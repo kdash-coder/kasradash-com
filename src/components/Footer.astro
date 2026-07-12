@@ -1,0 +1,79 @@
+---
+import { HUBS, SOCIALS } from '../lib/site';
+const year = new Date().getFullYear();
+
+const learnLinks = [
+  { label: 'What Is SEO?', href: '/seo/' },
+  { label: 'How SEO Works', href: '/seo/learn/how-seo-works/' },
+  { label: 'SEO Fundamentals', href: '/seo/learn/seo-fundamentals/' },
+  { label: 'SEO Glossary', href: '/seo/learn/seo-glossary/' },
+  { label: 'How Long Does SEO Take?', href: '/seo/learn/how-long-does-seo-take/' },
+];
+
+const popularLinks = [
+  { label: 'Internal Linking Guide', href: '/seo/content-seo/internal-linking/' },
+  { label: 'Topical Authority', href: '/seo/content-seo/topical-authority/' },
+  { label: 'Link Building Strategies', href: '/seo/link-building/strategies/' },
+  { label: 'Technical SEO Audit', href: '/seo/technical-seo/audit/' },
+  { label: 'AI Overviews Optimisation', href: '/seo/ai-and-seo/ai-overviews-optimisation/' },
+];
+---
+
+<footer class="bg-deep text-white">
+  <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <img src="/images/Frame-106.png" alt="Kasra Dash" class="h-9 w-auto" width="170" height="36" loading="lazy" />
+        <p class="mt-4 text-sm leading-relaxed text-lavender/80">
+          Kasra Dash is a UK-based entrepreneur and SEO consultant. Founder of The Masterminders Conference and creator of mySEO.app, helping SEOs and business owners grow with practical, tested strategies.
+        </p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          {SOCIALS.map((s) => (
+            <a href={s.href} rel="noopener" target="_blank" class="rounded-full border border-white/20 px-3 py-1.5 text-xs font-semibold text-lavender hover:border-brand-500 hover:bg-brand-500/20 hover:text-white">
+              {s.label}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <nav aria-label="SEO topics">
+        <h2 class="font-display text-sm font-bold uppercase tracking-wider text-lavender">SEO Topics</h2>
+        <ul class="mt-4 space-y-2.5">
+          {HUBS.map((hub) => (
+            <li><a href={hub.url} class="text-sm text-white/80 hover:text-white hover:underline">{hub.name}</a></li>
+          ))}
+        </ul>
+      </nav>
+
+      <nav aria-label="Start here">
+        <h2 class="font-display text-sm font-bold uppercase tracking-wider text-lavender">Start Here</h2>
+        <ul class="mt-4 space-y-2.5">
+          {learnLinks.map((l) => (
+            <li><a href={l.href} class="text-sm text-white/80 hover:text-white hover:underline">{l.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+
+      <nav aria-label="Popular guides">
+        <h2 class="font-display text-sm font-bold uppercase tracking-wider text-lavender">Popular Guides</h2>
+        <ul class="mt-4 space-y-2.5">
+          {popularLinks.map((l) => (
+            <li><a href={l.href} class="text-sm text-white/80 hover:text-white hover:underline">{l.label}</a></li>
+          ))}
+          <li><a href="/contact/" class="text-sm font-bold text-brand-500 hover:text-white">Work With Me →</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/60 sm:flex-row">
+      <p>© {year} Kasra Dash. All Rights Reserved.</p>
+      <p>
+        <a href="/about-kasra-dash/" class="hover:text-white">About</a>
+        <span class="mx-2">·</span>
+        <a href="/contact/" class="hover:text-white">Contact</a>
+        <span class="mx-2">·</span>
+        <a href="/free-ai-seo-sheet/" class="hover:text-white">Free AI SEO Sheet</a>
+      </p>
+    </div>
+  </div>
+</footer>

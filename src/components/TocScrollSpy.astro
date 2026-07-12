@@ -1,0 +1,26 @@
+<script>
+  const links = document.querySelectorAll<HTMLAnchorElement>('.toc-link');
+  if (links.length) {
+    const map = new Map<Element, HTMLAnchorElement>();
+    links.forEach((link) => {
+      const id = decodeURIComponent(link.hash.slice(1));
+      const target = document.getElementById(id);
+      if (target) map.set(target, link);
+    });
+    let active: HTMLAnchorElement | null = null;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            active?.classList.remove('active');
+            active = map.get(entry.target) ?? null;
+            active?.classList.add('active');
+            break;
+          }
+        }
+      },
+      { rootMargin: '-15% 0px -70% 0px' }
+    );
+    map.forEach((_, target) => observer.observe(target));
+  }
+</script>

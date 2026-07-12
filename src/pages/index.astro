@@ -1,0 +1,232 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { HUBS, SITE_URL } from '../lib/site';
+import { SERVICES, CASE_STUDIES, MISTAKES, WINS, TESTIMONIALS, FAQS } from '../lib/home-data';
+
+const title = 'Kasra Dash - Entrepreneur, Founder & SEO Strategist';
+const description =
+  'Kasra Dash is a UK-based SEO consultant and entrepreneur. Founder of The Masterminders Conference and mySEO.app, helping businesses win rankings, traffic and revenue with tested SEO systems.';
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: FAQS.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Kasra Dash',
+    url: SITE_URL,
+  },
+];
+---
+
+<BaseLayout {title} {description} path="/" jsonLd={jsonLd}>
+  <main>
+    {/* Hero */}
+    <section class="relative overflow-hidden border-b border-tint-border bg-tint">
+      <div class="pointer-events-none absolute -right-40 -top-40 h-96 w-96 rounded-full bg-brand-500/15 blur-3xl" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute -bottom-32 left-1/4 h-80 w-80 rounded-full bg-indigo-brand/10 blur-3xl" aria-hidden="true"></div>
+      <div class="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:py-24">
+        <div>
+          <p class="inline-block rounded-full border border-brand-500/30 bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-600">
+            Consultant · SEO Expert · Podcaster
+          </p>
+          <h1 class="mt-5 font-display text-4xl font-extrabold leading-[1.08] tracking-tight text-ink sm:text-5xl lg:text-6xl">
+            Kasra Dash – A Leading <span class="brand-gradient-text">SEO Consultant</span>
+          </h1>
+          <p class="mt-6 max-w-xl text-lg leading-relaxed text-muted">
+            Kasra Dash is an entrepreneur focused on SEO and AI search. Founder of{' '}<a href="https://mastermindersconference.com" rel="noopener" class="font-semibold text-brand-600 hover:underline">The Masterminders Conference</a>, connecting founders, operators, and SEOs worldwide, and creator of{' '}<a href="https://myseo.app" rel="noopener" class="font-semibold text-brand-600 hover:underline">mySEO.app</a>, a learning and community platform for SEOs.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center gap-4">
+            <a href="/contact/" class="brand-gradient rounded-full px-7 py-3.5 text-base font-bold text-white shadow-lg shadow-brand-500/30 transition hover:shadow-xl hover:shadow-brand-500/40">
+              Work With Me
+            </a>
+            <a href="/seo/" class="text-base font-bold text-ink underline decoration-brand-500/40 decoration-2 underline-offset-4 hover:text-brand-600">
+              Read the SEO guides
+            </a>
+          </div>
+          <div class="mt-10 flex items-center gap-4 rounded-2xl border border-tint-border bg-white p-4 sm:max-w-md">
+            <p class="font-display text-3xl font-extrabold brand-gradient-text">14,700</p>
+            <p class="text-sm leading-snug text-muted">
+              business owners already enjoy higher rankings, more traffic, and lower SEO costs with this proven SEO system.
+            </p>
+          </div>
+        </div>
+        <div class="relative mx-auto w-full max-w-sm lg:max-w-none">
+          <div class="brand-gradient absolute inset-0 translate-x-3 translate-y-3 rounded-3xl opacity-20" aria-hidden="true"></div>
+          <img
+            src="/images/image-11-1005x1024.webp"
+            alt="Kasra Dash, SEO consultant and founder of The Masterminders Conference"
+            class="relative w-full rounded-3xl border border-tint-border object-cover shadow-2xl shadow-deep/20"
+            width="503"
+            height="512"
+            fetchpriority="high"
+          />
+        </div>
+      </div>
+    </section>
+
+    {/* Featured in */}
+    <section class="bg-deep py-8" aria-label="As featured in">
+      <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-12 gap-y-4 px-4 sm:px-6">
+        <p class="text-xs font-bold uppercase tracking-widest text-lavender/70">As featured in</p>
+        <img src="/images/image-50.svg" alt="Searcharoo" class="h-7 w-auto opacity-80" loading="lazy" />
+        <img src="/images/image-51.svg" alt="Autoblogging.ai" class="h-7 w-auto opacity-80" loading="lazy" />
+        <img src="/images/image-52.svg" alt="Backlink Doctor" class="h-7 w-auto opacity-80" loading="lazy" />
+      </div>
+    </section>
+
+    {/* Services */}
+    <section class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+      <p class="text-sm font-bold uppercase tracking-widest text-brand-600">Our services</p>
+      <div class="mt-2 flex flex-wrap items-end justify-between gap-4">
+        <h2 class="max-w-xl font-display text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">Digital Marketing Services</h2>
+        <a href="/contact/" class="text-sm font-bold text-brand-600 hover:underline">Discuss your project →</a>
+      </div>
+      <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {SERVICES.map((s) => (
+          <div class="group rounded-2xl border border-tint-border bg-white p-6 transition hover:-translate-y-1 hover:border-brand-500/40 hover:shadow-xl hover:shadow-brand-500/10">
+            <h3 class="font-display text-xl font-bold text-ink">
+              <a href={s.href} class="hover:text-brand-600">{s.name}</a>
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-muted">{s.copy}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* Case studies */}
+    <section class="bg-deep py-20 text-white">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <p class="text-sm font-bold uppercase tracking-widest text-brand-500">Case studies</p>
+        <h2 class="mt-2 max-w-2xl font-display text-3xl font-extrabold tracking-tight sm:text-4xl">Exploring Success Through Real Results</h2>
+        <div class="mt-10 grid gap-5 lg:grid-cols-3">
+          {CASE_STUDIES.map((cs) => (
+            <div class="flex flex-col rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
+              <p class="inline-block self-start rounded-full bg-brand-500/25 px-3 py-1 text-xs font-bold uppercase tracking-wider text-lavender">{cs.tag}</p>
+              <h3 class="mt-4 font-display text-lg font-bold leading-snug">{cs.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-lavender/80">{cs.copy}</p>
+              <dl class="mt-6 grid grid-cols-2 gap-4 border-t border-white/10 pt-5">
+                {cs.stats.map((st) => (
+                  <div>
+                    <dd class="font-display text-2xl font-extrabold text-white">{st.value}</dd>
+                    <dt class="text-xs text-lavender/70">{st.label}</dt>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Wrong vs right */}
+    <section class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+      <div class="grid gap-6 lg:grid-cols-2">
+        <div class="rounded-2xl border border-tint-border bg-white p-7">
+          <h2 class="font-display text-2xl font-bold text-ink">Where most businesses go wrong with SEO</h2>
+          <ul class="mt-5 space-y-3">
+            {MISTAKES.map((m) => (
+              <li class="flex gap-3 text-sm leading-relaxed text-muted">
+                <span class="mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full bg-red-100 text-xs font-bold text-red-600" aria-hidden="true">✕</span>
+                {m}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-brand-500/30 bg-tint p-7">
+          <h2 class="font-display text-2xl font-bold text-ink">What top-performing websites get right</h2>
+          <ul class="mt-5 space-y-3">
+            {WINS.map((w) => (
+              <li class="flex gap-3 text-sm leading-relaxed text-ink">
+                <span class="brand-gradient mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full text-xs font-bold text-white" aria-hidden="true">✓</span>
+                {w}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div class="mt-8 text-center">
+        <a href="/contact/" class="brand-gradient inline-block rounded-full px-7 py-3.5 text-base font-bold text-white shadow-lg shadow-brand-500/30 hover:shadow-xl">
+          Unlock Your SEO Success Plan
+        </a>
+      </div>
+    </section>
+
+    {/* SEO hubs */}
+    <section class="border-y border-tint-border bg-tint py-20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <p class="text-sm font-bold uppercase tracking-widest text-brand-600">Learn SEO free</p>
+        <h2 class="mt-2 max-w-2xl font-display text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">100+ guides, frameworks and templates</h2>
+        <p class="mt-3 max-w-2xl text-muted">Everything Kasra has learned testing SEO since 2018, organised into six topic hubs.</p>
+        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {HUBS.map((hub) => (
+            <a href={hub.url} class="group rounded-2xl border border-tint-border bg-white p-5 transition hover:-translate-y-0.5 hover:border-brand-500/40 hover:shadow-lg hover:shadow-brand-500/10">
+              <h3 class="font-display text-lg font-bold text-ink group-hover:text-brand-600">{hub.name}</h3>
+              <p class="mt-1.5 text-sm leading-relaxed text-muted">{hub.blurb}</p>
+              <span class="mt-3 inline-block text-sm font-bold text-brand-600">Browse guides →</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Testimonials */}
+    <section class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+      <p class="text-sm font-bold uppercase tracking-widest text-brand-600">Testimonials</p>
+      <h2 class="mt-2 font-display text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">What clients say</h2>
+      <div class="mt-10 grid gap-5 lg:grid-cols-3">
+        {TESTIMONIALS.map((t) => (
+          <figure class="flex flex-col rounded-2xl border border-tint-border bg-white p-6">
+            <svg class="h-7 w-7 text-brand-500/40" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.6 4.8C6 7 3.9 10.2 3.9 14.1c0 3 1.8 5.1 4.4 5.1 2.3 0 4-1.7 4-4 0-2.2-1.5-3.8-3.6-3.8-.4 0-.9.1-1 .1.3-2 2-4.3 4-5.5L9.6 4.8zm10.1 0c-3.5 2.2-5.7 5.4-5.7 9.3 0 3 1.8 5.1 4.4 5.1 2.3 0 4-1.7 4-4 0-2.2-1.5-3.8-3.5-3.8-.5 0-1 .1-1.1.1.3-2 2-4.3 4-5.5l-2.1-1.2z"/></svg>
+            <blockquote class="mt-4 flex-1 text-sm leading-relaxed text-ink">{t.quote}</blockquote>
+            <figcaption class="mt-5 border-t border-tint-border pt-4 text-sm">
+              <span class="font-bold text-ink">{t.name}</span>
+              <span class="block text-muted">{t.role}</span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+
+    {/* FAQ */}
+    <section class="border-t border-tint-border bg-tint py-20">
+      <div class="mx-auto max-w-3xl px-4 sm:px-6">
+        <h2 class="text-center font-display text-3xl font-extrabold tracking-tight text-ink sm:text-4xl">Frequently Asked Questions</h2>
+        <div class="mt-10 space-y-3">
+          {FAQS.map((f) => (
+            <details class="group rounded-xl border border-tint-border bg-white p-5 open:border-brand-500/40">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-base font-bold text-ink [&::-webkit-details-marker]:hidden">
+                {f.q}
+                <span class="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-tint text-brand-600 transition group-open:rotate-45" aria-hidden="true">+</span>
+              </summary>
+              <p class="mt-3 text-sm leading-relaxed text-muted">{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Final CTA */}
+    <section class="bg-deep py-20 text-white">
+      <div class="mx-auto max-w-3xl px-4 text-center sm:px-6">
+        <h2 class="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">Ready to Boost Your SEO?</h2>
+        <p class="mx-auto mt-4 max-w-xl text-lavender/85">
+          Let's chat about your goals and how we can elevate your SEO strategy. Fill out the contact form, and let's start scaling your business together.
+        </p>
+        <a href="/contact/" class="brand-gradient mt-8 inline-block rounded-full px-8 py-4 text-base font-bold text-white shadow-lg shadow-brand-500/40 hover:shadow-xl">
+          Work With Me
+        </a>
+        <p class="mt-4 text-sm text-lavender/70">
+          Prefer to start smaller? <a href="/free-ai-seo-sheet/" class="font-semibold text-lavender underline hover:text-white">Grab the free AI SEO sheet</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

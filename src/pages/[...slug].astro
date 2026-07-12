@@ -1,0 +1,71 @@
+---
+import { getCollection, render } from 'astro:content';
+import ArticleLayout from '../layouts/ArticleLayout.astro';
+import HubLayout from '../layouts/HubLayout.astro';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles');
+  return articles.map((entry) => ({
+    params: { slug: entry.data.url.replace(/^\/|\/$/g, '') },
+    props: { entry, all: articles },
+  }));
+}
+
+const { entry, all } = Astro.props;
+const { Content, headings } = await render(entry);
+const d = entry.data;
+
+// Related guides: same silo, excluding self and the hub page itself
+const siblings = all.filter(
+  (a) => a.data.silo === d.silo && a.data.url !== d.url && a.data.kind === 'article'
+);
+
+// Deterministic rotation so every page promotes different siblings
+const start = Math.abs([...d.url].reduce((acc, ch) => acc + ch.charCodeAt(0), 0)) % Math.max(siblings.length, 1);
+const related = siblings.length
+  ? Array.from({ length: Math.min(5, siblings.length) }, (_, i) => siblings[(start + i) % siblings.length]).map((a) => ({
+      title: a.data.h1,
+      href: a.data.url,
+    }))
+  : [];
+
+const children = all
+  .filter((a) => a.data.silo === d.url && a.data.url !== d.url)
+  .sort((a, b) => a.data.h1.localeCompare(b.data.h1));
+
+const hubChildrenBySilo =
+  d.url === '/seo/'
+    ? all.filter((a) => a.data.kind === 'hub' && a.data.url !== '/seo/')
+    : [];
+---
+
+{
+  d.kind === 'hub' ? (
+    <HubLayout
+      title={d.title}
+      description={d.description}
+      h1={d.h1}
+      path={d.url}
+      siloName={d.siloName}
+      guides={d.url === "/seo/" ? hubChildrenBySilo : children}
+      ogImage={d.ogImage}
+      isPillar={d.url === '/seo/'}
+    >
+      <Content />
+    </HubLayout>
+  ) : (
+    <ArticleLayout
+      title={d.title}
+      description={d.description}
+      h1={d.h1}
+      path={d.url}
+      siloName={d.siloName}
+      siloUrl={d.silo}
+      {headings}
+      {related}
+      ogImage={d.ogImage}
+    >
+      <Content />
+    </ArticleLayout>
+  )
+}

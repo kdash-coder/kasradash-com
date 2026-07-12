@@ -1,0 +1,56 @@
+---
+import { SITE_URL, SITE_NAME } from '../lib/site';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  ogImage?: string;
+  type?: 'website' | 'article';
+  jsonLd?: object[];
+}
+
+const { title, description, path, ogImage = '/images/Group-89.png', type = 'website', jsonLd = [] } = Astro.props;
+const canonical = new URL(path, SITE_URL).href;
+const ogImageAbs = new URL(ogImage, SITE_URL).href;
+
+const personOrg = {
+  '@context': 'https://schema.org',
+  '@type': ['Person', 'Organization'],
+  '@id': `${SITE_URL}/#person`,
+  name: SITE_NAME,
+  url: SITE_URL,
+  image: `${SITE_URL}/images/Group-89.png`,
+  jobTitle: 'SEO Consultant & Entrepreneur',
+  description:
+    'Kasra Dash is a UK-based entrepreneur, SEO consultant and speaker. Founder of The Masterminders Conference and creator of mySEO.app.',
+  sameAs: [
+    'https://www.youtube.com/@kasradash',
+    'https://www.linkedin.com/in/kasra-dash',
+    'https://x.com/Kasra_Dash',
+    'https://www.instagram.com/kasra_d_',
+    'https://www.facebook.com/Kasra.Dash1',
+  ],
+};
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+
+<meta property="og:type" content={type} />
+<meta property="og:site_name" content={SITE_NAME} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImageAbs} />
+<meta property="og:locale" content="en_GB" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageAbs} />
+<meta name="twitter:creator" content="@Kasra_Dash" />
+
+<script type="application/ld+json" set:html={JSON.stringify(personOrg)} />
+{jsonLd.map((block) => <script type="application/ld+json" set:html={JSON.stringify(block)} />)}

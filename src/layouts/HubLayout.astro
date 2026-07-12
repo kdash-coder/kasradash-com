@@ -1,0 +1,110 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { SITE_URL, HUBS } from '../lib/site';
+
+interface Props {
+  title: string;
+  description: string;
+  h1: string;
+  path: string;
+  siloName: string;
+  guides: CollectionEntry<'articles'>[];
+  ogImage?: string;
+  isPillar?: boolean;
+}
+
+const { title, description, h1, path, siloName, guides, ogImage, isPillar = false } = Astro.props;
+
+const crumbs = isPillar
+  ? [
+      { label: 'Home', href: '/' },
+      { label: 'SEO', href: '/seo/' },
+    ]
+  : [
+      { label: 'Home', href: '/' },
+      { label: 'SEO', href: '/seo/' },
+      { label: siloName, href: path },
+    ];
+
+const otherHubs = HUBS.filter((hub) => hub.url !== path);
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: h1,
+    description,
+    url: new URL(path, SITE_URL).href,
+    hasPart: guides.map((c) => ({
+      '@type': 'Article',
+      headline: c.data.h1,
+      url: new URL(c.data.url, SITE_URL).href,
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbs.map((c, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: c.label,
+      item: new URL(c.href, SITE_URL).href,
+    })),
+  },
+];
+---
+
+<BaseLayout {title} {description} {path} {ogImage} jsonLd={jsonLd}>
+  <main>
+    <div class="border-b border-tint-border bg-tint">
+      <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">
+        <Breadcrumbs {crumbs} />
+        <h1 class="mt-4 max-w-4xl font-display text-3xl font-extrabold leading-tight tracking-tight text-ink sm:text-5xl">{h1}</h1>
+        <p class="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">{description}</p>
+      </div>
+    </div>
+
+    <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+      {guides.length > 0 && (
+        <section aria-label={`${siloName} guides`}>
+          <h2 class="font-display text-2xl font-bold text-ink">
+            {isPillar ? 'Explore the SEO topic hubs' : `All ${siloName} guides`}
+          </h2>
+          <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {guides.map((c) => (
+              <a
+                href={c.data.url}
+                class="group flex flex-col rounded-2xl border border-tint-border bg-white p-5 transition hover:-translate-y-0.5 hover:border-brand-500/40 hover:shadow-lg hover:shadow-brand-500/10"
+              >
+                <h3 class="font-display text-base font-bold leading-snug text-ink group-hover:text-brand-600">
+                  {c.data.h1}
+                </h3>
+                <p class="mt-2 line-clamp-3 text-sm leading-relaxed text-muted">{c.data.description}</p>
+                <span class="mt-auto pt-3 text-sm font-bold text-brand-600">Read the guide →</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <section class="prose prose-kasra mt-14 max-w-3xl">
+        <slot />
+      </section>
+
+      {!isPillar && (
+        <section class="mt-14 rounded-2xl border border-tint-border bg-tint p-6" aria-label="Other SEO topics">
+          <h2 class="font-display text-lg font-bold text-ink">Keep exploring SEO</h2>
+          <div class="mt-4 flex flex-wrap gap-2">
+            {otherHubs.map((hub) => (
+              <a href={hub.url} class="rounded-full border border-tint-border bg-white px-4 py-2 text-sm font-semibold text-ink hover:border-brand-500 hover:text-brand-600">
+                {hub.name}
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+    </div>
+  </main>
+</BaseLayout>

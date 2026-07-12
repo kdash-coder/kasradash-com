@@ -1,0 +1,144 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import TocScrollSpy from '../components/TocScrollSpy.astro';
+import { SITE_URL } from '../lib/site';
+
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Related {
+  title: string;
+  href: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  h1: string;
+  path: string;
+  siloName: string;
+  siloUrl: string;
+  headings: Heading[];
+  related: Related[];
+  ogImage?: string;
+}
+
+const { title, description, h1, path, siloName, siloUrl, headings, related, ogImage } = Astro.props;
+const toc = headings.filter((h) => h.depth === 2);
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'SEO', href: '/seo/' },
+  ...(siloUrl !== '/seo/' ? [{ label: siloName, href: siloUrl }] : []),
+  { label: h1, href: path },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: h1,
+    description,
+    author: { '@id': `${SITE_URL}/#person` },
+    publisher: { '@id': `${SITE_URL}/#person` },
+    mainEntityOfPage: new URL(path, SITE_URL).href,
+    image: ogImage ? new URL(ogImage, SITE_URL).href : `${SITE_URL}/images/Group-89.png`,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbs.map((c, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: c.label,
+      item: new URL(c.href, SITE_URL).href,
+    })),
+  },
+];
+---
+
+<BaseLayout {title} {description} {path} {ogImage} type="article" {jsonLd}>
+  <main>
+    <div class="border-b border-tint-border bg-tint">
+      <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:py-14">
+        <Breadcrumbs {crumbs} />
+        <h1 class="mt-4 max-w-4xl font-display text-3xl font-extrabold leading-tight tracking-tight text-ink sm:text-4xl lg:text-[2.75rem]">
+          {h1}
+        </h1>
+        <p class="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">{description}</p>
+        <div class="mt-6 flex items-center gap-3">
+          <img src="/images/Group-89.png" alt="" class="h-10 w-10 rounded-full border border-tint-border bg-white object-contain p-1" width="40" height="40" />
+          <div class="text-sm">
+            <p class="font-bold text-ink">Kasra Dash</p>
+            <p class="text-muted">SEO Consultant · Founder, The Masterminders & mySEO.app</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-auto max-w-6xl gap-10 px-4 py-10 sm:px-6 lg:grid lg:grid-cols-[13rem_minmax(0,1fr)_15rem] lg:py-14 xl:gap-12">
+      {/* Left: jump links */}
+      <aside class="hidden lg:block">
+        {toc.length > 2 && (
+          <nav class="sticky top-24" aria-label="On this page">
+            <h2 class="font-display text-xs font-bold uppercase tracking-wider text-muted">On this page</h2>
+            <ul class="mt-3 space-y-0.5 border-l border-tint-border">
+              {toc.map((h) => (
+                <li>
+                  <a
+                    href={`#${h.slug}`}
+                    class="toc-link -ml-px block border-l-2 border-transparent py-1 pl-3 text-[0.8rem] leading-snug text-muted transition hover:border-lavender hover:text-ink"
+                  >
+                    {h.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
+      </aside>
+
+      {/* Centre: article */}
+      <article class="prose prose-kasra max-w-none lg:max-w-[46rem]">
+        <slot />
+      </article>
+
+      {/* Right: sidebar */}
+      <aside class="mt-12 space-y-6 lg:mt-0">
+        <div class="lg:sticky lg:top-24 space-y-6">
+          <div class="rounded-2xl border border-tint-border bg-tint p-5">
+            <h2 class="font-display text-xs font-bold uppercase tracking-wider text-muted">Related guides</h2>
+            <ul class="mt-3 space-y-2.5">
+              {related.map((r) => (
+                <li>
+                  <a href={r.href} class="block text-sm font-semibold leading-snug text-ink hover:text-brand-600 hover:underline">{r.title}</a>
+                </li>
+              ))}
+              <li class="pt-1">
+                <a href={siloUrl} class="text-sm font-bold text-brand-600 hover:underline">All {siloName} guides →</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl bg-deep p-5 text-white">
+            <h2 class="font-display text-lg font-bold leading-snug">Want this done for you?</h2>
+            <p class="mt-2 text-sm leading-relaxed text-lavender/85">
+              Kasra Dash consults for brands that want rankings, not reports. Get a clear strategy built on tested SEO systems.
+            </p>
+            <a href="/contact/" class="brand-gradient mt-4 block rounded-full px-4 py-2.5 text-center text-sm font-bold text-white">
+              Work With Me
+            </a>
+            <a href="/free-ai-seo-sheet/" class="mt-2 block text-center text-xs font-semibold text-lavender hover:text-white hover:underline">
+              or grab the free AI SEO sheet
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <TocScrollSpy />
+</BaseLayout>
