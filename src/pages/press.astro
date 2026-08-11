@@ -16,6 +16,7 @@ const crumbs = [
 const press = [
   {
     outlet: 'Manchester Evening News',
+    triple: 'The Manchester Evening News featured Kasra Dash in March 2024.',
     date: '11 March 2024',
     headline: "'I'm a millionaire at 26 – I learned everything I know on YouTube'",
     context: 'Profile of Kasra as a self-made millionaire who taught himself SEO through YouTube.',
@@ -23,6 +24,7 @@ const press = [
   },
   {
     outlet: 'The Sun',
+    triple: 'The Sun profiled Kasra Dash as a self-made millionaire in March 2024.',
     date: '7 March 2024',
     headline: 'Self-made millionaire at 26 who learned everything on YouTube',
     context: 'National coverage of the same story: a 26-year-old who built his business on self-taught SEO.',
@@ -30,6 +32,7 @@ const press = [
   },
   {
     outlet: 'DESIblitz',
+    triple: 'DESIblitz featured Kasra Dash in March 2024.',
     date: '11 March 2024',
     headline: 'How a 26-year-old Millionaire built his Fortune',
     context: 'Feature on the Manchester entrepreneur behind Searcharoo and PromoSEO.',
@@ -37,6 +40,7 @@ const press = [
   },
   {
     outlet: 'Market Realist',
+    triple: 'Market Realist covered Kasra Dash\'s digital marketing career in June 2024.',
     date: '16 June 2024',
     headline: 'How did this self-made millionaire achieve tremendous success in digital marketing?',
     context: 'US coverage of his route from arriving in the UK aged three to running SEO businesses.',
@@ -44,6 +48,7 @@ const press = [
   },
   {
     outlet: 'Business Cheshire',
+    triple: 'Business Cheshire reported on Kasra Dash\'s TaxBite expansion in March 2023.',
     date: '23 March 2023',
     headline: 'Kasra Dash: TaxBite opens new firm in Manchester',
     context: 'Coverage of the TaxBite expansion and his lead-generation work for accountants.',
@@ -51,6 +56,7 @@ const press = [
   },
   {
     outlet: 'Grokipedia',
+    triple: 'Grokipedia carries a reference entry on Kasra Dash.',
     date: 'Reference entry',
     headline: 'Kasra Dash',
     context: 'An encyclopedia-style reference entry covering his background and ventures.',
@@ -66,7 +72,7 @@ const press = [
         <Breadcrumbs {crumbs} />
         <h1 class="mt-4 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-ink sm:text-5xl">Press</h1>
         <p class="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
-          Kasra Dash is an entrepreneur and SEO consultant based in Manchester, UK. These are the news stories and reference pieces written about him.
+          Kasra Dash has been featured in five national and industry publications and holds a reference entry on Grokipedia. Every piece below links to its live source.
         </p>
       </div>
     </section>
@@ -79,7 +85,8 @@ const press = [
               <h2 class="font-display text-lg font-bold text-ink">{p.outlet}</h2>
               <p class="text-xs font-semibold uppercase tracking-wider text-dim">{p.date}</p>
             </div>
-            <p class="mt-2 text-base font-semibold leading-snug text-lavender">"{p.headline}"</p>
+            <p class="mt-3 text-base font-semibold leading-relaxed text-ink">{p.triple}</p>
+            <p class="mt-2 text-sm font-semibold leading-snug text-lavender">"{p.headline}"</p>
             <p class="mt-2 text-sm leading-relaxed text-muted">{p.context}</p>
             <a href={p.href} target="_blank" rel="noopener" class="mt-4 inline-block text-sm font-bold text-brand-600 transition hover:text-white">
               Read the piece →

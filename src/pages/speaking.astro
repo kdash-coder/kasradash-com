@@ -34,21 +34,112 @@ const engagements = [
     linkLabel: 'Watch the interview →',
   },
   {
+    name: 'SEO Estonia 2024',
+    when: '2024 · Tallinn, Estonia',
+    copy: 'Kasra Dash spoke at SEO Estonia in 2024, returning after his 2023 appearance at the Tallinn conference.',
+    href: 'https://seoestonia.com/',
+    linkLabel: 'Visit seoestonia.com →',
+  },
+  {
+    name: 'SEO Estonia 2023',
+    when: '2023 · Tallinn, Estonia',
+    copy: "Kasra Dash spoke at SEO Estonia in 2023. The conference's own site carries his 2023 feedback video.",
+    href: 'https://seoestonia.com/',
+    linkLabel: 'Visit seoestonia.com →',
+  },
+  {
+    name: 'Chiang Mai SEO 2023',
+    when: '2023 · Chiang Mai, Thailand',
+    copy: 'Kasra Dash spoke at Chiang Mai SEO 2023, the SEO conference held in Chiang Mai, Thailand.',
+    href: 'https://chiangmaiseoconference.com/',
+    linkLabel: 'Visit chiangmaiseoconference.com →',
+  },
+  {
+    name: 'SEO Mastery Summit',
+    when: 'Ho Chi Minh City, Vietnam',
+    copy: 'Kasra Dash spoke at the SEO Mastery Summit, the SEO and AI conference held in Ho Chi Minh City.',
+    href: 'https://seomasterysummit.com/',
+    linkLabel: 'Visit seomasterysummit.com →',
+  },
+  {
     name: 'Affiliate World',
     when: 'Multiple editions',
     copy: 'Kasra has appeared at Affiliate World events, with his attendance documented in event photography.',
   },
 ];
+
+/* Photo slot per engagement: Kasra is supplying event photos. Add
+ * image: { src: '/images/speaking/<file>', alt: '<entity-first alt>' }
+ * to any entry above and the card renders it; nothing renders until then. */
+
+// Event nodes — attested engagements; url only where the event site verified live (11 Aug 2026).
+const eventNodes = [
+  {
+    '@type': 'Event',
+    name: 'The Masterminders 2026',
+    startDate: '2026-06-24',
+    endDate: '2026-06-26',
+    location: { '@type': 'Place', name: 'Hilton Deansgate', address: { '@type': 'PostalAddress', addressLocality: 'Manchester', addressCountry: 'United Kingdom' } },
+    organizer: { '@id': 'https://kasradash.com/#person' },
+    url: 'https://themasterminders.com/',
+  },
+  {
+    '@type': 'Event',
+    name: 'brightonSEO September 2023',
+    startDate: '2023-09',
+    location: { '@type': 'Place', name: 'Brighton', address: { '@type': 'PostalAddress', addressLocality: 'Brighton', addressCountry: 'United Kingdom' } },
+    performer: { '@id': 'https://kasradash.com/#person' },
+    url: 'https://brightonseo.com/people/kasra-dash',
+  },
+  {
+    '@type': 'Event',
+    name: 'SEO Estonia 2023',
+    startDate: '2023',
+    location: { '@type': 'Place', name: 'Tallinn', address: { '@type': 'PostalAddress', addressLocality: 'Tallinn', addressCountry: 'Estonia' } },
+    performer: { '@id': 'https://kasradash.com/#person' },
+    url: 'https://seoestonia.com/',
+  },
+  {
+    '@type': 'Event',
+    name: 'SEO Estonia 2024',
+    startDate: '2024',
+    location: { '@type': 'Place', name: 'Tallinn', address: { '@type': 'PostalAddress', addressLocality: 'Tallinn', addressCountry: 'Estonia' } },
+    performer: { '@id': 'https://kasradash.com/#person' },
+    url: 'https://seoestonia.com/',
+  },
+  {
+    '@type': 'Event',
+    name: 'Chiang Mai SEO 2023',
+    startDate: '2023',
+    location: { '@type': 'Place', name: 'Chiang Mai', address: { '@type': 'PostalAddress', addressLocality: 'Chiang Mai', addressCountry: 'Thailand' } },
+    performer: { '@id': 'https://kasradash.com/#person' },
+    url: 'https://chiangmaiseoconference.com/',
+  },
+  {
+    '@type': 'Event',
+    name: 'SEO Mastery Summit',
+    location: { '@type': 'Place', name: 'Ho Chi Minh City', address: { '@type': 'PostalAddress', addressLocality: 'Ho Chi Minh City', addressCountry: 'Vietnam' } },
+    performer: { '@id': 'https://kasradash.com/#person' },
+    url: 'https://seomasterysummit.com/',
+  },
+  {
+    '@type': 'Event',
+    name: 'WOSCon 2024',
+    startDate: '2024',
+    performer: { '@id': 'https://kasradash.com/#person' },
+    url: 'https://www.youtube.com/watch?v=FfkRa228qs8',
+  },
+];
 ---
 
-<BaseLayout {title} {description} path="/speaking/" breadcrumbs={crumbs}>
+<BaseLayout {title} {description} path="/speaking/" breadcrumbs={crumbs} graphNodes={eventNodes}>
   <main>
     <section class="border-b border-tint-border bg-tint">
       <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">
         <Breadcrumbs {crumbs} />
         <h1 class="mt-4 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-ink sm:text-5xl">Speaking</h1>
         <p class="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
-          Kasra Dash is an entrepreneur and SEO consultant based in Manchester, UK. He speaks at search and marketing events and hosts his own conference.
+          Kasra Dash is an entrepreneur and SEO consultant based in Manchester, UK. He has spoken at SEO conferences across Europe and Asia and hosts his own conference in Manchester.
         </p>
       </div>
     </section>
@@ -57,6 +148,9 @@ const engagements = [
       <div class="space-y-4">
         {engagements.map((e) => (
           <article class="rounded-[20px] border border-tint-border bg-tint p-6">
+            {e.image && (
+              <img src={e.image.src} alt={e.image.alt} class="mb-5 w-full rounded-xl border border-tint-border object-cover" loading="lazy" />
+            )}
             <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
               <h2 class="font-display text-lg font-bold text-ink">{e.name}</h2>
               <p class="text-xs font-semibold uppercase tracking-wider text-dim">{e.when}</p>

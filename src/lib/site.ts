@@ -28,6 +28,7 @@ export const ABOUT_MENU: MenuItem[] = [
   { label: 'Partnerships', href: '/partnerships/' },
   { label: 'Press', href: '/press/' },
   { label: 'Speaking', href: '/speaking/' },
+  { label: 'Life Lessons', href: '/life-lessons/' },
   { label: 'Podcast', href: '/podcast/' },
 ];
 
