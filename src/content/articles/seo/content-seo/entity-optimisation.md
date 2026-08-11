@@ -125,7 +125,7 @@ Add structured data (e.g., *Person*, *Organisation*, *Article*) to reinforce ent
 
 **Schema markup → validates → entity relevance for Google’s crawlers.**
 
-→ Use implementation tips from the [**Schema Markup Guide**](seo/technical-seo/schema-markup-guide/).
+→ Use implementation tips from the [**Schema Markup Guide**](/seo/technical-seo/schema-markup-guide/).
 
 ### Step 4: Use Consistent Naming and References
 

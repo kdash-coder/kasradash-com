@@ -275,7 +275,7 @@ To recap:
 - Strengthen authority with **semantic entities**.
 - Maintain consistency with **content frameworks** and **audits**.
 
-→ Continue your journey through [**Semantic SEO**](seo/content-seo/semantic-seo/) and enhance performance with **E-E-A-T**.
+→ Continue your journey through [**Semantic SEO**](/seo/content-seo/semantic-seo/) and enhance performance with **E-E-A-T**.
 
 Or learn about [content distribution](/seo/content-seo/content-distribution/) here.
 
