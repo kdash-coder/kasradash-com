@@ -6,10 +6,12 @@ url: "/seo/technical-seo/canonical-tags/"
 silo: "/seo/technical-seo/"
 siloName: "Technical SEO"
 kind: "article"
+datePublished: "2025-10-13T20:51:14+00:00"
+dateModified: "2025-10-13T20:57:00+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 
-C**anonical tags → signal → to search engines which URL should be treated as the master version of a page.**
+**Canonical tags → signal → to search engines which URL should be treated as the master version of a page.**
 
 Without proper canonicalisation, duplicate or parameterised URLs can split ranking power and confuse Google about which page to index.
 

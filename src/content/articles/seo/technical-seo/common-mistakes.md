@@ -6,6 +6,8 @@ url: "/seo/technical-seo/common-mistakes/"
 silo: "/seo/technical-seo/"
 siloName: "Technical SEO"
 kind: "article"
+datePublished: "2025-10-13T22:28:57+00:00"
+dateModified: "2026-02-10T17:24:09+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

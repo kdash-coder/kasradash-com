@@ -6,6 +6,8 @@ url: "/seo/technical-seo/core-web-vitals/"
 silo: "/seo/technical-seo/"
 siloName: "Technical SEO"
 kind: "article"
+datePublished: "2025-10-13T08:33:37+00:00"
+dateModified: "2025-10-30T12:54:08+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

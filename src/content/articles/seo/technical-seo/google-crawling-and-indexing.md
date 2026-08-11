@@ -6,6 +6,8 @@ url: "/seo/technical-seo/google-crawling-and-indexing/"
 silo: "/seo/technical-seo/"
 siloName: "Technical SEO"
 kind: "article"
+datePublished: "2025-10-13T08:42:47+00:00"
+dateModified: "2025-10-30T12:55:16+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

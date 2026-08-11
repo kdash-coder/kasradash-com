@@ -6,6 +6,8 @@ url: "/seo/seo-frameworks/seo-checklist/"
 silo: "/seo/seo-frameworks/"
 siloName: "SEO Frameworks"
 kind: "article"
+datePublished: "2025-10-28T19:13:31+00:00"
+dateModified: "2025-10-31T09:07:19+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

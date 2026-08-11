@@ -6,6 +6,8 @@ url: "/seo/link-building/wikipedia-backlinks/"
 silo: "/seo/link-building/"
 siloName: "Link Building"
 kind: "article"
+datePublished: "2025-10-15T01:47:52+00:00"
+dateModified: "2025-10-15T01:47:54+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

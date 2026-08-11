@@ -1,11 +1,13 @@
 ---
 title: "How AI Changes Search Intent and SERP Behaviour 2026"
-description: "Learn how AI systems like Google’s MUM, RankBrain, and SGE reshape how users search, and how SEOs can adapt their strategies."
+description: "Learn how AI systems like Google’s MUM, RankBrain, and SGE reshape how users search — and how SEOs can adapt their strategies."
 h1: "How AI Changes Search Intent and SERP Behaviour"
 url: "/seo/ai-and-seo/ai-search-intent/"
 silo: "/seo/ai-and-seo/"
 siloName: "AI & SEO"
 kind: "article"
+datePublished: "2025-10-28T19:02:24+00:00"
+dateModified: "2025-10-28T19:02:27+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

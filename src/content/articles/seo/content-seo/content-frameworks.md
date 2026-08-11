@@ -1,11 +1,13 @@
 ---
 title: "Content Frameworks: Hub and Spoke, Pillar-Cluster Models Explained 2026"
-description: "Learn how to scale your content production with AI tools-without sacrificing quality, originality, or search trust. Discover responsible workflows that keep your SEO authentic and sustainable."
+description: "Learn how to scale your content production with AI tools—without sacrificing quality, originality, or search trust. Discover responsible workflows that keep your SEO authentic and sustainable."
 h1: "Content Frameworks: Hub and Spoke, Pillar-Cluster Models Explained"
 url: "/seo/content-seo/content-frameworks/"
 silo: "/seo/content-seo/"
 siloName: "Content SEO"
 kind: "article"
+datePublished: "2025-10-28T17:42:27+00:00"
+dateModified: "2025-10-31T08:55:16+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

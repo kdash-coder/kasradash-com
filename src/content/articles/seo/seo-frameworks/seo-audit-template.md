@@ -6,6 +6,8 @@ url: "/seo/seo-frameworks/seo-audit-template/"
 silo: "/seo/seo-frameworks/"
 siloName: "SEO Frameworks"
 kind: "article"
+datePublished: "2025-10-28T19:25:38+00:00"
+dateModified: "2026-02-09T21:43:10+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

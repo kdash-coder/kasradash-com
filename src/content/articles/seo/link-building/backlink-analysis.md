@@ -6,6 +6,8 @@ url: "/seo/link-building/backlink-analysis/"
 silo: "/seo/link-building/"
 siloName: "Link Building"
 kind: "article"
+datePublished: "2025-10-14T22:53:48+00:00"
+dateModified: "2025-10-14T22:53:51+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

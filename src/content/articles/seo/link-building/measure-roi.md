@@ -1,11 +1,13 @@
 ---
 title: "How to Measure ROI in Link Building (With Formulas and Tools)"
-description: "Learn how to calculate and track link building ROI using proven formulas, tools, and dashboards, explained by Kasra Dash."
+description: "Learn how to calculate and track link building ROI using proven formulas, tools, and dashboards — explained by Kasra Dash."
 h1: "How to Measure ROI in Link Building (With Formulas and Tools)"
 url: "/seo/link-building/measure-roi/"
 silo: "/seo/link-building/"
 siloName: "Link Building"
 kind: "article"
+datePublished: "2025-10-15T00:36:54+00:00"
+dateModified: "2026-02-10T00:13:07+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

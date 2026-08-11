@@ -1,11 +1,13 @@
 ---
 title: "The 3 Pillars of SEO: Technical, On-Page and Off-Page Explained"
-description: "Discover the three pillars of SEO, Technical, On-Page, and Off-Page. Learn how they work together to improve search rankings."
+description: "Discover the three pillars of SEO — Technical, On-Page, and Off-Page. Learn how they work together to improve search rankings."
 h1: "The 3 Pillars of SEO: Technical, On-Page and Off-Page Explained"
 url: "/seo/learn/the-3-pillars-of-seo/"
 silo: "/seo/learn/"
 siloName: "Learn SEO"
 kind: "article"
+datePublished: "2025-10-12T20:35:05+00:00"
+dateModified: "2025-10-30T13:08:23+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 
@@ -30,7 +32,7 @@ Because each pillar influences the others, balance matters. A technically perfec
 
 **→ Continue from [How SEO Works](/seo/learn/how-seo-works/) to see how these pillars support the crawl → index → rank cycle.**
 
-## Technical SEO, The Foundation
+## Technical SEO — The Foundation
 
 **Technical SEO → enables → search engine access and understanding.**
 
@@ -53,7 +55,7 @@ If Google can’t crawl your content, no amount of keywords or backlinks can mak
 
 Use **Google Search Console** for coverage reports and **Screaming Frog** to audit crawl depth, redirects, and broken links. Address errors first, then optimise speed and structure.
 
-## On-Page SEO, The Content Layer
+## On-Page SEO — The Content Layer
 
 **On-Page SEO → aligns → your content with search intent.**
 
@@ -76,7 +78,7 @@ Good On-Page SEO makes your content easy to read for humans and machines, a perf
 
 There’s no fixed percentage. Focus on covering related entities and answering the query completely, Google measures relevance by meaning, not repetition.
 
-## Off-Page SEO, The Authority Builder
+## Off-Page SEO — The Authority Builder
 
 **Off-Page SEO → earns → trust through external signals.**
 

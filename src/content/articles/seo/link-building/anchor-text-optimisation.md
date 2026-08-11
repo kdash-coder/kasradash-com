@@ -6,6 +6,8 @@ url: "/seo/link-building/anchor-text-optimisation/"
 silo: "/seo/link-building/"
 siloName: "Link Building"
 kind: "article"
+datePublished: "2025-10-15T02:28:03+00:00"
+dateModified: "2026-02-10T00:09:31+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

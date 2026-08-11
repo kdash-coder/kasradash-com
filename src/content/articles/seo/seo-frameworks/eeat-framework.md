@@ -6,6 +6,8 @@ url: "/seo/seo-frameworks/eeat-framework/"
 silo: "/seo/seo-frameworks/"
 siloName: "SEO Frameworks"
 kind: "article"
+datePublished: "2025-10-28T21:00:26+00:00"
+dateModified: "2025-10-28T21:00:28+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

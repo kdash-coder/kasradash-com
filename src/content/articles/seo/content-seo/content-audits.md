@@ -6,6 +6,8 @@ url: "/seo/content-seo/content-audits/"
 silo: "/seo/content-seo/"
 siloName: "Content SEO"
 kind: "article"
+datePublished: "2025-10-15T11:48:33+00:00"
+dateModified: "2026-02-10T23:11:56+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

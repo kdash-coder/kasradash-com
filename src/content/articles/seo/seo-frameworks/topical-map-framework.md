@@ -6,6 +6,8 @@ url: "/seo/seo-frameworks/topical-map-framework/"
 silo: "/seo/seo-frameworks/"
 siloName: "SEO Frameworks"
 kind: "article"
+datePublished: "2025-10-28T20:05:13+00:00"
+dateModified: "2025-10-31T08:53:07+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

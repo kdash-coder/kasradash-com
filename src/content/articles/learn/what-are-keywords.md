@@ -1,11 +1,13 @@
 ---
 title: "What Are Keywords in SEO? (Beginner’s Guide to Search Intent in 2025)"
-description: "Learn what keywords are, why they matter, and how to use them effectively in SEO. Includes keyword types, intent, and examples, by Kasra Dash."
+description: "Learn what keywords are, why they matter, and how to use them effectively in SEO. Includes keyword types, intent, and examples — by Kasra Dash."
 h1: "What Are Keywords in SEO? (Beginner’s Guide to Search Intent in 2025)"
 url: "/learn/what-are-keywords/"
 silo: "/seo/learn/"
 siloName: "Learn SEO"
 kind: "article"
+datePublished: "2025-10-12T22:28:37+00:00"
+dateModified: "2025-10-30T12:15:16+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

@@ -6,6 +6,8 @@ url: "/seo/ai-and-seo/ai-seo-tools/"
 silo: "/seo/ai-and-seo/"
 siloName: "AI & SEO"
 kind: "article"
+datePublished: "2025-10-28T18:56:12+00:00"
+dateModified: "2026-02-09T21:43:09+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

@@ -6,6 +6,8 @@ url: "/seo/content-seo/optimise-old-content/"
 silo: "/seo/content-seo/"
 siloName: "Content SEO"
 kind: "article"
+datePublished: "2025-10-28T17:22:08+00:00"
+dateModified: "2026-03-30T13:59:40+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

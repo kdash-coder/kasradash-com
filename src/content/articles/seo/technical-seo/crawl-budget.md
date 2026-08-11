@@ -6,6 +6,8 @@ url: "/seo/technical-seo/crawl-budget/"
 silo: "/seo/technical-seo/"
 siloName: "Technical SEO"
 kind: "article"
+datePublished: "2025-10-13T19:13:50+00:00"
+dateModified: "2025-10-30T12:58:14+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

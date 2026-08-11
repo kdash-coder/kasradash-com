@@ -6,6 +6,8 @@ url: "/seo/technical-seo/xml-sitemaps-robots-txt/"
 silo: "/seo/technical-seo/"
 siloName: "Technical SEO"
 kind: "article"
+datePublished: "2025-10-13T20:08:08+00:00"
+dateModified: "2025-10-13T20:14:59+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

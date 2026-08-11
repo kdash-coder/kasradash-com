@@ -1,11 +1,13 @@
 ---
 title: "SEO Ranking Factors in 2026: What Really Impacts Your Google Rankings"
-description: "Discover the most important SEO ranking factors for 2026. Learn how Google decides which pages to rank and how to optimise yours, explained by Kasra Dash."
+description: "Discover the most important SEO ranking factors for 2026. Learn how Google decides which pages to rank and how to optimise yours — explained by Kasra Dash."
 h1: "SEO Ranking Factors in 2026: What Really Impacts Your Google Rankings"
 url: "/seo/learn/seo-ranking-factors/"
 silo: "/seo/learn/"
 siloName: "Learn SEO"
 kind: "article"
+datePublished: "2025-10-12T22:38:58+00:00"
+dateModified: "2025-10-30T13:09:06+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

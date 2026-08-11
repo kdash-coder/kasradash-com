@@ -6,6 +6,8 @@ url: "/seo/ai-and-seo/ethical-seo/"
 silo: "/seo/ai-and-seo/"
 siloName: "AI & SEO"
 kind: "article"
+datePublished: "2025-10-28T19:05:20+00:00"
+dateModified: "2025-10-28T19:05:22+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

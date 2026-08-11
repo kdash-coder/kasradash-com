@@ -1,11 +1,13 @@
 ---
 title: "RankBrain vs BERT vs MUM: Evolution of Google’s AI Systems"
-description: "Understand how Google’s AI systems, RankBrain, BERT, and MUM, have evolved to make search smarter. Learn how each algorithm interprets intent, meaning, and context, and what that means for SEO in 2025."
+description: "Understand how Google’s AI systems — RankBrain, BERT, and MUM — have evolved to make search smarter. Learn how each algorithm interprets intent, meaning, and context, and what that means for SEO in 2025."
 h1: "RankBrain vs BERT vs MUM: Evolution of Google’s AI Systems"
 url: "/seo/ai-and-seo/rankbrain-vs-bert-vs-mum/"
 silo: "/seo/ai-and-seo/"
 siloName: "AI & SEO"
 kind: "article"
+datePublished: "2025-10-28T18:25:56+00:00"
+dateModified: "2026-02-10T17:24:10+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

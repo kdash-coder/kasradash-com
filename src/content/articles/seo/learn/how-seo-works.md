@@ -1,11 +1,13 @@
 ---
 title: "How SEO Works: A Step-by-Step Explanation of Search Engine Optimisation"
-description: "Learn how SEO works step-by-step. Discover how search engines crawl, index, and rank pages, explained by Kasra Dash."
+description: "Learn how SEO works step-by-step. Discover how search engines crawl, index, and rank pages — explained by Kasra Dash."
 h1: "How SEO Works: A Step-by-Step Explanation of Search Engine Optimisation"
 url: "/seo/learn/how-seo-works/"
 silo: "/seo/learn/"
 siloName: "Learn SEO"
 kind: "article"
+datePublished: "2025-10-12T19:57:17+00:00"
+dateModified: "2025-10-30T12:10:20+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 
@@ -15,7 +17,7 @@ This step-by-step guide by **Kasra Dash** explains the complete process, from **
 
 When you understand the mechanism behind SEO, every ranking change starts to make sense, because you can trace it back to how search engines process your content.
 
-## Step 1, Crawling: How Search Engines Discover Your Pages
+## Step 1 — Crawling: How Search Engines Discover Your Pages
 
 Before anything can rank, it must first be *found*. Crawling is how **Googlebot** and other search engine bots explore the web.
 
@@ -40,7 +42,7 @@ If a page isn’t crawled, it can’t be indexed, and if it’s not indexed, it 
 
 Check **Google Search Console → Crawl Stats Report**. You’ll see how many requests Googlebot makes, what content type it fetches, and whether any errors block access.
 
-## Step 2, Indexing: How Search Engines Understand Your Content
+## Step 2 — Indexing: How Search Engines Understand Your Content
 
 Once discovered, Google processes and stores information about your pages in its **index**, a massive, structured database of web content.
 
@@ -63,7 +65,7 @@ Think of the index as Google’s memory, the better it understands your content,
 
 In Google, type `site:yourdomain.com/page-url`. If it appears, it’s indexed. You can also confirm in **Search Console → Pages → Index Status**.
 
-## Step 3, Ranking: How Google Decides What to Show
+## Step 3 — Ranking: How Google Decides What to Show
 
 Once your page is in the index, **algorithms** evaluate hundreds of signals to determine where it should appear in the **SERP (Search Engine Results Page)**.
 

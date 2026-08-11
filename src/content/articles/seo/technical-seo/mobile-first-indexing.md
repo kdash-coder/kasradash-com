@@ -6,6 +6,8 @@ url: "/seo/technical-seo/mobile-first-indexing/"
 silo: "/seo/technical-seo/"
 siloName: "Technical SEO"
 kind: "article"
+datePublished: "2025-10-13T21:32:17+00:00"
+dateModified: "2025-10-30T12:56:52+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 
