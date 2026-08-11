@@ -13,7 +13,7 @@ dateModified: "2026-02-15T13:18:41+00:00"
 
 Here are a few free resources:
 
-[Free SEO PDF Checklist](/files/checklist.pdf) **New**
+[Free SEO PDF Checklist (inside The New Search on Skool)](https://www.skool.com/the-new-search/about?utm_source=kasradash.com&utm_medium=site&utm_campaign=thank-you-page) **New**
 
 For any google sheet’s please remember to do the following:
 

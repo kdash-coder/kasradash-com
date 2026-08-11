@@ -58,7 +58,7 @@ const jsonLd = [
     <div class="border-b border-tint-border bg-tint">
       <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">
         <Breadcrumbs {crumbs} />
-        <h1 class="mt-4 max-w-4xl font-display text-3xl font-extrabold leading-tight tracking-tight text-ink sm:text-5xl">{h1}</h1>
+        <h1 class="mt-4 max-w-4xl font-display text-3xl font-bold leading-tight tracking-tight text-ink sm:text-5xl">{h1}</h1>
         <p class="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
           Short, practical reads on the tools, communities and people shaping SEO right now.
         </p>
@@ -71,9 +71,9 @@ const jsonLd = [
           {posts.map((p) => (
             <a
               href={p.data.url}
-              class="group flex flex-col rounded-2xl border border-tint-border bg-white p-5 transition hover:-translate-y-0.5 hover:border-brand-500/40 hover:shadow-lg hover:shadow-brand-500/10"
+              class="group flex flex-col rounded-[20px] border border-tint-border bg-tint p-5 transition hover:-translate-y-0.5 hover:border-brand-500/50 hover:shadow-lg hover:shadow-brand-500/10"
             >
-              <h2 class="font-display text-base font-bold leading-snug text-ink group-hover:text-brand-600">
+              <h2 class="font-display text-base font-bold leading-snug text-ink transition group-hover:text-brand-600">
                 {p.data.h1}
               </h2>
               <p class="mt-2 line-clamp-3 text-sm leading-relaxed text-muted">{p.data.description}</p>

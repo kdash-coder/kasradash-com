@@ -4,7 +4,9 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const title = 'Free AI SEO Sheet - Kasra Dash';
 const description =
-  'Get the free AI SEO sheet from Kasra Dash: the prompts, workflows and checks his team uses to combine AI with SEO. Enter your details and it lands in your inbox.';
+  'Get the free AI SEO sheet from Kasra Dash: the prompts, workflows and checks his team uses to combine AI with SEO. It lives inside The New Search, his Skool community.';
+
+const SKOOL_URL = 'https://www.skool.com/the-new-search/about?utm_source=kasradash.com&utm_medium=site&utm_campaign=free-sheet';
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -20,19 +22,39 @@ const crumbs = [
         <Breadcrumbs {crumbs} />
         <h1 class="mt-4 max-w-3xl font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">Free AI SEO Sheet</h1>
         <p class="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
-          The exact AI prompts and workflows Kasra Dash and his team use to speed up SEO work without losing quality. Free, straight to your inbox.
+          The exact AI prompts and workflows Kasra Dash and his team use to speed up SEO work without losing quality. The sheet lives inside The New Search, Kasra's Skool community.
         </p>
       </div>
     </section>
 
     <section class="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1fr_20rem]">
-      <div class="overflow-hidden rounded-[20px] border border-tint-border bg-white">
-        <iframe
-          src="https://api.leadconnectorhq.com/widget/form/Pxcgxgcb1znuNO3pJJud"
-          title="Get the free AI SEO sheet"
-          class="h-[640px] w-full"
-          loading="lazy"
-        ></iframe>
+      <div class="rounded-[20px] border border-brand-500/40 bg-deep p-7 sm:p-9">
+        <h2 class="font-display text-2xl font-bold text-ink sm:text-3xl">Get the sheet inside The New Search</h2>
+        <p class="mt-3 max-w-xl text-base leading-relaxed text-muted">
+          The New Search is Kasra's AI SEO community on Skool. Join and the sheet is waiting for you inside.
+        </p>
+        <ul class="mt-6 space-y-3">
+          <li class="flex gap-3 text-sm leading-relaxed text-lavender">
+            <span class="brand-gradient mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full text-xs font-bold text-white" aria-hidden="true">✓</span>
+            The AI SEO sheet: prompts, workflows and QA checks
+          </li>
+          <li class="flex gap-3 text-sm leading-relaxed text-lavender">
+            <span class="brand-gradient mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full text-xs font-bold text-white" aria-hidden="true">✓</span>
+            Weekly live calls with Kasra
+          </li>
+          <li class="flex gap-3 text-sm leading-relaxed text-lavender">
+            <span class="brand-gradient mt-0.5 flex h-5 w-5 flex-none items-center justify-center rounded-full text-xs font-bold text-white" aria-hidden="true">✓</span>
+            Member discussions on what is ranking and why
+          </li>
+        </ul>
+        <a
+          href={SKOOL_URL}
+          target="_blank"
+          rel="noopener"
+          class="btn-gradient mt-8 inline-block px-7 py-3.5 text-base font-bold shadow-lg shadow-brand-500/25 transition hover:shadow-xl hover:shadow-brand-500/40"
+        >
+          Join The New Search
+        </a>
       </div>
       <aside class="space-y-6">
         <div class="rounded-[20px] border border-tint-border bg-tint p-6">
