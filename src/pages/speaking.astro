@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = 'Speaking — Kasra Dash';
+const description =
+  'Kasra Dash speaks at SEO and marketing events including brightonSEO and WOSCon, and hosts The Masterminders conference in Manchester, running 24 to 26 June 2026 at the Hilton Deansgate.';
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Speaking', href: '/speaking/' },
+];
+
+const engagements = [
+  {
+    name: 'Host of The Masterminders',
+    when: '24–26 June 2026 · Hilton Deansgate, Manchester',
+    copy: 'Kasra founded and hosts The Masterminders, a conference that brings business owners and SEO professionals together in Manchester. The 2026 edition runs over three days in June.',
+    href: 'https://themasterminders.com/',
+    linkLabel: 'Visit themasterminders.com →',
+  },
+  {
+    name: 'brightonSEO',
+    when: 'September 2023 · Brighton',
+    copy: 'Kasra spoke at brightonSEO, the search marketing conference, in September 2023. His speaker profile covers website recovery and SEO consulting.',
+    href: 'https://brightonseo.com/people/kasra-dash',
+    linkLabel: 'View his brightonSEO profile →',
+  },
+  {
+    name: 'WOSCon 2024',
+    when: '2024',
+    copy: 'Kasra appeared in the WOSCon 2024 live interview series, talking through his approach to SEO on camera.',
+    href: 'https://www.youtube.com/watch?v=FfkRa228qs8',
+    linkLabel: 'Watch the interview →',
+  },
+  {
+    name: 'Affiliate World',
+    when: 'Multiple editions',
+    copy: 'Kasra has appeared at Affiliate World events, with his attendance documented in event photography.',
+  },
+];
+---
+
+<BaseLayout {title} {description} path="/speaking/" breadcrumbs={crumbs}>
+  <main>
+    <section class="border-b border-tint-border bg-tint">
+      <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">
+        <Breadcrumbs {crumbs} />
+        <h1 class="mt-4 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-ink sm:text-5xl">Speaking</h1>
+        <p class="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
+          Kasra Dash is an entrepreneur and SEO consultant based in Manchester, UK. He speaks at search and marketing events and hosts his own conference.
+        </p>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-4xl px-4 py-14 sm:px-6" aria-label="Speaking engagements">
+      <div class="space-y-4">
+        {engagements.map((e) => (
+          <article class="rounded-[20px] border border-tint-border bg-tint p-6">
+            <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+              <h2 class="font-display text-lg font-bold text-ink">{e.name}</h2>
+              <p class="text-xs font-semibold uppercase tracking-wider text-dim">{e.when}</p>
+            </div>
+            <p class="mt-2 text-sm leading-relaxed text-muted">{e.copy}</p>
+            {e.href && (
+              <a href={e.href} target="_blank" rel="noopener" class="mt-4 inline-block text-sm font-bold text-brand-600 transition hover:text-white">
+                {e.linkLabel}
+              </a>
+            )}
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="border-t border-tint-border bg-tint py-14">
+      <div class="mx-auto max-w-3xl px-4 text-center sm:px-6">
+        <h2 class="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">Book Kasra to speak</h2>
+        <p class="mx-auto mt-3 max-w-xl text-muted">
+          For conference talks, panels or podcast interviews, email me@kasradash.com or use the contact form.
+        </p>
+        <a href="/contact/" class="btn-gradient mt-6 inline-block px-6 py-3 text-sm font-bold shadow-lg shadow-brand-500/25 transition hover:shadow-xl hover:shadow-brand-500/40">
+          Contact Kasra
+        </a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

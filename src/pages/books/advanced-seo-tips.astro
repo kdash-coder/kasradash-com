@@ -1,0 +1,26 @@
+---
+import BookPage from '../../components/BookPage.astro';
+import { BOOKS } from '../../lib/schema';
+
+const book = BOOKS.find((b) => b.slug === 'advanced-seo-tips')!;
+
+const title = 'Advanced SEO Tips 2025: The Future of Search — Book by Kasra Dash';
+const description =
+  'Kasra Dash is a co-author of Advanced SEO Tips 2025: The Future of Search, a 476-page book on where search is heading, written with James Dooley, Karl Hudson, Andrew Halliday and Koray Gübür.';
+
+const coverage = [
+  'Advanced SEO Tips 2025: The Future of Search is a 476-page book about where search is heading and what still works. Five working SEOs break down common SEO myths and lay out the strategies they run on their own sites and for clients.',
+  'The book covers the shift towards AI-driven search and the practices the authors expect to survive it. Kasra Dash co-authored it with James Dooley, Karl Hudson, Andrew Halliday and Koray Gübür; the Kindle edition was published on 13 April 2025.',
+  'It sits alongside The Complete Local SEO Playbook 2025 and iGaming SEO in the series of three books Kasra has co-authored.',
+];
+
+const authorNotes = {
+  'James Dooley': "James Dooley is an SEO entrepreneur, Kasra Dash's mentor since 2019, and his co-author on all three books.",
+  'Kasra Dash': 'Kasra Dash is an entrepreneur and SEO consultant based in Manchester, UK. He is the founder of The Masterminders conference and creator of mySEO.',
+  'Karl Hudson': 'Karl Hudson co-authored two of the three books in the series and has appeared on The Business Dash With Kasra.',
+  'Andrew Halliday': 'Andrew Halliday is one of the five co-authors of Advanced SEO Tips 2025.',
+  'Koray Gübür': 'Koray Gübür co-authored two of the three books in the series and has appeared on The Business Dash With Kasra.',
+};
+---
+
+<BookPage {book} {title} {description} {coverage} {authorNotes} />

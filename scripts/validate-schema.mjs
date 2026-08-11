@@ -81,10 +81,36 @@ const FORBIDDEN_URL_PATTERNS = [
   [/fbcdn\.net/i, 'expiring fbcdn image URL'],
   [/gstatic\.com/i, 'Google-cache gstatic image URL'],
   [/"http:\/\//, 'non-https URL'],
+  [/company-information\.service\.gov\.uk/i, 'Companies House URL (numbers unconfirmed)'],
 ];
+
+// The ONE verified book KGMID — allowed ONLY on the playbook page (trust-pages brief).
+const PLAYBOOK_PAGE = 'books/the-complete-local-seo-playbook/index.html';
+const PLAYBOOK_KGMID = 'https://www.google.com/search?kgmid=/g/11lw0t0wcl';
+
+// Expected Book nodes (trust pages): page → { id, isbn?, authors in byline order }.
+const EXPECTED_BOOKS = {
+  'books/the-complete-local-seo-playbook/index.html': {
+    id: `${SITE_URL}/books/the-complete-local-seo-playbook/#book`,
+    isbn: '9798345497913',
+    authors: ['Mike Martin', 'James Dooley', 'Kasra Dash'],
+  },
+  'books/advanced-seo-tips/index.html': {
+    id: `${SITE_URL}/books/advanced-seo-tips/#book`,
+    authors: ['James Dooley', 'Kasra Dash', 'Karl Hudson', 'Andrew Halliday', 'Koray Gübür'],
+  },
+  'books/igaming-seo/index.html': {
+    id: `${SITE_URL}/books/igaming-seo/#book`,
+    authors: ['James Dooley', 'Karl Hudson', 'Kasra Dash', 'Koray Gübür'],
+  },
+};
+const BOOK_IDS = Object.values(EXPECTED_BOOKS).map((b) => b.id);
+const PODCAST_PAGE = 'podcast/index.html';
 
 let personDefsTotal = 0;
 let articleAuthorsChecked = 0;
+let bookDefsTotal = 0;
+let podcastDefsTotal = 0;
 
 for (const file of pages) {
   const page = relative(DIST, file);
@@ -159,11 +185,71 @@ for (const file of pages) {
     }
   }
 
-  // Forbidden URLs.
+  // Forbidden URLs. The single verified playbook KGMID is allowed on its own page only.
   for (const raw of scripts) {
     for (const [pattern, label] of FORBIDDEN_URL_PATTERNS) {
-      if (pattern.test(raw)) fail(page, `forbidden URL in JSON-LD: ${label}`);
+      if (!pattern.test(raw)) continue;
+      if (label.startsWith('kgmid') && page === PLAYBOOK_PAGE) {
+        const stripped = raw.split(PLAYBOOK_KGMID).join('');
+        if (!/kgmid=/i.test(stripped)) continue; // only the one allowed id present
+      }
+      fail(page, `forbidden URL in JSON-LD: ${label}`);
     }
+  }
+
+  // ---- Trust pages: Book node invariants ----
+  const bookDefs = nodes.filter((n) => typesOf(n).includes('Book') && isDefinition(n) && typeof n['@id'] === 'string' && BOOK_IDS.includes(n['@id']));
+  const expectedBook = EXPECTED_BOOKS[page];
+  if (expectedBook) {
+    const def = bookDefs.find((n) => n['@id'] === expectedBook.id);
+    if (!def) {
+      fail(page, `missing Book definition ${expectedBook.id}`);
+    } else {
+      bookDefsTotal += 1;
+      const authors = (Array.isArray(def.author) ? def.author : [def.author]).map((a) =>
+        a && a['@id'] === PERSON_ID ? 'Kasra Dash' : a?.name
+      );
+      if (JSON.stringify(authors) !== JSON.stringify(expectedBook.authors)) {
+        fail(page, `Book authors mismatch: got ${JSON.stringify(authors)}, expected ${JSON.stringify(expectedBook.authors)}`);
+      }
+      if (!authors.includes('Kasra Dash')) fail(page, 'Book must credit #person as an author');
+      if (expectedBook.isbn && def.isbn !== expectedBook.isbn) {
+        fail(page, `Book isbn mismatch: got ${JSON.stringify(def.isbn)}, expected ${expectedBook.isbn}`);
+      }
+    }
+    if (bookDefs.length !== 1) fail(page, `expected exactly 1 Book definition on a book page, found ${bookDefs.length}`);
+  } else if (bookDefs.length > 0) {
+    fail(page, `Book node defined outside its own page: ${bookDefs.map((n) => n['@id']).join(', ')}`);
+  }
+
+  // #person.author must reference exactly the three Book @ids (every page).
+  if (personDefs.length === 1) {
+    const refs = (Array.isArray(personDefs[0].author) ? personDefs[0].author : []).map((a) => a && a['@id']);
+    if (JSON.stringify(refs) !== JSON.stringify(BOOK_IDS)) {
+      fail(page, `#person.author must reference the 3 Book @ids, got ${JSON.stringify(refs)}`);
+    }
+  }
+
+  // ---- Trust pages: PodcastSeries only on /podcast/, YouTube-only sameAs ----
+  const podcastDefs = nodes.filter(
+    (n) => (typesOf(n).includes('PodcastSeries') || typesOf(n).includes('CreativeWorkSeries')) && isDefinition(n) && 'sameAs' in n
+  );
+  if (page === PODCAST_PAGE) {
+    if (podcastDefs.length !== 1) {
+      fail(page, `expected exactly 1 PodcastSeries definition on /podcast/, found ${podcastDefs.length}`);
+    } else {
+      podcastDefsTotal += 1;
+      const series = podcastDefs[0];
+      if (!(series.author && series.author['@id'] === PERSON_ID)) fail(page, 'PodcastSeries.author must be {"@id": #person}');
+      const sameAs = Array.isArray(series.sameAs) ? series.sameAs : [];
+      for (const u of sameAs) {
+        if (!/^https:\/\/www\.youtube\.com\//.test(u)) fail(page, `PodcastSeries sameAs must be YouTube-only, got ${u}`);
+      }
+      const raw = JSON.stringify(series);
+      if (/open\.spotify\.com|podcasts\.apple\.com/i.test(raw)) fail(page, 'PodcastSeries must not claim Spotify/Apple (show is not there)');
+    }
+  } else if (podcastDefs.length > 0) {
+    fail(page, 'PodcastSeries defined outside /podcast/');
   }
 
   // noindex ↔ sitemap coherence.
@@ -175,8 +261,16 @@ for (const file of pages) {
   }
 }
 
+if (bookDefsTotal !== Object.keys(EXPECTED_BOOKS).length) {
+  fail('(site)', `expected ${Object.keys(EXPECTED_BOOKS).length} Book definitions sitewide, found ${bookDefsTotal}`);
+}
+if (podcastDefsTotal !== 1) {
+  fail('(site)', `expected exactly 1 PodcastSeries definition sitewide, found ${podcastDefsTotal}`);
+}
+
 console.log(`Checked ${pages.length} pages, ${sitemapUrls.size} sitemap URLs.`);
 console.log(`#person definitions: ${personDefsTotal}/${pages.length} pages (1 each), Article author refs verified: ${articleAuthorsChecked}.`);
+console.log(`Book definitions: ${bookDefsTotal}/3 (playbook kgmid allowed on its page only), PodcastSeries: ${podcastDefsTotal}/1 (YouTube-only sameAs).`);
 if (failures.length > 0) {
   console.error(`\nFAILED — ${failures.length} problem(s):`);
   for (const f of failures) console.error('  ' + f);

@@ -16,8 +16,22 @@ export const HUBS: Hub[] = [
   { url: '/seo/seo-frameworks/', name: 'SEO Frameworks', blurb: 'Templates and systems to run SEO like an operator.' },
 ];
 
-export const NAV = [
+export interface MenuItem {
+  label: string;
+  href: string;
+}
+
+/** About dropdown — the entity trust pages. */
+export const ABOUT_MENU: MenuItem[] = [
   { label: 'About Kasra Dash', href: '/about-kasra-dash/' },
+  { label: 'Books', href: '/books/' },
+  { label: 'Partnerships', href: '/partnerships/' },
+  { label: 'Press', href: '/press/' },
+  { label: 'Speaking', href: '/speaking/' },
+  { label: 'Podcast', href: '/podcast/' },
+];
+
+export const NAV = [
   { label: 'The New Search', href: 'https://www.skool.com/the-new-search/about?utm_source=kasradash.com&utm_medium=site&utm_campaign=header-nav' },
 ];
 
