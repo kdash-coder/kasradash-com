@@ -6,6 +6,8 @@ url: "/seo/link-building/testimonial-links/"
 silo: "/seo/link-building/"
 siloName: "Link Building"
 kind: "article"
+datePublished: "2025-10-14T21:56:09+00:00"
+dateModified: "2025-10-14T21:57:41+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

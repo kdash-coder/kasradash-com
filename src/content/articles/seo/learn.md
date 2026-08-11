@@ -6,6 +6,8 @@ url: "/seo/learn/"
 silo: "/seo/learn/"
 siloName: "Learn SEO"
 kind: "hub"
+datePublished: "2025-10-11T22:42:18+00:00"
+dateModified: "2026-04-14T13:52:46+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 
@@ -47,7 +49,7 @@ Master these first principles, because understanding mechanics (crawl → index 
 
 Tip: Work through the list in order. Because each concept underpins the next, you’ll avoid shallow tactics and build durable skills.
 
-### What should I learn first, content, links, or technical?
+### What should I learn first — content, links, or technical?
 
 Start with **how search works** and the **3 pillars**. Since technical issues can block discovery, fix crawlability and indexing first; therefore your content and links can be evaluated properly. Then build out intent-led content and acquire relevant, trustworthy links.
 

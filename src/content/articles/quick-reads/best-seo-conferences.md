@@ -6,6 +6,8 @@ url: "/quick-reads/best-seo-conferences/"
 silo: "/seo/"
 siloName: "SEO"
 kind: "article"
+datePublished: "2025-12-07T16:15:06+00:00"
+dateModified: "2026-02-03T10:29:46+00:00"
 ogImage: "/images/Best-SEO-Conferences-2026.png"
 ---
 

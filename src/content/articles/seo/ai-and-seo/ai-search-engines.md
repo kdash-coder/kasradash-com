@@ -1,11 +1,13 @@
 ---
 title: "How AI Search Engines Like Perplexity and ChatGPT Rank Answers 2026"
-description: "Understand how AI search engines like Perplexity and ChatGPT generate and rank answers. Learn how ranking in generative search differs from Google’s algorithm, and how to optimise your content for AI-driven visibility."
+description: "Understand how AI search engines like Perplexity and ChatGPT generate and rank answers. Learn how ranking in generative search differs from Google’s algorithm — and how to optimise your content for AI-driven visibility."
 h1: "How AI Search Engines Like Perplexity and ChatGPT Rank Answers"
 url: "/seo/ai-and-seo/ai-search-engines/"
 silo: "/seo/ai-and-seo/"
 siloName: "AI & SEO"
 kind: "article"
+datePublished: "2025-10-28T18:29:24+00:00"
+dateModified: "2026-04-13T16:11:49+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

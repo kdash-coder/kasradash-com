@@ -6,6 +6,8 @@ url: "/seo/technical-seo/http-status-codes-for-seo/"
 silo: "/seo/technical-seo/"
 siloName: "Technical SEO"
 kind: "article"
+datePublished: "2025-10-13T21:22:04+00:00"
+dateModified: "2025-10-13T21:26:55+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 
@@ -49,7 +51,7 @@ Your server’s responses determine whether Googlebot can access and index conte
 
 Let’s break down the most common HTTP codes and their SEO implications.
 
-### ✅ 200 OK, Success
+### ✅ 200 OK — Success
 
 The page loads correctly. This is the ideal response for all indexable pages.
 

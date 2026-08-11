@@ -6,6 +6,8 @@ url: "/seo/seo-frameworks/content-calendar-template/"
 silo: "/seo/seo-frameworks/"
 siloName: "SEO Frameworks"
 kind: "article"
+datePublished: "2025-10-28T19:40:05+00:00"
+dateModified: "2026-03-31T08:39:28+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

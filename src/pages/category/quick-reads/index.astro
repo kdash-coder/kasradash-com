@@ -1,0 +1,87 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import { SITE_URL } from '../../../lib/site';
+
+const title = 'Quick Reads Archives - Kasra Dash';
+const description =
+  'Quick reads from Kasra Dash: short, practical breakdowns of SEO tools, communities, events and the people worth following.';
+const h1 = 'Quick Reads';
+const path = '/category/quick-reads/';
+
+const all = await getCollection('articles');
+const posts = all
+  .filter(
+    (a) =>
+      a.data.url.startsWith('/quick-reads/') &&
+      a.data.kind === 'article' &&
+      !a.data.noindex
+  )
+  .sort((a, b) =>
+    (b.data.datePublished ?? '').localeCompare(a.data.datePublished ?? '')
+  );
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Quick Reads', href: path },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: h1,
+    description,
+    url: new URL(path, SITE_URL).href,
+    hasPart: posts.map((p) => ({
+      '@type': 'Article',
+      headline: p.data.h1,
+      url: new URL(p.data.url, SITE_URL).href,
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbs.map((c, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: c.label,
+      item: new URL(c.href, SITE_URL).href,
+    })),
+  },
+];
+---
+
+<BaseLayout {title} {description} {path} jsonLd={jsonLd}>
+  <main>
+    <div class="border-b border-tint-border bg-tint">
+      <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">
+        <Breadcrumbs {crumbs} />
+        <h1 class="mt-4 max-w-4xl font-display text-3xl font-extrabold leading-tight tracking-tight text-ink sm:text-5xl">{h1}</h1>
+        <p class="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+          Short, practical reads on the tools, communities and people shaping SEO right now.
+        </p>
+      </div>
+    </div>
+
+    <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+      <section aria-label="Quick reads">
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {posts.map((p) => (
+            <a
+              href={p.data.url}
+              class="group flex flex-col rounded-2xl border border-tint-border bg-white p-5 transition hover:-translate-y-0.5 hover:border-brand-500/40 hover:shadow-lg hover:shadow-brand-500/10"
+            >
+              <h2 class="font-display text-base font-bold leading-snug text-ink group-hover:text-brand-600">
+                {p.data.h1}
+              </h2>
+              <p class="mt-2 line-clamp-3 text-sm leading-relaxed text-muted">{p.data.description}</p>
+              <span class="mt-auto pt-3 text-sm font-bold text-brand-600">Read it →</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    </div>
+  </main>
+</BaseLayout>

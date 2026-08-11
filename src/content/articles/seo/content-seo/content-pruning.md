@@ -1,11 +1,13 @@
 ---
 title: "Content Pruning for SEO: Improve Crawl Efficiency & Topical Authority"
-description: "Learn how to prune low‑performing content to boost crawl efficiency, topical authority, and SEO performance, without harming valuable pages."
+description: "Learn how to prune low‑performing content to boost crawl efficiency, topical authority, and SEO performance — without harming valuable pages."
 h1: "Content Pruning for SEO: Improve Crawl Efficiency & Topical Authority"
 url: "/seo/content-seo/content-pruning/"
 silo: "/seo/content-seo/"
 siloName: "Content SEO"
 kind: "article"
+datePublished: "2025-10-16T22:53:10+00:00"
+dateModified: "2026-02-10T23:20:04+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

@@ -6,6 +6,8 @@ url: "/seo/content-seo/seo-blog-writing/"
 silo: "/seo/content-seo/"
 siloName: "Content SEO"
 kind: "article"
+datePublished: "2025-10-15T12:56:19+00:00"
+dateModified: "2026-02-10T00:08:31+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

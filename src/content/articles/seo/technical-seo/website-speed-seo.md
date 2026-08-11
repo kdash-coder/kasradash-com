@@ -6,6 +6,8 @@ url: "/seo/technical-seo/website-speed-seo/"
 silo: "/seo/technical-seo/"
 siloName: "Technical SEO"
 kind: "article"
+datePublished: "2025-10-13T19:43:21+00:00"
+dateModified: "2025-10-29T22:08:27+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

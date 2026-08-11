@@ -6,6 +6,8 @@ url: "/seo/seo-frameworks/content-brief-template/"
 silo: "/seo/seo-frameworks/"
 siloName: "SEO Frameworks"
 kind: "article"
+datePublished: "2025-10-28T19:18:54+00:00"
+dateModified: "2025-10-28T19:18:57+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

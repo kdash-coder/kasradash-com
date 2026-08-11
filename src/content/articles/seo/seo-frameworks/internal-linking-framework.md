@@ -6,6 +6,8 @@ url: "/seo/seo-frameworks/internal-linking-framework/"
 silo: "/seo/seo-frameworks/"
 siloName: "SEO Frameworks"
 kind: "article"
+datePublished: "2025-10-28T19:53:56+00:00"
+dateModified: "2025-10-31T09:34:54+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

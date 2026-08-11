@@ -6,6 +6,8 @@ url: "/seo/learn/seo-strategy-for-beginners/"
 silo: "/seo/learn/"
 siloName: "Learn SEO"
 kind: "article"
+datePublished: "2025-10-12T22:14:15+00:00"
+dateModified: "2025-10-30T13:07:39+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

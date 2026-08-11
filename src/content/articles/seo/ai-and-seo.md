@@ -1,11 +1,13 @@
 ---
 title: "AI & SEO: How Artificial Intelligence Is Changing Search 2026"
-description: "Discover how artificial intelligence is reshaping SEO. Learn how AI impacts search rankings, content strategy, and user intent, and how to future-proof your site for the new era of intelligent search."
+description: "Discover how artificial intelligence is reshaping SEO. Learn how AI impacts search rankings, content strategy, and user intent — and how to future-proof your site for the new era of intelligent search."
 h1: "AI & SEO: How Artificial Intelligence Is Changing Search"
 url: "/seo/ai-and-seo/"
 silo: "/seo/ai-and-seo/"
 siloName: "AI & SEO"
 kind: "hub"
+datePublished: "2025-10-28T18:05:44+00:00"
+dateModified: "2026-02-10T22:34:20+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

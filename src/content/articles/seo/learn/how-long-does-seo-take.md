@@ -1,11 +1,13 @@
 ---
 title: "How Long Does SEO Take to Work? (Realistic Timelines in 2025)"
-description: "Learn how long SEO takes to show results. Understand realistic timelines, growth phases, and influencing factors, explained by Kasra Dash."
+description: "Learn how long SEO takes to show results. Understand realistic timelines, growth phases, and influencing factors — explained by Kasra Dash."
 h1: "How Long Does SEO Take to Work? (Realistic Timelines in 2025)"
 url: "/seo/learn/how-long-does-seo-take/"
 silo: "/seo/learn/"
 siloName: "Learn SEO"
 kind: "article"
+datePublished: "2025-10-12T21:28:36+00:00"
+dateModified: "2025-10-30T13:01:21+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 
@@ -21,7 +23,7 @@ This guide by **Kasra Dash** explains what influences SEO timelines, what you ca
 
 SEO isn’t instant magic, it’s compounding momentum. When built properly, its value only grows stronger with time.
 
-## The Short Answer, SEO Takes 3 to 12 Months
+## The Short Answer — SEO Takes 3 to 12 Months
 
 Most websites start seeing measurable improvements, like increased impressions and keyword rankings, within **3 to 6 months**.  
 Competitive industries or brand-new domains often take closer to **12 months**.

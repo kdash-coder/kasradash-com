@@ -6,6 +6,8 @@ url: "/seo/seo-frameworks/conversion-framework/"
 silo: "/seo/seo-frameworks/"
 siloName: "SEO Frameworks"
 kind: "article"
+datePublished: "2025-10-28T20:41:57+00:00"
+dateModified: "2025-10-28T20:42:01+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

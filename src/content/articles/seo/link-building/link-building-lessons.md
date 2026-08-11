@@ -6,6 +6,8 @@ url: "/seo/link-building/link-building-lessons/"
 silo: "/seo/link-building/"
 siloName: "Link Building"
 kind: "article"
+datePublished: "2025-10-15T00:04:12+00:00"
+dateModified: "2026-02-10T00:10:37+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 
@@ -183,7 +185,7 @@ Over-reliance on a single method (such as guest posting) leaves a footprint. The
 
 No, a natural backlink profile includes both dofollow and nofollow links because diversity indicates authenticity to Google.
 
-## Lesson 9: Authority Takes Time, Be Patient
+## Lesson 9: Authority Takes Time — Be Patient
 
 SEO is cumulative. Many of my best backlinks took months to pay off, and some still compound today.
 

@@ -6,6 +6,8 @@ url: "/seo/ai-and-seo/google-mum/"
 silo: "/seo/ai-and-seo/"
 siloName: "AI & SEO"
 kind: "article"
+datePublished: "2025-10-28T18:22:39+00:00"
+dateModified: "2025-10-28T18:22:42+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

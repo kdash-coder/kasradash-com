@@ -6,6 +6,8 @@ url: "/seo/learn/what-is-google-indexing/"
 silo: "/seo/learn/"
 siloName: "Learn SEO"
 kind: "article"
+datePublished: "2025-10-12T22:51:34+00:00"
+dateModified: "2025-11-04T09:27:35+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

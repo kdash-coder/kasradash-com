@@ -12,6 +12,9 @@ const articles = defineCollection({
     siloName: z.string(),
     kind: z.enum(['article', 'hub']),
     ogImage: z.string().optional(),
+    noindex: z.boolean().optional(),
+    datePublished: z.string().optional(),
+    dateModified: z.string().optional(),
   }),
 });
 

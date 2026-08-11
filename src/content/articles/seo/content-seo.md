@@ -6,6 +6,8 @@ url: "/seo/content-seo/"
 silo: "/seo/content-seo/"
 siloName: "Content SEO"
 kind: "hub"
+datePublished: "2025-10-15T09:52:42+00:00"
+dateModified: "2026-02-10T22:54:22+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

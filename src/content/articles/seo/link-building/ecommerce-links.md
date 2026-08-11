@@ -6,6 +6,8 @@ url: "/seo/link-building/ecommerce-links/"
 silo: "/seo/link-building/"
 siloName: "Link Building"
 kind: "article"
+datePublished: "2025-10-14T23:22:51+00:00"
+dateModified: "2025-10-14T23:34:41+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

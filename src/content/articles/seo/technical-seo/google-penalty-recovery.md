@@ -6,6 +6,8 @@ url: "/seo/technical-seo/google-penalty-recovery/"
 silo: "/seo/technical-seo/"
 siloName: "Technical SEO"
 kind: "article"
+datePublished: "2025-10-13T22:51:28+00:00"
+dateModified: "2025-10-13T22:51:30+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

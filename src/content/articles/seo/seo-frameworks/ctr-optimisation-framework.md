@@ -1,11 +1,13 @@
 ---
 title: "CTR Optimisation Framework: Testing Titles & Metas for Higher Clicks"
-description: "Boost your organic CTR with this CTR Optimisation Framework, a step-by-step system for testing, refining, and improving your SEO titles and meta descriptions to win more clicks, traffic, and visibility in 2026."
+description: "Boost your organic CTR with this CTR Optimisation Framework — a step-by-step system for testing, refining, and improving your SEO titles and meta descriptions to win more clicks, traffic, and visibility in 2026."
 h1: "CTR Optimisation Framework: Testing Titles & Metas for Higher Clicks"
 url: "/seo/seo-frameworks/ctr-optimisation-framework/"
 silo: "/seo/seo-frameworks/"
 siloName: "SEO Frameworks"
 kind: "article"
+datePublished: "2025-10-28T21:06:43+00:00"
+dateModified: "2025-10-28T21:06:46+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

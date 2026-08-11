@@ -6,6 +6,8 @@ url: "/seo/technical-seo/schema-markup-guide/"
 silo: "/seo/technical-seo/"
 siloName: "Technical SEO"
 kind: "article"
+datePublished: "2025-10-13T21:56:10+00:00"
+dateModified: "2025-10-13T22:02:42+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

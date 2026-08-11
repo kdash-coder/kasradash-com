@@ -6,6 +6,8 @@ url: "/seo/technical-seo/"
 silo: "/seo/technical-seo/"
 siloName: "Technical SEO"
 kind: "hub"
+datePublished: "2025-10-13T08:21:30+00:00"
+dateModified: "2025-10-30T13:04:11+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

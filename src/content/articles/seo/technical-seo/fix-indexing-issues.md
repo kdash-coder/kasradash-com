@@ -6,6 +6,8 @@ url: "/seo/technical-seo/fix-indexing-issues/"
 silo: "/seo/technical-seo/"
 siloName: "Technical SEO"
 kind: "article"
+datePublished: "2025-10-13T20:30:51+00:00"
+dateModified: "2025-10-13T20:39:43+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

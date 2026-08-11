@@ -6,6 +6,8 @@ url: "/seo/link-building/link-velocity/"
 silo: "/seo/link-building/"
 siloName: "Link Building"
 kind: "article"
+datePublished: "2025-10-15T02:08:22+00:00"
+dateModified: "2026-02-10T23:06:39+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

@@ -6,6 +6,8 @@ url: "/seo/learn/seo-glossary/"
 silo: "/seo/learn/"
 siloName: "Learn SEO"
 kind: "article"
+datePublished: "2025-10-12T22:04:38+00:00"
+dateModified: "2025-11-04T09:28:26+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

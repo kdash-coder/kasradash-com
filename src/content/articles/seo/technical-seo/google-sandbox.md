@@ -6,6 +6,8 @@ url: "/seo/technical-seo/google-sandbox/"
 silo: "/seo/technical-seo/"
 siloName: "Technical SEO"
 kind: "article"
+datePublished: "2025-10-13T23:02:51+00:00"
+dateModified: "2025-10-13T23:02:53+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

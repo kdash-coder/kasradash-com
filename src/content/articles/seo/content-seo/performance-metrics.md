@@ -6,6 +6,8 @@ url: "/seo/content-seo/performance-metrics/"
 silo: "/seo/content-seo/"
 siloName: "Content SEO"
 kind: "article"
+datePublished: "2025-10-28T17:52:38+00:00"
+dateModified: "2025-10-28T17:52:42+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

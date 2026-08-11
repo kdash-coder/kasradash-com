@@ -6,6 +6,8 @@ url: "/seo/technical-seo/javascript-seo/"
 silo: "/seo/technical-seo/"
 siloName: "Technical SEO"
 kind: "article"
+datePublished: "2025-10-13T21:41:04+00:00"
+dateModified: "2025-10-30T12:58:39+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

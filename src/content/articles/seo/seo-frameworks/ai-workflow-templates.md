@@ -6,6 +6,8 @@ url: "/seo/seo-frameworks/ai-workflow-templates/"
 silo: "/seo/seo-frameworks/"
 siloName: "SEO Frameworks"
 kind: "article"
+datePublished: "2025-10-28T20:16:10+00:00"
+dateModified: "2025-10-30T14:28:31+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

@@ -6,6 +6,8 @@ url: "/seo/content-seo/entity-optimisation/"
 silo: "/seo/content-seo/"
 siloName: "Content SEO"
 kind: "article"
+datePublished: "2025-10-16T20:24:47+00:00"
+dateModified: "2026-02-10T23:14:18+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

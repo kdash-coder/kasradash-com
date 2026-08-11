@@ -6,6 +6,8 @@ url: "/seo/learn/how-search-engines-work/"
 silo: "/seo/learn/"
 siloName: "Learn SEO"
 kind: "article"
+datePublished: "2025-10-13T08:06:53+00:00"
+dateModified: "2025-10-13T08:10:55+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 
@@ -33,7 +35,7 @@ These systems don’t just look for keywords, they analyse **context**, **author
 
 Search engines are not libraries of pages; they are ecosystems of meaning.
 
-## Step 1: Crawling, How Search Engines Discover Pages
+## Step 1: Crawling — How Search Engines Discover Pages
 
 **Crawling → is → the discovery phase of search.**
 
@@ -58,7 +60,7 @@ Crawlers can only find what you link to, and they prioritise what your structure
 
 Use **Google Search Console’s Crawl Stats Report** to see how frequently Googlebot visits your pages. Regular crawling indicates healthy discovery and accessibility.
 
-## Step 2: Indexing, How Search Engines Store Information
+## Step 2: Indexing — How Search Engines Store Information
 
 After crawling, Google analyses and stores your pages in its **index**, a massive database of web content.
 
@@ -83,7 +85,7 @@ Indexing is the gateway between being found and being forgotten.
 
 Check for **noindex tags**, crawl errors, or duplicate content. You can use the **URL Inspection Tool** in Google Search Console to diagnose issues.
 
-## Step 3: Ranking, How Search Engines Order Results
+## Step 3: Ranking — How Search Engines Order Results
 
 Once a page is indexed, Google decides **where it should appear** in search results.
 

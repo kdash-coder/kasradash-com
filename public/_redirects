@@ -1,0 +1,7 @@
+# Cloudflare Pages redirects — live-inventory parity (Q6, 11 Aug 2026)
+# Old uncategorized slug moved to /quick-reads/ on the live site (13 Jul 2026)
+/uncategorized/best-ai-seo-skool-groups-2026/ /quick-reads/best-ai-seo-skool-groups-2026/ 301
+/uncategorized/best-ai-seo-skool-groups-2026 /quick-reads/best-ai-seo-skool-groups-2026/ 301
+# WP category archive retired in the rebuild; quick-reads is the only real category
+/category/uncategorized/ /category/quick-reads/ 301
+/category/uncategorized /category/quick-reads/ 301

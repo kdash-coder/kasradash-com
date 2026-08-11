@@ -6,6 +6,8 @@ url: "/seo/seo-frameworks/seo-reporting-dashboard/"
 silo: "/seo/seo-frameworks/"
 siloName: "SEO Frameworks"
 kind: "article"
+datePublished: "2025-10-28T19:58:34+00:00"
+dateModified: "2025-10-28T19:58:36+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

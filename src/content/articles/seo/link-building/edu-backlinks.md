@@ -6,6 +6,8 @@ url: "/seo/link-building/edu-backlinks/"
 silo: "/seo/link-building/"
 siloName: "Link Building"
 kind: "article"
+datePublished: "2025-10-14T21:36:25+00:00"
+dateModified: "2025-10-14T21:37:16+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

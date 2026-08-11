@@ -6,6 +6,8 @@ url: "/seo/technical-seo/audit/"
 silo: "/seo/technical-seo/"
 siloName: "Technical SEO"
 kind: "article"
+datePublished: "2025-10-13T22:08:59+00:00"
+dateModified: "2025-10-30T12:50:53+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

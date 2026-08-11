@@ -6,6 +6,8 @@ url: "/seo/seo-frameworks/technical-seo-framework/"
 silo: "/seo/seo-frameworks/"
 siloName: "SEO Frameworks"
 kind: "article"
+datePublished: "2025-10-28T20:31:25+00:00"
+dateModified: "2026-02-09T21:43:10+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 

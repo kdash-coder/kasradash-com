@@ -6,6 +6,8 @@ url: "/seo/technical-seo/google-algorithm-updates/"
 silo: "/seo/technical-seo/"
 siloName: "Technical SEO"
 kind: "article"
+datePublished: "2025-10-13T22:39:16+00:00"
+dateModified: "2025-10-13T22:39:19+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 
