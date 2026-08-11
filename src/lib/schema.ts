@@ -586,7 +586,9 @@ export function podcastSeriesNode() {
 }
 
 /** Partnership orgs — url + sameAs ONLY (no Companies House: numbers unconfirmed).
- * Role wording on-page comes verbatim from each org's own site. */
+ * Role wording on-page comes verbatim from each org's own site. The New Search and
+ * Rank OS are Kasra-attested ventures; getrankos.com verified live 11 Aug 2026
+ * (names Kasra, describes the AI-citation SEO tool). */
 export function partnershipOrgNodes() {
   return [
     {
@@ -602,6 +604,22 @@ export function partnershipOrgNodes() {
       name: 'FatRank',
       url: 'https://www.fatrank.com/',
       sameAs: ['https://www.fatrank.com/'],
+    },
+    {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#org-the-new-search`,
+      name: 'The New Search',
+      url: 'https://www.skool.com/the-new-search/about',
+      founder: { '@id': PERSON_ID },
+      sameAs: ['https://www.skool.com/the-new-search/about'],
+    },
+    {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#org-rank-os`,
+      name: 'Rank OS',
+      url: 'https://getrankos.com/',
+      founder: { '@id': PERSON_ID },
+      sameAs: ['https://getrankos.com/'],
     },
   ];
 }

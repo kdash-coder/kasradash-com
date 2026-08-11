@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = 'Life Lessons from Kasra Dash';
+const description =
+  'Life lessons from Kasra Dash, drawn from the press coverage of his story: teaching himself SEO through YouTube, arriving in the UK aged three, and becoming a self-made millionaire at 26.';
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Life Lessons', href: '/life-lessons/' },
+];
+
+/* Every lesson below is drawn from a verified source: the four press pieces
+ * (URLs loaded live 2026-08-11, q3-asset-inventory.md §3.1) or Kasra's own
+ * About copy. No invented anecdotes. */
+const lessons = [
+  {
+    h2: 'Where did Kasra Dash learn SEO?',
+    body: 'Kasra Dash taught himself SEO through YouTube. The Manchester Evening News covered his story in March 2024 under the headline "I\'m a millionaire at 26. I learned everything I know on YouTube." The lesson he draws from it: a career can be built from free, public material if you actually do the work the videos describe.',
+    source: { label: 'Manchester Evening News, March 2024', href: 'https://www.manchestereveningnews.co.uk/news/greater-manchester-news/im-millionaire-26--learned-28767260' },
+  },
+  {
+    h2: 'Start earlier than feels comfortable',
+    body: 'Kasra Dash began building websites at fifteen, in 2012, before he had any qualifications in the field. He discovered SEO in 2018 and treated it as a game of testing and experimentation. Starting young gave the testing years time to compound.',
+    source: { label: 'About Kasra Dash', href: '/about-kasra-dash/' },
+  },
+  {
+    h2: 'Results can arrive young',
+    body: 'Kasra Dash was profiled by The Sun in March 2024 as a self-made millionaire at 26. The profile traces the result to years of self-taught, tested SEO work rather than to any single break.',
+    source: { label: 'The Sun, March 2024', href: 'https://www.thesun.co.uk/money/26455805/millionaire-learned-everything-youtube/' },
+  },
+  {
+    h2: 'A new country can be a starting line',
+    body: 'Kasra Dash emigrated from Iran to the UK at the age of three, was raised and educated in Scotland, and built his career in Manchester. Market Realist covered that route in June 2024, and DESIblitz featured him the same year as the Manchester entrepreneur behind Searcharoo and PromoSEO.',
+    source: { label: 'Market Realist, June 2024', href: 'https://marketrealist.com/how-did-this-self-made-millionaire-achieve-tremendous-success-in-digital-marketing/' },
+  },
+  {
+    h2: 'Recovery is a skill you can practise',
+    body: 'Kasra Dash is known for recovering websites from Google algorithm updates, and Business Cheshire described him in March 2023 as one of the best SEOs in the UK when covering his TaxBite expansion. Sites get hit; treating recovery as a repeatable discipline is what turns a setback into a service.',
+    source: { label: 'Business Cheshire, March 2023', href: 'https://www.businesscheshire.co.uk/2023/03/23/kasra-dash-taxbite-opens-new-firm-in-manchester/' },
+  },
+];
+---
+
+<BaseLayout {title} {description} path="/life-lessons/" breadcrumbs={crumbs}>
+  <main>
+    <section class="border-b border-tint-border bg-tint">
+      <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">
+        <Breadcrumbs {crumbs} />
+        <h1 class="mt-4 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-ink sm:text-5xl">Life Lessons from Kasra Dash</h1>
+        <p class="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
+          Kasra Dash is an entrepreneur and SEO consultant based in Manchester, UK. These are the lessons his story carries, each tied to the article that documents it.
+        </p>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+      <p class="mb-8 max-w-3xl rounded-[20px] border border-amber-400/40 bg-amber-400/10 px-5 py-4 text-sm font-semibold text-amber-200">
+        Draft — Kasra to review wording before launch.
+      </p>
+      <div class="reading-well prose prose-well max-w-3xl p-5 sm:p-8 lg:p-12">
+        {lessons.map((lesson) => (
+          <>
+            <h2>{lesson.h2}</h2>
+            <p>{lesson.body}</p>
+            <p>
+              <em>
+                Documented in{' '}
+                <a href={lesson.source.href} target={lesson.source.href.startsWith('http') ? '_blank' : undefined} rel={lesson.source.href.startsWith('http') ? 'noopener' : undefined}>
+                  {lesson.source.label}
+                </a>.
+              </em>
+            </p>
+          </>
+        ))}
+      </div>
+    </section>
+
+    <section class="border-t border-tint-border bg-tint py-14">
+      <div class="mx-auto max-w-3xl px-4 text-center sm:px-6">
+        <h2 class="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">Read the full story</h2>
+        <p class="mx-auto mt-3 max-w-xl text-muted">
+          The press pieces behind these lessons live on the press page, and the longer version of the story is on the about page.
+        </p>
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <a href="/press/" class="btn-gradient px-6 py-3 text-sm font-bold shadow-lg shadow-brand-500/25 transition hover:shadow-xl hover:shadow-brand-500/40">
+            See the press coverage
+          </a>
+          <a href="/about-kasra-dash/" class="rounded-full border border-tint-border px-6 py-3 text-sm font-bold text-ink transition hover:border-brand-500 hover:bg-brand-500/10">
+            About Kasra Dash
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
