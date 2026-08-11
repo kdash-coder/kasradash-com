@@ -19,7 +19,7 @@ export const HUBS: Hub[] = [
 export const NAV = [
   { label: 'SEO Guides', href: '/seo/', children: HUBS },
   { label: 'About Kasra Dash', href: '/about-kasra-dash/' },
-  { label: 'Free AI SEO Sheet', href: '/free-ai-seo-sheet/' },
+  { label: 'The New Search', href: 'https://www.skool.com/the-new-search/about?utm_source=kasradash.com&utm_medium=site&utm_campaign=header-nav' },
 ];
 
 export const SOCIALS = [
