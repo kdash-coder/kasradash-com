@@ -145,15 +145,19 @@ const PRESS_ARTICLES = [
   },
 ];
 
-// performerIn — eight strongest verified guest appearances (q3-asset-inventory.md §3.2:
-// the three whose episode pages cite kasradash.com, plus Craig Campbell 2019, Unscripted SEO,
-// Rhino Rank and DDD Ep 1, plus the oEmbed-verified WOSCon interview). url only where a
-// public episode/profile URL was verified — never guessed.
+// performerIn — ten strongest verified guest appearances. Curation: q3-asset-inventory.md
+// §3.2 (the three whose episode pages cite kasradash.com, plus Craig Campbell 2019,
+// Unscripted SEO, Rhino Rank, DDD Ep 1, the oEmbed-verified WOSCon interview), plus the
+// two URL-backed episodes carried over from the LIVE site's performerIn (SirLinksalot,
+// Market Movers — both independently verified via the Apple API in q3; both URLs
+// re-checked 2026-08-11: HTTP 200 with "Kasra Dash" present in the served HTML).
+// Episode urls come from the live schema or q3 verification only — never guessed.
 const GUEST_APPEARANCES = [
   {
     '@type': 'PodcastEpisode',
     name: 'Getting Started in SEO with Kasra Dash',
     datePublished: '2019-11-19',
+    url: "https://music.amazon.co.uk/podcasts/1f41a9c5-aa99-4b00-ac37-137e24be977c/episodes/85894405-f40a-4838-8571-84949e026983/craig-campbell's-digital-marketing-podcast-getting-started-in-seo-with-kasra-dash",
     partOfSeries: { '@type': 'PodcastSeries', name: "Craig Campbell's Digital Marketing Podcast" },
   },
   {
@@ -183,16 +187,32 @@ const GUEST_APPEARANCES = [
   },
   {
     '@type': 'PodcastEpisode',
+    name: 'SEO Evolution, Fitness, and Entrepreneurial Balance',
+    datePublished: '2025-05-30',
+    url: 'https://sirlinksalot.co/kasra-dash-seo-evolution-entrepreneurial-balance/',
+    partOfSeries: { '@type': 'PodcastSeries', name: 'SirLinksalot Digital Marketing Podcast' },
+  },
+  {
+    '@type': 'PodcastEpisode',
     name: 'The Truth About Local SEO',
     datePublished: '2025-09-01',
-    url: 'https://open.spotify.com/episode/3RFc0olg8KNoYd1gME225f',
+    url: 'https://www.rhinorank.io/blog/the-truth-about-local-seo-with-kasra-dash/',
+    sameAs: ['https://open.spotify.com/episode/3RFc0olg8KNoYd1gME225f'],
     partOfSeries: { '@type': 'PodcastSeries', name: 'The Rhino Rank Podcast' },
   },
   {
     '@type': 'PodcastEpisode',
     name: 'Why Lazy SEO Is Dead and Brands Win',
     datePublished: '2025-09-09',
+    url: 'https://podcasts.apple.com/us/podcast/kasra-dash-on-why-lazy-seo-is-dead-and-brands-win/id1700893670?i=1000725692126',
     partOfSeries: { '@type': 'PodcastSeries', name: 'Revenue Optimization with StatsDrone' },
+  },
+  {
+    '@type': 'PodcastEpisode',
+    name: "Parasite Conferences, Rank-and-Rent Power — Inside Kasra Dash's Playbook",
+    datePublished: '2025-10-02',
+    url: 'https://www.marketmoverspod.com/e/parasite-conferences-rank-and-rent-power-and-big-link-plays-inside-kasra-dash-s-playbook/',
+    partOfSeries: { '@type': 'PodcastSeries', name: 'Market Movers' },
   },
   {
     '@type': 'VideoObject',
