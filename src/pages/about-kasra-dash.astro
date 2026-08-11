@@ -1,11 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import { SITE_URL, SOCIALS } from '../lib/site';
+import { SOCIALS } from '../lib/site';
+import { PERSON_ID } from '../lib/schema';
 
-const title = 'Kasra Dash - Entrepreneur, Founder & Digital Business Builder';
+const title = 'About Kasra Dash — Entrepreneur and SEO Consultant in Manchester';
 const description =
-  'Kasra Dash is a UK-based entrepreneur, SEO consultant, speaker and educator. Founder of The Masterminders Conference and creator of mySEO.app, helping SEOs achieve their goals through tools, education and community.';
+  'Kasra Dash is an entrepreneur and SEO consultant based in Manchester, UK. Founder of The Masterminders conference and creator of mySEO, helping SEOs achieve their goals through tools, education and community.';
 
 const ventures = [
   {
@@ -66,17 +67,11 @@ const crumbs = [
   { label: 'About Kasra Dash', href: '/about-kasra-dash/' },
 ];
 
-const jsonLd = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'ProfilePage',
-    mainEntity: { '@id': `${SITE_URL}/#person` },
-    url: `${SITE_URL}/about-kasra-dash/`,
-  },
-];
+// The page's WebPage node is typed AboutPage with mainEntity → the one #person.
+const webPageExtras = { mainEntity: { '@id': PERSON_ID } };
 ---
 
-<BaseLayout {title} {description} path="/about-kasra-dash/" jsonLd={jsonLd}>
+<BaseLayout {title} {description} path="/about-kasra-dash/" pageType="AboutPage" breadcrumbs={crumbs} {webPageExtras}>
   <main>
     <section class="relative overflow-hidden border-b border-tint-border bg-tint">
       <div class="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-brand-500/15 blur-3xl" aria-hidden="true"></div>

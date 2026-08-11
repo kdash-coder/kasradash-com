@@ -1,5 +1,14 @@
 ---
 import { SITE_URL, SITE_NAME } from '../lib/site';
+import {
+  buildGraph,
+  personNode,
+  websiteNode,
+  webPageNode,
+  breadcrumbNode,
+  type Crumb,
+  type PageType,
+} from '../lib/schema';
 
 interface Props {
   title: string;
@@ -7,36 +16,62 @@ interface Props {
   path: string;
   ogImage?: string;
   type?: 'website' | 'article';
-  jsonLd?: object[];
+  /** schema.org type of this page's WebPage node (ContactPage on /contact/, AboutPage on /about-kasra-dash/, …). */
+  pageType?: PageType;
+  /** Rendered as BreadcrumbList in the graph and linked from the WebPage node. */
+  breadcrumbs?: Crumb[];
+  /** Extra properties merged onto the WebPage node (mainEntity, about, hasPart, …). */
+  webPageExtras?: Record<string, unknown>;
+  /** Page-specific nodes appended to the single @graph (no @context of their own). */
+  graphNodes?: object[];
+  datePublished?: string;
+  dateModified?: string;
+  /** noindex:true → robots noindex,follow. Sitemap exclusion is wired in astro.config.mjs. */
+  noindex?: boolean;
 }
 
-const { title, description, path, ogImage = '/images/Group-89.png', type = 'website', jsonLd = [] } = Astro.props;
+const {
+  title,
+  description,
+  path,
+  ogImage = '/images/Group-89.png',
+  type = 'website',
+  pageType = 'WebPage',
+  breadcrumbs = [],
+  webPageExtras = {},
+  graphNodes = [],
+  datePublished,
+  dateModified,
+  noindex = false,
+} = Astro.props;
+
 const canonical = new URL(path, SITE_URL).href;
 const ogImageAbs = new URL(ogImage, SITE_URL).href;
 
-const personOrg = {
-  '@context': 'https://schema.org',
-  '@type': ['Person', 'Organization'],
-  '@id': `${SITE_URL}/#person`,
-  name: SITE_NAME,
-  url: SITE_URL,
-  image: `${SITE_URL}/images/Group-89.png`,
-  jobTitle: 'SEO Consultant & Entrepreneur',
-  description:
-    'Kasra Dash is a UK-based entrepreneur, SEO consultant and speaker. Founder of The Masterminders Conference and creator of mySEO.app.',
-  sameAs: [
-    'https://www.youtube.com/@kasradash',
-    'https://www.linkedin.com/in/kasra-dash',
-    'https://x.com/Kasra_Dash',
-    'https://www.instagram.com/kasra_d_',
-    'https://www.facebook.com/Kasra.Dash1',
-  ],
-};
+// The page's single @graph: ONE #person + ONE #website sitewide, this page's WebPage
+// node, its breadcrumb, then page-specific nodes (Article, …).
+const graph = buildGraph([
+  personNode(),
+  websiteNode(),
+  webPageNode({
+    canonical,
+    title,
+    description,
+    pageType,
+    datePublished,
+    dateModified,
+    hasBreadcrumb: breadcrumbs.length > 0,
+    extras: webPageExtras,
+  }),
+  ...(breadcrumbs.length > 0 ? [breadcrumbNode(canonical, breadcrumbs)] : []),
+  ...graphNodes,
+]);
 ---
 
 <title>{title}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex,follow" />}
 
 <meta property="og:type" content={type} />
 <meta property="og:site_name" content={SITE_NAME} />
@@ -52,5 +87,4 @@ const personOrg = {
 <meta name="twitter:image" content={ogImageAbs} />
 <meta name="twitter:creator" content="@Kasra_Dash" />
 
-<script type="application/ld+json" set:html={JSON.stringify(personOrg)} />
-{jsonLd.map((block) => <script type="application/ld+json" set:html={JSON.stringify(block)} />)}
+<script type="application/ld+json" set:html={JSON.stringify(graph)} />

@@ -3,6 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import TocScrollSpy from '../components/TocScrollSpy.astro';
 import { SITE_URL } from '../lib/site';
+import { articleNode } from '../lib/schema';
 
 interface Heading {
   depth: number;
@@ -25,9 +26,12 @@ interface Props {
   headings: Heading[];
   related: Related[];
   ogImage?: string;
+  datePublished?: string;
+  dateModified?: string;
+  noindex?: boolean;
 }
 
-const { title, description, h1, path, siloName, siloUrl, headings, related, ogImage } = Astro.props;
+const { title, description, h1, path, siloName, siloUrl, headings, related, ogImage, datePublished, dateModified, noindex } = Astro.props;
 const toc = headings.filter((h) => h.depth === 2);
 
 const crumbs = [
@@ -37,31 +41,13 @@ const crumbs = [
   { label: h1, href: path },
 ];
 
-const jsonLd = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: h1,
-    description,
-    author: { '@id': `${SITE_URL}/#person` },
-    publisher: { '@id': `${SITE_URL}/#person` },
-    mainEntityOfPage: new URL(path, SITE_URL).href,
-    image: ogImage ? new URL(ogImage, SITE_URL).href : `${SITE_URL}/images/Group-89.png`,
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: crumbs.map((c, i) => ({
-      '@type': 'ListItem',
-      position: i + 1,
-      name: c.label,
-      item: new URL(c.href, SITE_URL).href,
-    })),
-  },
+const canonical = new URL(path, SITE_URL).href;
+const graphNodes = [
+  articleNode({ canonical, headline: h1, description, image: ogImage, datePublished, dateModified }),
 ];
 ---
 
-<BaseLayout {title} {description} {path} {ogImage} type="article" {jsonLd}>
+<BaseLayout {title} {description} {path} {ogImage} type="article" breadcrumbs={crumbs} {graphNodes} {datePublished} {dateModified} {noindex}>
   <main>
     <div class="border-b border-tint-border bg-tint">
       <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:py-14">

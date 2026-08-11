@@ -1,0 +1,153 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = 'Privacy Policy - Kasra Dash';
+const description =
+  'How kasradash.com collects, uses and protects your personal data — covering the contact and lead forms, newsletter, embedded videos and hosting analytics.';
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Privacy Policy', href: '/privacy-policy/' },
+];
+---
+
+<BaseLayout {title} {description} path="/privacy-policy/" breadcrumbs={crumbs}>
+  <main>
+    <section class="border-b border-tint-border bg-tint">
+      <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+        <Breadcrumbs {crumbs} />
+        <h1 class="mt-4 font-display text-4xl font-extrabold tracking-tight text-ink sm:text-5xl">Privacy Policy</h1>
+        <p class="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
+          How this website collects, uses and protects your personal data.
+        </p>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+      <p class="mb-10 max-w-3xl rounded-2xl border border-amber-300 bg-amber-50 px-5 py-4 text-sm font-semibold text-amber-900">
+        Draft — review before launch. This policy was prepared for review and has not yet been
+        approved. Confirm the details below (controller name, retention periods, analytics tooling)
+        before publishing the site.
+      </p>
+
+      <div class="prose prose-kasra max-w-3xl">
+        <p><em>Last updated: 11 August 2026</em></p>
+
+        <h2>Who we are</h2>
+        <p>
+          This website, kasradash.com (the "site"), is operated by Kasra Dash ("we", "us"), an
+          entrepreneur and SEO consultant based in Manchester, UK. For the purposes of UK data
+          protection law (the UK GDPR and the Data Protection Act 2018), Kasra Dash is the data
+          controller for personal data collected through this site. You can contact us about
+          anything in this policy at <a href="mailto:me@kasradash.com">me@kasradash.com</a>.
+        </p>
+
+        <h2>What we collect and why</h2>
+
+        <h3>Contact and lead forms</h3>
+        <p>
+          The forms on our <a href="/contact/">contact page</a> and
+          <a href="/free-ai-seo-sheet/">free AI SEO sheet page</a> are provided by HighLevel Inc.
+          ("GoHighLevel", served from api.leadconnectorhq.com) and are embedded on this site. When
+          you submit a form we collect the details you enter — typically your name, email address,
+          phone number and information about your business or enquiry. We use this information to
+          respond to your enquiry, provide what you requested and, where you have agreed, to send
+          you relevant follow-up messages. GoHighLevel processes this data on our behalf.
+        </p>
+
+        <h3>Newsletter</h3>
+        <p>
+          If you sign up to the newsletter we collect your email address and use it to send you the
+          newsletter. We rely on your consent to do this, and you can withdraw it at any time by
+          using the unsubscribe link in any email or by contacting us. We do not sell your email
+          address or share it with third parties for their own marketing.
+        </p>
+
+        <h3>Embedded videos</h3>
+        <p>
+          Some pages embed videos hosted on YouTube. When you view or play an embedded video,
+          YouTube (Google) may set cookies and collect data about your viewing, your device and, if
+          you are signed in, your Google account, under
+          <a href="https://policies.google.com/privacy" rel="noopener">Google's privacy policy</a>.
+          We do not control this processing.
+        </p>
+
+        <h3>Hosting and analytics</h3>
+        <p>
+          Our hosting provider automatically records standard server logs — including IP addresses,
+          browser type and pages requested — to deliver the site, keep it secure and produce
+          aggregate traffic statistics. This information is not used to identify individual
+          visitors.
+        </p>
+
+        <h2>Our lawful bases</h2>
+        <ul>
+          <li><strong>Consent</strong> — the newsletter and any optional marketing follow-up.</li>
+          <li><strong>Legitimate interests</strong> — responding to enquiries, keeping the site secure and understanding aggregate site usage.</li>
+          <li><strong>Contract</strong> — where you engage us for consulting or related services.</li>
+        </ul>
+
+        <h2>Who we share data with</h2>
+        <p>
+          We share personal data only with the service providers that run this site and our
+          business: HighLevel Inc. (forms, lead management and email), Google (embedded YouTube
+          videos) and our hosting provider. Each acts under its own terms and, where it processes
+          data for us, under a data processing agreement. We do not sell personal data.
+        </p>
+
+        <h2>International transfers</h2>
+        <p>
+          Some of these providers (including HighLevel Inc. and Google) store data outside the UK,
+          including in the United States. Where that happens, transfers are protected by
+          safeguards recognised under UK law, such as the UK Extension to the EU–US Data Privacy
+          Framework or the International Data Transfer Agreement / standard contractual clauses.
+        </p>
+
+        <h2>How long we keep your data</h2>
+        <p>
+          We keep enquiry and lead data for as long as needed to handle your enquiry and any
+          resulting business relationship, and newsletter data until you unsubscribe. Server logs
+          are retained for short periods by our hosting provider. We delete or anonymise data when
+          it is no longer needed.
+        </p>
+
+        <h2>Your rights</h2>
+        <p>Under the UK GDPR you have the right to:</p>
+        <ul>
+          <li>access the personal data we hold about you;</li>
+          <li>have inaccurate data corrected;</li>
+          <li>have your data erased;</li>
+          <li>restrict or object to our processing of it;</li>
+          <li>receive a portable copy of data you provided to us;</li>
+          <li>withdraw consent at any time, where consent is our lawful basis.</li>
+        </ul>
+        <p>
+          To exercise any of these rights, email
+          <a href="mailto:me@kasradash.com">me@kasradash.com</a>. You also have the right to
+          complain to the Information Commissioner's Office at
+          <a href="https://ico.org.uk" rel="noopener">ico.org.uk</a>.
+        </p>
+
+        <h2>Cookies</h2>
+        <p>
+          This site does not set cookies of its own. Embedded third-party content — the GoHighLevel
+          forms and YouTube videos described above — may set cookies when you interact with it. You
+          can block or delete cookies through your browser settings; doing so may stop the embedded
+          forms or videos from working.
+        </p>
+
+        <h2>Changes to this policy</h2>
+        <p>
+          We may update this policy from time to time. The "Last updated" date at the top shows
+          when it last changed, and significant changes will be highlighted on this page.
+        </p>
+
+        <h2>Contact</h2>
+        <p>
+          Questions about this policy or your data: <a href="mailto:me@kasradash.com">me@kasradash.com</a>.
+        </p>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

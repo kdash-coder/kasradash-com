@@ -15,6 +15,13 @@ const { entry, all } = Astro.props;
 const { Content, headings } = await render(entry);
 const d = entry.data;
 
+// Optional frontmatter owned by Q6's content.config.ts (datePublished/dateModified/noindex).
+// Read defensively so this wiring lights up the moment their schema change lands.
+const extra = d as Partial<{ datePublished: string; dateModified: string; noindex: boolean }>;
+const datePublished = extra.datePublished;
+const dateModified = extra.dateModified;
+const noindex = extra.noindex === true;
+
 // Related guides: same silo, excluding self and the hub page itself
 const siblings = all.filter(
   (a) => a.data.silo === d.silo && a.data.url !== d.url && a.data.kind === 'article'
@@ -50,6 +57,9 @@ const hubChildrenBySilo =
       guides={d.url === "/seo/" ? hubChildrenBySilo : children}
       ogImage={d.ogImage}
       isPillar={d.url === '/seo/'}
+      {datePublished}
+      {dateModified}
+      {noindex}
     >
       <Content />
     </HubLayout>
@@ -64,6 +74,9 @@ const hubChildrenBySilo =
       {headings}
       {related}
       ogImage={d.ogImage}
+      {datePublished}
+      {dateModified}
+      {noindex}
     >
       <Content />
     </ArticleLayout>
