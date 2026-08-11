@@ -55,6 +55,7 @@ const L: Record<string, string> = {
   'Oliver Kenyon': 'https://conversionwise.com/about',
   'Mads Singers': 'https://madssingers.com/',
   'James Dooley': 'https://jamesdooley.com/',
+  'Ryan Stewart': 'https://www.webris.org/',
 };
 
 interface Engagement {
@@ -68,7 +69,7 @@ interface Engagement {
   support?: string;
   href?: string;
   linkLabel?: string;
-  image?: { src: string; alt: string };
+  image?: { src: string; alt: string; width: number; height: number };
 }
 
 const engagements: Engagement[] = [
@@ -94,6 +95,7 @@ const engagements: Engagement[] = [
     when: '2025 · Manchester',
     intro: 'Kasra Dash founded and hosted The Masterminders 2025, featuring',
     names: ['Michał Suski', 'Jason Hennessey', 'Kalin Karakehayov', 'Alex Drew', 'Lara Acosta', 'James Dooley'],
+    image: { src: '/images/speaking/kasra-dash-speaking-at-the-masterminders-2025.jpg', alt: 'Kasra Dash speaking at The Masterminders 2025', width: 2048, height: 2048 },
     href: 'https://themasterminders.com/',
     linkLabel: 'Visit themasterminders.com →',
   },
@@ -105,13 +107,14 @@ const engagements: Engagement[] = [
     support: "The conference's interview series recorded a live speaker episode with him.",
     href: 'https://www.youtube.com/watch?v=FfkRa228qs8',
     linkLabel: 'Watch the interview →',
-    image: { src: '/images/speaking/woscon-2024.jpg', alt: 'Kasra Dash on the WOSCon 2024 speaker interview series' },
+    image: { src: '/images/speaking/kasra-dash-speaking-at-woscon-2024.jpg', alt: 'Kasra Dash speaking at WOSCon 2024', width: 1440, height: 1800 },
   },
   {
-    name: 'Affiliate World 2024',
-    when: '2024',
-    intro: 'Kasra Dash spoke at Affiliate World 2024 alongside',
+    name: 'Affiliate World Dubai 2024',
+    when: '2024 · Dubai',
+    intro: 'Kasra Dash spoke at Affiliate World Dubai 2024 alongside',
     names: ['Craig Campbell', 'Carrie Rose', 'Dennis Yu'],
+    image: { src: '/images/speaking/kasra-dash-speaking-at-affiliate-world-dubai-2024.jpg', alt: 'Kasra Dash speaking at Affiliate World Dubai 2024', width: 1440, height: 1800 },
   },
   {
     name: 'SEO Estonia 2024',
@@ -119,6 +122,7 @@ const engagements: Engagement[] = [
     intro: 'Kasra Dash spoke at SEO Estonia 2024 alongside',
     names: ['Jason Barnard'],
     support: "SEO Estonia's speaker archive lists the appearance.",
+    image: { src: '/images/speaking/kasra-dash-speaking-at-seo-estonia-2024.jpg', alt: 'Kasra Dash speaking at SEO Estonia 2024', width: 1440, height: 1800 },
     href: 'https://seoestonia.com/',
     linkLabel: 'Visit seoestonia.com →',
   },
@@ -140,6 +144,14 @@ const engagements: Engagement[] = [
     linkLabel: 'View his brightonSEO profile →',
   },
   {
+    name: 'Search Birmingham 2023',
+    when: '2023 · Birmingham',
+    intro: 'Kasra Dash spoke at Search Birmingham 2023 alongside',
+    names: ['Charles Floate', 'Ryan Stewart'],
+    support: 'Kasra was named Best SEO Speaker at the event.',
+    image: { src: '/images/speaking/kasra-dash-speaking-at-search-birmingham-2023.jpg', alt: 'Kasra Dash speaking at Search Birmingham 2023', width: 1440, height: 962 },
+  },
+  {
     name: 'SEO Estonia 2023',
     when: '2023 · Tallinn, Estonia',
     intro: 'Kasra Dash spoke at SEO Estonia 2023 alongside',
@@ -147,13 +159,14 @@ const engagements: Engagement[] = [
     support: "SEO Estonia's speaker archive lists the appearance, and the conference site carries his feedback video.",
     href: 'https://seoestonia.com/',
     linkLabel: 'Visit seoestonia.com →',
-    image: { src: '/images/speaking/seo-estonia-2023.jpg', alt: 'Kasra Dash, speaker at SEO Estonia 2023' },
+    image: { src: '/images/speaking/kasra-dash-speaking-at-seo-estonia-2023.jpg', alt: 'Kasra Dash speaking at SEO Estonia 2023', width: 1440, height: 868 },
   },
   {
     name: 'Chiang Mai SEO 2023',
     when: '2023 · Chiang Mai, Thailand',
     intro: 'Kasra Dash spoke at Chiang Mai SEO 2023 alongside',
     names: ['Kevin Indig', 'Koray Tuğberk Gübür', 'Kyle Roof', 'Matt Diggity', 'Tim Soulo', 'Craig Campbell'],
+    image: { src: '/images/speaking/kasra-dash-speaking-at-chiang-mai-seo-2023.jpg', alt: 'Kasra Dash speaking at Chiang Mai SEO 2023', width: 1290, height: 871 },
     href: 'https://chiangmaiseoconference.com/',
     linkLabel: 'Visit chiangmaiseoconference.com →',
   },
@@ -232,8 +245,16 @@ const eventNodes = [
   },
   {
     '@type': 'Event',
-    name: 'Affiliate World 2024',
+    name: 'Affiliate World Dubai 2024',
     startDate: '2024',
+    location: { '@type': 'Place', name: 'Dubai', address: { '@type': 'PostalAddress', addressLocality: 'Dubai', addressCountry: 'United Arab Emirates' } },
+    performer: { '@id': 'https://kasradash.com/#person' },
+  },
+  {
+    '@type': 'Event',
+    name: 'Search Birmingham 2023',
+    startDate: '2023',
+    location: { '@type': 'Place', name: 'Birmingham', address: { '@type': 'PostalAddress', addressLocality: 'Birmingham', addressCountry: 'United Kingdom' } },
     performer: { '@id': 'https://kasradash.com/#person' },
   },
   {
@@ -263,7 +284,7 @@ const eventNodes = [
         {engagements.map((e) => (
           <article class="rounded-[20px] border border-tint-border bg-tint p-6">
             {e.image && (
-              <img src={e.image.src} alt={e.image.alt} class="mb-5 w-full max-w-md rounded-xl border border-tint-border object-cover" loading="lazy" />
+              <img src={e.image.src} alt={e.image.alt} width={e.image.width} height={e.image.height} class="mb-5 w-full max-w-md rounded-xl border border-tint-border object-cover" loading="lazy" />
             )}
             <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
               <h2 class="font-display text-lg font-bold text-ink">{e.name}</h2>
