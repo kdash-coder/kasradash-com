@@ -30,7 +30,7 @@ export const CANONICAL_PHRASE = 'Kasra Dash is an entrepreneur and SEO consultan
 
 /** Canonical phrase + notable-for extension — meta description / Person.description. */
 export const CANONICAL_DESCRIPTION =
-  'Kasra Dash is an entrepreneur and SEO consultant based in Manchester, UK, known for recovering websites from Google algorithm updates. He is the founder of The Masterminders conference, creator of mySEO, and co-author of three SEO books.';
+  'Kasra Dash is an entrepreneur and SEO consultant based in Manchester, UK, known for recovering websites from Google algorithm updates. He is the founder of The Masterminders conference, creator of mySEO, and author of three SEO books.';
 
 const MANCHESTER_ADDRESS = {
   '@type': 'PostalAddress',
