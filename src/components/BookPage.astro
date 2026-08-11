@@ -1,13 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from './Breadcrumbs.astro';
-import { bookNode, bookUrl, bookId, amazonUk, amazonUs, type BookDef } from '../lib/schema';
+import { BOOKS, bookNode, bookId, amazonUk, amazonUs, type BookDef } from '../lib/schema';
 
 interface Props {
   book: BookDef;
   title: string;
   description: string;
-  /** Paragraphs for the "What does the book cover?" well. */
+  /** Entity-first triple paragraphs for the "What does the book cover?" well. */
   coverage: string[];
   /** One line per co-author, keyed by name. */
   authorNotes: Record<string, string>;
@@ -15,6 +15,7 @@ interface Props {
 
 const { book, title, description, coverage, authorNotes } = Astro.props;
 const path = `/books/${book.slug}/`;
+const shortName = book.name.split(':')[0];
 
 const crumbs = [
   { label: 'Home', href: '/' },
@@ -28,11 +29,42 @@ const published = new Date(book.datePublished).toLocaleDateString('en-GB', {
   day: 'numeric',
 });
 
+/* Sourced ratings, checked 11 August 2026 (q3-asset-inventory.md §1). Numbers only,
+ * never invented quotes. Update the date whenever the numbers are re-checked. */
+const RATINGS_CHECKED = '11 August 2026';
+const RATINGS: Record<string, { amazonUk: string; amazonUkCount: number; goodreads: string; goodreadsCount: number }> = {
+  'the-complete-local-seo-playbook': { amazonUk: '4.4', amazonUkCount: 15, goodreads: '4.88', goodreadsCount: 17 },
+  'advanced-seo-tips': { amazonUk: '5.0', amazonUkCount: 9, goodreads: '5.00', goodreadsCount: 15 },
+  'igaming-seo': { amazonUk: '5.0', amazonUkCount: 5, goodreads: '4.67', goodreadsCount: 15 },
+};
+const rating = RATINGS[book.slug];
+
+/* Verified product facts that live outside the schema (q3 §1). Omit what q3 does not state. */
+const PAGE_COUNTS: Record<string, string> = {
+  'the-complete-local-seo-playbook': '179 (paperback)',
+  'advanced-seo-tips': '476 (Kindle edition)',
+};
+const pageCount = PAGE_COUNTS[book.slug];
+
+const productRows: [string, string][] = [
+  ['Book name', `${book.name}: ${book.subtitle}`],
+  ['Authors', book.authorNames.join(', ')],
+  ['Published', published],
+  ...(book.slug === 'the-complete-local-seo-playbook' ? [['Publisher', 'Independently published'] as [string, string]] : []),
+  ['Formats', book.formats.map((f) => `${f.label} (ASIN ${f.asin})`).join(' · ')],
+  ...(book.isbn ? [['ISBN-13', book.isbn] as [string, string]] : []),
+  ...(pageCount ? [['Pages', pageCount] as [string, string]] : []),
+  ['Language', 'English'],
+];
+
+const otherBooks = BOOKS.filter((b) => b.slug !== book.slug);
 const graphNodes = [bookNode(book)];
 const webPageExtras = { mainEntity: { '@id': bookId(book.slug) } };
 
 const authorHref = (name: string) =>
   name === 'Kasra Dash' ? '/about-kasra-dash/' : name === 'James Dooley' ? 'https://jamesdooley.com/' : undefined;
+
+const formatList = book.formats.map((f) => f.label).join(', ').replace(/, ([^,]*)$/, ' and $1');
 ---
 
 <BaseLayout {title} {description} {path} breadcrumbs={crumbs} {graphNodes} {webPageExtras} datePublished={book.datePublished}>
@@ -40,30 +72,13 @@ const authorHref = (name: string) =>
     <section class="border-b border-tint-border bg-tint">
       <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">
         <Breadcrumbs {crumbs} />
-        <p class="mt-4 inline-block rounded-full border border-brand-500/30 bg-brand-500/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-600">Book</p>
+        <p class="mt-4 inline-block rounded-full border border-brand-500/30 bg-brand-500/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-600">Book by Kasra Dash</p>
         <h1 class="mt-3 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl lg:text-[2.75rem]">{book.name}</h1>
         <p class="mt-3 max-w-2xl text-lg leading-relaxed text-muted">{book.subtitle}</p>
-        <dl class="mt-6 flex flex-wrap gap-x-8 gap-y-3 text-sm">
-          <div>
-            <dt class="text-dim">Authors</dt>
-            <dd class="mt-0.5 font-semibold text-ink">{book.authorNames.join(', ')}</dd>
-          </div>
-          <div>
-            <dt class="text-dim">Published</dt>
-            <dd class="mt-0.5 font-semibold text-ink">{published}</dd>
-          </div>
-          <div>
-            <dt class="text-dim">Formats</dt>
-            <dd class="mt-0.5 font-semibold text-ink">{book.formats.map((f) => f.label).join(' · ')}</dd>
-          </div>
-          {book.isbn && (
-            <div>
-              <dt class="text-dim">ISBN-13</dt>
-              <dd class="mt-0.5 font-semibold text-ink">{book.isbn}</dd>
-            </div>
-          )}
-        </dl>
-        <div class="mt-8 flex flex-wrap items-center gap-3">
+        <p class="mt-4 max-w-2xl text-base leading-relaxed text-muted">
+          {book.name} is a book co-authored by {book.authorNames.join(', ')}. It was published on {published} and is sold on Amazon in {formatList} editions.
+        </p>
+        <div class="mt-7 flex flex-wrap items-center gap-3">
           <a href={amazonUk(book)} target="_blank" rel="noopener" class="btn-gradient px-6 py-3 text-sm font-bold shadow-lg shadow-brand-500/25 transition hover:shadow-xl hover:shadow-brand-500/40">
             Buy on Amazon UK
           </a>
@@ -81,13 +96,16 @@ const authorHref = (name: string) =>
 
     <section class="mx-auto max-w-6xl px-4 py-14 sm:px-6">
       <div class="reading-well prose prose-well max-w-3xl p-5 sm:p-8 lg:p-12">
-        <h2>What does the book cover?</h2>
+        <h2>What does {shortName} cover?</h2>
         {coverage.map((para) => <p>{para}</p>)}
       </div>
     </section>
 
     <section class="mx-auto max-w-6xl px-4 pb-14 sm:px-6">
-      <h2 class="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">Who wrote {book.name.split(':')[0]}?</h2>
+      <h2 class="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">Who wrote {shortName}?</h2>
+      <p class="mt-3 max-w-3xl text-muted">
+        {shortName} was written by {book.authorNames.join(', ')}, in that byline order. Kasra Dash is one of the co-authors.
+      </p>
       <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {book.authorNames.map((name) => (
           <div class="rounded-[20px] border border-tint-border bg-tint p-5">
@@ -111,25 +129,94 @@ const authorHref = (name: string) =>
       </div>
     </section>
 
-    <section class="border-t border-tint-border bg-tint py-14">
-      <div class="mx-auto max-w-3xl px-4 text-center sm:px-6">
-        <h2 class="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">Where can I buy {book.name.split(':')[0]}?</h2>
-        <p class="mx-auto mt-3 max-w-xl text-muted">
-          The book is sold on Amazon in {book.formats.map((f) => f.label.toLowerCase()).join(', ')} editions.
-          {book.goodreads && ' Reviews and ratings live on Goodreads.'}
-        </p>
-        <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
-          <a href={amazonUk(book)} target="_blank" rel="noopener" class="btn-gradient px-6 py-3 text-sm font-bold shadow-lg shadow-brand-500/25 transition hover:shadow-xl hover:shadow-brand-500/40">
-            Buy on Amazon UK
-          </a>
-          <a href={amazonUs(book)} target="_blank" rel="noopener" class="rounded-full border border-tint-border px-6 py-3 text-sm font-bold text-ink transition hover:border-brand-500 hover:bg-brand-500/10">
-            Buy on Amazon US
-          </a>
+    {rating && (
+      <section class="border-y border-tint-border bg-tint py-14">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6">
+          <h2 class="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">What do readers rate {shortName}?</h2>
+          <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:max-w-3xl">
+            <div class="rounded-[20px] border border-tint-border bg-deep p-6">
+              <h3 class="font-display text-base font-bold text-ink">Amazon UK</h3>
+              <p class="mt-2 font-jakarta text-3xl font-bold text-ink">{rating.amazonUk} <span class="text-base font-semibold text-dim">/ 5</span></p>
+              <p class="mt-2 text-sm leading-relaxed text-muted">
+                On Amazon UK, {shortName} holds {rating.amazonUk} stars from {rating.amazonUkCount} ratings, checked {RATINGS_CHECKED}.
+              </p>
+            </div>
+            <div class="rounded-[20px] border border-tint-border bg-deep p-6">
+              <h3 class="font-display text-base font-bold text-ink">Goodreads</h3>
+              <p class="mt-2 font-jakarta text-3xl font-bold text-ink">{rating.goodreads} <span class="text-base font-semibold text-dim">/ 5</span></p>
+              <p class="mt-2 text-sm leading-relaxed text-muted">
+                On Goodreads, {shortName} holds a {rating.goodreads} average from {rating.goodreadsCount} ratings, checked {RATINGS_CHECKED}.
+              </p>
+            </div>
+          </div>
         </div>
-        <p class="mt-8 text-sm text-dim">
-          Explore the other titles on the <a href="/books/" class="font-semibold text-lavender underline transition hover:text-white">books page</a>.
-        </p>
+      </section>
+    )}
+
+    <section class="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+      <h2 class="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">Where can you buy {shortName}?</h2>
+      <ul class="mt-6 max-w-3xl space-y-3">
+        <li class="flex gap-3 text-base leading-relaxed text-muted">
+          <span class="brand-gradient mt-1 flex h-5 w-5 flex-none items-center justify-center rounded-full text-xs font-bold text-white" aria-hidden="true">✓</span>
+          <span>Buy {book.name} from <a href={amazonUk(book)} target="_blank" rel="noopener" class="font-semibold text-brand-600 transition hover:text-white">Amazon UK</a>, where it is available in {formatList} editions.</span>
+        </li>
+        <li class="flex gap-3 text-base leading-relaxed text-muted">
+          <span class="brand-gradient mt-1 flex h-5 w-5 flex-none items-center justify-center rounded-full text-xs font-bold text-white" aria-hidden="true">✓</span>
+          <span>Buy {book.name} from <a href={amazonUs(book)} target="_blank" rel="noopener" class="font-semibold text-brand-600 transition hover:text-white">Amazon US</a>.</span>
+        </li>
+        {book.goodreads && (
+          <li class="flex gap-3 text-base leading-relaxed text-muted">
+            <span class="brand-gradient mt-1 flex h-5 w-5 flex-none items-center justify-center rounded-full text-xs font-bold text-white" aria-hidden="true">✓</span>
+            <span>{book.name} is listed on <a href={book.goodreads} target="_blank" rel="noopener" class="font-semibold text-brand-600 transition hover:text-white">Goodreads</a>, where readers rate and review it.</span>
+          </li>
+        )}
+        {book.extraSameAs?.some((u) => u.includes('thecompletelocalseoplaybook')) && (
+          <li class="flex gap-3 text-base leading-relaxed text-muted">
+            <span class="brand-gradient mt-1 flex h-5 w-5 flex-none items-center justify-center rounded-full text-xs font-bold text-white" aria-hidden="true">✓</span>
+            <span>{book.name} has its own website at <a href="https://thecompletelocalseoplaybook.com/" target="_blank" rel="noopener" class="font-semibold text-brand-600 transition hover:text-white">thecompletelocalseoplaybook.com</a>.</span>
+          </li>
+        )}
+      </ul>
+    </section>
+
+    <section class="border-y border-tint-border bg-tint py-14">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <h2 class="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">Product details</h2>
+        <div class="mt-6 max-w-3xl overflow-hidden rounded-[20px] border border-tint-border">
+          <table class="w-full text-sm">
+            <tbody>
+              {productRows.map(([attr, value], i) => (
+                <tr class={i % 2 === 0 ? 'bg-deep' : 'bg-tint'}>
+                  <th scope="row" class="w-36 px-5 py-3.5 text-left align-top font-semibold text-lavender">{attr}</th>
+                  <td class="px-5 py-3.5 text-muted">{value}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+      <h2 class="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">What are all books authored by Kasra Dash?</h2>
+      <p class="mt-3 max-w-3xl text-muted">Kasra Dash is the co-author of three SEO books. {book.name} is one of the three.</p>
+      <ul class="mt-6 max-w-3xl space-y-2.5">
+        {BOOKS.map((b) => (
+          <li class="text-base leading-relaxed text-muted">
+            {b.slug === book.slug ? (
+              <span class="font-semibold text-ink">{b.name}: {b.subtitle} (this page)</span>
+            ) : (
+              <a href={`/books/${b.slug}/`} class="font-semibold text-brand-600 transition hover:text-white">{b.name}: {b.subtitle}</a>
+            )}
+          </li>
+        ))}
+      </ul>
+      <p class="mt-5 text-sm text-dim">
+        See the full list on the <a href="/books/" class="font-semibold text-lavender underline transition hover:text-white">books by Kasra Dash</a> page, or read the other two:
+        {otherBooks.map((b, i) => (
+          <span> <a href={`/books/${b.slug}/`} class="font-semibold text-lavender underline transition hover:text-white">{b.name.split(':')[0]}</a>{i === 0 ? ' and' : '.'}</span>
+        ))}
+      </p>
     </section>
   </main>
 </BaseLayout>

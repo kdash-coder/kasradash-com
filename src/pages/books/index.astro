@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import { BOOKS, booksItemListNode, amazonUk } from '../../lib/schema';
+import { BOOKS, booksItemListNode, amazonUk, amazonUs } from '../../lib/schema';
 
-const title = 'SEO Books by Kasra Dash';
+const title = 'Books by Kasra Dash';
 const description =
   'Kasra Dash is the co-author of three SEO books: The Complete Local SEO Playbook 2025, Advanced SEO Tips 2025 and iGaming SEO, written with James Dooley, Mike Martin, Karl Hudson, Andrew Halliday and Koray Gübür.';
 
@@ -15,7 +15,42 @@ const crumbs = [
 const graphNodes = [booksItemListNode()];
 const webPageExtras = { mainEntity: { '@id': 'https://kasradash.com/books/#booklist' } };
 
-const fmt = (d: string) => new Date(d).toLocaleDateString('en-GB', { year: 'numeric', month: 'long' });
+/* Sourced ratings, checked 11 August 2026 (q3-asset-inventory.md §1). Numbers only. */
+const RATINGS_CHECKED = '11 August 2026';
+
+// Per-book hub blocks in the reference grammar: topics as triples, sourced reviews, buy triples.
+const blocks = [
+  {
+    slug: 'the-complete-local-seo-playbook',
+    topics: [
+      'The Complete Local SEO Playbook 2025 covers boosting local search rankings.',
+      'The book covers optimising a Google Business Profile.',
+      'The book covers link building for local results.',
+    ],
+    reviews: 'On Amazon UK the paperback holds 4.4 stars from 15 ratings, and on Goodreads it holds a 4.88 average from 17 ratings, checked ' + RATINGS_CHECKED + '.',
+  },
+  {
+    slug: 'advanced-seo-tips',
+    topics: [
+      'Advanced SEO Tips 2025 covers the future of search, including AI-driven results.',
+      'The book busts common SEO myths.',
+      'The book sets out the strategies its five authors run in the field.',
+    ],
+    reviews: 'On Amazon UK the book holds 5.0 stars from 9 ratings, and on Goodreads it holds a 5.00 average from 15 ratings, checked ' + RATINGS_CHECKED + '.',
+  },
+  {
+    slug: 'igaming-seo',
+    topics: [
+      'iGaming SEO covers search strategy for casinos, slots, bingo and sports betting.',
+      'The book covers link building, content and technical SEO in high-competition niches.',
+      'The book covers which shortcuts get gambling sites penalised.',
+    ],
+    reviews: 'On Amazon UK the book holds 5.0 stars from 5 ratings, and on Goodreads it holds a 4.67 average from 15 ratings, checked ' + RATINGS_CHECKED + '.',
+  },
+].map((b) => ({ ...b, book: BOOKS.find((x) => x.slug === b.slug)! }));
+
+const fmtList = (book: (typeof BOOKS)[number]) =>
+  book.formats.map((f) => f.label).join(', ').replace(/, ([^,]*)$/, ' and $1');
 ---
 
 <BaseLayout {title} {description} path="/books/" pageType="CollectionPage" breadcrumbs={crumbs} {graphNodes} {webPageExtras}>
@@ -23,27 +58,51 @@ const fmt = (d: string) => new Date(d).toLocaleDateString('en-GB', { year: 'nume
     <section class="border-b border-tint-border bg-tint">
       <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">
         <Breadcrumbs {crumbs} />
-        <h1 class="mt-4 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-ink sm:text-5xl">SEO Books by Kasra Dash</h1>
+        <h1 class="mt-4 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-ink sm:text-5xl">Books by Kasra Dash</h1>
         <p class="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
-          Kasra Dash is the co-author of three SEO books, written with James Dooley and other working SEOs. All three are sold on Amazon in the UK and US.
+          Kasra Dash is the co-author of three SEO books. All three books by Kasra Dash are sold on Amazon in the UK and US, and all three were written with other working SEOs.
         </p>
       </div>
     </section>
 
     <section class="mx-auto max-w-6xl px-4 py-14 sm:px-6" aria-label="The three books">
-      <div class="grid gap-5 lg:grid-cols-3">
-        {BOOKS.map((book) => (
-          <article class="flex flex-col rounded-[20px] border border-tint-border bg-tint p-6">
-            <p class="inline-block self-start rounded-full bg-brand-500/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-lavender">{fmt(book.datePublished)}</p>
-            <h2 class="mt-4 font-display text-xl font-bold leading-snug text-ink">
-              <a href={`/books/${book.slug}/`} class="transition hover:text-brand-600">{book.name}</a>
+      <div class="space-y-6">
+        {blocks.map(({ book, topics, reviews }) => (
+          <article class="rounded-[20px] border border-tint-border bg-tint p-6 sm:p-8">
+            <h2 class="max-w-3xl font-display text-2xl font-bold leading-snug text-ink">
+              <a href={`/books/${book.slug}/`} class="transition hover:text-brand-600">{book.name}: {book.subtitle}</a>
             </h2>
-            <p class="mt-2 flex-1 text-sm leading-relaxed text-muted">{book.subtitle}</p>
-            <p class="mt-4 text-xs text-dim">By {book.authorNames.join(', ')}</p>
-            <div class="mt-5 flex flex-wrap gap-2 border-t border-tint-border pt-5">
-              <a href={`/books/${book.slug}/`} class="btn-gradient px-4 py-2 text-xs font-bold">About the book</a>
-              <a href={amazonUk(book)} target="_blank" rel="noopener" class="rounded-full border border-tint-border px-4 py-2 text-xs font-bold text-ink transition hover:border-brand-500 hover:bg-brand-500/10">Buy on Amazon UK</a>
+            <p class="mt-3 max-w-3xl text-sm leading-relaxed text-muted">
+              {book.name} is a book co-authored by {book.authorNames.join(', ')}, published {new Date(book.datePublished).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}.
+            </p>
+            <div class="mt-6 grid gap-6 lg:grid-cols-3">
+              <div>
+                <h3 class="font-display text-sm font-bold uppercase tracking-wider text-dim">Core topics</h3>
+                <ul class="mt-3 space-y-2">
+                  {topics.map((t) => (
+                    <li class="flex gap-2.5 text-sm leading-relaxed text-muted">
+                      <span class="brand-gradient mt-1 flex h-4 w-4 flex-none items-center justify-center rounded-full text-[0.6rem] font-bold text-white" aria-hidden="true">✓</span>
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 class="font-display text-sm font-bold uppercase tracking-wider text-dim">Reader reviews</h3>
+                <p class="mt-3 text-sm leading-relaxed text-muted">{reviews}</p>
+              </div>
+              <div>
+                <h3 class="font-display text-sm font-bold uppercase tracking-wider text-dim">Where to buy</h3>
+                <p class="mt-3 text-sm leading-relaxed text-muted">
+                  Buy {book.name} from <a href={amazonUk(book)} target="_blank" rel="noopener" class="font-semibold text-brand-600 transition hover:text-white">Amazon UK</a> or
+                  <a href={amazonUs(book)} target="_blank" rel="noopener" class="font-semibold text-brand-600 transition hover:text-white"> Amazon US</a>, available in {fmtList(book)} editions.
+                  {book.goodreads && (
+                    <span> The book is listed on <a href={book.goodreads} target="_blank" rel="noopener" class="font-semibold text-brand-600 transition hover:text-white">Goodreads</a>.</span>
+                  )}
+                </p>
+              </div>
             </div>
+            <a href={`/books/${book.slug}/`} class="btn-gradient mt-6 inline-block px-5 py-2.5 text-sm font-bold">About the book</a>
           </article>
         ))}
       </div>
@@ -51,11 +110,21 @@ const fmt = (d: string) => new Date(d).toLocaleDateString('en-GB', { year: 'nume
 
     <section class="border-t border-tint-border bg-tint py-14">
       <div class="mx-auto max-w-3xl px-4 sm:px-6">
-        <h2 class="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">Who does Kasra Dash write with?</h2>
+        <h2 class="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">What are all books authored by Kasra Dash?</h2>
+        <p class="mt-4 leading-relaxed text-muted">Here are all three books co-authored by Kasra Dash:</p>
+        <ul class="mt-4 space-y-2.5">
+          {BOOKS.map((b) => (
+            <li class="text-base leading-relaxed">
+              <a href={`/books/${b.slug}/`} class="font-semibold text-brand-600 transition hover:text-white">{b.name}: {b.subtitle}</a>
+            </li>
+          ))}
+        </ul>
+
+        <h2 class="mt-12 font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">Who does Kasra Dash write with?</h2>
         <p class="mt-4 leading-relaxed text-muted">
-          All three books are collaborations. James Dooley, Kasra's mentor since 2019, co-authored every title;
-          Mike Martin joined for the local SEO playbook, and Karl Hudson, Andrew Halliday and Koray Gübür
-          co-wrote the advanced and iGaming titles. Several of the co-authors have also appeared on
+          Kasra Dash writes with other working SEOs. James Dooley, his mentor since 2019, co-authored all three books;
+          Mike Martin co-authored the local SEO playbook; and Karl Hudson, Andrew Halliday and Koray Gübür co-wrote the
+          advanced and iGaming titles. Several of the co-authors have appeared on
           <a href="/podcast/" class="font-semibold text-brand-600 transition hover:text-white"> The Business Dash With Kasra</a>.
         </p>
         <p class="mt-4 leading-relaxed text-muted">
