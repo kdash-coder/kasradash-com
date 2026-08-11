@@ -5,3 +5,6 @@
 # WP category archive retired in the rebuild; quick-reads is the only real category
 /category/uncategorized/ /category/quick-reads/ 301
 /category/uncategorized /category/quick-reads/ 301
+# Free sheet retired (Kasra, 11 Aug 2026): the site pushes The New Search community instead
+/free-ai-seo-sheet/ https://www.skool.com/the-new-search/about?utm_source=kasradash.com&utm_medium=redirect&utm_campaign=free-sheet 301
+/free-ai-seo-sheet https://www.skool.com/the-new-search/about?utm_source=kasradash.com&utm_medium=redirect&utm_campaign=free-sheet 301

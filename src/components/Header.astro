@@ -35,6 +35,8 @@ const current = Astro.url.pathname;
       {NAV.filter((n) => !n.children).map((item) => (
         <a
           href={item.href}
+          target={item.href.startsWith('http') ? '_blank' : undefined}
+          rel={item.href.startsWith('http') ? 'noopener' : undefined}
           class={`rounded-full px-3 py-2 text-sm font-semibold transition hover:bg-white/5 hover:text-white ${current === item.href ? 'text-brand-600' : 'text-lavender'}`}
         >
           {item.label}
@@ -68,7 +70,7 @@ const current = Astro.url.pathname;
         <a href={hub.url} class="block rounded-lg px-3 py-2 pl-6 text-sm font-medium text-dim transition hover:bg-white/5 hover:text-white">{hub.name}</a>
       ))}
       <a href="/about-kasra-dash/" class="block rounded-lg px-3 py-2 font-display font-bold text-ink transition hover:bg-white/5">About Kasra Dash</a>
-      <a href="/free-ai-seo-sheet/" class="block rounded-lg px-3 py-2 font-display font-bold text-ink transition hover:bg-white/5">Free AI SEO Sheet</a>
+      <a href="https://www.skool.com/the-new-search/about?utm_source=kasradash.com&utm_medium=site&utm_campaign=header-nav" target="_blank" rel="noopener" class="block rounded-lg px-3 py-2 font-display font-bold text-ink transition hover:bg-white/5">The New Search</a>
       <a href="/contact/" class="btn-gradient mt-2 block px-5 py-3 text-center font-bold">Work With Me</a>
     </nav>
   </div>

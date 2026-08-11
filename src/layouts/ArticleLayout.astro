@@ -74,7 +74,7 @@ const graphNodes = [
       </div>
     </div>
 
-    <div class="mx-auto max-w-6xl gap-10 px-4 py-10 sm:px-6 lg:grid lg:grid-cols-[13rem_minmax(0,1fr)_15rem] lg:py-14 xl:gap-12">
+    <div class="mx-auto max-w-6xl gap-10 px-4 py-10 sm:px-6 lg:grid lg:grid-cols-[12rem_minmax(0,1fr)_14rem] lg:py-14">
       {/* Left: jump links */}
       <aside class="hidden lg:block">
         {toc.length > 2 && (
@@ -96,8 +96,8 @@ const graphNodes = [
         )}
       </aside>
 
-      {/* Centre: article */}
-      <article class="prose prose-kasra max-w-none lg:max-w-[46rem]">
+      {/* Centre: article — light reading well on the dark frame */}
+      <article class="reading-well prose prose-well max-w-none p-5 sm:p-8 lg:max-w-[46rem] lg:p-10">
         <slot />
       </article>
 
@@ -119,12 +119,17 @@ const graphNodes = [
           </div>
 
           <div class="rounded-[20px] border border-tint-border bg-tint p-5">
-            <h2 class="font-display text-lg font-bold leading-snug text-ink">Newsletter</h2>
+            <h2 class="font-display text-lg font-bold leading-snug text-ink">The New Search</h2>
             <p class="mt-2 text-sm leading-relaxed text-muted">
-              SEO strategies and test results from Kasra, straight to your inbox.
+              Kasra's AI SEO community on Skool: weekly live calls, his test results, and the free AI SEO sheet inside.
             </p>
-            <a href="/free-ai-seo-sheet/" class="mt-4 block rounded-full border border-tint-border px-4 py-2.5 text-center text-sm font-bold text-ink transition hover:border-brand-500 hover:bg-brand-500/10">
-              Subscribe free
+            <a
+              href="https://www.skool.com/the-new-search/about?utm_source=kasradash.com&utm_medium=site&utm_campaign=article-sidebar"
+              target="_blank"
+              rel="noopener"
+              class="mt-4 block rounded-full border border-tint-border px-4 py-2.5 text-center text-sm font-bold text-ink transition hover:border-brand-500 hover:bg-brand-500/10"
+            >
+              Join The New Search
             </a>
           </div>
 
