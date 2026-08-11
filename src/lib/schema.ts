@@ -206,8 +206,8 @@ const GUEST_APPEARANCES = [
  * The ONE Person node. Emitted on every page.
  * Deliberately omitted (unverified — P0 open items, do not add until confirmed):
  * awards (live field holds non-awards), Course (stale 2023), birthPlace/nationality wording,
- * alumniOf Edinburgh Napier, Companies House URLs, kgmid links, TikTok, PodcastSeries
- * (no /podcast/ page exists in this phase).
+ * alumniOf Edinburgh Napier, Companies House URLs, person-level kgmid links, TikTok.
+ * PodcastSeries lives ONLY on /podcast/ (podcastSeriesNode); Person links books via author refs.
  */
 export function personNode() {
   return {
@@ -261,6 +261,9 @@ export function personNode() {
     ],
     founder: [ORG_MASTERMINDERS, ORG_MYSEO],
     worksFor: [{ '@id': ORG_MASTERMINDERS['@id'] }, { '@id': ORG_MYSEO['@id'] }],
+    // Entity blueprint §C: the person references his three Book @ids sitewide;
+    // the full Book nodes live on their own /books/* pages.
+    author: personAuthorRefs(),
     subjectOf: PRESS_ARTICLES,
     performerIn: GUEST_APPEARANCES,
     sameAs: PERSON_SAME_AS,
@@ -368,4 +371,217 @@ export function buildGraph(nodes: object[]) {
     '@context': 'https://schema.org',
     '@graph': nodes,
   };
+}
+
+/* ------------------------------------------------------------------ */
+/* Trust pages (kd/trust-pages) — books, podcast, partnership orgs.    */
+/* Every URL/ASIN/ISBN/date below verified 2026-08-11                  */
+/* (q3-asset-inventory.md §1-2 + Goodreads work page loaded live).     */
+/* ------------------------------------------------------------------ */
+
+export interface BookFormat {
+  label: string;
+  asin: string;
+}
+
+export interface BookDef {
+  slug: string;
+  /** Exact Amazon title. */
+  name: string;
+  subtitle: string;
+  datePublished: string;
+  isbn?: string;
+  /** Byline order as printed on Amazon. */
+  authorNames: string[];
+  formats: BookFormat[];
+  /** Primary ASIN for the dp/ links (the format q3 verified on both marketplaces). */
+  primaryAsin: string;
+  goodreads?: string;
+  /** Extra verified sameAs URLs (book site, kgmid — playbook only). */
+  extraSameAs?: string[];
+}
+
+export const BOOKS: BookDef[] = [
+  {
+    slug: 'the-complete-local-seo-playbook',
+    name: 'The Complete Local SEO Playbook 2025',
+    subtitle:
+      'Proven Strategies for Boosting Your Rankings, Optimising Your Google Business Profile, and Link Building',
+    datePublished: '2024-11-15',
+    isbn: '9798345497913',
+    authorNames: ['Mike Martin', 'James Dooley', 'Kasra Dash'],
+    formats: [
+      { label: 'Paperback', asin: 'B0DM55R5W4' },
+      { label: 'Kindle', asin: 'B0DM2HFYK6' },
+    ],
+    primaryAsin: 'B0DM55R5W4',
+    goodreads: 'https://www.goodreads.com/book/show/221235522-the-complete-local-seo-playbook-2025',
+    extraSameAs: [
+      'https://thecompletelocalseoplaybook.com/',
+      // The ONE verified book KGMID (from James Dooley's live schema) — this book only.
+      'https://www.google.com/search?kgmid=/g/11lw0t0wcl',
+    ],
+  },
+  {
+    slug: 'advanced-seo-tips',
+    name: 'Advanced SEO Tips 2025: The Future of Search',
+    subtitle: 'Myths Busted, SEO Strategies Revealed',
+    datePublished: '2025-04-13',
+    authorNames: ['James Dooley', 'Kasra Dash', 'Karl Hudson', 'Andrew Halliday', 'Koray Gübür'],
+    formats: [
+      { label: 'Kindle', asin: 'B0F4QXZXHQ' },
+      { label: 'Hardcover', asin: 'B0DW88LPJG' },
+      { label: 'Paperback', asin: 'B0DW8KY9HQ' },
+    ],
+    primaryAsin: 'B0F4QXZXHQ',
+  },
+  {
+    slug: 'igaming-seo',
+    name: 'iGaming SEO',
+    subtitle: 'The Truth About Advanced SEO for Online Gambling: Casinos, Slots, Bingo & Sports Betting',
+    datePublished: '2025-04-11',
+    authorNames: ['James Dooley', 'Karl Hudson', 'Kasra Dash', 'Koray Gübür'],
+    formats: [
+      { label: 'Kindle', asin: 'B0D91ZSFMP' },
+      { label: 'Hardcover', asin: 'B0F1JW8F8R' },
+      { label: 'Paperback', asin: 'B0F1FXDNP6' },
+    ],
+    primaryAsin: 'B0D91ZSFMP',
+  },
+];
+
+export function bookId(slug: string) {
+  return `${SITE_URL}/books/${slug}/#book`;
+}
+
+export function bookUrl(book: BookDef) {
+  return `${SITE_URL}/books/${book.slug}/`;
+}
+
+export function amazonUk(book: BookDef) {
+  return `https://www.amazon.co.uk/dp/${book.primaryAsin}`;
+}
+
+export function amazonUs(book: BookDef) {
+  return `https://www.amazon.com/dp/${book.primaryAsin}`;
+}
+
+/** Co-author Person nodes: James Dooley keeps his verified url (the reciprocal
+ * co-author triangle — his schema already credits Kasra); everyone else is name-only. */
+function bookAuthor(name: string): object {
+  if (name === 'Kasra Dash') return { '@id': PERSON_ID };
+  if (name === 'James Dooley') return { '@type': 'Person', name: 'James Dooley', url: 'https://jamesdooley.com/' };
+  return { '@type': 'Person', name };
+}
+
+/** Full Book node — emitted ONLY on that book's page. */
+export function bookNode(book: BookDef) {
+  return {
+    '@type': 'Book',
+    '@id': bookId(book.slug),
+    name: book.name,
+    alternateName: `${book.name}: ${book.subtitle}`,
+    url: bookUrl(book),
+    author: book.authorNames.map(bookAuthor),
+    datePublished: book.datePublished,
+    inLanguage: 'en-GB',
+    bookFormat: 'https://schema.org/Paperback',
+    ...(book.isbn ? { isbn: book.isbn } : {}),
+    workExample: book.formats.map((f) => ({
+      '@type': 'Book',
+      bookFormat: f.label === 'Kindle' ? 'https://schema.org/EBook' : `https://schema.org/${f.label}`,
+      url: `https://www.amazon.co.uk/dp/${f.asin}`,
+    })),
+    sameAs: [
+      amazonUk(book),
+      amazonUs(book),
+      ...(book.goodreads ? [book.goodreads] : []),
+      ...(book.extraSameAs ?? []),
+    ],
+    mainEntityOfPage: { '@id': webPageId(bookUrl(book)) },
+  };
+}
+
+/** ItemList for the /books/ hub. */
+export function booksItemListNode() {
+  return {
+    '@type': 'ItemList',
+    '@id': `${SITE_URL}/books/#booklist`,
+    itemListElement: BOOKS.map((b, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: { '@id': bookId(b.slug) },
+      name: b.name,
+      url: bookUrl(b),
+    })),
+  };
+}
+
+/** Person.author → the three Book @ids (entity blueprint §C). */
+export function personAuthorRefs() {
+  return BOOKS.map((b) => ({ '@id': bookId(b.slug) }));
+}
+
+/** The Business Dash With Kasra — a YouTube interview series (no Spotify/Apple
+ * presence; YouTube URLs only). Emitted ONLY on /podcast/. */
+export const PODCAST_PLAYLIST = 'https://www.youtube.com/playlist?list=PL542wQmQgo070aOOyJJIJTkykp6K_M3M-';
+
+/** The 18 contributor names from the live homepage schema (crawl 2026-08-11). */
+export const PODCAST_GUESTS = [
+  'Kyle Roof',
+  'Lily Ray',
+  'Koray Tuğberk Gübür',
+  'Patrick Stox',
+  'Craig Campbell',
+  'Joe Davies',
+  'Julian Goldie',
+  'Fery Kaszoni',
+  'Karl Hudson',
+  'Ryan Stewart',
+  'Lara Acosta',
+  'Robert Niechciał',
+  'Gareth Hoyle',
+  'Gareth Bull',
+  'Jason Hennessey',
+  'Gary Wilson',
+  'Alex Drew',
+  'Niels Zee',
+];
+
+export function podcastSeriesNode() {
+  const canonical = `${SITE_URL}/podcast/`;
+  return {
+    '@type': 'PodcastSeries',
+    '@id': `${canonical}#series`,
+    name: 'The Business Dash With Kasra',
+    description:
+      'The Business Dash With Kasra is a YouTube interview series in which Kasra Dash interviews SEOs, business owners and entrepreneurs.',
+    url: canonical,
+    mainEntityOfPage: { '@id': webPageId(canonical) },
+    author: { '@id': PERSON_ID },
+    inLanguage: 'en-GB',
+    contributor: PODCAST_GUESTS.map((name) => ({ '@type': 'Person', name })),
+    sameAs: [PODCAST_PLAYLIST, 'https://www.youtube.com/@kasradash'],
+  };
+}
+
+/** Partnership orgs — url + sameAs ONLY (no Companies House: numbers unconfirmed).
+ * Role wording on-page comes verbatim from each org's own site. */
+export function partnershipOrgNodes() {
+  return [
+    {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#org-searcharoo`,
+      name: 'Searcharoo',
+      url: 'https://searcharoo.com/',
+      sameAs: ['https://searcharoo.com/about-kasra-dash/'],
+    },
+    {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#org-fatrank`,
+      name: 'FatRank',
+      url: 'https://www.fatrank.com/',
+      sameAs: ['https://www.fatrank.com/'],
+    },
+  ];
 }

@@ -1,0 +1,24 @@
+---
+import BookPage from '../../components/BookPage.astro';
+import { BOOKS } from '../../lib/schema';
+
+const book = BOOKS.find((b) => b.slug === 'the-complete-local-seo-playbook')!;
+
+const title = 'The Complete Local SEO Playbook 2025 — Book by Kasra Dash';
+const description =
+  'Kasra Dash is a co-author of The Complete Local SEO Playbook 2025, a 179-page guide to local rankings, Google Business Profile optimisation and link building, written with Mike Martin and James Dooley.';
+
+const coverage = [
+  'The Complete Local SEO Playbook 2025 is a 179-page working guide to ranking a business in local search. It walks through the strategies the authors use on client and portfolio sites: winning local rankings, optimising a Google Business Profile, and building the links that local results reward.',
+  'The book is written for business owners and SEOs who want a repeatable local process rather than theory. Kasra Dash co-authored it with Mike Martin and James Dooley, and it was published independently on 15 November 2024.',
+  'It is the first of three SEO books Kasra Dash has co-authored, alongside Advanced SEO Tips 2025 and iGaming SEO.',
+];
+
+const authorNotes = {
+  'Mike Martin': 'Mike Martin co-authored The Complete Local SEO Playbook 2025 and hosts the Mike Martin Asks podcast, where Kasra appeared in June 2023.',
+  'James Dooley': "James Dooley is an SEO entrepreneur, Kasra Dash's mentor since 2019, and his co-author on all three books.",
+  'Kasra Dash': 'Kasra Dash is an entrepreneur and SEO consultant based in Manchester, UK. He is the founder of The Masterminders conference and creator of mySEO.',
+};
+---
+
+<BookPage {book} {title} {description} {coverage} {authorNotes} />

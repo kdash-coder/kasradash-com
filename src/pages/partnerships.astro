@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { partnershipOrgNodes } from '../lib/schema';
+
+const title = 'Partnerships — Kasra Dash';
+const description =
+  'Kasra Dash is the founder of The Masterminders conference, creator of mySEO, co-founder and SEO strategist at Searcharoo, SEO strategist at FatRank, and co-author of three SEO books with James Dooley.';
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Partnerships', href: '/partnerships/' },
+];
+
+// Role wording rule: Searcharoo and FatRank descriptions use each site's OWN words
+// (searcharoo.com/about-kasra-dash/ and fatrank.com, loaded 2026-08-11). FatRank's
+// role is deliberately NOT stated as ownership — unconfirmed.
+const partnerships = [
+  {
+    name: 'The Masterminders',
+    role: 'Founder',
+    href: 'https://themasterminders.com/',
+    copy: 'Kasra Dash founded The Masterminders in 2023, a conference in Manchester that brings business owners and SEO professionals together. The next event runs 24 to 26 June 2026 at the Hilton Deansgate.',
+  },
+  {
+    name: 'mySEO',
+    role: 'Creator',
+    href: 'https://myseo.app/',
+    copy: 'Kasra Dash created mySEO in 2025, an invite-only community app where vetted SEO professionals share strategies, courses and live training.',
+  },
+  {
+    name: 'Searcharoo',
+    role: 'Co-founder & SEO strategist',
+    href: 'https://searcharoo.com/',
+    copy: 'Searcharoo describes Kasra Dash as its co-founder and SEO strategist. The agency delivers link building and SEO services, and its about page carries his profile.',
+  },
+  {
+    name: 'FatRank',
+    role: 'SEO strategist and content expert',
+    href: 'https://www.fatrank.com/',
+    copy: 'FatRank describes Kasra Dash as an SEO strategist and content expert, known for innovative testing. The site publishes SEO research and rankings tools.',
+  },
+  {
+    name: 'James Dooley',
+    role: 'Co-author, three books',
+    href: 'https://jamesdooley.com/',
+    copy: 'Kasra Dash and James Dooley have co-authored three SEO books together: The Complete Local SEO Playbook 2025, Advanced SEO Tips 2025 and iGaming SEO. James has been his mentor since they met at a private mastermind in 2019.',
+  },
+];
+
+const graphNodes = partnershipOrgNodes();
+---
+
+<BaseLayout {title} {description} path="/partnerships/" breadcrumbs={crumbs} {graphNodes}>
+  <main>
+    <section class="border-b border-tint-border bg-tint">
+      <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">
+        <Breadcrumbs {crumbs} />
+        <h1 class="mt-4 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-ink sm:text-5xl">Partnerships</h1>
+        <p class="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
+          Kasra Dash is an entrepreneur and SEO consultant based in Manchester, UK. These are the companies he has founded and the working partnerships behind his ventures.
+        </p>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-4 py-14 sm:px-6" aria-label="Ventures and partnerships">
+      <div class="grid gap-5 md:grid-cols-2">
+        {partnerships.map((p) => (
+          <article class="rounded-[20px] border border-tint-border bg-tint p-6">
+            <p class="inline-block rounded-full bg-brand-500/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-lavender">{p.role}</p>
+            <h2 class="mt-4 font-display text-xl font-bold text-ink">
+              <a href={p.href} target="_blank" rel="noopener" class="transition hover:text-brand-600">{p.name}</a>
+            </h2>
+            <p class="mt-2 text-sm leading-relaxed text-muted">{p.copy}</p>
+          </article>
+        ))}
+        <article class="rounded-[20px] border border-brand-500/40 bg-deep p-6">
+          <p class="inline-block rounded-full bg-brand-500/20 px-3 py-1 text-xs font-bold uppercase tracking-wider text-lavender">Work together</p>
+          <h2 class="mt-4 font-display text-xl font-bold text-ink">Partner with Kasra</h2>
+          <p class="mt-2 text-sm leading-relaxed text-muted">
+            For consulting, speaking or partnership proposals, use the contact form or email me@kasradash.com directly.
+          </p>
+          <a href="/contact/" class="btn-gradient mt-5 inline-block px-5 py-2.5 text-sm font-bold">Work With Me</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="border-t border-tint-border bg-tint py-14">
+      <div class="mx-auto max-w-3xl px-4 sm:px-6">
+        <h2 class="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">How do the ventures fit together?</h2>
+        <p class="mt-4 leading-relaxed text-muted">
+          The pattern across every venture is the same: test SEO in the field, then turn what works into
+          something others can use. The agencies apply it for clients, the
+          <a href="/books/" class="font-semibold text-brand-600 transition hover:text-white"> books</a> and
+          <a href="/podcast/" class="font-semibold text-brand-600 transition hover:text-white"> interview series</a> document it,
+          and The Masterminders and mySEO put the people doing it in one room.
+        </p>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { podcastSeriesNode, PODCAST_PLAYLIST, PODCAST_GUESTS } from '../lib/schema';
+
+const title = 'The Business Dash With Kasra — Interview Series';
+const description =
+  'The Business Dash With Kasra is a YouTube interview series in which Kasra Dash interviews SEOs, business owners and entrepreneurs, including Kyle Roof, Lily Ray, Patrick Stox and Craig Campbell.';
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Podcast', href: '/podcast/' },
+];
+
+const graphNodes = [podcastSeriesNode()];
+const webPageExtras = { mainEntity: { '@id': 'https://kasradash.com/podcast/#series' } };
+---
+
+<BaseLayout {title} {description} path="/podcast/" breadcrumbs={crumbs} {graphNodes} {webPageExtras}>
+  <main>
+    <section class="border-b border-tint-border bg-tint">
+      <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">
+        <Breadcrumbs {crumbs} />
+        <p class="mt-4 inline-block rounded-full border border-brand-500/30 bg-brand-500/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-600">YouTube Interview Series</p>
+        <h1 class="mt-3 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-ink sm:text-5xl">The Business Dash With Kasra</h1>
+        <p class="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
+          The Business Dash With Kasra is a YouTube interview series in which Kasra Dash sits down with SEOs, business owners and entrepreneurs. It runs on his YouTube channel, which has 36.9k subscribers.
+        </p>
+        <div class="mt-7 flex flex-wrap items-center gap-3">
+          <a href={PODCAST_PLAYLIST} target="_blank" rel="noopener" class="btn-gradient px-6 py-3 text-sm font-bold shadow-lg shadow-brand-500/25 transition hover:shadow-xl hover:shadow-brand-500/40">
+            Watch the full series
+          </a>
+          <a href="https://www.youtube.com/@kasradash" target="_blank" rel="noopener" class="rounded-full border border-tint-border px-6 py-3 text-sm font-bold text-ink transition hover:border-brand-500 hover:bg-brand-500/10">
+            Subscribe on YouTube
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-4xl px-4 py-14 sm:px-6" aria-label="Watch the series">
+      <h2 class="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">Watch the series</h2>
+      <div class="mt-6 overflow-hidden rounded-[20px] border border-tint-border bg-tint">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/videoseries?list=PL542wQmQgo070aOOyJJIJTkykp6K_M3M-"
+          title="The Business Dash With Kasra, YouTube playlist"
+          class="aspect-video w-full"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <p class="mt-3 text-sm text-dim">
+        The player runs through the whole playlist. Every episode also lives on the
+        <a href={PODCAST_PLAYLIST} target="_blank" rel="noopener" class="font-semibold text-lavender underline transition hover:text-white"> YouTube playlist</a>.
+      </p>
+    </section>
+
+    <section class="border-y border-tint-border bg-tint py-14">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6">
+        <h2 class="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">Who has been on the show?</h2>
+        <p class="mt-3 max-w-2xl text-muted">
+          Guests so far include some of the best-known names in search and digital marketing:
+        </p>
+        <ul class="mt-6 flex flex-wrap gap-2">
+          {PODCAST_GUESTS.map((name) => (
+            <li class="rounded-full border border-tint-border bg-deep px-4 py-2 text-sm font-semibold text-lavender">{name}</li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-3xl px-4 py-14 text-center sm:px-6">
+      <h2 class="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">Want to be a guest?</h2>
+      <p class="mx-auto mt-3 max-w-xl text-muted">
+        Kasra records with SEOs, founders and operators who have real results to talk through. Pitch yourself by email or through the contact form.
+      </p>
+      <a href="/contact/" class="btn-gradient mt-6 inline-block px-6 py-3 text-sm font-bold shadow-lg shadow-brand-500/25 transition hover:shadow-xl hover:shadow-brand-500/40">
+        Pitch an episode
+      </a>
+    </section>
+  </main>
+</BaseLayout>

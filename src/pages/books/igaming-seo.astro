@@ -1,0 +1,25 @@
+---
+import BookPage from '../../components/BookPage.astro';
+import { BOOKS } from '../../lib/schema';
+
+const book = BOOKS.find((b) => b.slug === 'igaming-seo')!;
+
+const title = 'iGaming SEO — Book by Kasra Dash';
+const description =
+  'Kasra Dash is a co-author of iGaming SEO, a book on advanced SEO for online gambling covering casinos, slots, bingo and sports betting, written with James Dooley, Karl Hudson and Koray Gübür.';
+
+const coverage = [
+  'iGaming SEO: The Truth About Advanced SEO for Online Gambling covers search strategy in one of the hardest verticals there is: casinos, slots, bingo and sports betting. The authors write from direct experience ranking gambling and affiliate sites in markets where competition is relentless.',
+  'The book explains what changes when a niche is this competitive: how link building, content and technical decisions differ from mainstream SEO, and which shortcuts get sites burned. Kasra Dash co-authored it with James Dooley, Karl Hudson and Koray Gübür; the Kindle edition was published on 11 April 2025.',
+  'It completes the series of three books Kasra has co-authored, alongside The Complete Local SEO Playbook 2025 and Advanced SEO Tips 2025.',
+];
+
+const authorNotes = {
+  'James Dooley': "James Dooley is an SEO entrepreneur, Kasra Dash's mentor since 2019, and his co-author on all three books.",
+  'Karl Hudson': 'Karl Hudson co-authored two of the three books in the series and has appeared on The Business Dash With Kasra.',
+  'Kasra Dash': 'Kasra Dash is an entrepreneur and SEO consultant based in Manchester, UK. He has worked on gambling and affiliate SEO campaigns referenced in his case studies.',
+  'Koray Gübür': 'Koray Gübür co-authored two of the three books in the series and has appeared on The Business Dash With Kasra.',
+};
+---
+
+<BookPage {book} {title} {description} {coverage} {authorNotes} />

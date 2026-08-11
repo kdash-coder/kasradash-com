@@ -1,6 +1,7 @@
 ---
-import { NAV } from '../lib/site';
+import { NAV, HUBS, ABOUT_MENU } from '../lib/site';
 const current = Astro.url.pathname;
+const aboutActive = ABOUT_MENU.some((item) => current === item.href);
 ---
 
 <header class="sticky top-0 z-50 border-b border-tint-border bg-black/85 backdrop-blur-md">
@@ -10,6 +11,51 @@ const current = Astro.url.pathname;
     </a>
 
     <nav class="hidden items-center gap-1 lg:flex" aria-label="Main">
+      <div class="group relative">
+        <a
+          href="/seo/"
+          class={`flex items-center gap-1 rounded-full px-3 py-2 text-sm font-semibold transition hover:bg-white/5 hover:text-white ${current.startsWith('/seo') ? 'text-brand-600' : 'text-lavender'}`}
+        >
+          SEO Guides
+          <svg class="h-3.5 w-3.5 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+        </a>
+        <div class="invisible absolute left-1/2 top-full w-[560px] -translate-x-1/2 pt-2 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">
+          <div class="grid grid-cols-2 gap-1 rounded-[20px] border border-tint-border bg-deep p-3 shadow-xl shadow-black/60">
+            {HUBS.map((hub) => (
+              <a href={hub.url} class="rounded-xl p-3 transition hover:bg-white/5">
+                <span class="block font-display text-sm font-bold text-ink">{hub.name}</span>
+                <span class="mt-0.5 block text-xs leading-snug text-dim">{hub.blurb}</span>
+              </a>
+            ))}
+            <a href="/seo/" class="col-span-2 rounded-xl bg-white/5 p-3 text-center text-sm font-semibold text-brand-600 transition hover:bg-white/10 hover:text-white">
+              Browse the full SEO hub →
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="group relative">
+        <a
+          href="/about-kasra-dash/"
+          class={`flex items-center gap-1 rounded-full px-3 py-2 text-sm font-semibold transition hover:bg-white/5 hover:text-white ${aboutActive ? 'text-brand-600' : 'text-lavender'}`}
+        >
+          About Kasra Dash
+          <svg class="h-3.5 w-3.5 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+        </a>
+        <div class="invisible absolute left-1/2 top-full w-56 -translate-x-1/2 pt-2 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">
+          <div class="rounded-[20px] border border-tint-border bg-deep p-2 shadow-xl shadow-black/60">
+            {ABOUT_MENU.map((item) => (
+              <a
+                href={item.href}
+                class={`block rounded-xl px-3 py-2.5 text-sm font-semibold transition hover:bg-white/5 hover:text-white ${current === item.href ? 'text-brand-600' : 'text-lavender'}`}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {NAV.filter((n) => !n.children).map((item) => (
         <a
           href={item.href}
@@ -41,9 +87,16 @@ const current = Astro.url.pathname;
     </div>
   </div>
 
-  <div id="mobile-menu" class="hidden border-t border-tint-border bg-black lg:hidden">
+  <div id="mobile-menu" class="hidden max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-tint-border bg-black lg:hidden">
     <nav class="mx-auto max-w-6xl space-y-1 px-4 py-4" aria-label="Mobile">
+      <a href="/seo/" class="block rounded-lg px-3 py-2 font-display font-bold text-ink transition hover:bg-white/5">All SEO Guides</a>
+      {HUBS.map((hub) => (
+        <a href={hub.url} class="block rounded-lg px-3 py-2 pl-6 text-sm font-medium text-dim transition hover:bg-white/5 hover:text-white">{hub.name}</a>
+      ))}
       <a href="/about-kasra-dash/" class="block rounded-lg px-3 py-2 font-display font-bold text-ink transition hover:bg-white/5">About Kasra Dash</a>
+      {ABOUT_MENU.filter((item) => item.href !== '/about-kasra-dash/').map((item) => (
+        <a href={item.href} class="block rounded-lg px-3 py-2 pl-6 text-sm font-medium text-dim transition hover:bg-white/5 hover:text-white">{item.label}</a>
+      ))}
       <a href="https://www.skool.com/the-new-search/about?utm_source=kasradash.com&utm_medium=site&utm_campaign=header-nav" target="_blank" rel="noopener" class="block rounded-lg px-3 py-2 font-display font-bold text-ink transition hover:bg-white/5">The New Search</a>
       <a href="/contact/" class="btn-gradient mt-2 block px-5 py-3 text-center font-bold">Work With Me</a>
     </nav>

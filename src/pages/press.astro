@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = 'Press — Kasra Dash in the News';
+const description =
+  'Kasra Dash has been featured in the Manchester Evening News, The Sun, DESIblitz, Market Realist and Business Cheshire, and has a reference entry on Grokipedia.';
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Press', href: '/press/' },
+];
+
+// The six verified press/reference pieces (all URLs loaded live 2026-08-11).
+// These are the same six carried as subjectOf on the #person node.
+const press = [
+  {
+    outlet: 'Manchester Evening News',
+    date: '11 March 2024',
+    headline: "'I'm a millionaire at 26 – I learned everything I know on YouTube'",
+    context: 'Profile of Kasra as a self-made millionaire who taught himself SEO through YouTube.',
+    href: 'https://www.manchestereveningnews.co.uk/news/greater-manchester-news/im-millionaire-26--learned-28767260',
+  },
+  {
+    outlet: 'The Sun',
+    date: '7 March 2024',
+    headline: 'Self-made millionaire at 26 who learned everything on YouTube',
+    context: 'National coverage of the same story: a 26-year-old who built his business on self-taught SEO.',
+    href: 'https://www.thesun.co.uk/money/26455805/millionaire-learned-everything-youtube/',
+  },
+  {
+    outlet: 'DESIblitz',
+    date: '11 March 2024',
+    headline: 'How a 26-year-old Millionaire built his Fortune',
+    context: 'Feature on the Manchester entrepreneur behind Searcharoo and PromoSEO.',
+    href: 'https://www.desiblitz.com/content/how-a-26-year-old-millionaire-built-his-fortune',
+  },
+  {
+    outlet: 'Market Realist',
+    date: '16 June 2024',
+    headline: 'How did this self-made millionaire achieve tremendous success in digital marketing?',
+    context: 'US coverage of his route from arriving in the UK aged three to running SEO businesses.',
+    href: 'https://marketrealist.com/how-did-this-self-made-millionaire-achieve-tremendous-success-in-digital-marketing/',
+  },
+  {
+    outlet: 'Business Cheshire',
+    date: '23 March 2023',
+    headline: 'Kasra Dash: TaxBite opens new firm in Manchester',
+    context: 'Coverage of the TaxBite expansion and his lead-generation work for accountants.',
+    href: 'https://www.businesscheshire.co.uk/2023/03/23/kasra-dash-taxbite-opens-new-firm-in-manchester/',
+  },
+  {
+    outlet: 'Grokipedia',
+    date: 'Reference entry',
+    headline: 'Kasra Dash',
+    context: 'An encyclopedia-style reference entry covering his background and ventures.',
+    href: 'https://grokipedia.com/page/Kasra_Dash',
+  },
+];
+---
+
+<BaseLayout {title} {description} path="/press/" breadcrumbs={crumbs}>
+  <main>
+    <section class="border-b border-tint-border bg-tint">
+      <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">
+        <Breadcrumbs {crumbs} />
+        <h1 class="mt-4 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-ink sm:text-5xl">Press</h1>
+        <p class="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
+          Kasra Dash is an entrepreneur and SEO consultant based in Manchester, UK. These are the news stories and reference pieces written about him.
+        </p>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-4xl px-4 py-14 sm:px-6" aria-label="Press coverage">
+      <div class="space-y-4">
+        {press.map((p) => (
+          <article class="rounded-[20px] border border-tint-border bg-tint p-6">
+            <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+              <h2 class="font-display text-lg font-bold text-ink">{p.outlet}</h2>
+              <p class="text-xs font-semibold uppercase tracking-wider text-dim">{p.date}</p>
+            </div>
+            <p class="mt-2 text-base font-semibold leading-snug text-lavender">"{p.headline}"</p>
+            <p class="mt-2 text-sm leading-relaxed text-muted">{p.context}</p>
+            <a href={p.href} target="_blank" rel="noopener" class="mt-4 inline-block text-sm font-bold text-brand-600 transition hover:text-white">
+              Read the piece →
+            </a>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="border-t border-tint-border bg-tint py-14">
+      <div class="mx-auto max-w-3xl px-4 text-center sm:px-6">
+        <h2 class="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">Press and interview requests</h2>
+        <p class="mx-auto mt-3 max-w-xl text-muted">
+          For interviews, comment or press enquiries, email me@kasradash.com or use the contact form.
+        </p>
+        <a href="/contact/" class="btn-gradient mt-6 inline-block px-6 py-3 text-sm font-bold shadow-lg shadow-brand-500/25 transition hover:shadow-xl hover:shadow-brand-500/40">
+          Contact Kasra
+        </a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
