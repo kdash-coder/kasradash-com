@@ -42,6 +42,7 @@ export const CASE_STUDIES = [
       { value: '23.9%', label: 'Converted leads' },
       { value: '143', label: 'Top 10 positions' },
     ],
+    video: 'https://youtu.be/s4-PNIPs6uw',
   },
   {
     tag: 'Shopify SEO',
@@ -53,6 +54,7 @@ export const CASE_STUDIES = [
       { value: '1.9%', label: 'Conversion rate' },
       { value: '2,342', label: 'Top 10 positions' },
     ],
+    video: 'https://youtu.be/F5N_dBqD21U',
   },
   {
     tag: 'Dental SEO',
@@ -62,8 +64,9 @@ export const CASE_STUDIES = [
       { value: '67', label: 'Monthly leads' },
       { value: '£115K', label: 'Revenue' },
       { value: '46%', label: 'Converted leads' },
-      { value: '143', label: 'Top 10 positions' },
+      { value: '83', label: 'Top 10 positions' },
     ],
+    video: 'https://youtu.be/H6-9sZ_YVpA',
   },
 ];
 
@@ -91,18 +94,21 @@ export const TESTIMONIALS = [
       'Collaborating with Kasra has been an incredible experience that has benefited our business in multiple ways. As a consultant, Kasra brought clarity and strategic direction, enabling us to optimize our operations and achieve sustainable growth. Their expertise as an SEO expert transformed our digital presence, driving a substantial increase in web traffic and improving our search engine rankings.',
     name: 'Scott A.',
     role: 'Miami Dental Practice',
+    avatar: '/images/User-face.svg',
   },
   {
     quote:
       'We used Kasra for consulting for our gambling brand. Kasra gave myself and my business partner a clear strategy on how to rank the website. Fast forward 8 months, we now have 2 websites ranking and earning 400k per month from them. Highly recommend Kasra & his team!',
     name: 'Anders F.',
     role: 'Apex Media',
+    avatar: '/images/apex-logo-150x150.jpg',
   },
   {
     quote:
       "Kasra & his team have been able to transform our digital presence online and provide my business with a consistent flow of enquiries. I've been able to scale the staff in my office from 3 members of staff to now 13.",
     name: 'Cecilia',
     role: 'Founder of GP Accountants',
+    avatar: '/images/User-face-1-1.svg',
   },
 ];
 
@@ -133,7 +139,7 @@ export const FAQS = [
   },
   {
     q: 'How can I contact Kasra Dash for business or partnership proposals?',
-    a: 'You can reach out to Kasra Dash by filling in the contact form on KasraDash.com.',
+    a: 'You can reach out to Kasra Dash by filling in the contact form on KasraDash.com or by sending an email directly to me@kasradash.com.',
   },
   {
     q: 'What is Kasra Dash an expert in?',

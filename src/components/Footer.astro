@@ -1,78 +1,72 @@
 ---
-import { HUBS, SOCIALS } from '../lib/site';
 const year = new Date().getFullYear();
 
-const learnLinks = [
-  { label: 'What Is SEO?', href: '/seo/' },
-  { label: 'How SEO Works', href: '/seo/learn/how-seo-works/' },
-  { label: 'SEO Fundamentals', href: '/seo/learn/seo-fundamentals/' },
-  { label: 'SEO Glossary', href: '/seo/learn/seo-glossary/' },
-  { label: 'How Long Does SEO Take?', href: '/seo/learn/how-long-does-seo-take/' },
-];
-
-const popularLinks = [
-  { label: 'Internal Linking Guide', href: '/seo/content-seo/internal-linking/' },
-  { label: 'Topical Authority', href: '/seo/content-seo/topical-authority/' },
-  { label: 'Link Building Strategies', href: '/seo/link-building/strategies/' },
-  { label: 'Technical SEO Audit', href: '/seo/technical-seo/audit/' },
-  { label: 'AI Overviews Optimisation', href: '/seo/ai-and-seo/ai-overviews-optimisation/' },
+// Live footer pattern: wordmark + short bio + social icon row + copyright.
+// YouTube deliberately points at the channel (the live site links a single video).
+const socials = [
+  {
+    label: 'Facebook',
+    href: 'https://www.facebook.com/Kasra.Dash1',
+    path: 'M13.5 21.9v-7.4h2.5l.4-2.9h-2.9V9.7c0-.8.4-1.6 1.7-1.6h1.3V5.6s-1.2-.2-2.3-.2c-2.4 0-3.9 1.4-3.9 4v2.2H7.9v2.9h2.4v7.4a10 10 0 1 1 3.2 0Z',
+  },
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/kasra_d_',
+    path: 'M12 2.2c2.7 0 3 0 4.1.1 1 .1 1.6.2 2 .4.5.2.8.4 1.2.8.4.4.6.7.8 1.2.1.4.3 1 .4 2 .1 1.1.1 1.4.1 4.1s0 3-.1 4.1c-.1 1-.2 1.6-.4 2-.2.5-.4.8-.8 1.2-.4.4-.7.6-1.2.8-.4.1-1 .3-2 .4-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-1-.1-1.6-.2-2-.4-.5-.2-.8-.4-1.2-.8-.4-.4-.6-.7-.8-1.2-.1-.4-.3-1-.4-2-.1-1.1-.1-1.4-.1-4.1s0-3 .1-4.1c.1-1 .2-1.6.4-2 .2-.5.4-.8.8-1.2.4-.4.7-.6 1.2-.8.4-.1 1-.3 2-.4 1.1-.1 1.4-.1 4.1-.1Zm0 1.8c-2.7 0-3 0-4 .1-1 0-1.5.2-1.8.3-.5.2-.8.4-1.1.7-.3.3-.5.6-.7 1.1-.1.3-.3.8-.3 1.8-.1 1-.1 1.3-.1 4s0 3 .1 4c0 1 .2 1.5.3 1.8.2.5.4.8.7 1.1.3.3.6.5 1.1.7.3.1.8.3 1.8.3 1 .1 1.3.1 4 .1s3 0 4-.1c1 0 1.5-.2 1.8-.3.5-.2.8-.4 1.1-.7.3-.3.5-.6.7-1.1.1-.3.3-.8.3-1.8.1-1 .1-1.3.1-4s0-3-.1-4c0-1-.2-1.5-.3-1.8-.2-.5-.4-.8-.7-1.1-.3-.3-.6-.5-1.1-.7-.3-.1-.8-.3-1.8-.3-1-.1-1.3-.1-4-.1Zm0 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4Zm5.2-3.1a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z',
+  },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/kasra-dash',
+    path: 'M20.4 3H3.6a.6.6 0 0 0-.6.6v16.8c0 .3.3.6.6.6h16.8c.3 0 .6-.3.6-.6V3.6a.6.6 0 0 0-.6-.6ZM8.3 18.4H5.7V9.9h2.6v8.5ZM7 8.7a1.5 1.5 0 1 1 0-3.1 1.5 1.5 0 0 1 0 3.1Zm11.4 9.7h-2.6v-4.1c0-1 0-2.3-1.4-2.3-1.4 0-1.6 1.1-1.6 2.2v4.2H10.2V9.9h2.5V11h.1c.3-.7 1.2-1.4 2.5-1.4 2.7 0 3.2 1.8 3.2 4v4.8Z',
+  },
+  {
+    label: 'X (Twitter)',
+    href: 'https://x.com/kasra_dash',
+    path: 'M17.8 3h3l-6.6 7.5L22 21h-6l-4.8-6.2L5.7 21h-3l7-8L2.4 3h6.2l4.3 5.7L17.8 3Zm-1 16.2h1.7L7.6 4.7H5.8l11 14.5Z',
+  },
+  {
+    label: 'YouTube',
+    href: 'https://www.youtube.com/@kasradash',
+    path: 'M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.3 5 12 5 12 5s-6.3 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26.4 26.4 0 0 0 2 12c0 1.6.1 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8c1.5.4 7.8.4 7.8.4s6.3 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.3-1.6.4-3.2.4-4.8 0-1.6-.1-3.2-.4-4.8ZM10 15.2V8.8l5.2 3.2L10 15.2Z',
+  },
 ];
 ---
 
-<footer class="bg-deep text-white">
-  <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-    <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
-      <div>
-        <img src="/images/Frame-106.png" alt="Kasra Dash" class="h-9 w-auto" width="170" height="36" loading="lazy" />
-        <p class="mt-4 text-sm leading-relaxed text-lavender/80">
-          Kasra Dash is a UK-based entrepreneur and SEO consultant. Founder of The Masterminders Conference and creator of mySEO.app, helping SEOs and business owners grow with practical, tested strategies.
-        </p>
-        <div class="mt-5 flex flex-wrap gap-3">
-          {SOCIALS.map((s) => (
-            <a href={s.href} rel="noopener" target="_blank" class="rounded-full border border-white/20 px-3 py-1.5 text-xs font-semibold text-lavender hover:border-brand-500 hover:bg-brand-500/20 hover:text-white">
-              {s.label}
-            </a>
-          ))}
-        </div>
-      </div>
-
-      <nav aria-label="SEO topics">
-        <h2 class="font-display text-sm font-bold uppercase tracking-wider text-lavender">SEO Topics</h2>
-        <ul class="mt-4 space-y-2.5">
-          {HUBS.map((hub) => (
-            <li><a href={hub.url} class="text-sm text-white/80 hover:text-white hover:underline">{hub.name}</a></li>
-          ))}
-        </ul>
-      </nav>
-
-      <nav aria-label="Start here">
-        <h2 class="font-display text-sm font-bold uppercase tracking-wider text-lavender">Start Here</h2>
-        <ul class="mt-4 space-y-2.5">
-          {learnLinks.map((l) => (
-            <li><a href={l.href} class="text-sm text-white/80 hover:text-white hover:underline">{l.label}</a></li>
-          ))}
-        </ul>
-      </nav>
-
-      <nav aria-label="Popular guides">
-        <h2 class="font-display text-sm font-bold uppercase tracking-wider text-lavender">Popular Guides</h2>
-        <ul class="mt-4 space-y-2.5">
-          {popularLinks.map((l) => (
-            <li><a href={l.href} class="text-sm text-white/80 hover:text-white hover:underline">{l.label}</a></li>
-          ))}
-          <li><a href="/contact/" class="text-sm font-bold text-brand-500 hover:text-white">Work With Me →</a></li>
-        </ul>
-      </nav>
+<footer class="border-t border-tint-border bg-tint">
+  <div class="mx-auto flex max-w-6xl flex-col items-center px-4 py-14 text-center sm:px-6">
+    <a href="/" aria-label="Kasra Dash home">
+      <img src="/images/Frame-106.png" alt="Kasra Dash" class="h-9 w-auto" width="170" height="36" loading="lazy" />
+    </a>
+    <p class="mt-5 max-w-xl text-sm leading-relaxed text-muted">
+      Kasra Dash is an entrepreneur and SEO consultant based in Manchester, UK. Founder of The
+      Masterminders Conference and creator of mySEO.app, sharing tested SEO strategies with
+      business owners and SEOs.
+    </p>
+    <div class="mt-6 flex items-center gap-3">
+      {socials.map((s) => (
+        <a
+          href={s.href}
+          rel="noopener"
+          target="_blank"
+          aria-label={s.label}
+          class="flex h-10 w-10 items-center justify-center rounded-full border border-tint-border text-lavender transition hover:border-brand-500 hover:bg-brand-500/15 hover:text-white"
+        >
+          <svg class="h-4.5 w-4.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d={s.path} /></svg>
+        </a>
+      ))}
     </div>
+    <a href="mailto:me@kasradash.com" class="mt-5 text-sm font-semibold text-lavender transition hover:text-white">me@kasradash.com</a>
 
-    <div class="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/60 sm:flex-row">
+    <div class="mt-10 flex w-full flex-col items-center justify-between gap-3 border-t border-tint-border pt-6 text-xs text-dim sm:flex-row">
       <p>© {year} Kasra Dash. All Rights Reserved.</p>
-      <p>
-        <a href="/about-kasra-dash/" class="hover:text-white">About</a>
-        <span class="mx-2">·</span>
-        <a href="/contact/" class="hover:text-white">Contact</a>
-        <span class="mx-2">·</span>
-        <a href="/free-ai-seo-sheet/" class="hover:text-white">Free AI SEO Sheet</a>
+      <p class="flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+        <a href="/about-kasra-dash/" class="transition hover:text-white">About</a>
+        <span aria-hidden="true">·</span>
+        <a href="/contact/" class="transition hover:text-white">Contact</a>
+        <span aria-hidden="true">·</span>
+        <a href="/free-ai-seo-sheet/" class="transition hover:text-white">Free AI SEO Sheet</a>
+        <span aria-hidden="true">·</span>
+        <a href="/privacy-policy/" class="transition hover:text-white">Privacy Policy</a>
       </p>
     </div>
   </div>
