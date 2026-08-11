@@ -1,32 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { HUBS, SITE_URL } from '../lib/site';
+import { HUBS } from '../lib/site';
 import { SERVICES, CASE_STUDIES, MISTAKES, WINS, TESTIMONIALS, FAQS } from '../lib/home-data';
+import { PERSON_ID, CANONICAL_DESCRIPTION } from '../lib/schema';
 
-const title = 'Kasra Dash - Entrepreneur, Founder & SEO Strategist';
-const description =
-  'Kasra Dash is a UK-based SEO consultant and entrepreneur. Founder of The Masterminders Conference and mySEO.app, helping businesses win rankings, traffic and revenue with tested SEO systems.';
+const title = 'Kasra Dash — Entrepreneur and SEO Consultant in Manchester';
+const description = CANONICAL_DESCRIPTION;
 
-const jsonLd = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: FAQS.map((f) => ({
-      '@type': 'Question',
-      name: f.q,
-      acceptedAnswer: { '@type': 'Answer', text: f.a },
-    })),
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: 'Kasra Dash',
-    url: SITE_URL,
-  },
-];
+// NO FAQPage schema (deprecated for commercial sites Aug 2023) — the FAQ section below
+// renders as accordions only. Person + WebSite nodes come from Seo.astro's single @graph;
+// the home page is the entity home, so its WebPage node points about → #person.
+const webPageExtras = { about: { '@id': PERSON_ID } };
 ---
 
-<BaseLayout {title} {description} path="/" jsonLd={jsonLd}>
+<BaseLayout {title} {description} path="/" {webPageExtras}>
   <main>
     {/* Hero */}
     <section class="relative overflow-hidden border-b border-tint-border bg-tint">

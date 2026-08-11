@@ -3,6 +3,7 @@ import type { CollectionEntry } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import { SITE_URL, HUBS } from '../lib/site';
+import { webPageId } from '../lib/schema';
 
 interface Props {
   title: string;
@@ -13,9 +14,12 @@ interface Props {
   guides: CollectionEntry<'articles'>[];
   ogImage?: string;
   isPillar?: boolean;
+  datePublished?: string;
+  dateModified?: string;
+  noindex?: boolean;
 }
 
-const { title, description, h1, path, siloName, guides, ogImage, isPillar = false } = Astro.props;
+const { title, description, h1, path, siloName, guides, ogImage, isPillar = false, datePublished, dateModified, noindex } = Astro.props;
 
 const crumbs = isPillar
   ? [
@@ -30,33 +34,17 @@ const crumbs = isPillar
 
 const otherHubs = HUBS.filter((hub) => hub.url !== path);
 
-const jsonLd = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'CollectionPage',
-    name: h1,
-    description,
-    url: new URL(path, SITE_URL).href,
-    hasPart: guides.map((c) => ({
-      '@type': 'Article',
-      headline: c.data.h1,
-      url: new URL(c.data.url, SITE_URL).href,
-    })),
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: crumbs.map((c, i) => ({
-      '@type': 'ListItem',
-      position: i + 1,
-      name: c.label,
-      item: new URL(c.href, SITE_URL).href,
-    })),
-  },
-];
+// The hub's WebPage node is typed CollectionPage; each child is referenced by the
+// same #webpage id that child defines on its own page, keeping ids consistent sitewide.
+const webPageExtras = {
+  hasPart: guides.map((c) => {
+    const childUrl = new URL(c.data.url, SITE_URL).href;
+    return { '@type': 'WebPage', '@id': webPageId(childUrl), name: c.data.h1, url: childUrl };
+  }),
+};
 ---
 
-<BaseLayout {title} {description} {path} {ogImage} jsonLd={jsonLd}>
+<BaseLayout {title} {description} {path} {ogImage} pageType="CollectionPage" breadcrumbs={crumbs} {webPageExtras} {datePublished} {dateModified} {noindex}>
   <main>
     <div class="border-b border-tint-border bg-tint">
       <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">

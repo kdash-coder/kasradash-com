@@ -12,7 +12,13 @@ interface Props {
   path: string;
   ogImage?: string;
   type?: 'website' | 'article';
-  jsonLd?: object[];
+  pageType?: import('../lib/schema').PageType;
+  breadcrumbs?: import('../lib/schema').Crumb[];
+  webPageExtras?: Record<string, unknown>;
+  graphNodes?: object[];
+  datePublished?: string;
+  dateModified?: string;
+  noindex?: boolean;
 }
 
 const props = Astro.props;
