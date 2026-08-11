@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { HUBS } from '../lib/site';
 import { SERVICES, CASE_STUDIES, MISTAKES, WINS, TESTIMONIALS, FAQS } from '../lib/home-data';
 import { PERSON_ID, CANONICAL_DESCRIPTION } from '../lib/schema';
 
@@ -12,7 +11,8 @@ const description = CANONICAL_DESCRIPTION;
 // the home page is the entity home, so its WebPage node points about → #person.
 const webPageExtras = { about: { '@id': PERSON_ID } };
 
-const FUNNEL_URL = 'https://start.kasradash.com/traffic-accelerator-system-page';
+const SKOOL_HERO = 'https://www.skool.com/the-new-search/about?utm_source=kasradash.com&utm_medium=site&utm_campaign=home-hero';
+const SKOOL_MID = 'https://www.skool.com/the-new-search/about?utm_source=kasradash.com&utm_medium=site&utm_campaign=home-mid-cta';
 ---
 
 <BaseLayout {title} {description} path="/" {webPageExtras}>
@@ -32,11 +32,11 @@ const FUNNEL_URL = 'https://start.kasradash.com/traffic-accelerator-system-page'
             Founder of{' '}<a href="https://mastermindersconference.com" rel="noopener" class="font-semibold text-brand-600 hover:text-white hover:underline">The Masterminders Conference</a>, connecting founders, operators, and SEOs worldwide, and creator of{' '}<a href="https://myseo.app" rel="noopener" class="font-semibold text-brand-600 hover:text-white hover:underline">mySEO.app</a>, a learning and community platform for SEOs.
           </p>
           <div class="mt-8 flex flex-wrap items-center gap-5">
-            <a href={FUNNEL_URL} rel="noopener" class="btn-gradient px-7 py-3.5 text-base font-bold shadow-lg shadow-brand-500/25 transition hover:shadow-xl hover:shadow-brand-500/40">
-              Unlock Your SEO Success Plan
+            <a href={SKOOL_HERO} target="_blank" rel="noopener" class="btn-gradient px-7 py-3.5 text-base font-bold shadow-lg shadow-brand-500/25 transition hover:shadow-xl hover:shadow-brand-500/40">
+              Join The New Search
             </a>
-            <a href="/seo/" class="text-base font-bold text-ink underline decoration-brand-500/50 decoration-2 underline-offset-4 transition hover:text-brand-600">
-              Read the SEO guides
+            <a href="/about-kasra-dash/" class="text-base font-bold text-ink underline decoration-brand-500/50 decoration-2 underline-offset-4 transition hover:text-brand-600">
+              About Kasra Dash
             </a>
           </div>
           <div class="mt-10 rounded-[20px] border border-tint-border bg-tint p-5 sm:max-w-md">
@@ -160,8 +160,8 @@ const FUNNEL_URL = 'https://start.kasradash.com/traffic-accelerator-system-page'
         </div>
       </div>
       <div class="mt-10 text-center">
-        <a href={FUNNEL_URL} rel="noopener" class="btn-gradient inline-block px-7 py-3.5 text-base font-bold shadow-lg shadow-brand-500/25 transition hover:shadow-xl hover:shadow-brand-500/40">
-          Unlock Your SEO Success Plan
+        <a href={SKOOL_MID} target="_blank" rel="noopener" class="btn-gradient inline-block px-7 py-3.5 text-base font-bold shadow-lg shadow-brand-500/25 transition hover:shadow-xl hover:shadow-brand-500/40">
+          Join The New Search
         </a>
       </div>
     </section>
@@ -217,22 +217,6 @@ const FUNNEL_URL = 'https://start.kasradash.com/traffic-accelerator-system-page'
         >
           Join The New Search
         </a>
-      </div>
-    </section>
-
-    {/* SEO hubs — internal linking into the guide library */}
-    <section class="mx-auto max-w-6xl px-4 py-20 sm:px-6">
-      <p class="inline-block rounded-full border border-brand-500/30 bg-brand-500/10 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-600">Learn SEO Free</p>
-      <h2 class="mt-3 max-w-2xl font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">100+ guides, frameworks and templates</h2>
-      <p class="mt-3 max-w-2xl text-muted">Everything Kasra has learned testing SEO since 2018, organised into six topic hubs.</p>
-      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {HUBS.map((hub) => (
-          <a href={hub.url} class="group rounded-[20px] border border-tint-border bg-tint p-5 transition hover:-translate-y-0.5 hover:border-brand-500/50 hover:shadow-lg hover:shadow-brand-500/10">
-            <h3 class="font-display text-lg font-bold text-ink transition group-hover:text-brand-600">{hub.name}</h3>
-            <p class="mt-1.5 text-sm leading-relaxed text-muted">{hub.blurb}</p>
-            <span class="mt-3 inline-block text-sm font-bold text-brand-600">Browse guides →</span>
-          </a>
-        ))}
       </div>
     </section>
 
