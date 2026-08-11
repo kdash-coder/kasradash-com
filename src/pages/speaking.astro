@@ -4,113 +4,166 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const title = 'Speaking — Kasra Dash';
 const description =
-  'Kasra Dash speaks at SEO and marketing events including brightonSEO and WOSCon, and hosts The Masterminders conference in Manchester, running 24 to 26 June 2026 at the Hilton Deansgate.';
+  'Kasra Dash has spoken at SEO conferences across Europe and Asia, including brightonSEO, SEO Estonia, Chiang Mai SEO and the SEO Mastery Summit, and hosts The Masterminders in Manchester.';
 
 const crumbs = [
   { label: 'Home', href: '/' },
   { label: 'Speaking', href: '/speaking/' },
 ];
 
-const engagements = [
+/*
+ * Lineup verification ledger (11-12 Aug 2026). Every linked name's own site was
+ * loaded live and identity-confirmed:
+ *   Kevin Indig kevin-indig.com · Koray Tuğberk Gübür holisticseo.digital · Matt
+ *   Diggity diggitymarketing.com · Tim Soulo timsoulo.com · Craig Campbell
+ *   craigcampbellseo.com · Charles Floate charlesfloate.com · Jason Barnard
+ *   jasonbarnard.com · Dennis Yu dennisyu.com · Chris M. Walker chrismwalker.io ·
+ *   Aleyda Solis aleydasolis.com · Itamar Blauer itamarblauer.com · Gus Pelogia
+ *   guspelogia.com · Kalin Karakehayov seo.domains · Andrew Holland
+ *   growththroughcontent.com · Michał Suski surferseo.com author page · Jason
+ *   Hennessey hennessey.com · Alex Drew odys.global author page · Lara Acosta
+ *   laraacosta.com/new-home · Oliver Kenyon conversionwise.com/about · Mads
+ *   Singers madssingers.com · James Dooley jamesdooley.com.
+ * PLAIN text (no live-verified own home): Kyle Roof (kyleroof.com TLS expired;
+ *   spelling via SEO Estonia archive) · Carrie Rose · Greg Gifford (domain
+ *   parked) · Fery Kaszoni (site 522) · Emma Jackson (HighLevel employee, no own
+ *   site) · Sean Bianco (spelling via themasterminders.com; no own site found).
+ * HELD OUT pending Kasra: "Van Oakes" (unverifiable) · Nathan Gotch for
+ *   Masterminders 2026 (not on the themasterminders.com roster; his home is
+ *   rankability.com/about if confirmed).
+ * Lineup names are on-page prose only — never added to the schema graph.
+ */
+const L: Record<string, string> = {
+  'Kevin Indig': 'https://www.kevin-indig.com/',
+  'Koray Tuğberk Gübür': 'https://www.holisticseo.digital/',
+  'Matt Diggity': 'https://diggitymarketing.com/',
+  'Tim Soulo': 'https://timsoulo.com/',
+  'Craig Campbell': 'https://www.craigcampbellseo.com/',
+  'Charles Floate': 'https://charlesfloate.com/',
+  'Jason Barnard': 'https://jasonbarnard.com/',
+  'Dennis Yu': 'https://dennisyu.com/',
+  'Chris M. Walker': 'https://chrismwalker.io/',
+  'Aleyda Solis': 'https://aleydasolis.com/',
+  'Itamar Blauer': 'https://itamarblauer.com/',
+  'Gus Pelogia': 'https://guspelogia.com/',
+  'Kalin Karakehayov': 'https://seo.domains/',
+  'Andrew Holland': 'https://growththroughcontent.com/about-andrew-holland/',
+  'Michał Suski': 'https://surferseo.com/blog/author/michal-suski/',
+  'Jason Hennessey': 'https://hennessey.com/',
+  'Alex Drew': 'https://odys.global/author/alex-d/',
+  'Lara Acosta': 'https://www.laraacosta.com/new-home',
+  'Oliver Kenyon': 'https://conversionwise.com/about',
+  'Mads Singers': 'https://madssingers.com/',
+  'James Dooley': 'https://jamesdooley.com/',
+};
+
+interface Engagement {
+  name: string;
+  when: string;
+  /** Primary sentence opener: Kasra as subject, ends before the name list. */
+  intro: string;
+  /** Names completing the primary sentence, in Kasra's stated order. */
+  names: string[];
+  /** Optional supporting sentence(s): archive corroboration, venue, context. */
+  support?: string;
+  href?: string;
+  linkLabel?: string;
+  image?: { src: string; alt: string };
+}
+
+const engagements: Engagement[] = [
   {
-    name: 'Host of The Masterminders',
+    name: 'The Masterminders 2026',
     when: '24–26 June 2026 · Hilton Deansgate, Manchester',
-    copy: 'Kasra founded and hosts The Masterminders, a conference that brings business owners and SEO professionals together in Manchester. The 2026 edition runs over three days in June.',
+    intro: 'Kasra Dash founded and hosted The Masterminders 2026, featuring',
+    names: ['Oliver Kenyon', 'Emma Jackson', 'Sean Bianco', 'Andrew Holland', 'Dennis Yu', 'Mads Singers', 'Fery Kaszoni', 'Koray Tuğberk Gübür', 'James Dooley', 'Kyle Roof'],
+    support: 'The lineup is published on themasterminders.com.',
     href: 'https://themasterminders.com/',
     linkLabel: 'Visit themasterminders.com →',
   },
   {
-    name: 'brightonSEO',
-    when: 'September 2023 · Brighton',
-    copy: 'Kasra spoke at brightonSEO, the search marketing conference, in September 2023. His speaker profile covers website recovery and SEO consulting.',
-    href: 'https://brightonseo.com/people/kasra-dash',
-    linkLabel: 'View his brightonSEO profile →',
-  },
-  {
-    name: 'WOSCon 2024',
-    when: '2024',
-    copy: 'Kasra appeared in the WOSCon 2024 live interview series, talking through his approach to SEO on camera.',
-    href: 'https://www.youtube.com/watch?v=FfkRa228qs8',
-    linkLabel: 'Watch the interview →',
-  },
-  {
-    name: 'SEO Estonia 2024',
-    when: '2024 · Tallinn, Estonia',
-    copy: "Kasra Dash spoke at SEO Estonia in 2024, returning after his 2023 appearance. The conference's own speaker archive lists him in the 2024 lineup.",
-    href: 'https://seoestonia.com/',
-    linkLabel: 'Visit seoestonia.com →',
-    lineup: {
-      intro: 'The SEO Estonia 2024 lineup included',
-      names: [{ name: 'Jason Barnard', href: 'https://jasonbarnard.com/' }],
-    },
-  },
-  {
-    name: 'SEO Estonia 2023',
-    when: '2023 · Tallinn, Estonia',
-    copy: "Kasra Dash spoke at SEO Estonia in 2023. The conference's speaker archive lists him in the 2023 lineup, and its site carries his 2023 feedback video.",
-    href: 'https://seoestonia.com/',
-    linkLabel: 'Visit seoestonia.com →',
-    lineup: {
-      intro: 'The SEO Estonia 2023 lineup included',
-      names: [
-        { name: 'Charles Floate', href: 'https://charlesfloate.com/' },
-        { name: 'Kyle Roof' },
-      ],
-    },
-  },
-  {
-    name: 'Chiang Mai SEO 2023',
-    when: '2023 · Chiang Mai, Thailand',
-    copy: 'Kasra Dash spoke at Chiang Mai SEO 2023, the SEO conference held in Chiang Mai, Thailand.',
-    href: 'https://chiangmaiseoconference.com/',
-    linkLabel: 'Visit chiangmaiseoconference.com →',
-    lineup: {
-      intro: 'Kasra Dash spoke alongside',
-      names: [
-        { name: 'Kevin Indig', href: 'https://www.kevin-indig.com/' },
-        { name: 'Koray Tuğberk Gübür', href: 'https://www.holisticseo.digital/' },
-        { name: 'Kyle Roof' },
-        { name: 'Matt Diggity', href: 'https://diggitymarketing.com/' },
-        { name: 'Tim Soulo', href: 'https://timsoulo.com/' },
-        { name: 'Craig Campbell', href: 'https://www.craigcampbellseo.com/' },
-      ],
-    },
-  },
-  {
-    name: 'SEO Mastery Summit',
-    when: 'Ho Chi Minh City, Vietnam',
-    copy: 'Kasra Dash spoke at the SEO Mastery Summit, the SEO and AI conference held in Ho Chi Minh City.',
+    name: 'SEO Mastery Summit 2025',
+    when: '2025 · Ho Chi Minh City, Vietnam',
+    intro: 'Kasra Dash spoke at the SEO Mastery Summit 2025 alongside',
+    names: ['Craig Campbell', 'Kalin Karakehayov', 'Andrew Holland'],
     href: 'https://seomasterysummit.com/',
     linkLabel: 'Visit seomasterysummit.com →',
   },
   {
+    name: 'The Masterminders 2025',
+    when: '2025 · Manchester',
+    intro: 'Kasra Dash founded and hosted The Masterminders 2025, featuring',
+    names: ['Michał Suski', 'Jason Hennessey', 'Kalin Karakehayov', 'Alex Drew', 'Lara Acosta', 'James Dooley'],
+    href: 'https://themasterminders.com/',
+    linkLabel: 'Visit themasterminders.com →',
+  },
+  {
+    name: 'WOSCon 2024',
+    when: '2024',
+    intro: 'Kasra Dash spoke at WOSCon 2024 alongside',
+    names: ['Chris M. Walker', 'Craig Campbell'],
+    support: "The conference's interview series recorded a live speaker episode with him.",
+    href: 'https://www.youtube.com/watch?v=FfkRa228qs8',
+    linkLabel: 'Watch the interview →',
+    image: { src: '/images/speaking/woscon-2024.jpg', alt: 'Kasra Dash on the WOSCon 2024 speaker interview series' },
+  },
+  {
     name: 'Affiliate World 2024',
     when: '2024',
-    copy: 'Kasra Dash spoke at Affiliate World 2024, the affiliate marketing conference series.',
-    lineup: {
-      intro: 'Kasra Dash spoke at Affiliate World 2024 alongside',
-      names: [
-        { name: 'Craig Campbell', href: 'https://www.craigcampbellseo.com/' },
-        { name: 'Carrie Rose' },
-        { name: 'Dennis Yu', href: 'https://dennisyu.com/' },
-      ],
-    },
+    intro: 'Kasra Dash spoke at Affiliate World 2024 alongside',
+    names: ['Craig Campbell', 'Carrie Rose', 'Dennis Yu'],
+  },
+  {
+    name: 'SEO Estonia 2024',
+    when: '2024 · Tallinn, Estonia',
+    intro: 'Kasra Dash spoke at SEO Estonia 2024 alongside',
+    names: ['Jason Barnard'],
+    support: "SEO Estonia's speaker archive lists the appearance.",
+    href: 'https://seoestonia.com/',
+    linkLabel: 'Visit seoestonia.com →',
+  },
+  {
+    name: 'SEO Mastery Summit 2024',
+    when: '2024 · Ho Chi Minh City, Vietnam',
+    intro: 'Kasra Dash spoke at the SEO Mastery Summit 2024 alongside',
+    names: ['Koray Tuğberk Gübür', 'Jason Barnard', 'Fery Kaszoni', 'James Dooley'],
+    href: 'https://seomasterysummit.com/',
+    linkLabel: 'Visit seomasterysummit.com →',
+  },
+  {
+    name: 'brightonSEO',
+    when: 'September 2023 · Brighton',
+    intro: 'Kasra Dash spoke at brightonSEO in September 2023 alongside',
+    names: ['Aleyda Solis', 'Greg Gifford', 'Itamar Blauer', 'Gus Pelogia'],
+    support: 'His speaker profile is published on brightonseo.com.',
+    href: 'https://brightonseo.com/people/kasra-dash',
+    linkLabel: 'View his brightonSEO profile →',
+  },
+  {
+    name: 'SEO Estonia 2023',
+    when: '2023 · Tallinn, Estonia',
+    intro: 'Kasra Dash spoke at SEO Estonia 2023 alongside',
+    names: ['Charles Floate', 'Kyle Roof', 'Kalin Karakehayov'],
+    support: "SEO Estonia's speaker archive lists the appearance, and the conference site carries his feedback video.",
+    href: 'https://seoestonia.com/',
+    linkLabel: 'Visit seoestonia.com →',
+    image: { src: '/images/speaking/seo-estonia-2023.jpg', alt: 'Kasra Dash, speaker at SEO Estonia 2023' },
+  },
+  {
+    name: 'Chiang Mai SEO 2023',
+    when: '2023 · Chiang Mai, Thailand',
+    intro: 'Kasra Dash spoke at Chiang Mai SEO 2023 alongside',
+    names: ['Kevin Indig', 'Koray Tuğberk Gübür', 'Kyle Roof', 'Matt Diggity', 'Tim Soulo', 'Craig Campbell'],
+    href: 'https://chiangmaiseoconference.com/',
+    linkLabel: 'Visit chiangmaiseoconference.com →',
   },
 ];
 
-/* Lineup verification ledger (11 Aug 2026): every linked name's own site was loaded
- * live and identity-confirmed. Kyle Roof plain text (kyleroof.com TLS cert expired;
- * spelling confirmed via the SEO Estonia speaker archive). Carrie Rose plain text
- * (riseatseven.com confirms "Carrie" but no personal entity home verified).
- * OMITTED pending Kasra's confirmation: "Van Oakes" (site unreachable, spelling
- * unverifiable) and "Karl Kangur" for Estonia 2023 (the event archive lists him
- * for 2026, not 2023 — likely a voice-transcription mishear of Kalin Karakehayov). */
+/* Photo slots: Kasra is supplying more event photos. Add
+ * image: { src: '/images/speaking/<file>', alt: '<entity-first alt>' } to any
+ * entry and the card renders it. Provenance per file: IMAGES-PROVENANCE.md. */
 
-/* Photo slot per engagement: Kasra is supplying event photos. Add
- * image: { src: '/images/speaking/<file>', alt: '<entity-first alt>' }
- * to any entry above and the card renders it; nothing renders until then. */
-
-// Event nodes — attested engagements; url only where the event site verified live (11 Aug 2026).
+// Event nodes — attested engagements; url only where the event site verified live.
 const eventNodes = [
   {
     '@type': 'Event',
@@ -118,6 +171,14 @@ const eventNodes = [
     startDate: '2026-06-24',
     endDate: '2026-06-26',
     location: { '@type': 'Place', name: 'Hilton Deansgate', address: { '@type': 'PostalAddress', addressLocality: 'Manchester', addressCountry: 'United Kingdom' } },
+    organizer: { '@id': 'https://kasradash.com/#person' },
+    url: 'https://themasterminders.com/',
+  },
+  {
+    '@type': 'Event',
+    name: 'The Masterminders 2025',
+    startDate: '2025',
+    location: { '@type': 'Place', name: 'Manchester', address: { '@type': 'PostalAddress', addressLocality: 'Manchester', addressCountry: 'United Kingdom' } },
     organizer: { '@id': 'https://kasradash.com/#person' },
     url: 'https://themasterminders.com/',
   },
@@ -155,7 +216,16 @@ const eventNodes = [
   },
   {
     '@type': 'Event',
-    name: 'SEO Mastery Summit',
+    name: 'SEO Mastery Summit 2024',
+    startDate: '2024',
+    location: { '@type': 'Place', name: 'Ho Chi Minh City', address: { '@type': 'PostalAddress', addressLocality: 'Ho Chi Minh City', addressCountry: 'Vietnam' } },
+    performer: { '@id': 'https://kasradash.com/#person' },
+    url: 'https://seomasterysummit.com/',
+  },
+  {
+    '@type': 'Event',
+    name: 'SEO Mastery Summit 2025',
+    startDate: '2025',
     location: { '@type': 'Place', name: 'Ho Chi Minh City', address: { '@type': 'PostalAddress', addressLocality: 'Ho Chi Minh City', addressCountry: 'Vietnam' } },
     performer: { '@id': 'https://kasradash.com/#person' },
     url: 'https://seomasterysummit.com/',
@@ -193,28 +263,26 @@ const eventNodes = [
         {engagements.map((e) => (
           <article class="rounded-[20px] border border-tint-border bg-tint p-6">
             {e.image && (
-              <img src={e.image.src} alt={e.image.alt} class="mb-5 w-full rounded-xl border border-tint-border object-cover" loading="lazy" />
+              <img src={e.image.src} alt={e.image.alt} class="mb-5 w-full max-w-md rounded-xl border border-tint-border object-cover" loading="lazy" />
             )}
             <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
               <h2 class="font-display text-lg font-bold text-ink">{e.name}</h2>
               <p class="text-xs font-semibold uppercase tracking-wider text-dim">{e.when}</p>
             </div>
-            <p class="mt-2 text-sm leading-relaxed text-muted">{e.copy}</p>
-            {e.lineup && (
-              <p class="mt-3 text-sm leading-relaxed text-dim">
-                {e.lineup.intro}{' '}
-                {e.lineup.names.map((person, i) => (
-                  <>
-                    {i > 0 && (i === e.lineup.names.length - 1 ? ' and ' : ', ')}
-                    {person.href ? (
-                      <a href={person.href} target="_blank" rel="noopener" class="font-semibold text-lavender transition hover:text-white">{person.name}</a>
-                    ) : (
-                      <span class="font-semibold text-lavender">{person.name}</span>
-                    )}
-                  </>
-                ))}.
-              </p>
-            )}
+            <p class="mt-2 text-sm leading-relaxed text-muted">
+              {e.intro}{' '}
+              {e.names.map((person, i) => (
+                <>
+                  {i > 0 && (i === e.names.length - 1 ? ' and ' : ', ')}
+                  {L[person] ? (
+                    <a href={L[person]} target="_blank" rel="noopener" class="font-semibold text-lavender transition hover:text-white">{person}</a>
+                  ) : (
+                    <span class="font-semibold text-lavender">{person}</span>
+                  )}
+                </>
+              ))}.
+            </p>
+            {e.support && <p class="mt-2 text-sm leading-relaxed text-dim">{e.support}</p>}
             {e.href && (
               <a href={e.href} target="_blank" rel="noopener" class="mt-4 inline-block text-sm font-bold text-brand-600 transition hover:text-white">
                 {e.linkLabel}
