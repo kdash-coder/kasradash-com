@@ -18,7 +18,7 @@ export const HUBS: Hub[] = [
 
 export const NAV = [
   { label: 'SEO Guides', href: '/seo/', children: HUBS },
-  { label: 'About', href: '/about-kasra-dash/' },
+  { label: 'About Kasra Dash', href: '/about-kasra-dash/' },
   { label: 'Free AI SEO Sheet', href: '/free-ai-seo-sheet/' },
 ];
 

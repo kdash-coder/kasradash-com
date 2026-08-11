@@ -2,20 +2,28 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  /* Brand palette, kept from kasradash.com */
+  /*
+   * Dark palette measured from the live kasradash.com capture (11 Aug 2026):
+   * grounds #000/#151515/#1A1A1A, white text, greys #8a8a8a/#CCCCCC/#D0D0D0,
+   * accent gradient 93.77deg #845CFE -> #4A4EF8, cards r20, pills r50-100.
+   * Semantic token names are kept from the light build so existing utilities
+   * resolve to their dark equivalents.
+   */
   --color-brand-500: #845cfe; /* primary purple */
-  --color-brand-600: #6d43ec;
+  --color-brand-600: #b7a3ff; /* link/accent tint that clears 4.5:1 on dark grounds */
   --color-indigo-brand: #4a4ef8; /* primary indigo */
-  --color-deep: #291469; /* deep purple, dark sections */
-  --color-deep-800: #1c0d49;
-  --color-ink: #1a1a1a;
-  --color-muted: #5b5971;
-  --color-lavender: #d0dffc;
-  --color-tint: #f4f1fe; /* light section background */
-  --color-tint-border: #e5defc;
+  --color-deep: #1a1a1a; /* raised bands & feature cards */
+  --color-deep-800: #101010;
+  --color-ink: #ffffff; /* primary text */
+  --color-muted: #cccccc; /* supporting text */
+  --color-dim: #8a8a8a; /* meta text — only on #000/#151515 grounds */
+  --color-lavender: #d0d0d0; /* tinted text on bands */
+  --color-tint: #151515; /* alternate section ground / quiet cards */
+  --color-tint-border: rgb(255 255 255 / 0.1);
 
-  --font-display: "Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Plus Jakarta Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Albert Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Albert Sans Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-jakarta: "Plus Jakarta Sans Variable", ui-sans-serif, system-ui, sans-serif;
 }
 
 html {
@@ -25,6 +33,7 @@ html {
 
 body {
   font-family: var(--font-sans);
+  background-color: #000000;
   color: var(--color-ink);
   -webkit-font-smoothing: antialiased;
 }
@@ -33,37 +42,74 @@ h1, h2, h3, h4 {
   font-family: var(--font-display);
 }
 
+::selection {
+  background-color: rgb(132 92 254 / 0.45);
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+}
+
+/* Exact live gradient (93.77deg, #845CFE 13.53% -> #4A4EF8 88.57%) */
 .brand-gradient {
-  background-image: linear-gradient(93deg, #845cfe 12%, #4a4ef8 95%);
+  background-image: linear-gradient(93.77deg, #845cfe 13.53%, #4a4ef8 88.57%);
 }
 
-.brand-gradient-text {
-  background-image: linear-gradient(93deg, #845cfe 12%, #4a4ef8 95%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+/* Primary CTA pill — live pattern: gradient pill, reversed gradient on hover */
+.btn-gradient {
+  position: relative;
+  isolation: isolate;
+  background-image: linear-gradient(93.77deg, #845cfe 13.53%, #4a4ef8 88.57%);
+  border-radius: 50px;
+  color: #ffffff;
+  overflow: hidden;
 }
 
-/* Article prose tuning */
+.btn-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: linear-gradient(93deg, #4a4ef8 12.53%, #845cfe 94.69%);
+  opacity: 0;
+  transition: opacity 200ms ease-out;
+}
+
+.btn-gradient:hover::before {
+  opacity: 1;
+}
+
+/* Article prose tuning for the dark ground */
 .prose-kasra {
-  --tw-prose-body: var(--color-ink);
+  --tw-prose-body: var(--color-muted);
   --tw-prose-headings: var(--color-ink);
+  --tw-prose-lead: var(--color-lavender);
   --tw-prose-links: var(--color-brand-600);
   --tw-prose-bold: var(--color-ink);
-  --tw-prose-quotes: var(--color-deep);
+  --tw-prose-counters: var(--color-dim);
+  --tw-prose-bullets: var(--color-brand-500);
+  --tw-prose-hr: var(--color-tint-border);
+  --tw-prose-quotes: var(--color-lavender);
+  --tw-prose-quote-borders: var(--color-brand-500);
+  --tw-prose-captions: var(--color-dim);
+  --tw-prose-code: var(--color-ink);
+  --tw-prose-pre-code: var(--color-lavender);
+  --tw-prose-pre-bg: var(--color-tint);
   --tw-prose-th-borders: var(--color-tint-border);
   --tw-prose-td-borders: var(--color-tint-border);
 }
 
 .prose-kasra a {
-  text-decoration-color: color-mix(in srgb, var(--color-brand-500) 45%, transparent);
+  text-decoration-color: color-mix(in srgb, var(--color-brand-500) 55%, transparent);
   text-underline-offset: 3px;
   font-weight: 600;
 }
 
 .prose-kasra a:hover {
-  color: var(--color-indigo-brand);
-  text-decoration-color: var(--color-indigo-brand);
+  color: #ffffff;
+  text-decoration-color: var(--color-brand-500);
 }
 
 .prose-kasra h2 {
