@@ -1,121 +1,82 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { articleNode } from '../lib/schema';
+import { SITE_URL } from '../lib/site';
 
 const title = 'Life Lessons from Kasra Dash';
 const description =
-  'Ten numbered life lessons from Kasra Dash, drawn from the press coverage of his story and his own published words: self-taught SEO, starting young, recovery, speed and finding the right rooms.';
+  'Five life lessons from Kasra Dash in his own words: bar work, moving cities young, stepping out of the comfort zone, finding a mentor and choosing the five people around you.';
 
 const crumbs = [
   { label: 'Home', href: '/' },
   { label: 'Life Lessons', href: '/life-lessons/' },
 ];
 
-/* Numbered format per Kasra (reference: fatrank.com/digital-nomad-life-lessons/):
- * short imperative heading, one actionable line plus a brief expansion. Every
- * lesson is drawn from a verified source — the press pieces (q3 §3.1) or Kasra's
- * own published copy on this site (About page + homepage FAQ). No invented
- * anecdotes; shorter than the reference rather than padded. */
-const lessons = [
-  {
-    h2: '1. Teach yourself the job',
-    body: 'Kasra Dash learned SEO from YouTube rather than a classroom. The Manchester Evening News told the story in March 2024 under the headline "I\'m a millionaire at 26. I learned everything I know on YouTube." The material is free; the work of applying it is the qualification.',
-    source: { label: 'Manchester Evening News, March 2024', href: 'https://www.manchestereveningnews.co.uk/news/greater-manchester-news/im-millionaire-26--learned-28767260' },
-  },
-  {
-    h2: '2. Start before you feel ready',
-    body: 'Kasra Dash built his first websites at fifteen, in 2012, with no qualifications in the field. The testing years compound: starting early gave him a decade of experiments before most people begin.',
-    source: { label: 'About Kasra Dash', href: '/about-kasra-dash/' },
-  },
-  {
-    h2: '3. Let the results speak',
-    body: 'Kasra Dash was profiled by The Sun as a self-made millionaire at 26. The profile traces the outcome to years of tested SEO work rather than a single lucky break.',
-    source: { label: 'The Sun, March 2024', href: 'https://www.thesun.co.uk/money/26455805/millionaire-learned-everything-youtube/' },
-  },
-  {
-    h2: '4. Start again anywhere',
-    body: 'Kasra Dash emigrated from Iran to the UK at three, grew up in Scotland and built his career in Manchester. Market Realist covered that route in June 2024; a new place is a starting line, and the skills travel with you.',
-    source: { label: 'Market Realist, June 2024', href: 'https://marketrealist.com/how-did-this-self-made-millionaire-achieve-tremendous-success-in-digital-marketing/' },
-  },
-  {
-    h2: '5. Practise recovery',
-    body: 'Kasra Dash is known for recovering websites from Google algorithm updates, and Business Cheshire called him one of the best SEOs in the UK when covering his TaxBite expansion in 2023. Setbacks repeat; treating recovery as a repeatable discipline turns them into a service.',
-    source: { label: 'Business Cheshire, March 2023', href: 'https://www.businesscheshire.co.uk/2023/03/23/kasra-dash-taxbite-opens-new-firm-in-manchester/' },
-  },
-  {
-    h2: '6. Make speed the first rule',
-    body: 'Kasra Dash lives by one stated philosophy: "The number one rule is speed." Deliver results faster, ship products quicker, and keep the quality, and you win in business and in life.',
-    source: { label: "Kasra's own FAQ on this site", href: '/#faq' },
-  },
-  {
-    h2: '7. Get in the right rooms',
-    body: 'Kasra Dash credits his fastest growth to being in the right room with the right people, and he founded The Masterminders so others could experience the same. Proximity to people doing the work beats studying it from a distance.',
-    source: { label: "Kasra's own FAQ on this site", href: '/#faq' },
-  },
-  {
-    h2: '8. Show people where to dig',
-    body: 'Kasra Dash quotes the lesson his mentor James Dooley taught him: "You don\'t want to be the one digging the hole. You should be showing people where to dig." Delegation is how a builder becomes a leader.',
-    source: { label: "Kasra's own FAQ on this site", href: '/#faq' },
-  },
-  {
-    h2: '9. Respect the marketing',
-    body: 'Kasra Dash gets pitched ten ideas a month and says finding a good operator is the easy part. In his experience the ability to market and scale an idea, and never the execution alone, is what decides whether it succeeds.',
-    source: { label: "Kasra's own FAQ on this site", href: '/#faq' },
-  },
-  {
-    h2: '10. Stay grounded',
-    body: 'Kasra Dash keeps the gym, healthy eating and family visits to Scotland in his week. The ambition runs on a body and a life that have to hold up with it.',
-    source: { label: "Kasra's own FAQ on this site", href: '/#faq' },
-  },
+/* Kasra's own words (voice notes, 12 Aug 2026), structured into the numbered
+ * format he chose. First person is deliberate on this page; the lessons run in
+ * the order he learnt them, with no references. Grammar tidied lightly only —
+ * the personality, including his blunter phrasing, is his and stays. */
+
+const canonical = `${SITE_URL}/life-lessons/`;
+const graphNodes = [
+  articleNode({ canonical, headline: 'Life Lessons from Kasra Dash', description }),
 ];
 ---
 
-<BaseLayout {title} {description} path="/life-lessons/" breadcrumbs={crumbs}>
+<BaseLayout {title} {description} path="/life-lessons/" breadcrumbs={crumbs} {graphNodes} type="article">
   <main>
     <section class="border-b border-tint-border bg-tint">
       <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">
         <Breadcrumbs {crumbs} />
         <h1 class="mt-4 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-ink sm:text-5xl">Life Lessons from Kasra Dash</h1>
         <p class="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
-          Kasra Dash is an entrepreneur and SEO consultant based in Manchester, UK. These are ten lessons from his story, each tied to the article or his own published words that document it.
+          Five lessons from my own path, in the order I learnt them. I am writing them down for other entrepreneurs, and maybe one day for kids who want to build something of their own.
         </p>
       </div>
     </section>
 
     <section class="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-      <p class="mb-8 max-w-3xl rounded-[20px] border border-amber-400/40 bg-amber-400/10 px-5 py-4 text-sm font-semibold text-amber-200">
-        Draft — Kasra to review wording before launch.
-      </p>
       <div class="reading-well prose prose-well max-w-3xl p-5 sm:p-8 lg:p-12">
-        {lessons.map((lesson) => (
-          <>
-            <h2>{lesson.h2}</h2>
-            <p>{lesson.body}</p>
-            <p>
-              <em>
-                Source:{' '}
-                <a href={lesson.source.href} target={lesson.source.href.startsWith('http') ? '_blank' : undefined} rel={lesson.source.href.startsWith('http') ? 'noopener' : undefined}>
-                  {lesson.source.label}
-                </a>.
-              </em>
-            </p>
-          </>
-        ))}
+        <h2>1. Work somewhere public facing</h2>
+        <p>
+          Everyone should work in a bar of some sort, somewhere properly public facing. You get to meet a lot of interesting characters, and you also come across a lot of, for lack of a better word, assholes. It is character building. You need to realise that everything in life does not run in straight lines. Sometimes the assholes are in person, sometimes they are keyboard warriors online, and sometimes they are trolls on YouTube.
+        </p>
+
+        <h2>2. Move to another city young</h2>
+        <p>
+          After I graduated university I moved from Scotland to Northampton. I literally did not know anyone. I moved because I needed a job. When you leave the city where all your mates and your family are, it pushes you out and forces you to become more outgoing.
+        </p>
+
+        <h2>3. Step out of your comfort zone</h2>
+        <p>
+          At eighteen or nineteen I got my very first web design client, and it was an e-commerce store. I had only ever touched brochure websites. I convinced the client anyway. The build took me about six months, and there was no AI at the time, this was around 2018. I earned about £5,000 from it, which was good money back then, especially for me.
+        </p>
+
+        <h2>4. Find a mentor</h2>
+        <p>
+          When I was nineteen or twenty I found James Dooley. He taught me a lot and fast-tracked my path, because he had already done the things I was trying to do, he knew the outcomes, and he guided me on the right path. If you do not want to go to university, find a mentor instead. A good mentor is worth its weight in gold.
+        </p>
+
+        <h2>5. You are the average of the five people you spend the most time with</h2>
+        <p>
+          People say they want to earn more, then hang around people who pull them down rather than drag them up. I was lucky. I picked five really successful people, and they pushed me to the next level. If your five friends all do six million a year and you do two, they can push you, because they know all of the downfalls and you can always ask them questions. And it is not just about money. Surround yourself with fitness people and they will push you in fitness too.
+        </p>
       </div>
     </section>
 
     <section class="border-t border-tint-border bg-tint py-14">
       <div class="mx-auto max-w-3xl px-4 text-center sm:px-6">
-        <h2 class="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">Read the full story</h2>
+        <h2 class="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">More of the story</h2>
         <p class="mx-auto mt-3 max-w-xl text-muted">
-          The press pieces behind these lessons live on the press page, and the longer version of the story is on the about page.
+          The longer version lives on the about page, and the conferences these years led to are on the speaking page.
         </p>
         <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
-          <a href="/press/" class="btn-gradient px-6 py-3 text-sm font-bold shadow-lg shadow-brand-500/25 transition hover:shadow-xl hover:shadow-brand-500/40">
-            See the press coverage
-          </a>
-          <a href="/about-kasra-dash/" class="rounded-full border border-tint-border px-6 py-3 text-sm font-bold text-ink transition hover:border-brand-500 hover:bg-brand-500/10">
+          <a href="/about-kasra-dash/" class="btn-gradient px-6 py-3 text-sm font-bold shadow-lg shadow-brand-500/25 transition hover:shadow-xl hover:shadow-brand-500/40">
             About Kasra Dash
+          </a>
+          <a href="/speaking/" class="rounded-full border border-tint-border px-6 py-3 text-sm font-bold text-ink transition hover:border-brand-500 hover:bg-brand-500/10">
+            Speaking
           </a>
         </div>
       </div>
