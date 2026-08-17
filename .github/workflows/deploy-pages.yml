@@ -23,6 +23,7 @@ jobs:
           node-version: 22
       - run: npm ci
       - run: npm run build
+      - run: node scripts/static-fallbacks.mjs
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
