@@ -21,7 +21,7 @@ AI search engines generate answers using large language models (LLMs) instead of
 - Retrieve relevant data from trusted sources.
 - Summarise it conversationally with citations.
 
-Two major players currently shaping this field are Perplexity AI and ChatGPT (OpenAI’s search mode), both blending information retrieval (IR) with generative reasoning. To understand how these models interpret language differently, see how [RankBrain, BERT, and MUM](/seo/ai-and-seo/rankbrain-vs-bert-vs-mum/) laid the groundwork for today’s AI-driven search systems.
+Two major players currently shaping this field are Perplexity AI and ChatGPT (OpenAI’s search mode), both blending information retrieval (IR) with generative reasoning. To understand how these models interpret language differently, see how [RankBrain, BERT, and MUM](/seo/ai-and-seo/) laid the groundwork for today’s AI-driven search systems.
 
 ## How Perplexity AI Ranks and Generates Answers
 
@@ -103,7 +103,7 @@ Authenticity and accuracy are algorithm-agnostic, they win across every search e
 AI-driven search changes how visibility is measured. Rather than chasing first-page rankings, SEO now involves earning AI citations, mentions, and contextual inclusion in generated answers. Key optimisation tactics include:
 
 - Writing clear, fact-led summaries that LLMs can extract.
-- Using [schema markup](/seo/technical-seo/schema-markup-guide/) such as FAQ and Article structured data, which gives AI retrieval systems a machine-readable summary of your page’s purpose and content.
+- Using [schema markup](/seo/technical-seo/) such as FAQ and Article structured data, which gives AI retrieval systems a machine-readable summary of your page’s purpose and content.
 - Strengthening [internal linking between entity clusters](/seo/content-seo/internal-linking/) to help both crawlers and AI models understand the relationships between your content.
 - Updating cornerstone content quarterly.
 - Publishing original research or statistics to attract citations.

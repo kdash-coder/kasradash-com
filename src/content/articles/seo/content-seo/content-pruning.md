@@ -41,12 +41,12 @@ Because fewer, better pages means Google can allocate crawl budget more effectiv
 
 Key outcomes:
 
-- **Crawl Budget**: Bots waste less time on low‑value URLs; important pages get crawled more often. See [Crawl Budget](/seo/technical-seo/crawl-budget/).
+- **Crawl Budget**: Bots waste less time on low‑value URLs; important pages get crawled more often. See [Crawl Budget](/seo/technical-seo/).
 - **Index Quality**: You remove thin, duplicate, or outdated pages that depress site‑wide quality.
 - **Topical Authority**: By retiring off‑topic or overlapping pages, you sharpen semantic signals across your cluster. See [Topical Authority](/seo/content-seo/topical-authority/).
 - **User Signals**: Clearer navigation and fewer dead‑ends improve engagement, which supports rankings.
 
-→ Reinforce meaning with Entity Optimisation and structured data from your [Schema Markup Guide](/seo/technical-seo/schema-markup-guide/).
+→ Reinforce meaning with Entity Optimisation and structured data from your [Schema Markup Guide](/seo/technical-seo/).
 
 ## How to Identify Pages to Prune (Decision Inputs)
 
@@ -56,7 +56,7 @@ Use **quantitative + qualitative** signals. Start broad, then narrow.
 
 - **Clicks & Impressions** (12–18 months): persistently low performance indicates low demand or poor match.
 - **Ranking Coverage**: keywords with no page‑1 potential after multiple updates.
-- **Backlinks / Referring Domains**: absence of meaningful links signals low authority; conversely, strong links argue for **consolidation** not deletion. See [Backlink Analysis](/seo/link-building/backlink-analysis/).
+- **Backlinks / Referring Domains**: absence of meaningful links signals low authority; conversely, strong links argue for **consolidation** not deletion. See [Backlink Analysis](/seo/link-building/).
 - **Conversion Contribution**: no assisted conversions for 6–12 months = retire/merge.
 - **Engagement**: very low time‑on‑page or extreme bounce may suggest mismatch to [Search Intent](/seo/content-seo/search-intent/).
 
@@ -69,7 +69,7 @@ Use **quantitative + qualitative** signals. Start broad, then narrow.
 
 If a URL has little traffic, no links, overlapping intent, and no clear update path → prune or merge.
 
-→ Formalise your thresholds in a simple rubric and track outcomes in your [Performance Metrics](/seo/content-seo/performance-metrics/) dashboard.
+→ Formalise your thresholds in a simple rubric and track outcomes in your [Performance Metrics](/seo/content-seo/) dashboard.
 
 ## Run a Content Audit Before You Prune
 
@@ -84,7 +84,7 @@ A **Content Audit → inventories → every indexable URL and its performance** 
 5. **Decide status** using an action column: *Keep / Update / Consolidate / Redirect / Noindex / Remove*.
 6. **Map merges**: assign a clear **destination URL** for any consolidation with anchor suggestions (see Internal Linking).
 
-**Helpful exports:** status codes (see [HTTP Status Codes](/seo/technical-seo/http-status-codes-for-seo/)), word count, inlinks, canonicals, lastmod, indexation state, primary keywords.
+**Helpful exports:** status codes (see [HTTP Status Codes](/seo/technical-seo/)), word count, inlinks, canonicals, lastmod, indexation state, primary keywords.
 
 ## Pruning vs Consolidation: Which Action Should You Take?
 
@@ -98,7 +98,7 @@ Use this quick decision table:
 | Out‑of‑date product/service page | **Redirect** to current equivalent | Preserves value and prevents user confusion |
 | Poor page with strong external links | **Merge** the value into a refreshed destination | Keep equity; don’t delete linkable assets |
 
-> **Tip:** Always choose the **most relevant canonical destination**. Avoid redirect chains (301 → 301 → 301) and check for self‑referencing canonicals after merges (see [Canonical Tags](/seo/technical-seo/canonical-tags/)).
+> **Tip:** Always choose the **most relevant canonical destination**. Avoid redirect chains (301 → 301 → 301) and check for self‑referencing canonicals after merges (see [Canonical Tags](/seo/technical-seo/)).
 
 ## Managing Crawl Efficiency After Pruning
 
@@ -106,10 +106,10 @@ Use this quick decision table:
 
 Post‑pruning checklist:
 
-- **Re‑submit updated XML sitemaps** and ensure only canonical, 200‑status URLs are listed (see [XML Sitemaps & Robots.txt](/seo/technical-seo/xml-sitemaps-robots-txt/)).
+- **Re‑submit updated XML sitemaps** and ensure only canonical, 200‑status URLs are listed (see [XML Sitemaps & Robots.txt](/seo/technical-seo/)).
 - **Audit internal links** to remove references to retired URLs and add new contextual links to priority pages (see Internal Linking).
 - **Monitor Crawl Stats** in GSC for fetches per day and response times; look for increased crawl allocation to key sections.
-- **Check renderability** on consolidated pages if JavaScript injects content (see [JavaScript SEO](/seo/technical-seo/javascript-seo/)).
+- **Check renderability** on consolidated pages if JavaScript injects content (see [JavaScript SEO](/seo/technical-seo/)).
 
 Cleaner architecture concentrates crawl on what you actually want to rank.
 
@@ -123,7 +123,7 @@ After you finalise actions, **operational hygiene** is everything.
 4. **Contextual Links**: From related posts, update anchors to reflect the new target’s primary entities.
 5. **Robots & Noindex**: Use `noindex` for necessary utility pages; don’t block with robots.txt if you still need Google to see the `noindex` tag.
 
-→ If you use templates, add **self‑referencing canonicals** and check mobile parity (see [Mobile‑First Indexing](/seo/technical-seo/mobile-first-indexing/)).
+→ If you use templates, add **self‑referencing canonicals** and check mobile parity (see [Mobile‑First Indexing](/seo/technical-seo/)).
 
 ## Tracking Impact (4–12 Weeks)
 
@@ -159,7 +159,7 @@ Treat pruning as a **content lifecycle** routine, not a one‑off clean‑up.
 
 - **Quarterly audits** for large sites; **bi‑annual** for smaller blogs.
 - Pre‑launch checklist for new content: ensure it doesn’t duplicate existing coverage.
-- Add a “Review by” date and owner for every evergreen page in your [Content Calendar](/seo/content-seo/content-calendar/).
+- Add a “Review by” date and owner for every evergreen page in your [Content Calendar](/seo/content-seo/).
 - When merging, log **redirect maps** and keep a rollback note for stakeholders.
 
 ## FAQs

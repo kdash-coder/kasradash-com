@@ -17,7 +17,7 @@ It forms the **foundation** of every SEO strategy. Without technical health, you
 
 In this guide by **Kasra Dash**, you’ll learn what Technical SEO is, why it matters, and how to diagnose and fix technical issues affecting visibility.
 
-→ Before diving in, revisit [**SEO Fundamentals**](/seo/learn/seo-fundamentals/), [**How Search Engines Work**](/seo/learn/how-search-engines-work/), and [**What Is Google Indexing**](/seo/learn/what-is-google-indexing/) to understand the underlying systems.
+→ Before diving in, revisit [**SEO Fundamentals**](/seo/learn/seo-fundamentals/), [**How Search Engines Work**](/seo/learn/), and [**What Is Google Indexing**](/seo/learn/) to understand the underlying systems.
 
 If content is the message, Technical SEO is the microphone that makes it heard.
 
@@ -33,7 +33,7 @@ At its core, Technical SEO solves three key challenges:
 2. **Can they understand your pages?** (Indexing)
 3. **Can they deliver your pages quickly and securely?** (Performance)
 
-→ Deep dive into discovery systems via [**Google Crawling & Indexing**](/seo/technical-seo/google-crawling-and-indexing/) and fix accessibility errors in [**Fix Indexing Issues**](/seo/technical-seo/fix-indexing-issues/).
+→ Deep dive into discovery systems via [**Google Crawling & Indexing**](/seo/technical-seo/) and fix accessibility errors in [**Fix Indexing Issues**](/seo/technical-seo/fix-indexing-issues/).
 
 Technical SEO ensures search engines can access, interpret, and trust your content.
 
@@ -52,7 +52,7 @@ Search engines reward websites that are fast, secure, mobile-friendly, and struc
 - Correct status codes and redirects protect equity.
 - Structured data enhances AI understanding and rich results.
 
-→ Explore page performance in [**Website Speed SEO**](/seo/technical-seo/website-speed-seo), canonical control in [**Canonical Tags**](/seo/technical-seo/canonical-tags/), and diagnostic health in [**HTTP Status Codes**](/seo/technical-seo/http-status-codes-for-seo/).
+→ Explore page performance in [**Website Speed SEO**](/seo/technical-seo/), canonical control in [**Canonical Tags**](/seo/technical-seo/), and diagnostic health in [**HTTP Status Codes**](/seo/technical-seo/).
 
 Good Technical SEO makes your website both machine-readable and human-friendly.
 
@@ -66,13 +66,13 @@ Each technical component interacts with others to shape how Google perceives and
 
 | Element | Purpose | Learn More |
 | --- | --- | --- |
-| **Core Web Vitals** | Measures page speed, responsiveness, and stability. | [Core Web Vitals](/seo/technical-seo/core-web-vitals/) |
-| **Crawl Budget** | Controls how often and how deeply Google crawls your site. | [Crawl Budget](/seo/technical-seo/crawl-budget/) |
-| **XML Sitemaps & Robots.txt** | Guide bots to important pages and block irrelevant ones. | [Sitemaps & Robots.txt](/seo/technical-seo/xml-sitemaps-robots-txt/) |
+| **Core Web Vitals** | Measures page speed, responsiveness, and stability. | [Core Web Vitals](/seo/technical-seo/) |
+| **Crawl Budget** | Controls how often and how deeply Google crawls your site. | [Crawl Budget](/seo/technical-seo/) |
+| **XML Sitemaps & Robots.txt** | Guide bots to important pages and block irrelevant ones. | [Sitemaps & Robots.txt](/seo/technical-seo/) |
 | **Canonical Tags** | Define preferred page versions to avoid duplication. | Canonical Tags |
-| **Mobile-First Indexing** | Ensures the mobile version of your site is optimised for discovery. | [Mobile-First Indexing](/seo/technical-seo/mobile-first-indexing/) |
-| **JavaScript SEO** | Helps Google render dynamic content correctly. | [JavaScript SEO](/seo/technical-seo/javascript-seo/) |
-| **Schema Markup** | Adds structured data to help search engines understand context. | [Schema Markup Guide](/seo/technical-seo/schema-markup-guide/) |
+| **Mobile-First Indexing** | Ensures the mobile version of your site is optimised for discovery. | [Mobile-First Indexing](/seo/technical-seo/) |
+| **JavaScript SEO** | Helps Google render dynamic content correctly. | [JavaScript SEO](/seo/technical-seo/) |
+| **Schema Markup** | Adds structured data to help search engines understand context. | [Schema Markup Guide](/seo/technical-seo/) |
 
 These systems work together to create a technically strong and semantically clear site.
 
@@ -112,7 +112,7 @@ Even well-optimised sites face technical challenges. Recognising and addressing 
 - **Incorrect Redirects:** 302s instead of 301s.
 - **Sandbox Effect:** New sites taking time to gain visibility.
 
-→ Troubleshoot these in [**Common Technical SEO Mistakes**](/seo/technical-seo/common-mistakes/), **Fix Indexing Issues**, and [**Google Sandbox**](/seo/technical-seo/google-sandbox/).
+→ Troubleshoot these in [**Common Technical SEO Mistakes**](/seo/technical-seo/common-mistakes/), **Fix Indexing Issues**, and [**Google Sandbox**](/seo/technical-seo/).
 
 Prevention is cheaper than recovery, technical diligence protects rankings.
 
@@ -126,7 +126,7 @@ When your structure is inconsistent, algorithms like **Panda**, **Penguin**, and
 
 If you’ve lost rankings after an update, start by auditing your site’s index coverage and content quality.
 
-→ Learn recovery techniques in [**Google Penalty Recovery**](/seo/technical-seo/google-penalty-recovery/) and monitor change patterns in [**Google Algorithm Updates**](/seo/technical-seo/google-algorithm-updates/).
+→ Learn recovery techniques in [**Google Penalty Recovery**](/seo/technical-seo/) and monitor change patterns in [**Google Algorithm Updates**](/seo/technical-seo/).
 
 Algorithm updates aren’t punishments, they’re stress tests for your technical integrity.
 

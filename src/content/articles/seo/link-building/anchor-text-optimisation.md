@@ -61,7 +61,7 @@ Anchor text determines how link equity passes between pages. Overusing exact-mat
 
 **Balanced anchor variation → distributes → authority safely.**
 
-→ Learn more about flow and safety in [**Tiered Link Building**](/seo/link-building/tiered-link-building-how-to-safely-build-authority-in-2025/).
+→ Learn more about flow and safety in [**Tiered Link Building**](/seo/link-building/).
 
 ### 3. Supports Entity Recognition
 
@@ -122,7 +122,7 @@ Keep exact match anchors under 10% of your total backlinks to stay below Google�
 
 Use tools like **Ahrefs**, **Semrush**, or **Majestic** to review your current anchor text profile.
 
-→ Start your analysis in [**Backlink Analysis**](/seo/link-building/backlink-analysis/).
+→ Start your analysis in [**Backlink Analysis**](/seo/link-building/).
 
 **Auditing anchors → identifies → over-optimised patterns.**
 
@@ -212,7 +212,7 @@ Balance is protection.
 
 ### Can I recover from anchor text penalties?
 
-Yes you can recover from anchor text penalties, recovery involves disavowing manipulative links, diluting overused anchors with branded ones, and rebuilding authority safely, see [**Google Penalty Recovery**](/seo/technical-seo/google-penalty-recovery/).
+Yes you can recover from anchor text penalties, recovery involves disavowing manipulative links, diluting overused anchors with branded ones, and rebuilding authority safely, see [**Google Penalty Recovery**](/seo/technical-seo/).
 
 ## Anchor Text and Link Velocity
 
@@ -220,7 +220,7 @@ The pace of new anchor text acquisition also influences your SEO safety. Rapid i
 
 **Anchor moderation → complements → healthy link velocity.**
 
-→ Understand the balance in [**Link Velocity**](/seo/link-building/link-velocity/).
+→ Understand the balance in [**Link Velocity**](/seo/link-building/).
 
 Steady anchor growth reflects steady authority.
 

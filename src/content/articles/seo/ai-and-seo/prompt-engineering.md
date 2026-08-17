@@ -80,7 +80,7 @@ Prompt Example:
 
 > “Act as an SEO data analyst. Generate 25 long-tail keywords related to ‘AI content detection’ sorted by informational, commercial, and transactional intent. Include related entities like GPTZero, Originality.ai, and Perplexity AI.”
 
-To refine your keyword clustering process, revisit [AI for Keyword Research](/seo/ai-and-seo/ai-keyword-research/): How to Find Opportunities with LLMs.
+To refine your keyword clustering process, revisit [AI for Keyword Research](/seo/ai-and-seo/): How to Find Opportunities with LLMs.
 
 LLMs don’t just find keywords, they reveal context.
 
@@ -175,7 +175,7 @@ Prompt frameworks turn AI chaos into content strategy clarity.
 
 ## Step 9: Integrating Prompt Engineering with SEO Tools
 
-Modern [SEO tools are embedding AI](/seo/ai-and-seo/ai-seo-tools/) capabilities, but the quality of outputs still depends on your prompts.  
+Modern [SEO tools are embedding AI](/seo/ai-and-seo/) capabilities, but the quality of outputs still depends on your prompts.  
 Tools like **SurferSEO**, **Frase**, **NeuronWriter**, and **Clearscope** use LLMs under the hood for SERP analysis and topic suggestions.
 
 Use tailored prompts inside these tools to:

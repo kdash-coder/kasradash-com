@@ -29,7 +29,7 @@ Example SEO frameworks include:
 - **Semantic SEO frameworks** for entity-rich content.
 - **Content cluster frameworks** for topical authority.
 - **Technical frameworks** for crawling and indexing.
-- **[Performance frameworks](/seo/seo-frameworks/seo-reporting-dashboard/)** for KPI measurement and auditing.
+- **[Performance frameworks](/seo/seo-frameworks/)** for KPI measurement and auditing.
 
 For foundations on how AI understands your site’s context, see Semantic SEO: Meaning, Context & Entity Optimisation.
 
@@ -79,7 +79,7 @@ Content frameworks → organise → your site’s topics into meaningful cluster
 
 They’re built using the **pillar-cluster model**, where each main topic (pillar) connects to subtopics (clusters) through internal links and shared entities.
 
-When scaling content you may also want to use a [content calendar](/seo/seo-frameworks/content-calendar-template/).
+When scaling content you may also want to use a [content calendar](/seo/seo-frameworks/).
 
 Example structure:
 
@@ -117,11 +117,11 @@ SEO performance → improves → through continuous measurement and iteration.
 This framework standardises how you track and optimise KPIs such as:
 
 - Organic visibility.
-- [Crawl efficiency](/seo/technical-seo/crawl-budget/).
+- [Crawl efficiency](/seo/technical-seo/).
 - Click-through rates.
 - Topical coverage.
 - Content freshness.
-- [Conversion Rate Optimsation](/seo/seo-frameworks/conversion-framework/).
+- [Conversion Rate Optimsation](/seo/seo-frameworks/).
 
 Use automation tools like **Looker Studio**, **Make**, or **n8n** to collect and report metrics consistently.  
 For detailed metrics, see How to Measure SEO Content Performance (KPIs & Tools).

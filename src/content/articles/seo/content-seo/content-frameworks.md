@@ -108,7 +108,7 @@ Add FAQ, Article, or HowTo schema where appropriate. Ensure metadata across clus
 
 Monitor engagement metrics like CTR, time on page, and internal link clicks. Refine underperforming pages, add missing subtopics, and ensure every cluster remains connected.
 
-For practical tracking methods, refer to [Performance Metrics for SEO Content](/seo/content-seo/performance-metrics/).
+For practical tracking methods, refer to [Performance Metrics for SEO Content](/seo/content-seo/).
 
 ## Common Mistakes to Avoid
 

@@ -118,7 +118,7 @@ Not every gap deserves equal attention. Use these metrics to prioritise:
 
 By targeting high-impact gaps first, you get faster SEO ROI while gradually strengthening your topical coverage.
 
-To learn how to score and track these improvements, check [Performance Metrics for SEO Content](/seo/content-seo/performance-metrics/).
+To learn how to score and track these improvements, check [Performance Metrics for SEO Content](/seo/content-seo/).
 
 ## Step 6: Create and Optimise New Content
 
@@ -131,7 +131,7 @@ When writing:
 - Include internal links to and from relevant pages.
 - Add unique insights, visuals, and data.
 
-For detailed guidance on structuring content, see our [SEO Blog Writing Framework](/seo/content-seo/seo-blog-writing/).
+For detailed guidance on structuring content, see our [SEO Blog Writing Framework](/seo/content-seo/).
 
 ### Should you update old posts or create new ones?
 

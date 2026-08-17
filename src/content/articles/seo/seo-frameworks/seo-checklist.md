@@ -79,7 +79,7 @@ On-page SEO → aligns → your content with user intent and search algorithms.
 
 **✓ Keyword & Intent Alignment**
 
-- [Map target keywords](/seo/seo-frameworks/keyword-research-template/) to specific pages.
+- [Map target keywords](/seo/seo-frameworks/) to specific pages.
 - Use primary, secondary, and semantic keywords naturally.
 - Optimise for search intent (informational, commercial, transactional).
 
@@ -182,7 +182,7 @@ Performance tracking → measures → impact and ROI.
 - Google Search Console (technical and keyword data).
 - Google Analytics 4 (behavioural metrics).
 - Ahrefs/Semrush (backlink and visibility).
-- [Looker Studio dashboards](/seo/seo-frameworks/seo-reporting-dashboard/) for integrated reporting.
+- [Looker Studio dashboards](/seo/seo-frameworks/) for integrated reporting.
 
 **✓ Ongoing Optimisation**
 

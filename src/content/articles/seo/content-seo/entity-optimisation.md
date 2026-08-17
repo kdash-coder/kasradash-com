@@ -65,7 +65,7 @@ The more relationships your entities share with recognised topics, the stronger 
 
 **Relationship density → signals → subject expertise.**
 
-→ Learn more about how structured data supports this in the [**Schema Markup Guide**](/seo/technical-seo/schema-markup-guide/).
+→ Learn more about how structured data supports this in the [**Schema Markup Guide**](/seo/technical-seo/).
 
 Google doesn’t rank words, it ranks relationships.
 
@@ -125,7 +125,7 @@ Add structured data (e.g., *Person*, *Organisation*, *Article*) to reinforce ent
 
 **Schema markup → validates → entity relevance for Google’s crawlers.**
 
-→ Use implementation tips from the [**Schema Markup Guide**](/seo/technical-seo/schema-markup-guide/).
+→ Use implementation tips from the [**Schema Markup Guide**](/seo/technical-seo/).
 
 ### Step 4: Use Consistent Naming and References
 

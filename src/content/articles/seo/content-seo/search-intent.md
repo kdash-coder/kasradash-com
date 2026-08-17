@@ -143,7 +143,7 @@ Create **branded or hub pages** that are easy to find and navigate.
 
 Develop **service pages, sales copy, and landing pages** focused on conversion.
 
-→ Example: [**SEO Audit Template**](/seo/seo-frameworks/seo-audit-template/)
+→ Example: [**SEO Audit Template**](/seo/seo-frameworks/)
 
 **Conversion-focused pages → match → purchase intent.**
 
@@ -239,6 +239,6 @@ To recap:
 - Analyse SERPs and behaviour patterns.
 - Match content type to user goal.
 
-→ Continue learning with **Semantic SEO** and plan your strategy using the [**Keyword Research Template**](/seo/seo-frameworks/keyword-research-template/).
+→ Continue learning with **Semantic SEO** and plan your strategy using the [**Keyword Research Template**](/seo/seo-frameworks/).
 
 In 2025, intent isn’t optional, it’s the essence of every search success story.

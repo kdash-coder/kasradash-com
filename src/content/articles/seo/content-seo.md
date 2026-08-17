@@ -194,7 +194,7 @@ Trust is the most powerful ranking factor you can’t fake.
 
 Use analytics tools to track impressions, CTR, and dwell time.
 
-→ Analyse results with [**Performance Metrics**](/seo/content-seo/performance-metrics/).
+→ Analyse results with [**Performance Metrics**](/seo/content-seo/).
 
 **Performance tracking → drives → iterative content improvement.**
 
@@ -226,7 +226,7 @@ An effective workflow turns sporadic content creation into a system of consisten
 4. Interlink with relevant pages.
 5. Publish, monitor, and update quarterly.
 
-→ Manage this with [**Content Calendar**](/seo/content-seo/content-calendar/).
+→ Manage this with [**Content Calendar**](/seo/content-seo/).
 
 **Systemised publishing → builds → sustainable topical authority.**
 
@@ -277,6 +277,6 @@ To recap:
 
 → Continue your journey through [**Semantic SEO**](/seo/content-seo/semantic-seo/) and enhance performance with **E-E-A-T**.
 
-Or learn about [content distribution](/seo/content-seo/content-distribution/) here.
+Or learn about [content distribution](/seo/content-seo/) here.
 
 Content SEO isn’t about writing more, it’s about writing with meaning, connection, and precision.

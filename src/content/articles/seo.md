@@ -27,9 +27,9 @@ Start your learning journey here:
 
 - [**SEO Fundamentals**](/seo/learn/seo-fundamentals/), the foundation of search visibility.
 - **What Is SEO**, the essential definition and principles.
-- [**How SEO Works**](/seo/learn/how-seo-works/), the process from crawling to ranking.
-- [**Three Pillars of SEO**](/seo/learn/the-3-pillars-of-seo/), the full framework of technical, on-page, and off-page optimisation.
-- [**SEO Strategy for Beginners**](/seo/learn/seo-strategy-for-beginners/), how to build your first SEO plan.
+- [**How SEO Works**](/seo/learn/), the process from crawling to ranking.
+- [**Three Pillars of SEO**](/seo/learn/), the full framework of technical, on-page, and off-page optimisation.
+- [**SEO Strategy for Beginners**](/seo/learn/), how to build your first SEO plan.
 
 → For the full education library, visit **Learn SEO**.
 
@@ -43,9 +43,9 @@ Search engines follow a three-stage cycle:
 
 | Stage | Description | Learn More |
 | --- | --- | --- |
-| **Crawling** | Googlebot discovers your content via internal and external links. | [Google Crawling & Indexing](/seo/technical-seo/google-crawling-and-indexing/) |
+| **Crawling** | Googlebot discovers your content via internal and external links. | [Google Crawling & Indexing](/seo/technical-seo/) |
 | **Indexing** | Google analyses and stores your content for retrieval. | How SEO Works |
-| **Ranking** | Algorithms decide which results to display first. | [Google Algorithm Updates](/seo/technical-seo/google-algorithm-updates/) |
+| **Ranking** | Algorithms decide which results to display first. | [Google Algorithm Updates](/seo/technical-seo/) |
 
 → Explore deeper insights on **Crawling and Indexing** and **SEO Ranking Factors**.
 
@@ -60,8 +60,8 @@ Every SEO system is built upon three interlocking pillars, **Technical**, **Cont
 Ensures Google can crawl, index, and understand your site efficiently.
 
 - [**Technical SEO**](/seo/technical-seo/), overview of site health.
-- [**Core Web Vitals**](/seo/technical-seo/core-web-vitals/), measure user experience and speed.
-- [**Website Speed & SEO**](/seo/technical-seo/website-speed-seo), reduce load times for ranking and UX.
+- [**Core Web Vitals**](/seo/technical-seo/), measure user experience and speed.
+- [**Website Speed & SEO**](/seo/technical-seo/), reduce load times for ranking and UX.
 - [**SEO Audit**](/seo/technical-seo/audit/), diagnose site issues and fix them systematically.
 - **Google Algorithm Updates**, stay ahead of system shifts.
 
@@ -80,8 +80,8 @@ Creates relevance and trust by aligning with search intent and entities.
 Builds credibility and authority through backlinks and brand mentions.
 
 - [**Link Building**](/seo/link-building/), the foundation of off-page SEO.
-- [**Guest Posting**](/seo/link-building/guest-posting/), earn links through outreach and value.
-- [**Backlink Analysis**](/seo/link-building/backlink-analysis/), evaluate link quality and toxicity.
+- [**Guest Posting**](/seo/link-building/), earn links through outreach and value.
+- [**Backlink Analysis**](/seo/link-building/), evaluate link quality and toxicity.
 - [**Link Building Strategies**](/seo/link-building/strategies/), expand authority systematically.
 
 Each pillar reinforces the others, technical access, content relevance, and off-page authority form your SEO ecosystem.
@@ -94,8 +94,8 @@ Modern optimisation means aligning your content with **machine understanding**, 
 
 - [**AI & SEO**](/seo/ai-and-seo/), how artificial intelligence reshapes optimisation.
 - [**AI Overviews Optimisation**](/seo/ai-and-seo/ai-overviews-optimisation/), adapt content for Google’s AI-generated summaries.
-- [**Google MUM**](/seo/ai-and-seo/google-mum/), understand how MUM analyses complex queries.
-- [**Future-Proof SEO**](/seo/ai-and-seo/future-proof-seo/), how to stay visible through algorithmic evolution.
+- [**Google MUM**](/seo/ai-and-seo/), understand how MUM analyses complex queries.
+- [**Future-Proof SEO**](/seo/ai-and-seo/), how to stay visible through algorithmic evolution.
 
 AI doesn’t replace SEO, it demands smarter SEO.
 

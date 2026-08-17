@@ -30,11 +30,11 @@ Each term is written in plain English, linked contextually to deeper guides with
 
 ## Core SEO Concepts
 
-**Algorithm** → A set of rules and AI systems (like **RankBrain** and **BERT**) that determine which web pages appear for specific searches. Learn more in [**What Are Search Engine Algorithms**](/seo/learn/what-are-search-engine-algorithms/).
+**Algorithm** → A set of rules and AI systems (like **RankBrain** and **BERT**) that determine which web pages appear for specific searches. Learn more in [**What Are Search Engine Algorithms**](/seo/learn/).
 
-**Crawling** → The process where **Googlebot** or other search engines discover and scan web pages via links or sitemaps. Covered in [**How SEO Works**](/seo/learn/how-seo-works/).
+**Crawling** → The process where **Googlebot** or other search engines discover and scan web pages via links or sitemaps. Covered in [**How SEO Works**](/seo/learn/).
 
-**Indexing** → When a search engine stores information about a page in its database so it can appear in search results. Explained in [**What Is Google Indexing**](/seo/learn/what-is-google-indexing/).
+**Indexing** → When a search engine stores information about a page in its database so it can appear in search results. Explained in [**What Is Google Indexing**](/seo/learn/).
 
 **Ranking Factors** → The signals algorithms use to decide which pages rank higher, such as relevance, backlinks, and usability. See [**SEO Ranking Factors**](/seo/learn/seo-ranking-factors/).
 
@@ -44,11 +44,11 @@ Each term is written in plain English, linked contextually to deeper guides with
 
 **SEO (Search Engine Optimisation)** → The practice of improving website visibility in organic search. Start with **What Is SEO**.
 
-**SEM (Search Engine Marketing)** → A broader term encompassing both SEO (organic) and **PPC** (paid). Compared in [**SEO vs SEM vs PPC**](/seo/learn/seo-vs-sem-vs-ppc/).
+**SEM (Search Engine Marketing)** → A broader term encompassing both SEO (organic) and **PPC** (paid). Compared in [**SEO vs SEM vs PPC**](/seo/learn/).
 
 **PPC (Pay Per Click)** → Paid advertising model where you pay per click, used within **SEM**.
 
-**E-E-A-T** → Google’s framework for evaluating **Experience, Expertise, Authoritativeness, and Trustworthiness**. Core to [**Why SEO Matters**](/seo/learn/why-seo-matters/).
+**E-E-A-T** → Google’s framework for evaluating **Experience, Expertise, Authoritativeness, and Trustworthiness**. Core to [**Why SEO Matters**](/seo/learn/).
 
 ## On-Page SEO Terms
 
@@ -186,7 +186,7 @@ AI doesn’t replace SEO, it evolves it.
 
 **Keyword Difficulty (KD)** → Metric estimating how hard it is to rank for a keyword.
 
-**→ See [How Long Does SEO Take](/seo/learn/how-long-does-seo-take/) and [SEO Strategy for Beginners](/seo/learn/seo-strategy-for-beginners/) for practical context.**
+**→ See [How Long Does SEO Take](/seo/learn/) and [SEO Strategy for Beginners](/seo/learn/) for practical context.**
 
 ## Marketing & Strategic Terms
 

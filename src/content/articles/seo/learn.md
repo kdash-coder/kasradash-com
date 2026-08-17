@@ -34,18 +34,18 @@ Because SEO is a system, not a single tactic, you’ll move from fundamental con
 Master these first principles, because understanding mechanics (crawl → index → rank) makes every later tactic more effective.
 
 - **[What is SEO?](/seo/)** `-` Discover what Search Engine Optimisation means, why it matters, and how it fuels business growth.
-- **[How SEO Works](/seo/learn/how-seo-works/)**, Learn how SEO aligns your site with search engine crawling, indexing, and ranking processes.
-- **[How Search Engines Work](/seo/learn/how-search-engines-work/)**, Understand the science behind crawling, indexing, and ranking so you can optimise with purpose.
-- **[The 3 Pillars of SEO](/seo/learn/the-3-pillars-of-seo/)**, Explore Technical, On-Page, and Off-Page optimisation, the stable architecture of any SEO strategy.
-- **[SEO vs SEM vs PPC](/seo/learn/seo-vs-sem-vs-ppc/)**, See how organic SEO differs from paid search (PPC) and the broader SEM umbrella.
-- **[Why SEO Matters](/seo/learn/why-seo-matters/)**, Learn why SEO is essential for compounding visibility, durable traffic, and profitable growth.
-- **[How Long Does SEO Take?](/seo/learn/how-long-does-seo-take/)**, Set realistic timelines and understand the inputs that accelerate results.
-- **[Search Engine Algorithms](/seo/learn/what-are-search-engine-algorithms/)**, Learn how algorithms determine rankings and what that means for your content.
+- **[How SEO Works](/seo/learn/)**, Learn how SEO aligns your site with search engine crawling, indexing, and ranking processes.
+- **[How Search Engines Work](/seo/learn/)**, Understand the science behind crawling, indexing, and ranking so you can optimise with purpose.
+- **[The 3 Pillars of SEO](/seo/learn/)**, Explore Technical, On-Page, and Off-Page optimisation, the stable architecture of any SEO strategy.
+- **[SEO vs SEM vs PPC](/seo/learn/)**, See how organic SEO differs from paid search (PPC) and the broader SEM umbrella.
+- **[Why SEO Matters](/seo/learn/)**, Learn why SEO is essential for compounding visibility, durable traffic, and profitable growth.
+- **[How Long Does SEO Take?](/seo/learn/)**, Set realistic timelines and understand the inputs that accelerate results.
+- **[Search Engine Algorithms](/seo/learn/)**, Learn how algorithms determine rankings and what that means for your content.
 - **[SEO Glossary](/seo/learn/seo-glossary/)**, Browse 100+ terms every marketer should know, from canonicalisation to zero-click.
-- **[SEO Strategy for Beginners](/seo/learn/seo-strategy-for-beginners/)**, Follow a step-by-step blueprint to build a strong SEO foundation.
+- **[SEO Strategy for Beginners](/seo/learn/)**, Follow a step-by-step blueprint to build a strong SEO foundation.
 - **[What Are Keywords?](/learn/what-are-keywords/)**, Understand what keywords are, how to discover them, and how they map to intent.
 - **[Ranking Factors](/seo/learn/seo-ranking-factors/)**, Explore the technical, content, and off-page factors that influence success.
-- **[Google Indexing](/seo/learn/what-is-google-indexing/)**, See how Google indexes and retrieves pages, and how to get indexed faster.
+- **[Google Indexing](/seo/learn/)**, See how Google indexes and retrieves pages, and how to get indexed faster.
 
 Tip: Work through the list in order. Because each concept underpins the next, you’ll avoid shallow tactics and build durable skills.
 
@@ -143,7 +143,7 @@ This isn’t a loose list of posts. It’s a **contextual bridge**: each summary
    - Do: Build topic clusters and an editorial calendar by intent stage.
    - Outcome: Scalable content that matches how people search.
 4. **I’m stuck on indexing**
-   - Read: **[Google Indexing](/seo/technical-seo/google-crawling-and-indexing/)**
+   - Read: **[Google Indexing](/seo/technical-seo/)**
    - Do: Audit coverage, sitemaps, robots, canonicals; remove bloat and fix duplication.
    - Outcome: Cleaner index, stronger signal-to-noise, faster evaluation.
 

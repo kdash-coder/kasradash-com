@@ -55,7 +55,7 @@ Finding the right keywords isn’t just about search volume.
 
 The SEOs I spoke to are using tools that help them understand [search intent](/seo/content-seo/search-intent/), build [topic clusters](/seo/content-seo/content-frameworks/), and identify SERP features that drive clicks.
 
-Below are some of the top tools that came up when I asked about [keyword research](/seo/seo-frameworks/keyword-research-template/).
+Below are some of the top tools that came up when I asked about [keyword research](/seo/seo-frameworks/).
 
 ### Top Keyword Research Tools Mentioned
 

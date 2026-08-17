@@ -179,7 +179,7 @@ A topical map → evolves → with your site and search landscape.
 
 Audit it quarterly to:
 
-- Add new entities found in [keyword research](/seo/seo-frameworks/keyword-research-template/).
+- Add new entities found in [keyword research](/seo/seo-frameworks/).
 - Merge overlapping clusters.
 - Update outdated topics.
 - Identify orphan pages and reconnect them contextually.
