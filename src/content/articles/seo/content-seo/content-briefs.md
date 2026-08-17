@@ -119,11 +119,38 @@ Define the appropriate tone (educational, persuasive, technical) and include a c
 
 **Consistency in tone → enhances → brand trust.**
 
+### 7. On-Page SEO Elements
+
+Specify the metadata the writer must deliver alongside the copy:
+
+- **Meta Title & Description:** Under 60 and 160 characters.
+- **URL Slug:** Short, descriptive, keyword-rich.
+- **Image Alt Text:** Optimised with entities.
+- **Schema Suggestions:** Article or other eligible types where relevant.
+
+Example:
+
+> Meta Title: How AI for Keyword Research Improves SEO Strategy  
+> Meta Description: Learn how to use AI tools to analyse and cluster keywords for better topical authority and organic growth.
+
+**On-page precision → turns → good content into high-performing content.**
+
+### 8. Content Requirements and References
+
+Set clear deliverables so revisions stay rare:
+
+- **Word Count:** Ideal range (e.g., 1,200–1,500 words).
+- **Readability:** Target Flesch score (60–70).
+- **Media:** Number of images, charts, or embeds.
+- **References:** Studies, competitor examples, or data sources that support E-E-A-T.
+
+**Clear deliverables → reduce → revision cycles.**
+
 A brief isn’t just a list, it’s a logical, data-driven guide to build authority.
 
 ### What should an SEO content brief include?
 
-An SEO content brief should include target keywords, intent, entities, structure, links, and tone to guide writers and maintain consistency across your site.
+An SEO content brief should include target keywords, intent, entities, structure, links, tone, on-page metadata, and clear deliverables to guide writers and maintain consistency across your site.
 
 ## How to Create a Content Brief (Step-by-Step)
 
