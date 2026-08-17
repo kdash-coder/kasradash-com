@@ -2,8 +2,15 @@
 import type { CollectionEntry } from 'astro:content';
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import TocScrollSpy from '../components/TocScrollSpy.astro';
 import { SITE_URL, HUBS } from '../lib/site';
 import { webPageId } from '../lib/schema';
+
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
 
 interface Props {
   title: string;
@@ -12,6 +19,7 @@ interface Props {
   path: string;
   siloName: string;
   guides: CollectionEntry<'articles'>[];
+  headings?: Heading[];
   ogImage?: string;
   isPillar?: boolean;
   datePublished?: string;
@@ -19,7 +27,16 @@ interface Props {
   noindex?: boolean;
 }
 
-const { title, description, h1, path, siloName, guides, ogImage, isPillar = false, datePublished, dateModified, noindex } = Astro.props;
+const { title, description, h1, path, siloName, guides, headings = [], ogImage, isPillar = false, datePublished, dateModified, noindex } = Astro.props;
+
+// Consolidation folded thousands of words into some hubs (QA-REPORT-2): give any
+// hub body with 4+ H2s the article ToC treatment; short intros stay rail-free.
+// Fallback: some folds landed as one H2 over many H3s (link-building), so when
+// H2s are sparse the rail builds from H3s instead.
+const h2s = headings.filter((h) => h.depth === 2);
+const h3s = headings.filter((h) => h.depth === 3);
+const toc = h2s.length >= 4 ? h2s : h3s.length >= 4 ? h3s : h2s;
+const showToc = toc.length >= 4;
 
 const crumbs = isPillar
   ? [
@@ -77,9 +94,30 @@ const webPageExtras = {
         </section>
       )}
 
-      <section class="reading-well prose prose-well mt-14 max-w-3xl p-5 sm:p-8 lg:p-12">
-        <slot />
-      </section>
+      <div class={showToc ? 'mt-14 gap-10 lg:grid lg:grid-cols-[12rem_minmax(0,1fr)]' : 'mt-14'}>
+        {showToc && (
+          <aside class="hidden lg:block">
+            <nav class="sticky top-24" aria-label="On this page">
+              <h2 class="font-display text-xs font-bold uppercase tracking-wider text-dim">On this page</h2>
+              <ul class="mt-3 space-y-0.5 border-l border-tint-border">
+                {toc.map((h) => (
+                  <li>
+                    <a
+                      href={`#${h.slug}`}
+                      class="toc-link -ml-px block border-l-2 border-transparent py-1 pl-3 text-[0.8rem] leading-snug text-dim transition hover:border-brand-500/50 hover:text-ink"
+                    >
+                      {h.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </aside>
+        )}
+        <section class="reading-well prose prose-well max-w-3xl p-5 sm:p-8 lg:p-12">
+          <slot />
+        </section>
+      </div>
 
       {!isPillar && (
         <section class="mt-14 rounded-[20px] border border-tint-border bg-tint p-6" aria-label="Other SEO topics">
@@ -95,4 +133,5 @@ const webPageExtras = {
       )}
     </div>
   </main>
+  {showToc && <TocScrollSpy />}
 </BaseLayout>
