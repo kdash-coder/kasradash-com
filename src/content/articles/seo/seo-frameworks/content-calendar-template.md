@@ -105,7 +105,7 @@ Team accountability keeps your publishing engine running smoothly.
 Assign tasks clearly within your calendar:
 
 - Writers: Content creation and keyword integration.
-- Editors: Review, optimise, and align with [E-E-A-T standards](/seo/content-seo/e-e-a-t/).
+- Editors: Review, optimise, and align with [E-E-A-T standards](/seo/seo-frameworks/eeat-framework/).
 - SEO Specialists: Add schema, metadata, and internal links.
 - Designers: Create images or graphics to support the article.
 
@@ -124,7 +124,7 @@ Use ChatGPT, Perplexity AI, or SurferSEO to:
 - Suggest metadata and headings automatically.
 - Analyse competitor content for depth and tone.
 
-Automation tools like Make and n8n can sync your CMS with your calendar, updating status automatically once posts are published. See the guide on [AI SEO automation](/seo/ai-and-seo/ai-seo-automation/) for workflow setup across these tools.
+Automation tools like Make and n8n can sync your CMS with your calendar, updating status automatically once posts are published. See the guide on [AI SEO automation](/seo/seo-frameworks/ai-workflow-templates/) for workflow setup across these tools.
 
 AI brings structure and speed to editorial planning.
 
@@ -139,7 +139,7 @@ Add a “Review Date” column to your calendar to prompt updates every 6–12 m
 - Internal links to new relevant pages.
 - Metadata alignment with current search intent.
 
-Feed these updates into your [Content Auditing Framework](/seo/seo-frameworks/content-audit-template/) to manage refreshes at scale.
+Feed these updates into your [Content Auditing Framework](/seo/content-seo/content-audits/) to manage refreshes at scale.
 
 Refreshing content signals reliability to both users and algorithms.
 

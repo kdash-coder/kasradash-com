@@ -63,7 +63,7 @@ This tool uses machine learning to group keywords by **search intent** and **SER
 
 Integrate it into workflows for automatic **topic clustering** and **intent segmentation** using ChatGPT or Claude.
 
-See how this supports semantic structure in Using AI to [Build Topical Maps Automatically](/seo/ai-and-seo/ai-topical-maps/).
+See how this supports semantic structure in Using AI to [Build Topical Maps Automatically](/seo/content-seo/topical-authority/).
 
 ### **4. AlsoAsked & AnswerThePublic**
 
@@ -145,7 +145,7 @@ Make connects data sources (Google Analytics, Ahrefs, Sheets) and automates recu
 **Best for:** Self-hosted SEO automation.  
 n8n gives advanced users more control over triggers and logic. Ideal for in-house SEO teams building **custom AI pipelines**, e.g., automatically generating keyword movement reports.
 
-For step-by-step examples, see [Automating SEO Tasks](/seo/ai-and-seo/ai-seo-automation/) with AI Tools (Make, n8n, ChatGPT).
+For step-by-step examples, see [Automating SEO Tasks](/seo/seo-frameworks/ai-workflow-templates/) with AI Tools (Make, n8n, ChatGPT).
 
 ### **5. DashThis or Databox**
 

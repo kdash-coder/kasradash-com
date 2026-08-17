@@ -87,7 +87,7 @@ AI search engines evaluate credibility through E-E-A-T signals. Even without Goo
 - **Authoritativeness:** Cited by other sources or domains.
 - **Trustworthiness:** Transparent sourcing and factual consistency.
 
-Because models like GPT and Claude were trained to avoid misinformation, they inherently favour sources that demonstrate these qualities. Our guide to [E-E-A-T for content writers](/seo/content-seo/e-e-a-t/) covers exactly how to embed these signals into every piece you publish, from author credentials to source attribution.
+Because models like GPT and Claude were trained to avoid misinformation, they inherently favour sources that demonstrate these qualities. Our guide to [E-E-A-T for content writers](/seo/seo-frameworks/eeat-framework/) covers exactly how to embed these signals into every piece you publish, from author credentials to source attribution.
 
 To strengthen these signals, ensure every article includes:
 
@@ -108,7 +108,7 @@ AI-driven search changes how visibility is measured. Rather than chasing first-p
 - Updating cornerstone content quarterly.
 - Publishing original research or statistics to attract citations.
 
-For a holistic framework that supports this, [Semantic SEO: Meaning, Context & Entity Optimisation](/seo/content-seo/semantic-seo/) explains how to structure content around concepts rather than keywords, which is exactly how AI retrieval systems index and select sources.
+For a holistic framework that supports this, [Semantic SEO: Meaning, Context & Entity Optimisation](/seo/content-seo/topical-authority/) explains how to structure content around concepts rather than keywords, which is exactly how AI retrieval systems index and select sources.
 
 **Does AI search kill traditional SEO?** No, it evolves it. Traditional SEO fuels discoverability; AI search amplifies authority. The two will coexist, with SEO shifting from “ranked pages” to “referenced insights.”
 
@@ -123,7 +123,7 @@ To increase your chances of being cited or summarised by AI models:
 - Use clear question-based headings.
 - Update content consistently.
 
-These steps make your site more understandable to retrieval-augmented generation (RAG) systems used by AI search engines. Understanding [how AI interprets search intent](/seo/ai-and-seo/ai-search-intent/) helps you frame content in a way that matches how generative models decompose and answer user queries, not just how traditional algorithms rank pages.
+These steps make your site more understandable to retrieval-augmented generation (RAG) systems used by AI search engines. Understanding [how AI interprets search intent](/seo/content-seo/search-intent/) helps you frame content in a way that matches how generative models decompose and answer user queries, not just how traditional algorithms rank pages.
 
 If your content reads like a trusted resource, AI models will treat it like one.
 
@@ -144,4 +144,4 @@ AI search engines like Perplexity and ChatGPT are not replacing Google, they’r
 
 By embracing semantic SEO, strengthening E-E-A-T, and producing entity-rich content, you make your expertise visible to both humans and machines.
 
-**Next step:** Audit your top content for factual accuracy and structure using the [Content Audit Template](/seo/seo-frameworks/content-audit-template/) to identify gaps and prepare your pages for AI search inclusion.
+**Next step:** Audit your top content for factual accuracy and structure using the [Content Audit Template](/seo/content-seo/content-audits/) to identify gaps and prepare your pages for AI search inclusion.

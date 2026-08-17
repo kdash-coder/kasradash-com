@@ -157,7 +157,7 @@ You should measure how testimonial backlinks contribute to your overall SEO grow
 
 Use **Ahrefs**, **Google Analytics**, and **Search Console** to track progress.
 
-→ Evaluate performance in [**Measure ROI of Link Building**](/seo/link-building/measure-roi/).
+→ Evaluate performance in [**Measure ROI of Link Building**](/seo/link-building/).
 
 Tracking ensures every testimonial effort delivers measurable authority.
 
@@ -223,6 +223,6 @@ To recap:
 - Keep pitches short, real, and value-driven.
 - Track performance and scale ethically.
 
-→ Continue learning with [**Link Building Strategies**](/seo/link-building/strategies/) and measure results in **Measure ROI of Link Building**.
+→ Continue learning with [**Link Building Strategies**](/seo/link-building/) and measure results in **Measure ROI of Link Building**.
 
 In link building, trust is the only currency that compounds.

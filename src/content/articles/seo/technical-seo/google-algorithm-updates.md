@@ -18,7 +18,7 @@ But when a new core update rolls out, rankings can shift overnight, leaving site
 
 In this guide by **Kasra Dash**, you’ll learn what Google algorithm updates are, how they work, and the practical steps to recover and future-proof your SEO strategy.
 
-→ For context on how updates interact with your site’s infrastructure, see [**Technical SEO Audit**](/seo/technical-seo/audit/) and [**SEO Ranking Factors**](/seo/learn/seo-ranking-factors/).
+→ For context on how updates interact with your site’s infrastructure, see [**Technical SEO Audit**](/seo/technical-seo/) and [**SEO Ranking Factors**](/seo/learn/seo-ranking-factors/).
 
 Algorithm updates are not punishments, they’re recalibrations of quality and relevance.
 
@@ -114,7 +114,7 @@ Use tools that visualise turbulence across industries:
 
 Use **Google Search Console → Performance Report** to identify keyword or URL-level drops.
 
-→ If you notice indexing anomalies, check [**Fix Indexing Issues**](/seo/technical-seo/fix-indexing-issues/).
+→ If you notice indexing anomalies, check [**Fix Indexing Issues**](/seo/technical-seo/).
 
 Data doesn’t lie, correlating trends reveals whether you’re a victim or a beneficiary.
 

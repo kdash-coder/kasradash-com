@@ -19,7 +19,7 @@ Understanding these codes is essential for diagnosing crawl errors, fixing visib
 
 In this guide by **Kasra Dash**, we’ll explain what HTTP status codes are, how they affect SEO, and how to fix common errors that waste crawl budget or block indexing.
 
-→ Before you begin, revisit [**Technical SEO**](/seo/technical-seo/) and [**Fix Indexing Issues**](/seo/technical-seo/fix-indexing-issues/) to understand how crawlability and accessibility work together.
+→ Before you begin, revisit [**Technical SEO**](/seo/technical-seo/) and [**Fix Indexing Issues**](/seo/technical-seo/) to understand how crawlability and accessibility work together.
 
 HTTP status codes are the language of communication between your website and search engines.
 
@@ -132,7 +132,7 @@ Pages return a **200 OK** status but display “not found” content, confusing 
 
 Frequent 500 errors indicate server instability or resource overload.
 
-→ Identify these issues with a [**Technical SEO Audit**](/seo/technical-seo/audit/) and review canonical logic in **Canonical Tags**.
+→ Identify these issues with a [**Technical SEO Audit**](/seo/technical-seo/) and review canonical logic in **Canonical Tags**.
 
 Every incorrect status code creates friction between your site and Googlebot.
 

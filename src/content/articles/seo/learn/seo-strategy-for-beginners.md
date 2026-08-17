@@ -54,7 +54,7 @@ Start with **seed topics** related to your business, then expand them using tool
 3. Map those themes to URLs, this is called **keyword mapping**.
 4. Target realistic opportunities before going after high-competition terms.
 
-→ Learn how intent shapes optimisation in [**What Are Keywords**](/learn/what-are-keywords/) and clarify terminology in the [**SEO Glossary**](/seo/learn/seo-glossary/).
+→ Learn how intent shapes optimisation in [**What Are Keywords**](/seo/learn/) and clarify terminology in the [**SEO Glossary**](/seo/learn/seo-glossary/).
 
 Keyword research tells you where to focus; strategy turns it into action.
 

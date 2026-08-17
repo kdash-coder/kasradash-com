@@ -17,7 +17,7 @@ If your traffic has dropped suddenly, your site might have been affected by a **
 
 In this guide by **Kasra Dash**, you’ll learn how to identify what kind of penalty you’ve been hit with, how to fix it, and how to rebuild your rankings the right way.
 
-→ Before starting recovery, revisit [**Google Algorithm Updates**](/seo/technical-seo/google-algorithm-updates/) and [**Technical SEO Audit**](/seo/technical-seo/audit/) to understand how Google evaluates quality and compliance.
+→ Before starting recovery, revisit [**Google Algorithm Updates**](/seo/technical-seo/google-algorithm-updates/) and [**Technical SEO Audit**](/seo/technical-seo/) to understand how Google evaluates quality and compliance.
 
 A penalty isn’t the end of your SEO, it’s a signal to rebuild with stronger, cleaner systems.
 
@@ -69,13 +69,13 @@ If it aligns, you’ve likely been impacted algorithmically rather than manually
 - Identify crawl errors, blocked resources, or duplicate content.
 - Verify indexation in **Google Search Console → Indexing → Pages**.
 
-→ For crawl diagnostics, review [**Fix Indexing Issues**](/seo/technical-seo/fix-indexing-issues/).
+→ For crawl diagnostics, review [**Fix Indexing Issues**](/seo/technical-seo/).
 
 ### Step 4: Review Backlink Profile
 
 Toxic backlinks often trigger penalties. Use **Ahrefs**, **Semrush**, or **Google’s Disavow Tool** to identify manipulative patterns.
 
-→ Learn clean linking practices in [**Link Building Strategies**](/seo/link-building/strategies/).
+→ Learn clean linking practices in [**Link Building Strategies**](/seo/link-building/).
 
 Accurate diagnosis prevents wasted effort on irrelevant fixes.
 

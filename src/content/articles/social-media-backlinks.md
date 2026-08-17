@@ -70,7 +70,7 @@ Social platforms drive qualified traffic that engages with your site, improving 
 
 **Engagement signals → strengthen → content credibility in Google’s eyes.**
 
-→ Track performance in [**Measure ROI of Link Building**](/seo/link-building/measure-roi/).
+→ Track performance in [**Measure ROI of Link Building**](/seo/link-building/).
 
 The best social backlinks bring both clicks and credibility.
 
@@ -261,6 +261,6 @@ To recap:
 - Engage genuinely and prioritise content quality.
 - Track referral and engagement metrics consistently.
 
-→ Continue learning in [**Link Building Strategies**](/seo/link-building/strategies/) and monitor outcomes with **Measure ROI of Link Building**.
+→ Continue learning in [**Link Building Strategies**](/seo/link-building/) and monitor outcomes with **Measure ROI of Link Building**.
 
 Social backlinks may not transfer PageRank, but they transfer trust.

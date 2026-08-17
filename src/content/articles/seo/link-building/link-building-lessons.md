@@ -79,7 +79,7 @@ Early on, I treated outreach like a numbers game, sending hundreds of templated 
 
 **When you make outreach about them, links follow naturally.**
 
-→ Apply ethical outreach frameworks in [**Link Building Strategies**](/seo/link-building/strategies/).
+→ Apply ethical outreach frameworks in [**Link Building Strategies**](/seo/link-building/).
 
 ### How can I improve my outreach success rate?
 
@@ -114,7 +114,7 @@ When I started, I looked for shortcuts, “free backlink generators,” “auto-
 **Free backlinks → still cost → time, creativity, and effort.**  
 There are legitimate ways to get free backlinks, like **HARO**, **broken link building**, or **guest posting**, but each requires outreach and strategy.
 
-→ Learn ethical methods in [**Free Backlinks**](/seo/seo-frameworks/backlink-outreach-template/).
+→ Learn ethical methods in [**Free Backlinks**](/seo/link-building/).
 
 **Effort → converts → into sustainable link equity.**
 
@@ -137,7 +137,7 @@ A healthy backlink profile grows **steadily**, not **suddenly**.
 - Spread campaigns across weeks, not days.
 - Focus on gradual, organic expansion.
 
-→ See how velocity impacts indexing in [**Technical SEO Audit**](/seo/technical-seo/audit/).
+→ See how velocity impacts indexing in [**Technical SEO Audit**](/seo/technical-seo/).
 
 **Stable growth → signals → authenticity to algorithms.**
 
@@ -192,7 +192,7 @@ SEO is cumulative. Many of my best backlinks took months to pay off, and some st
 **Authority growth → follows → consistency and patience.**  
 Don’t expect results overnight, instead, track progress quarterly.
 
-→ Learn evaluation metrics in [**Measure ROI of Link Building**](/seo/link-building/measure-roi/).
+→ Learn evaluation metrics in [**Measure ROI of Link Building**](/seo/link-building/).
 
 **Patience → produces → exponential compounding results.**
 

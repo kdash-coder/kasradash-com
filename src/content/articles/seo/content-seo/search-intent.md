@@ -75,7 +75,7 @@ Every search query falls into one of four primary intent types. Understanding ea
 
 **Intent clarity → directs → content format and structure.**
 
-→ Deepen contextual understanding in [**Semantic SEO**](/seo/content-seo/semantic-seo/).
+→ Deepen contextual understanding in [**Semantic SEO**](/seo/content-seo/topical-authority/).
 
 Each query signals a specific mindset, your content should match it.
 
@@ -226,6 +226,36 @@ Meaning gives structure; intent gives direction.
 ### How do intent and entities work together?
 
 Intent shows why a user searches, while entities show what they mean. Together, they form the foundation of semantic SEO.
+
+## How Does AI Change Search Intent?
+
+**AI → transforms → search intent from keyword-driven to meaning-driven.**
+
+Systems like **Google MUM**, **AI Overviews (SGE)**, and **Perplexity AI** interpret context, entities, and relationships rather than matching strings, so the classic intent categories now blend into **multi-intent** experiences:
+
+| Traditional Intent | AI-Influenced Behaviour |
+| --- | --- |
+| **Informational** | Users expect summarised answers with trustworthy citations. |
+| **Commercial** | AI models suggest comparison and product recommendations directly. |
+| **Transactional** | Voice search and generative assistants guide users to purchase faster. |
+| **Navigational** | Reduced, users rely on AI summaries instead of brand recall. |
+
+Conversational AI also drives **zero-click behaviour**: users refine queries inside one chat, CTRs fall on informational queries, and visibility means being **cited within answers** rather than merely ranked. Search is becoming predictive too — Google Discover and “For You” feeds surface content before a query is typed, so visibility begins before the search itself.
+
+To adapt, optimise for meaning rather than matching:
+
+1. **Target intent paths, not single intents**, using entity relationships and topic clusters.
+2. **Design for AI summarisation** with clear, fact-based, citation-friendly passages.
+3. **Leverage multimodal signals**, combining video, images, and structured data.
+4. **Measure visibility beyond rankings**, tracking mentions, citations, and zero-click exposure.
+
+→ To get cited by generative results, follow [**AI Overviews Optimisation**](/seo/ai-and-seo/ai-overviews-optimisation/).
+
+AI makes intent fluid, content must move with it.
+
+### What does AI-driven search mean for intent optimisation?
+
+AI-driven search blends intent types and answers many queries on the SERP itself, so content must align with entities and intent flows to be cited by generative results, not just ranked beneath them.
 
 ## Summary: Search Intent Is the Foundation of Effective SEO
 

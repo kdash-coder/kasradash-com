@@ -25,12 +25,12 @@ Instead of checking random metrics, you’ll follow a defined structure that ens
 
 A complete SEO audit should assess:
 
-1. [**Technical Health**](/seo/seo-frameworks/technical-seo-framework/), How well your site performs for crawlers and users.
+1. [**Technical Health**](/seo/technical-seo/), How well your site performs for crawlers and users.
 2. **On-Page SEO**, Content relevance, keyword usage, and E-E-A-T.
 3. **Off-Page SEO**, Backlinks, authority, and reputation.
 4. **Performance Metrics**, What’s improving, what’s stagnating, and why.
 
-For a complementary process, pair this with your [Content Auditing Framework](/seo/seo-frameworks/content-audit-template/).
+For a complementary process, pair this with your [Content Auditing Framework](/seo/content-seo/content-audits/).
 
 Consistency turns audits into intelligence.
 
@@ -41,7 +41,7 @@ Technical SEO → ensures → your site is accessible, indexable, and fast.
 **✓ Crawlability and Indexation**
 
 - Check with Google Search Console’s “Pages” report.
-- Review [robots.txt and XML sitemap](/seo/technical-seo/audit/) for exclusions.
+- Review [robots.txt and XML sitemap](/seo/technical-seo/) for exclusions.
 - Identify crawl errors (404s, redirect loops, soft 404s).
 - Ensure canonical tags are used correctly.
 
@@ -129,7 +129,7 @@ Off-page SEO → measures → your authority and credibility across the web.
 - Compare your domain authority and link profile against competitors.
 - Identify high-authority sites linking to them but not to you.
 
-For link-building frameworks, check [Internal Linking](/seo/seo-frameworks/internal-linking-framework/) for SEO.
+For link-building frameworks, check [Internal Linking](/seo/content-seo/internal-linking/) for SEO.
 
 Off-page audits show how trustworthy your digital footprint really is.
 

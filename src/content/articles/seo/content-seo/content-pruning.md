@@ -80,7 +80,7 @@ A **Content Audit → inventories → every indexable URL and its performance** 
 1. **Crawl the site** (Screaming Frog / Sitebulb) to export all indexable URLs, word counts, canonicals, status codes, inlinks/outlinks.
 2. **Join performance data** (GSC/Analytics): clicks, impressions, CTR, conversions.
 3. **Tag each URL** by topic, cluster, intent, and lifecycle stage (evergreen, dated, campaign).
-4. **Flag issues**: duplicate titles, thin pages, soft 404s, non‑canonical indexation, orphan pages (see [Fix Indexing Issues](/seo/technical-seo/fix-indexing-issues/)).
+4. **Flag issues**: duplicate titles, thin pages, soft 404s, non‑canonical indexation, orphan pages (see [Fix Indexing Issues](/seo/technical-seo/)).
 5. **Decide status** using an action column: *Keep / Update / Consolidate / Redirect / Noindex / Remove*.
 6. **Map merges**: assign a clear **destination URL** for any consolidation with anchor suggestions (see Internal Linking).
 
@@ -99,6 +99,19 @@ Use this quick decision table:
 | Poor page with strong external links | **Merge** the value into a refreshed destination | Keep equity; don’t delete linkable assets |
 
 > **Tip:** Always choose the **most relevant canonical destination**. Avoid redirect chains (301 → 301 → 301) and check for self‑referencing canonicals after merges (see [Canonical Tags](/seo/technical-seo/canonical-tags/)).
+
+## How Do You Refresh the Pages You Keep?
+
+**Refreshing → regains → lost rankings without starting from scratch.** When the audit verdict is *Update* rather than prune, work through this sequence:
+
+1. **Realign to modern [search intent](/seo/content-seo/search-intent/)**: check what now ranks for the main keyword (guides, lists, comparisons) and reshape the introduction, headings, and coverage to match.
+2. **Strengthen on‑page entities**: mention and define the tools, brands, and methodologies the topic depends on so Google understands the article’s focus — see [Entity Optimisation](/seo/content-seo/entity-optimisation/).
+3. **Improve readability and UX**: clear headings, short paragraphs, fresh visuals, and navigation aids that lift dwell time.
+4. **Update metadata for CTR**: current year, updated stats, and a problem-focused meta description — small tweaks can lift click-through rate by 20–30%. The [CTR Optimisation Framework](/seo/seo-frameworks/ctr-optimisation-framework/) covers the full process.
+5. **Strengthen internal links** across the cluster so the refreshed page reinforces its [topical authority](/seo/content-seo/topical-authority/).
+6. **Refresh the publish date and promote**: if updates are substantial, update the date and push the article through newsletters and communities so it gets re-crawled quickly.
+
+Every refreshed article compounds authority across the cluster it belongs to.
 
 ## Managing Crawl Efficiency After Pruning
 

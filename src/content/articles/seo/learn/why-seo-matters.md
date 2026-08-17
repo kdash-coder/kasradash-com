@@ -67,7 +67,7 @@ By targeting relevant **keywords**, optimising for query language, and structuri
 
 Because SEO matches demand rather than interrupting it, conversion rates are typically higher than those from cold advertising.
 
-**→ Learn how search intent guides optimisation in [What Are Keywords](/learn/what-are-keywords/) and review the discovery process in [How SEO Works](/seo/learn/how-seo-works/).**
+**→ Learn how search intent guides optimisation in [What Are Keywords](/seo/learn/) and review the discovery process in [How SEO Works](/seo/learn/how-seo-works/).**
 
 SEO is demand-driven marketing, you meet people where they already are, not where you hope they’ll be.
 

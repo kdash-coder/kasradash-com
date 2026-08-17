@@ -17,7 +17,7 @@ It forms the **foundation** of every SEO strategy. Without technical health, you
 
 In this guide by **Kasra Dash**, you’ll learn what Technical SEO is, why it matters, and how to diagnose and fix technical issues affecting visibility.
 
-→ Before diving in, revisit [**SEO Fundamentals**](/seo/learn/seo-fundamentals/), [**How Search Engines Work**](/seo/learn/how-search-engines-work/), and [**What Is Google Indexing**](/seo/learn/what-is-google-indexing/) to understand the underlying systems.
+→ Before diving in, revisit [**SEO Fundamentals**](/seo/learn/), [**How Search Engines Work**](/seo/learn/how-search-engines-work/), and [**What Is Google Indexing**](/seo/learn/what-is-google-indexing/) to understand the underlying systems.
 
 If content is the message, Technical SEO is the microphone that makes it heard.
 
@@ -33,7 +33,7 @@ At its core, Technical SEO solves three key challenges:
 2. **Can they understand your pages?** (Indexing)
 3. **Can they deliver your pages quickly and securely?** (Performance)
 
-→ Deep dive into discovery systems via [**Google Crawling & Indexing**](/seo/technical-seo/google-crawling-and-indexing/) and fix accessibility errors in [**Fix Indexing Issues**](/seo/technical-seo/fix-indexing-issues/).
+→ Deep dive into discovery systems via [**Google Crawling & Indexing**](/seo/technical-seo/google-crawling-and-indexing/) and fix accessibility errors in **Fix Indexing Issues**.
 
 Technical SEO ensures search engines can access, interpret, and trust your content.
 
@@ -78,41 +78,124 @@ These systems work together to create a technically strong and semantically clea
 
 A technically perfect site doesn’t just rank better, it scales faster and breaks less.
 
-## Technical SEO Audits
+## How Do You Run a Technical SEO Audit?
 
-A **Technical SEO Audit** identifies the structural barriers preventing your site from performing at its best.
+**A Technical SEO Audit → analyses → how search engines crawl, render, and index your site to identify barriers that prevent growth.** It differs from a content audit because it focuses on the *infrastructure*, not the copy. Work through these phases:
 
-You’ll analyse crawl data, site architecture, performance metrics, and indexing status to uncover issues.
+### Phase 1: Crawlability and Indexing
 
-### Audit Checklist
+Crawl the site with **Screaming Frog**, **Sitebulb**, or **JetOctopus**, then:
 
-- Crawl your site using **Screaming Frog** or **Sitebulb**.
-- Check indexation in **Google Search Console**.
-- Measure **Core Web Vitals** with **Lighthouse**.
-- Validate structured data using Google’s **Rich Results Test**.
-- Identify broken links, redirect chains, and canonical conflicts.
+- Confirm `robots.txt` doesn’t block important directories (keep sensitive or duplicate paths disallowed):
 
-→ Learn the full process in [**Technical SEO Audit**](/seo/technical-seo/audit/) and fix crawl barriers in **Fix Indexing Issues**.
+```
+User-agent: *
+Disallow: /checkout/
+Allow: /
+```
 
-Auditing is where visibility problems are revealed, and solved.
+- Validate the sitemap lists only canonical, 200-status URLs — remove anything returning 3xx/4xx/5xx — and submit it in **Google Search Console**.
+- Confirm every page carries a **self-referencing canonical**, with no canonical chains (A → B → C).
+
+### Phase 2: Site Architecture
+
+- **Click depth:** keep critical pages within 3 clicks of the homepage.
+- **Orphan pages:** find pages with no internal links and connect them.
+- **Hierarchy:** logical Homepage → Category → Subpage paths with clean URLs and breadcrumb navigation.
+
+### Phase 3: Speed and Core Web Vitals
+
+| Metric | Target | Fixes |
+| --- | --- | --- |
+| **LCP** (Largest Contentful Paint) | ≤ 2.5s | Optimise hero images, use lazy loading |
+| **INP** (Interaction to Next Paint) | ≤ 200ms | Reduce JS execution time |
+| **CLS** (Cumulative Layout Shift) | ≤ 0.1 | Reserve space for ads/images |
+
+Measure with **PageSpeed Insights**, **Lighthouse**, and the **Chrome UX Report** — and audit mobile separately, because the index is mobile-based. Core Web Vitals act as a *tiebreaker*: when content quality is equal, faster sites win.
+
+### Phase 4: Mobile Parity and Rendering
+
+Verify identical content between mobile and desktop, check the rendered HTML via **Search Console → URL Inspection → View Crawled Page**, and confirm JS/CSS resources aren’t blocked. Compare raw vs rendered HTML with Screaming Frog’s rendering mode — if Google can’t render your content, it can’t rank it.
+
+### Phase 5: Structured Data
+
+Validate every JSON-LD block in **Google’s Rich Results Test**, check Search Console’s enhancements reports, and make sure schema matches the visible content exactly.
+
+### Phase 6: Crawl Budget and Log Files
+
+Analyse server logs (Screaming Frog Log File Analyser, JetOctopus) to see which pages Googlebot actually visits, spot wasteful crawls on irrelevant URLs, and confirm priority pages get crawled most.
+
+### Phase 7: Security
+
+HTTPS enforced sitewide, valid SSL certificates, no mixed-content warnings, updated CMS and dependencies.
+
+### Phase 8: Report and Prioritise
+
+| Priority | Definition | Example |
+| --- | --- | --- |
+| **Critical** | Blocks indexing or visibility | Robots.txt blocking site |
+| **High** | Significantly affects ranking | 404 on key landing page |
+| **Medium** | Impacts crawl efficiency | Orphan pages, slow assets |
+
+Categorise fixes by impact and effort — meta duplicates, 404s and sitemap clean-up are high-impact/low-effort wins; structure rebuilds and Core Web Vitals work are high-impact/high-effort projects. An audit isn’t complete until issues are prioritised, implemented, and verified.
 
 ### How often should you run a technical audit?
 
-Every 3–6 months, or after any major website update. Continuous auditing ensures your technical foundation evolves alongside Google’s systems.
+Run a **full audit quarterly** and a **light check monthly**, plus after any migration, redesign, or major algorithm update.
 
-## Common Technical SEO Problems
+## Common Technical SEO Mistakes (and How to Fix Them)
 
-Even well-optimised sites face technical challenges. Recognising and addressing them early prevents long-term ranking loss.
+**Technical SEO mistakes → create → barriers for search engines to crawl, render, and index your site.** Even a single blocked resource or canonical error can quietly sabotage months of SEO work. The eight categories that cause most damage:
 
-### Frequent Issues
+| Mistake | Typical Cause | The Fix |
+| --- | --- | --- |
+| **Crawl blocks** | Essential pages disallowed in robots.txt; leftover staging `noindex` | Test in Search Console, keep sitemaps fresh, strip temporary noindex after deployment |
+| **Indexation gaps** | Canonicals pointing at dead URLs; parameter duplicates (`?sort=`, `?filter=`) | Correct canonical targets, merge duplicates into one strong version |
+| **Rendering failures** | Client-side rendering only; lazy-loaded content with no fallback; blocked JS/CSS | Use server-side rendering or pre-rendering, add `<noscript>` fallbacks, unblock resources |
+| **Slow pages** | Oversized images, excessive third-party scripts, weak hosting | Compress to WebP/AVIF on a CDN, minify CSS/JS, enable server caching |
+| **Canonical conflicts** | Missing or contradictory canonicals; HTTP vs HTTPS duplicates | Self-referencing canonicals resolving with a 200 status |
+| **Crawl budget waste** | Faceted navigation loops, filter URLs, infinite scroll | Block non-indexable parameters, consolidate filters, prioritise internal links to key pages |
+| **Security gaps** | Mixed content, broken HTTP→HTTPS redirects, expired SSL | Force HTTPS via 301s, update internal links, renew certificates early |
+| **Schema errors** | Invalid JSON syntax, markup that doesn’t match visible content | Validate in the Rich Results Test and keep markup truthful |
 
-- **Crawl Errors:** Broken links or blocked directories.
-- **Duplicate Content:** Poor canonical implementation.
-- **Slow Load Speeds:** Oversized images or render-blocking scripts.
-- **Incorrect Redirects:** 302s instead of 301s.
-- **Sandbox Effect:** New sites taking time to gain visibility.
+Crawl budget only becomes critical once a site exceeds roughly 10,000 URLs — but canonical clarity and rendering parity matter at every size.
 
-→ Troubleshoot these in [**Common Technical SEO Mistakes**](/seo/technical-seo/common-mistakes/), **Fix Indexing Issues**, and [**Google Sandbox**](/seo/technical-seo/google-sandbox/).
+**Prevention beats recovery:** run the audit quarterly, monitor crawl stats in Search Console, set up crawl alerts, test changes in staging, and validate schema, canonicals, and sitemaps before deploying.
+
+### How do I check if Google is crawling my site?
+
+Use the **URL Inspection Tool** in Search Console — it shows when Googlebot last crawled a page and whether it was indexed.
+
+## How Do You Fix Indexing Issues?
+
+**Indexing issues → occur → when search engines discover your pages but do not store them in their searchable database.** The pipeline is *Crawling → Rendering → Indexing → Ranking* — if any step fails, the page never appears in results.
+
+Indexing failures fall into three categories: **technical** (blocked by robots.txt or noindex, broken canonicals, missing from the sitemap, failed rendering), **content** (thin, duplicate, or auto-generated pages Google deprioritises), and **authority** (new or untrusted pages with few internal or external links).
+
+### Diagnose first
+
+1. Check **Search Console → Pages → Indexing → Not Indexed** for reasons like “Discovered – currently not indexed” (usually weak internal links or duplication) and inspect individual URLs with the **URL Inspection Tool**.
+2. Crawl with Screaming Frog and cross-reference against your sitemap.
+3. Search `site:yourdomain.com` — a count far below expectations means content is invisible to Google.
+
+### Then fix in this order
+
+1. **Remove technical barriers:** accidental noindex tags, robots.txt blocks, canonicals pointing at dead URLs, redirect chains.
+2. **Improve content quality:** merge thin or duplicate pages into stronger resources and add E-E-A-T signals.
+3. **Strengthen internal linking:** link from high-authority pages to unindexed URLs with descriptive anchors, keeping click depth under 3.
+4. **Increase crawl incentives:** refresh old pages, earn external links, resubmit the updated sitemap.
+
+| Site Type | Average Reindex Time |
+| --- | --- |
+| Small blogs | 1–7 days |
+| Mid-size sites | 1–3 weeks |
+| Large or e-commerce | 1–6 weeks |
+
+For faster discovery on supported engines, push updates via the **IndexNow API**; use Google’s **Indexing API** only for job postings and livestream content.
+
+### Should I use the “Request Indexing” tool for every page?
+
+No — only after major updates. Overuse can trigger throttling. Fix the technical and content causes first; forced indexing never outruns a quality problem.
 
 Prevention is cheaper than recovery, technical diligence protects rankings.
 

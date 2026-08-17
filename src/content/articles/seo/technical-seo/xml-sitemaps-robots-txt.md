@@ -64,7 +64,7 @@ For large sites, a **sitemap index** can reference multiple sitemap files:
 - They highlight content freshness through `<lastmod>`.
 - They reduce crawl waste by focusing bots on indexable URLs.
 
-→ See how sitemaps influence discovery in [**Crawl Budget**](/seo/technical-seo/crawl-budget/) and fix submission errors in [**Fix Indexing Issues**](/seo/technical-seo/fix-indexing-issues/).
+→ See how sitemaps influence discovery in [**Crawl Budget**](/seo/technical-seo/crawl-budget/) and fix submission errors in [**Fix Indexing Issues**](/seo/technical-seo/).
 
 Think of your sitemap as the map Google follows to find your most valuable destinations.
 
@@ -94,7 +94,7 @@ Sitemap: https://www.example.com/sitemap.xml
 | **Allow** | Overrides disallow rules for certain files or folders. |
 | **Sitemap** | Points to your sitemap file (optional but recommended). |
 
-→ Learn about crawler behaviour in **Google Crawling & Indexing** and see examples of configuration errors in [**Common Technical SEO Mistakes**](/seo/technical-seo/common-mistakes/).
+→ Learn about crawler behaviour in **Google Crawling & Indexing** and see examples of configuration errors in [**Common Technical SEO Mistakes**](/seo/technical-seo/).
 
 Robots.txt is not a security system, it’s a set of polite requests for crawlers.
 
@@ -126,7 +126,7 @@ Here, the sitemap reference within `robots.txt` makes it easier for bots to loca
 - **Robots.txt configuration** ensures crawl resources aren’t wasted.
 - **Combined control** improves crawl efficiency and protects server performance.
 
-→ Validate this synergy with a [**Technical SEO Audit**](/seo/technical-seo/audit/) and fix blocked resources through **Fix Indexing Issues**.
+→ Validate this synergy with a [**Technical SEO Audit**](/seo/technical-seo/) and fix blocked resources through **Fix Indexing Issues**.
 
 A sitemap guides bots to what matters; robots.txt keeps them out of what doesn’t.
 

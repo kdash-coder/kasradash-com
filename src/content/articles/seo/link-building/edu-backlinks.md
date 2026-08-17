@@ -62,7 +62,7 @@ Educational career centres list industry placements and work experience opportun
 
 If you or your business has ties to a university (guest lecturing, alumni programmes, or partnerships), ask for a link on alumni pages or collaborative project listings.
 
-→ Explore scalable tactics in [**Link Building Strategies**](/seo/link-building/strategies/) and [**Guest Posting**](/seo/link-building/guest-posting/).
+→ Explore scalable tactics in [**Link Building Strategies**](/seo/link-building/) and [**Guest Posting**](/seo/link-building/guest-posting/).
 
 Authenticity and relevance make the difference between a genuine EDU link and a red flag.
 

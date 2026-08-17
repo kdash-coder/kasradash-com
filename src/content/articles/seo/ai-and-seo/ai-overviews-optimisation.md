@@ -27,7 +27,8 @@ If your content is selected, it can appear as a citation in the AI Overview box,
 
 For context on how Google’s generative model interprets meaning, read [AI & SEO](/seo/ai-and-seo/): How Artificial Intelligence Is Changing Search.
 
-/eael accordion: Why are AI Overviews important for SEO?  
+### Why are AI Overviews important for SEO?
+
 AI Overviews take up prime SERP real estate. Being cited gives your brand instant authority, higher click-through rates, and exposure to users who may not scroll further down the results page.
 
 ## Step 1: Understand How AI Overviews Choose Sources
@@ -113,6 +114,10 @@ When AI Overviews cite content, they favour writers and brands that demonstrate 
 
 AI trusts humans who show proof, not just opinions.
 
+### Can new websites appear in AI Overviews?
+
+Yes, if they demonstrate strong E-E-A-T, structured clarity, and focus on niche authority. Smaller, high-quality sites can be cited over generic, high-traffic ones if they demonstrate superior precision and expertise.
+
 ## Step 6: Optimise for Conversational and Multi-Intent Queries
 
 SGE → focuses → on complex, conversational queries.
@@ -124,8 +129,8 @@ To align with this, target natural-language searches such as:
 - “Best tools for AI content optimisation.”
 - “Is AI content penalised by Google?”
 
-Craft your content to answer both **primary** and **secondary** questions in one piece.  
-You can refine your keyword and intent mapping by understanding [how AI changes search intent](/seo/ai-and-seo/ai-search-intent/).
+Craft your content to answer both **primary** and **secondary** questions in one piece. Tools like **AlsoAsked**, **Semrush Topic Research**, and Google’s **“People Also Ask”** data surface the conversational and comparative queries AI Overviews favour.  
+You can refine your keyword and intent mapping by understanding [how AI changes search intent](/seo/content-seo/search-intent/).
 
 Write like you’re answering, not just optimising.
 

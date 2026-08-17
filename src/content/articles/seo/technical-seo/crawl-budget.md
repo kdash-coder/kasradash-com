@@ -66,7 +66,7 @@ If your crawl budget is wasted on irrelevant or duplicate URLs, critical pages m
 
 **Duplicate content → wastes → crawl resources.**
 
-→ Fix duplication using [**Canonical Tags**](/seo/technical-seo/canonical-tags/) and prevent accessibility issues via [**Fix Indexing Issues**](/seo/technical-seo/fix-indexing-issues/).
+→ Fix duplication using [**Canonical Tags**](/seo/technical-seo/canonical-tags/) and prevent accessibility issues via [**Fix Indexing Issues**](/seo/technical-seo/).
 
 Efficient crawling ensures Google focuses on what matters most, your money pages, not your metadata.
 
@@ -93,7 +93,7 @@ Tools like **Screaming Frog Log File Analyser** or **Splunk** make this process 
 
 Run a full-site crawl with **Screaming Frog**, **Sitebulb**, or **Ahrefs** to compare crawler paths against indexed URLs.
 
-→ Learn how to interpret this data in [**Technical SEO Audit**](/seo/technical-seo/audit/) and measure performance correlations in [**Website Speed SEO**](/seo/technical-seo/website-speed-seo).
+→ Learn how to interpret this data in [**Technical SEO Audit**](/seo/technical-seo/) and measure performance correlations in [**Website Speed SEO**](/seo/technical-seo/website-speed-seo).
 
 What you measure, you can improve, crawl data reveals how Google truly sees your site.
 

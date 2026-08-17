@@ -25,7 +25,7 @@ Before you dive into tactics, you need to understand **how SEO works at its core
 
 Start your learning journey here:
 
-- [**SEO Fundamentals**](/seo/learn/seo-fundamentals/), the foundation of search visibility.
+- [**SEO Fundamentals**](/seo/learn/), the foundation of search visibility.
 - **What Is SEO**, the essential definition and principles.
 - [**How SEO Works**](/seo/learn/how-seo-works/), the process from crawling to ranking.
 - [**Three Pillars of SEO**](/seo/learn/the-3-pillars-of-seo/), the full framework of technical, on-page, and off-page optimisation.
@@ -62,7 +62,7 @@ Ensures Google can crawl, index, and understand your site efficiently.
 - [**Technical SEO**](/seo/technical-seo/), overview of site health.
 - [**Core Web Vitals**](/seo/technical-seo/core-web-vitals/), measure user experience and speed.
 - [**Website Speed & SEO**](/seo/technical-seo/website-speed-seo), reduce load times for ranking and UX.
-- [**SEO Audit**](/seo/technical-seo/audit/), diagnose site issues and fix them systematically.
+- [**SEO Audit**](/seo/technical-seo/), diagnose site issues and fix them systematically.
 - **Google Algorithm Updates**, stay ahead of system shifts.
 
 ### 2. Content SEO
@@ -70,7 +70,7 @@ Ensures Google can crawl, index, and understand your site efficiently.
 Creates relevance and trust by aligning with search intent and entities.
 
 - [**Content SEO**](/seo/content-seo/), write for both humans and algorithms.
-- [**Semantic SEO**](/seo/content-seo/semantic-seo/), optimise for meaning, not keywords.
+- [**Semantic SEO**](/seo/content-seo/topical-authority/), optimise for meaning, not keywords.
 - [**Search Intent**](/seo/content-seo/search-intent/), match what users truly want.
 - [**Content Audits**](/seo/content-seo/content-audits/), refine underperforming pages.
 - [**Content Frameworks**](/seo/content-seo/content-frameworks/), scalable structures for SEO copy.
@@ -82,7 +82,7 @@ Builds credibility and authority through backlinks and brand mentions.
 - [**Link Building**](/seo/link-building/), the foundation of off-page SEO.
 - [**Guest Posting**](/seo/link-building/guest-posting/), earn links through outreach and value.
 - [**Backlink Analysis**](/seo/link-building/backlink-analysis/), evaluate link quality and toxicity.
-- [**Link Building Strategies**](/seo/link-building/strategies/), expand authority systematically.
+- [**Link Building Strategies**](/seo/link-building/), expand authority systematically.
 
 Each pillar reinforces the others, technical access, content relevance, and off-page authority form your SEO ecosystem.
 
@@ -109,7 +109,7 @@ Once you understand the principles, you can scale using repeatable systems.
 
 - [**SEO Frameworks**](/seo/seo-frameworks/), unify technical, content, and linking strategies.
 - [**SEO Checklist**](/seo/seo-frameworks/seo-checklist/), step-by-step execution plan.
-- [**Internal Linking Framework**](/seo/seo-frameworks/internal-linking-framework/), strengthen site architecture and topical relevance.
+- [**Internal Linking Framework**](/seo/content-seo/internal-linking/), strengthen site architecture and topical relevance.
 - [**Topical Map Framework**](/seo/seo-frameworks/topical-map-framework/), build authority around semantic clusters.
 
 Frameworks turn SEO from tactics into an operational system.

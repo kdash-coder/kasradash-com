@@ -51,7 +51,7 @@ Over time, rankings decline due to algorithm changes or outdated information.
 
 **Regular audits → prevent → performance drops from ageing content.**
 
-→ Revive lost rankings using [**Optimise Old Content**](/seo/content-seo/optimise-old-content/).
+→ Revive lost rankings using [**Optimise Old Content**](/seo/content-seo/content-pruning/).
 
 Neglected content silently drains authority.
 
@@ -61,7 +61,7 @@ By merging weak posts and linking related ones, audits enhance your topical dept
 
 **Consolidated content → reinforces → semantic trust.**
 
-→ Learn how this impacts authority in [**Semantic SEO**](/seo/content-seo/semantic-seo/).
+→ Learn how this impacts authority in [**Semantic SEO**](/seo/content-seo/topical-authority/).
 
 ### 3. Improve User Experience
 
@@ -83,7 +83,7 @@ Export all URLs using tools like **Screaming Frog**, **Semrush**, or **Ahrefs**.
 
 **Comprehensive inventory → enables → holistic analysis.**
 
-→ Use templates from the [**Content Audit Template**](/seo/seo-frameworks/content-audit-template/).
+→ Use the template layout below to structure your inventory.
 
 ### Step 2: Assess Content Quality
 
@@ -137,6 +137,28 @@ A well-audited site compounds in value every quarter.
 ### How do I perform a content audit?
 
 To perform a content audit, collect all URLs, assess performance data, categorise each page, improve what’s valuable, and remove or merge what isn’t.
+
+## What Should a Content Audit Template Include?
+
+**Structure → simplifies → analysis.** A ready-to-use audit template looks like this:
+
+| URL | Title | Primary Keyword | Cluster | Organic Sessions | CTR | Conversion Rate | Content Score | Action |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| /semantic-seo/ | What Is Semantic SEO? | semantic seo | Content SEO | 2,430 | 7.1% | 1.8% | 92 | Keep |
+| /ai-seo-tools/ | Best AI Tools for SEO | ai seo tools | AI SEO | 1,950 | 5.9% | 2.3% | 84 | Update |
+| /old-blog-post/ | SEO Tips 2021 | seo tips | General | 140 | 0.9% | 0.1% | 42 | Remove |
+
+Include **non-indexed pages** too — they still influence crawl flow and internal linking.
+
+### What makes a good content score metric?
+
+Combine performance and quality factors, for example:
+`(Traffic x Engagement Rate x Entity Density) / (Bounce Rate + Age Factor)`
+Normalise it on a 100-point scale for easy comparison.
+
+### How deep should internal-link checks go?
+
+Flag orphaned pages, broken links, and crawl depth — important pages should sit **≤3 clicks from the homepage**, and **3–10 contextual internal links per 1,000 words** typically balances readability and crawl efficiency.
 
 ## Tools for Conducting a Content Audit
 

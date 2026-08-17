@@ -54,7 +54,7 @@ AI tools → empower → ethical SEO when used responsibly.
 
 Here’s how to use them correctly:
 
-- **Research:** Use AI for [semantic keyword analysis](/seo/ai-and-seo/ai-keyword-research/) and [topical mapping](/seo/ai-and-seo/ai-topical-maps/).
+- **Research:** Use AI for [semantic keyword analysis](/seo/ai-and-seo/ai-keyword-research/) and [topical mapping](/seo/content-seo/topical-authority/).
 - **Creation:** Let AI assist in outlines or ideation, but keep humans responsible for insight and voice.
 - **Editing:** Use AI to improve clarity and accuracy, not to mask thin or duplicate content.
 - **Automation:** Deploy workflows for efficiency (e.g., schema generation or reporting), not manipulation.
@@ -63,7 +63,7 @@ Example prompt for responsible use:
 
 > “Act as an SEO strategist. Draft a content outline around [topic] that aligns with E-E-A-T and avoids repetitive keyword usage.”
 
-For practical automation tips, see [Automating SEO Tasks](/seo/ai-and-seo/ai-seo-automation/) with AI Tools (Make, n8n, ChatGPT).
+For practical automation tips, see [Automating SEO Tasks](/seo/seo-frameworks/ai-workflow-templates/) with AI Tools (Make, n8n, ChatGPT).
 
 AI is your assistant, not your author.
 

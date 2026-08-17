@@ -116,7 +116,7 @@ Once prioritised, map each keyword cluster to your [content calendar](/seo/seo-f
 - Assign **primary** and **secondary** keywords to each page.
 - Use **semantic variations** to improve topical coverage.
 - Optimise **titles, headings, and schema** around target phrases.
-- [Link related pages internally](/seo/seo-frameworks/internal-linking-framework/) for stronger entity associations.
+- [Link related pages internally](/seo/content-seo/internal-linking/) for stronger entity associations.
 
 For guidance on writing high-performing pages, see SEO Blog Writing Framework.
 
@@ -132,7 +132,7 @@ Review your template quarterly to:
 - Compare ranking trends in Search Console.
 - Track performance by intent type and topic cluster.
 
-Integrate findings into your [Content Auditing Framework](/seo/seo-frameworks/content-audit-template/) to maintain alignment between keyword insights and live content.
+Integrate findings into your [Content Auditing Framework](/seo/content-seo/content-audits/) to maintain alignment between keyword insights and live content.
 
 Sustainable SEO comes from iteration, not intuition.
 

@@ -102,9 +102,9 @@ This framework focuses on:
 - **Internal linking** to reinforce contextual relationships.
 - **Schema and metadata** for entity recognition.
 - **[E-E-A-T signals](/seo/seo-frameworks/eeat-framework/)** that improve trust.
-- **[Content Brief](/seo/seo-frameworks/content-brief-template/)** for writing trustworthy content.
+- **[Content Brief](/seo/content-seo/content-briefs/)** for writing trustworthy content.
 
-It aligns perfectly with how Google’s **Knowledge Graph** and **[AI Overviews](/seo/content-seo/ai-overviews/)** interpret content.
+It aligns perfectly with how Google’s **Knowledge Graph** and **[AI Overviews](/seo/ai-and-seo/ai-overviews-optimisation/)** interpret content.
 
 For implementation details, read [Entity Optimisation](/seo/content-seo/entity-optimisation/) for SEO.
 

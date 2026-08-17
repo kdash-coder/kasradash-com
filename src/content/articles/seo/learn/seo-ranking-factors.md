@@ -51,7 +51,7 @@ Your content must demonstrate **expertise**, **clarity**, and **depth**. It shou
 ### 2. Keywords & Intent Alignment
 
 Keywords show *topic focus*, but intent determines *ranking success.*  
-→ Learn the difference in [**What Are Keywords**](/learn/what-are-keywords/).
+→ Learn the difference in [**What Are Keywords**](/seo/learn/).
 
 ### 3. Title Tags & Meta Descriptions
 

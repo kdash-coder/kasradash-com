@@ -17,7 +17,7 @@ Because Google now ranks meaning and intent rather than mere keywords, [masterin
 
 In this comprehensive guide by **Kasra Dash**, you’ll learn how to optimise content for both search engines and users, by structuring, interlinking, and enriching it with semantic depth.
 
-→ Before diving in, explore [**SEO Fundamentals**](/seo/learn/seo-fundamentals/) for an overview of how content fits within broader SEO systems.
+→ Before diving in, explore [**SEO Fundamentals**](/seo/learn/) for an overview of how content fits within broader SEO systems.
 
 Content SEO builds authority by connecting entities, intent, and experience into a coherent search narrative.
 
@@ -36,7 +36,7 @@ It focuses on meaning, not just keywords, helping Google understand what your pa
 - **[Internal Linking](/seo/content-seo/internal-linking/):** Reinforcing contextual relevance through hierarchy.
 - **[Anchor Text](/seo/link-building/anchor-text-optimisation/):** Optimise Anchors & help crawlers get round and find pages.
 
-→ See [**Semantic SEO**](/seo/content-seo/semantic-seo/) for how meaning enhances visibility.
+→ See [**Semantic SEO**](/seo/content-seo/topical-authority/) for how meaning enhances visibility.
 
 Optimised content serves both algorithms and audiences simultaneously.
 
@@ -86,7 +86,7 @@ Before content can rank, it must be crawlable, indexable, and fast-loading.
 
 **Technical foundations → enable → search engine accessibility.**
 
-→ Read [**Technical SEO Audit**](/seo/technical-seo/audit/) to ensure your content can be crawled and indexed properly.
+→ Read [**Technical SEO Audit**](/seo/technical-seo/) to ensure your content can be crawled and indexed properly.
 
 ### 2. Semantic Depth
 
@@ -102,7 +102,7 @@ Internal links and topical clusters build navigational and thematic strength.
 
 **Structured linking → distributes → authority and relevance sitewide.**
 
-→ Implement this system using the [**Internal Linking Framework**](/seo/seo-frameworks/internal-linking-framework/).
+→ Implement this system using the [**Internal Linking Framework**](/seo/content-seo/internal-linking/).
 
 Strong structure turns scattered articles into interconnected authority systems.
 
@@ -184,7 +184,7 @@ Authority compounds when content remains fresh.
 
 Demonstrate Experience, Expertise, Authoritativeness, and Trustworthiness in your writing.
 
-→ Learn how to integrate this in [**E-E-A-T**](/seo/content-seo/e-e-a-t/).
+→ Learn how to integrate this in [**E-E-A-T**](/seo/seo-frameworks/eeat-framework/).
 
 **E-E-A-T optimisation → builds → credibility across entities and authors.**
 
@@ -204,7 +204,7 @@ Measurement transforms effort into evolution.
 
 AI tools accelerate topic ideation, outline generation, and optimisation, but human oversight ensures nuance and accuracy.
 
-→ Explore [**AI Content Production**](/seo/content-seo/ai-content-production/).
+→ Explore [**AI Content Production**](/seo/ai-and-seo/ai-content-creation/).
 
 **AI assistance → boosts → productivity, not replaces strategy.**
 
@@ -254,7 +254,7 @@ Publishing content without understanding search intent, it leads to irrelevant t
 
 Search is becoming more conversational and entity-driven. Optimising for semantic understanding, AI overviews, and knowledge connections ensures long-term visibility.
 
-→ Explore [**AI Overviews**](/seo/content-seo/ai-overviews/) for future-proof SEO techniques.
+→ Explore [**AI Overviews**](/seo/ai-and-seo/ai-overviews-optimisation/) for future-proof SEO techniques.
 
 **Semantic alignment → secures → relevance in AI-enhanced search.**
 
@@ -275,7 +275,7 @@ To recap:
 - Strengthen authority with **semantic entities**.
 - Maintain consistency with **content frameworks** and **audits**.
 
-→ Continue your journey through [**Semantic SEO**](/seo/content-seo/semantic-seo/) and enhance performance with **E-E-A-T**.
+→ Continue your journey through [**Semantic SEO**](/seo/content-seo/topical-authority/) and enhance performance with **E-E-A-T**.
 
 Or learn about [content distribution](/seo/content-seo/content-distribution/) here.
 

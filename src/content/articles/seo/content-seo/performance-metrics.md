@@ -43,7 +43,7 @@ Next, identify where competitors are outranking you. Most SEO tools include a �
 - Entities or subtopics they include that you’ve missed
 - SERP features they occupy (e.g. Featured Snippets, People Also Ask)
 
-For example, if your competitor ranks for “semantic SEO case studies” but you only cover “semantic SEO basics,” you’ve found a depth gap. You can close it by expanding coverage in your own [Semantic SEO](/seo/content-seo/semantic-seo/) article.
+For example, if your competitor ranks for “semantic SEO case studies” but you only cover “semantic SEO basics,” you’ve found a depth gap. You can close it by expanding coverage in your own [Semantic SEO](/seo/content-seo/topical-authority/) article.
 
 ## Step 3: Assess Search Intent
 
@@ -57,7 +57,7 @@ No. Focus only on opportunities that reinforce your existing clusters or target 
 
 ## Step 4: Map Gaps into Your Pillar-Cluster Structure
 
-Once you’ve collected target opportunities, map each keyword to its logical position within your **pillar-cluster** model. Assign each topic to a pillar and define supporting cluster pages to connect related subtopics. For example, if your analysis shows you’re missing coverage around “AI content scaling,” you can connect it to your post on Using AI Tools to [Scale Content Production Responsibly](/seo/content-seo/ai-content-production/). Interlinking ensures that new pages enhance your overall entity network rather than existing as isolated assets.
+Once you’ve collected target opportunities, map each keyword to its logical position within your **pillar-cluster** model. Assign each topic to a pillar and define supporting cluster pages to connect related subtopics. For example, if your analysis shows you’re missing coverage around “AI content scaling,” you can connect it to your post on Using AI Tools to [Scale Content Production Responsibly](/seo/ai-and-seo/ai-content-creation/). Interlinking ensures that new pages enhance your overall entity network rather than existing as isolated assets.
 
 ## Step 5: Prioritise by Value and Effort
 

@@ -27,7 +27,7 @@ In **Search Generative Experience (SGE)** and **Perplexity**, users no longer sc
 
 That means visibility is no longer about ranking position, it’s about **inclusion in AI-generated answers**.
 
-To understand this evolution, see How [AI Changes Search Intent](/seo/ai-and-seo/ai-search-intent/) and SERP Behaviour.
+To understand this evolution, see How [AI Changes Search Intent](/seo/content-seo/search-intent/) and SERP Behaviour.
 
 AI search doesn’t just find information, it reasons through it.
 
@@ -86,7 +86,7 @@ Example cluster structure for *AI in SEO*:
   - Cluster 3: “AI-Assisted Content Creation”
   - Cluster 4: “AI Overviews Optimisation”
 
-For automation workflows to scale topical mapping, see Using AI to [Build Topical Maps Automatically](/seo/ai-and-seo/ai-topical-maps/).
+For automation workflows to scale topical mapping, see Using AI to [Build Topical Maps Automatically](/seo/content-seo/topical-authority/).
 
 Depth builds trust; clusters build visibility.
 
@@ -160,7 +160,7 @@ Use tools like **Make**, **n8n**, and **ChatGPT** to streamline repetitive tasks
 
 But always keep editorial oversight. Over-automation can lead to duplication, data drift, or quality decay, eroding your trust signals over time.
 
-For workflow examples, see [Automating SEO Tasks](/seo/ai-and-seo/ai-seo-automation/) with AI Tools (Make, n8n, ChatGPT).
+For workflow examples, see [Automating SEO Tasks](/seo/seo-frameworks/ai-workflow-templates/) with AI Tools (Make, n8n, ChatGPT).
 
 Automate the process, not the purpose.
 

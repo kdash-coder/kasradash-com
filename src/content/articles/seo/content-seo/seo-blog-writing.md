@@ -28,7 +28,7 @@ It blends keyword strategy, semantic optimisation, and user intent to build topi
 
 **Optimised blog writing → strengthens → visibility and conversions.**
 
-→ Learn how meaning drives rankings in [**Semantic SEO**](/seo/content-seo/semantic-seo/).
+→ Learn how meaning drives rankings in [**Semantic SEO**](/seo/content-seo/topical-authority/).
 
 ### Key Objectives
 

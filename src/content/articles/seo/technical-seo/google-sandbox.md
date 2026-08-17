@@ -19,7 +19,7 @@ While Google has never officially confirmed its existence, SEOs have observed th
 
 In this guide by **Kasra Dash**, you’ll learn what the Google Sandbox is, why new sites struggle to rank, how long it lasts, and how to accelerate your way out of it.
 
-→ Before you start, make sure your site is fully accessible and indexable by reviewing [**Fix Indexing Issues**](/seo/technical-seo/fix-indexing-issues/) and running a [**Technical SEO Audit**](/seo/technical-seo/audit/).
+→ Before you start, make sure your site is fully accessible and indexable by reviewing [**Fix Indexing Issues**](/seo/technical-seo/) and running a [**Technical SEO Audit**](/seo/technical-seo/).
 
 The Sandbox isn’t punishment, it’s Google’s way of testing your trustworthiness before granting full visibility.
 
@@ -61,7 +61,7 @@ New sites may experience slower crawl rates and delayed indexation.
 Google’s ranking systems rely on **backlinks**, **brand mentions**, and **user engagement** to determine trust.  
 New domains haven’t accumulated enough of these signals yet.
 
-→ Accelerate link acquisition with [**Link Building Strategies**](/seo/link-building/strategies/).
+→ Accelerate link acquisition with [**Link Building Strategies**](/seo/link-building/).
 
 ### 3. Low E-E-A-T Indicators
 

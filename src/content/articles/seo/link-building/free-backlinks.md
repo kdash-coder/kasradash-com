@@ -223,7 +223,7 @@ Every free backlink should deliver tangible results, not just metrics.
 | **Organic Keywords** | Measures ranking impact |
 | **Conversions** | Evaluates ROI and relevance |
 
-→ Learn reporting methods in **[Measure ROI of Link Building](/seo/link-building/measure-roi/)**.
+→ Learn reporting methods in **[Measure ROI of Link Building](/seo/link-building/)**.
 
 **Measurement → validates → link-building success over time.**
 
@@ -265,6 +265,6 @@ To recap:
 - Focus on education, outreach, and authenticity.
 - Measure link impact regularly.
 
-→ Deepen your strategy with **[Link Building Strategies](/seo/link-building/strategies/)** and **[Anchor Text Optimisation](/seo/link-building/anchor-text-optimisation/)**.
+→ Deepen your strategy with **[Link Building Strategies](/seo/link-building/)** and **[Anchor Text Optimisation](/seo/link-building/anchor-text-optimisation/)**.
 
 Free backlinks aren’t about finding loopholes, they’re about earning trust that Google can verify.

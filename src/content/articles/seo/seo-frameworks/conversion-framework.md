@@ -85,7 +85,7 @@ To increase conversions, your content must lead the user from awareness to actio
 **Implementation Checklist:**
 
 - Add **CTAs** relevant to the reader’s intent at every stage.
-- Use **[progressive internal linking](/seo/seo-frameworks/internal-linking-framework/)** (e.g., guide → comparison → product).
+- Use **[progressive internal linking](/seo/content-seo/internal-linking/)** (e.g., guide → comparison → product).
 - Include **inline prompts** (“See how we did it with [case study]”).
 - Design **sticky navigation** or sidebar CTAs for better visibility.
 

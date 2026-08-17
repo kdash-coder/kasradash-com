@@ -133,7 +133,7 @@ Competitor backlink analysis reveals where your rivals gain authority and what o
 - Analyse their top-performing pages for backlink sources.
 - Replicate their strongest placements ethically.
 
-→ Apply findings in **[Link Building Strategies](/seo/link-building/strategies/)**.
+→ Apply findings in **[Link Building Strategies](/seo/link-building/)**.
 
 **Competitor benchmarking → exposes → link acquisition gaps you can fill.**
 
@@ -234,7 +234,7 @@ You can’t improve what you don’t measure. Consistent performance tracking va
 | **Toxic Score** | Risk indicator from spammy or low-value sites |
 | **Organic Visibility** | Keyword and traffic improvements post-clean-up |
 
-→ Learn how to quantify ROI in **[Measure ROI of Link Building](/seo/link-building/measure-roi/)**.
+→ Learn how to quantify ROI in **[Measure ROI of Link Building](/seo/link-building/)**.
 
 **Performance measurement → validates → SEO investment effectiveness.**
 

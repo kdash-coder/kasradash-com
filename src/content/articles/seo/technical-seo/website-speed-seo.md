@@ -67,7 +67,7 @@ Speed isn’t one metric, it’s a system of performance signals.
 | **Time to First Byte (TTFB)** | Server response time | < 0.8s |
 | **Total Blocking Time (TBT)** | Time scripts block interactivity | < 200ms |
 
-→ Deepen your understanding in **Core Web Vitals** and learn how to audit performance in [**Technical SEO Audit**](/seo/technical-seo/audit/).
+→ Deepen your understanding in **Core Web Vitals** and learn how to audit performance in [**Technical SEO Audit**](/seo/technical-seo/).
 
 Speed metrics measure not just how fast a page loads, but how fast it feels.
 
@@ -85,7 +85,7 @@ You can’t improve what you don’t measure. The right tools reveal both lab da
 | **CrUX (Chrome UX Report)** | Real-world Chrome user data | Field |
 | **Google Search Console** | Site-wide Core Web Vitals reporting | Field |
 
-→ Use these tools alongside [**Fix Indexing Issues**](/seo/technical-seo/fix-indexing-issues/) to spot slow-loading URLs that might be excluded from indexing.
+→ Use these tools alongside [**Fix Indexing Issues**](/seo/technical-seo/) to spot slow-loading URLs that might be excluded from indexing.
 
 Testing with multiple tools provides both speed scores and experience insights.
 

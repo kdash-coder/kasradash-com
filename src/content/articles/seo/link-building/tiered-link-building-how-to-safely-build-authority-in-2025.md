@@ -17,7 +17,7 @@ Because not all backlinks are equal, this method strategically funnels authority
 
 In this guide by **Kasra Dash**, you’ll learn what tiered link building is, how it works, and how to execute it safely under Google’s ever-tightening algorithmic scrutiny.
 
-→ Start by reviewing [**Link Building Fundamentals**](/seo/link-building/strategies/) to understand how authority flows between domains.
+→ Start by reviewing [**Link Building Fundamentals**](/seo/link-building/) to understand how authority flows between domains.
 
 Tiered link building magnifies link equity when applied with precision and ethical boundaries.
 
@@ -192,7 +192,7 @@ To justify investment, measure how each layer contributes to rankings and referr
 - Referring domain growth.
 - Tier 1 backlink visibility and index rate.
 
-→ Learn to quantify this in [**Measure ROI of Link Building**](/seo/link-building/measure-roi/).
+→ Learn to quantify this in [**Measure ROI of Link Building**](/seo/link-building/).
 
 **Tier measurement → demonstrates → ROI across layered campaigns.**
 
