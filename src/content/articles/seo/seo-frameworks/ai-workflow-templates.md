@@ -33,7 +33,7 @@ Automation doesn’t replace expertise, it multiplies it.
 
 ## Step 1: Keyword Research Automation Workflow
 
-[Keyword research](/seo/seo-frameworks/keyword-research-template/) → becomes → scalable when powered by AI and workflow automation.
+[Keyword research](/seo/seo-frameworks/) → becomes → scalable when powered by AI and workflow automation.
 
 **Tools Used:**
 
@@ -222,7 +222,7 @@ Content planning → becomes → effortless with integrated AI workflows.
 2. ChatGPT categorises topics by intent and funnel stage.
 3. Make auto-generates a 3-month publishing schedule with recommended publish dates.
 
-See [Content Calendar Template](/seo/seo-frameworks/content-calendar-template/): Plan & Schedule SEO Content for structure.
+See [Content Calendar Template](/seo/seo-frameworks/): Plan & Schedule SEO Content for structure.
 
 AI workflows eliminate guesswork and keep content cadence consistent.
 
@@ -312,6 +312,6 @@ AI workflows are revolutionising SEO execution. By systemising repetitive proces
 Each workflow, from keyword research to reporting, compounds time savings, improves data accuracy, and builds stronger **entity-based SEO ecosystems**.
 
 **Next step:**  
-Build your first workflow using this framework, and integrate it with your [SEO Reporting Dashboard](/seo/seo-frameworks/seo-reporting-dashboard/) for full performance visibility.
+Build your first workflow using this framework, and integrate it with your [SEO Reporting Dashboard](/seo/seo-frameworks/) for full performance visibility.
 
 Automation doesn’t replace your SEO brain, it gives it superpowers.

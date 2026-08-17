@@ -21,7 +21,7 @@ To earn a spot, your content needs to demonstrate clarity, depth, and trust at b
 
 **AI Overviews** → summarise → multiple authoritative sources to answer a user’s question within the SERP.
 
-Google’s AI combines its Knowledge Graph, machine learning models (like [**MUM** and **BERT**](/seo/ai-and-seo/rankbrain-vs-bert-vs-mum/)), and content indexing systems to produce concise, contextual responses. These summaries pull key insights from sources that align with Google’s definition of “helpful content.”
+Google’s AI combines its Knowledge Graph, machine learning models (like [**MUM** and **BERT**](/seo/ai-and-seo/)), and content indexing systems to produce concise, contextual responses. These summaries pull key insights from sources that align with Google’s definition of “helpful content.”
 
 If your content is selected, it can appear as a citation in the AI Overview box, often *above* standard organic listings.
 
@@ -176,6 +176,6 @@ Getting featured in Google’s AI Overviews isn’t about gaming the system, it�
 
 By strengthening entity clarity, E-E-A-T signals, and factual precision, you turn your content into a trusted source Google’s SGE confidently cites.
 
-As AI continues to evolve, the brands that [future-proof their SEO strategy](/seo/ai-and-seo/future-proof-seo/) by mastering semantic relationships and human authenticity will dominate the next era of search visibility.
+As AI continues to evolve, the brands that [future-proof their SEO strategy](/seo/ai-and-seo/) by mastering semantic relationships and human authenticity will dominate the next era of search visibility.
 
 **Next step:** Run an entity and structure audit using your Entity Optimisation Guide to prepare your top-performing pages for AI Overview inclusion.

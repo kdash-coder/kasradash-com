@@ -240,7 +240,7 @@ What gets tracked gets optimised, what gets optimised gets clicked.
 
 ### How Do You Present CTR Data to Clients?
 
-Integrate it into your [SEO Reporting Dashboard](/seo/seo-frameworks/seo-reporting-dashboard/). Include CTR deltas (before vs. after optimisation) alongside keyword ranking and traffic data for a complete narrative of growth.
+Integrate it into your [SEO Reporting Dashboard](/seo/seo-frameworks/). Include CTR deltas (before vs. after optimisation) alongside keyword ranking and traffic data for a complete narrative of growth.
 
 ## Conclusion
 

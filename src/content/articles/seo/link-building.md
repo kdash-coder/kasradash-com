@@ -96,7 +96,7 @@ Link building strategies fall into **manual**, **earned**, and **strategic** cat
 
 #### 1. Guest Posting
 
-Writing articles for other websites in exchange for a contextual link. This is one of the most widely used manual link building strategies because it combines content marketing with direct editorial placement. → Learn the full workflow in [Guest Posting](/seo/link-building/guest-posting/).
+Writing articles for other websites in exchange for a contextual link. This is one of the most widely used manual link building strategies because it combines content marketing with direct editorial placement. → Learn the full workflow in [Guest Posting](/seo/link-building/).
 
 #### 2. Editorial Link Building
 
@@ -104,7 +104,7 @@ Editorial link building involves earning links naturally within editorial conten
 
 #### 3. Broken Link Building
 
-Finding broken outbound links on relevant sites and offering your resource as a replacement. → Read the process in [Broken Link Building](/seo/link-building/broken-link-building/).
+Finding broken outbound links on relevant sites and offering your resource as a replacement. → Read the process in [Broken Link Building](/seo/link-building/).
 
 #### 4. Resource Page Link Building
 
@@ -118,7 +118,7 @@ Responding to journalist queries and contributing to media publications for high
 
 **Tiered link building → amplifies → the strength of your existing backlinks.**
 
-A tiered link building strategy involves building secondary links to your primary backlinks to reinforce PageRank flow. When executed carefully, this approach can significantly boost the authority passed to your target pages. → Explore detailed tactics in [Tiered Link Building](/seo/link-building/tiered-link-building-how-to-safely-build-authority-in-2025/).
+A tiered link building strategy involves building secondary links to your primary backlinks to reinforce PageRank flow. When executed carefully, this approach can significantly boost the authority passed to your target pages. → Explore detailed tactics in [Tiered Link Building](/seo/link-building/).
 
 | Tier | Target | Type |
 | --- | --- | --- |
@@ -128,11 +128,11 @@ A tiered link building strategy involves building secondary links to your primar
 
 #### 7. Testimonial Link Building
 
-Testimonial link building involves providing genuine reviews or endorsements for tools and services you use, in exchange for an editorial backlink on the vendor’s website. These links are often highly relevant and contextual. → See examples in [Testimonial Links](/seo/link-building/testimonial-links/).
+Testimonial link building involves providing genuine reviews or endorsements for tools and services you use, in exchange for an editorial backlink on the vendor’s website. These links are often highly relevant and contextual. → See examples in [Testimonial Links](/seo/link-building/).
 
 #### 8. Wikipedia Backlinks
 
-Adding verifiable, authoritative references to relevant Wikipedia pages where your content genuinely supports the topic. → See examples in [Wikipedia Editorial Citations](/seo/link-building/wikipedia-backlinks/).
+Adding verifiable, authoritative references to relevant Wikipedia pages where your content genuinely supports the topic. → See examples in [Wikipedia Editorial Citations](/seo/link-building/).
 
 #### 9. Link Reclamation and Unlinked Mentions
 
@@ -154,7 +154,7 @@ Guest appearances and interviews secure backlinks via show notes and bio links, 
 
 #### Which link building strategy works best?
 
-A blended approach that combines outreach, content quality, and relationship-driven links produces the most sustainable long-term results. This also varies for every niche. For example, [building links for ecom stores](/seo/link-building/ecommerce-links/) is very different to building links for local businesses or academic institutions.
+A blended approach that combines outreach, content quality, and relationship-driven links produces the most sustainable long-term results. This also varies for every niche. For example, [building links for ecom stores](/seo/link-building/) is very different to building links for local businesses or academic institutions.
 
 #### Choosing the Right Strategy for Your Stage
 
@@ -191,7 +191,7 @@ Assets that consistently earn links:
 
 Definitive user based link building means choosing your asset based on what your audience actually searches for and struggles with, then letting genuine demand pull the links in. Review your support tickets, your community questions and your top-performing social posts before you commission anything. Assets built from real user demand earn links because they answer questions other writers are already trying to answer.
 
-→ Pair this with distribution through [podcast link building](/seo/link-building/podcast-links/) and [social media backlinks](/social-media-backlinks/) so the asset gets seen by the people who can link to it.
+→ Pair this with distribution through [podcast link building](/seo/link-building/) and [social media backlinks](/seo/link-building/) so the asset gets seen by the people who can link to it.
 
 ### Skyscraper SEO vs Ranch Style: Which Model Earns More Links
 
@@ -239,7 +239,7 @@ For enrolment specifically, or enrollment if you are working on a US institution
 
 Only if the scholarship is real. Scholarship link building was heavily abused, so Google now discounts most scholarship page links and many university resource pages have stopped accepting submissions. If you genuinely fund students, promote it and take the links. If the scholarship exists purely to collect .edu links, expect close to zero value.
 
-→ See the full process in [EDU backlinks](/seo/link-building/edu-backlinks/).
+→ See the full process in [EDU backlinks](/seo/link-building/).
 
 ### How to Build High-Quality Backlinks: Step by Step
 
@@ -342,7 +342,7 @@ Most campaigns stall because every month starts from zero. A system fixes the se
 5. **Outreach and follow up.** One personalised opener, one value reason, one follow up after five days.
 6. **Verify and log.** Confirm the link is live, dofollow, indexed and in body content. Log the date so you can attribute ranking movement later.
 
-Keep your acquisition rate steady rather than spiky, because sudden jumps in [link velocity](/seo/link-building/link-velocity/) sit outside the normal pattern for a site of your size and invite scrutiny.
+Keep your acquisition rate steady rather than spiky, because sudden jumps in [link velocity](/seo/link-building/) sit outside the normal pattern for a site of your size and invite scrutiny.
 
 ### Backlink Outreach Templates: Emails That Actually Get Replies
 
@@ -409,7 +409,7 @@ Thorough link building analysis is essential to any long-term strategy. Auditing
 - Sitewide footer and sidebar links across unrelated domains
 - Networks where the same 30 domains link to every client
 
-→ [Learn removal methods in Google Penalty Recovery](/seo/technical-seo/google-penalty-recovery/).
+→ [Learn removal methods in Google Penalty Recovery](/seo/technical-seo/).
 
 *Healthy backlink profiles grow gradually and naturally.*
 
@@ -482,7 +482,7 @@ Organic link building is about earning links through genuine quality rather than
 
 **Link manipulation → triggers → Google penalties.**
 
-→ Learn how to avoid penalties in [Google Penalty Recovery](/seo/technical-seo/google-penalty-recovery/).
+→ Learn how to avoid penalties in [Google Penalty Recovery](/seo/technical-seo/).
 
 *One unnatural link can undo months of legitimate SEO work.*
 
@@ -572,10 +572,10 @@ Work through these link building courses and guides in this order:
 
 1. This page, for the fundamentals of authority, equity and link quality.
 2. Link building strategies, for tactic selection by niche and budget.
-3. [Guest posting](/seo/link-building/guest-posting/) and [broken link building](/seo/link-building/broken-link-building/), for repeatable outreach execution.
-4. [Free backlinks](/seo/link-building/free-backlinks/), for what you can build before you have a budget.
+3. [Guest posting](/seo/link-building/) and [broken link building](/seo/link-building/), for repeatable outreach execution.
+4. [Free backlinks](/seo/link-building/), for what you can build before you have a budget.
 5. [Anchor text optimisation](/seo/link-building/anchor-text-optimisation/), for keeping your profile natural as volume increases.
-6. [Backlink analysis](/seo/link-building/backlink-analysis/), for auditing what you have built.
+6. [Backlink analysis](/seo/link-building/), for auditing what you have built.
 7. [Link building lessons](/seo/link-building/link-building-lessons/), for the mistakes I would rather you skipped.
 
 Then build 10 links using one tactic before you read anything else. Most people fail at link building because they studied nine tactics and executed none.
@@ -639,6 +639,6 @@ To recap:
 - Avoid shortcuts or manipulative tactics.
 - Build topical authority with internal and external linking synergy.
 
-→ Continue your journey with Link Building Strategies and [Backlink Analysis](/seo/link-building/backlink-analysis/) to deepen your expertise.
+→ Continue your journey with Link Building Strategies and [Backlink Analysis](/seo/link-building/) to deepen your expertise.
 
 *In SEO, authority is never bought. It is earned, one trusted link at a time.*

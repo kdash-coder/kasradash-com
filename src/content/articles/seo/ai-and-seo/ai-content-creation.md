@@ -60,7 +60,7 @@ AI can write fast, but only humans can write credibly.
 
 ## Step 1: Use AI for Ideation, Not Execution
 
-[AI tools](/seo/ai-and-seo/ai-seo-tools/) are excellent for **topic generation**, **keyword clustering**, and **content brief creation**. They understand entity relationships and semantic structures better than most manual workflows.
+[AI tools](/seo/ai-and-seo/) are excellent for **topic generation**, **keyword clustering**, and **content brief creation**. They understand entity relationships and semantic structures better than most manual workflows.
 
 Example prompt:
 
@@ -68,7 +68,7 @@ Example prompt:
 
 However, never publish AI drafts unedited. Instead, treat AI as a **research assistant**, capable of surfacing insights and saving time, but not replacing editorial judgement.
 
-Explore ideation methods in [AI for Keyword Research](/seo/ai-and-seo/ai-keyword-research/): How to Find Opportunities with LLMs.
+Explore ideation methods in [AI for Keyword Research](/seo/ai-and-seo/): How to Find Opportunities with LLMs.
 
 AI finds ideas; humans find meaning.
 
@@ -120,7 +120,7 @@ Include:
 - Date of last update.
 - Clear source citations.
 
-This transparency signals authenticity and accountability. If AI assisted in writing, disclose it where appropriate, [ethical transparency](/seo/ai-and-seo/ethical-seo/) enhances trust.
+This transparency signals authenticity and accountability. If AI assisted in writing, disclose it where appropriate, [ethical transparency](/seo/ai-and-seo/) enhances trust.
 
 For entity alignment, ensure your author pages link to related expertise clusters as outlined in Entity Optimisation for SEO.
 
@@ -174,7 +174,7 @@ Automated content can dilute tone, introduce factual errors, and make multiple p
 - Randomise phrasing to avoid “AI signature” patterns.
 - Use tools like **Originality.ai** to audit AI proportion.
 
-See [AI Content Detection](/seo/ai-and-seo/ai-content-detection/): Tools to Identify Human vs AI Writing for guidance on maintaining authenticity.
+See [AI Content Detection](/seo/ai-and-seo/): Tools to Identify Human vs AI Writing for guidance on maintaining authenticity.
 
 If everything reads the same, nothing stands out.
 

@@ -47,7 +47,7 @@ Internal links guide search engine bots through your website, ensuring new or de
 
 **Strategic linking → improves → crawl coverage and speed.**
 
-→ Learn crawl optimisation in [**Google Crawling and Indexing**](/seo/technical-seo/google-crawling-and-indexing/).
+→ Learn crawl optimisation in [**Google Crawling and Indexing**](/seo/technical-seo/).
 
 ### 2. Distributes Link Equity
 
@@ -96,7 +96,7 @@ Internal linking plays a critical role in **Semantic SEO** by establishing meani
 
 When one page links to another using context-rich anchor text, it strengthens the semantic relationship between the two entities.
 
-→ Example: Linking from [**Entity Optimisation**](/seo/content-seo/entity-optimisation/) to [**Schema Markup Guide**](/seo/technical-seo/schema-markup-guide/) clarifies how structured data supports meaning.
+→ Example: Linking from [**Entity Optimisation**](/seo/content-seo/entity-optimisation/) to [**Schema Markup Guide**](/seo/technical-seo/) clarifies how structured data supports meaning.
 
 **Semantic links → create → a web of relevance.**
 
@@ -166,7 +166,7 @@ Use crawl data to review broken or redundant links quarterly.
 
 **Ongoing audits → sustain → efficiency and equity distribution.**
 
-→ Perform detailed checks using the [**SEO Audit Template**](/seo/seo-frameworks/seo-audit-template/).
+→ Perform detailed checks using the [**SEO Audit Template**](/seo/seo-frameworks/).
 
 Internal linking strategy is ongoing, not a one-time setup.
 

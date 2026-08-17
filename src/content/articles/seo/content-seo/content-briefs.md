@@ -81,7 +81,7 @@ Include a target keyword plus semantically related terms. Use **Google Keyword P
 
 **Keyword hierarchy → guides → topical depth.**
 
-→ Find targets using the [**Keyword Research Template**](/seo/seo-frameworks/keyword-research-template/).
+→ Find targets using the [**Keyword Research Template**](/seo/seo-frameworks/).
 
 ### 2. Search Intent & Audience Insight
 
@@ -109,7 +109,7 @@ List key entities that reinforce topical coverage (people, tools, concepts).
 
 Suggest relevant internal links to contextually related pages.
 
-→ Example: Link to [**SEO Blog Writing**](/seo/content-seo/seo-blog-writing/) or [**Content Calendar**](/seo/content-seo/content-calendar/).
+→ Example: Link to [**SEO Blog Writing**](/seo/content-seo/) or [**Content Calendar**](/seo/content-seo/).
 
 **Strategic linking → distributes → authority and guides users.**
 

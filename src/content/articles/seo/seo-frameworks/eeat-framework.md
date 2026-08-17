@@ -252,6 +252,6 @@ The **E-E-A-T Implementation Framework** transforms SEO content from information
 In an AI-driven search landscape, **authenticity is the new algorithm**.
 
 **Next step:**  
-Audit your existing content, apply this framework, and integrate E-E-A-T checkpoints into your editorial systems. Then, connect with your [SEO Reporting Dashboard](/seo/seo-frameworks/seo-reporting-dashboard/) to track improvements in credibility, rankings, and engagement.
+Audit your existing content, apply this framework, and integrate E-E-A-T checkpoints into your editorial systems. Then, connect with your [SEO Reporting Dashboard](/seo/seo-frameworks/) to track improvements in credibility, rankings, and engagement.
 
 In 2025, E-E-A-T isn’t optional, it’s existential.

@@ -13,7 +13,7 @@ ogImage: "/images/kasradash.com_.png"
 
 Artificial intelligence is revolutionising how search engines understand, evaluate, and deliver content.
 
-From Google’s **AI Overviews** to predictive ranking systems like [**RankBrain** and **BERT**](/seo/ai-and-seo/rankbrain-vs-bert-vs-mum/), AI now determines *which content deserves visibility*, and *why*.
+From Google’s **AI Overviews** to predictive ranking systems like [**RankBrain** and **BERT**](/seo/ai-and-seo/), AI now determines *which content deserves visibility*, and *why*.
 
 AI isn’t replacing SEO; it’s redefining it.
 
@@ -63,7 +63,7 @@ AI allows search engines to forecast what users need *before* they finish typing
 
 When it comes to AI people also use what’s called [prompt engineering](/seo/ai-and-seo/prompt-engineering/) to create better outputs.
 
-For SEO, this means content must anticipate multi-intent queries and emerging trends. Use [AI SEO tools](/seo/ai-and-seo/ai-seo-tools/) like **Google Trends**, **AlsoAsked**, and **SurferSEO** to identify new patterns before competitors.
+For SEO, this means content must anticipate multi-intent queries and emerging trends. Use [AI SEO tools](/seo/ai-and-seo/) like **Google Trends**, **AlsoAsked**, and **SurferSEO** to identify new patterns before competitors.
 
 ## Content Creation in the AI Era
 
@@ -90,7 +90,7 @@ Rather than targeting keywords in isolation, focus on covering entire intent lay
 
 Mapping this intent across your pillar-cluster model ensures you cover every stage of the buyer journey. See how to build this framework in Search Intent Optimisation.
 
-Here is a guide that talks about using [AI for keyword research](/seo/ai-and-seo/ai-keyword-research/).
+Here is a guide that talks about using [AI for keyword research](/seo/ai-and-seo/).
 
 When content matches intent, AI rewards clarity with visibility.
 
@@ -150,7 +150,7 @@ AI doesn’t penalise content; it filters mediocrity.
 
 The more precise your content’s meaning and experience, the higher your chance of visibility – whether in AI Overviews or organic listings.
 
-For a practical next step, learn how to monitor your evolving performance in [How to Measure SEO Content Performance](/seo/content-seo/performance-metrics/) (KPIs & Tools).
+For a practical next step, learn how to monitor your evolving performance in [How to Measure SEO Content Performance](/seo/content-seo/) (KPIs & Tools).
 
 AI rewards clarity, depth, and human insight, the future belongs to those who master all three.
 
@@ -166,7 +166,7 @@ To succeed in this new era, combine AI-assisted efficiency with human-led expert
 
 Some other relevant articles that cover AI & SEO are:
 
-- [AI content detection](/seo/ai-and-seo/ai-content-detection/)
+- [AI content detection](/seo/ai-and-seo/)
 - [AI Content Creation](/seo/ai-and-seo/ai-content-creation/)
-- [Indexing AI Content (Do’s & Dont’s)](/seo/ai-and-seo/ai-and-indexing/)
-- [Ethical SEO Using AI](/seo/ai-and-seo/ethical-seo/)
+- [Indexing AI Content (Do’s & Dont’s)](/seo/ai-and-seo/)
+- [Ethical SEO Using AI](/seo/ai-and-seo/)

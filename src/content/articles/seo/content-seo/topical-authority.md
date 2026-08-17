@@ -413,7 +413,7 @@ Tracking topical authority means measuring how your content performs as a collec
 
 **Performance tracking → validates → authority growth.**
 
-→ Measure full impact via [**Performance Metrics**](/seo/content-seo/performance-metrics/).
+→ Measure full impact via [**Performance Metrics**](/seo/content-seo/).
 
 *Authority can be felt qualitatively, but it has to be proven quantitatively.*
 

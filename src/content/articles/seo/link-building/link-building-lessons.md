@@ -34,7 +34,7 @@ When I first started, I focused on link count. But Google’s algorithms, partic
 
 **Google’s trust → flows → through editorially given links, not manufactured ones.**
 
-→ Deepen this understanding in [**Backlink Analysis**](/seo/link-building/backlink-analysis/).
+→ Deepen this understanding in [**Backlink Analysis**](/seo/link-building/).
 
 **One great link can outweigh one hundred poor ones.**
 
@@ -154,7 +154,7 @@ I’ve seen sites recover, and others vanish, due to link penalties. Each case t
 **Disavowing toxic backlinks → restores → algorithmic trust.**  
 Audit regularly to identify spammy patterns before they escalate.
 
-→ Read detailed recovery steps in [**Google Penalty Recovery**](/seo/technical-seo/google-penalty-recovery/).
+→ Read detailed recovery steps in [**Google Penalty Recovery**](/seo/technical-seo/).
 
 **Proactive audits → prevent → reactive penalties.**
 
@@ -175,7 +175,7 @@ Over-reliance on a single method (such as guest posting) leaves a footprint. The
 - Resource pages and EDU backlinks.
 - Tiered reinforcement links.
 
-→ Explore diversification in [**Podcast Link Building**](/seo/link-building/podcast-links/) and [**Tiered Link Building**](/seo/link-building/tiered-link-building-how-to-safely-build-authority-in-2025/).
+→ Explore diversification in [**Podcast Link Building**](/seo/link-building/) and [**Tiered Link Building**](/seo/link-building/).
 
 **Link diversity → strengthens → algorithmic trust and resilience.**
 
@@ -209,7 +209,7 @@ When Google rolls out updates, sites with clean, diverse, and authoritative link
 
 **Algorithm resilience → comes → from ethical link building.**
 
-→ Stay informed with [**Google Algorithm Updates**](/seo/technical-seo/google-algorithm-updates/).
+→ Stay informed with [**Google Algorithm Updates**](/seo/technical-seo/).
 
 **Consistency → outlasts → volatility.**
 

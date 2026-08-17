@@ -27,7 +27,7 @@ In 2023, Google updated the QRGs to include **“Experience”** as the fourth E
 
 The same framework now informs **[AI Overviews (SGE)](/seo/ai-and-seo/ai-overviews-optimisation/)** and **MUM**-based interpretations of content quality.
 
-For a detailed breakdown of these AI systems, see [RankBrain vs BERT vs MUM](/seo/ai-and-seo/rankbrain-vs-bert-vs-mum/): Evolution of Google’s AI Systems.
+For a detailed breakdown of these AI systems, see [RankBrain vs BERT vs MUM](/seo/ai-and-seo/): Evolution of Google’s AI Systems.
 
 ## How Google’s Quality Raters Work
 
@@ -145,7 +145,7 @@ In practice:
 
 Together, they emulate how a **human rater** would perceive content quality, meaning your site must “feel” authentic, relevant, and authoritative, even to machines.
 
-To see how these systems evolved, explore [Google MUM Explained](/seo/ai-and-seo/google-mum/): How Multitask Unified Model Understands Content.
+To see how these systems evolved, explore [Google MUM Explained](/seo/ai-and-seo/): How Multitask Unified Model Understands Content.
 
 AI doesn’t replace human judgement, it scales it.
 
@@ -188,7 +188,7 @@ While human raters remain essential, AI models increasingly mimic their decision
 - **Engagement metrics** (time on page, pogo-sticking).
 - **Trust indicators** (authorship, transparency, backlinks).
 
-As [AI-generated content](/seo/ai-and-seo/ai-content-detection/) becomes more common, Google’s systems will lean heavily on **E-E-A-T** and **authorship provenance** to separate authentic insight from automation.
+As [AI-generated content](/seo/ai-and-seo/) becomes more common, Google’s systems will lean heavily on **E-E-A-T** and **authorship provenance** to separate authentic insight from automation.
 
 To stay compliant, combine **AI efficiency** with **human validation**, as outlined in [AI-Assisted Content Creation](/seo/ai-and-seo/ai-content-creation/): Balancing Efficiency with E-E-A-T.
 

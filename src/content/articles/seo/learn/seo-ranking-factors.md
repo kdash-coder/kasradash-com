@@ -15,7 +15,7 @@ Google considers **hundreds of ranking factors**, but only a few truly determine
 
 This guide by **Kasra Dash** breaks down the essential **SEO ranking factors in 2026**, explaining how algorithms measure **relevance, quality, and trust**, and what you can do to optimise effectively.
 
-→ Before reading, start with [**How SEO Works**](/seo/) and [**What Are Search Engine Algorithms**](/seo/learn/what-are-search-engine-algorithms/) to understand the systems behind ranking.
+→ Before reading, start with [**How SEO Works**](/seo/) and [**What Are Search Engine Algorithms**](/seo/learn/) to understand the systems behind ranking.
 
 Ranking isn’t about tricking Google, it’s about aligning with how Google defines value.
 
@@ -28,7 +28,7 @@ These signals combine into a weighted system that evolves with every algorithm u
 
 Because no single element guarantees rankings, success comes from balance, optimising technical, on-page, and off-page factors together.
 
-→ For the foundational context, review **What Is SEO** and [**Three Pillars of SEO**](/seo/learn/the-3-pillars-of-seo/).
+→ For the foundational context, review **What Is SEO** and [**Three Pillars of SEO**](/seo/learn/).
 
 Google doesn’t rank pages randomly, it ranks the most trustworthy answers for each intent.
 
@@ -88,7 +88,7 @@ Natural backlink profiles contain links from various domains, blogs, news outlet
 
 Earn visibility through data-led content, partnerships, and story-driven campaigns.
 
-→ Learn the nuances in [**Link Building**](/seo/link-building/), [**Guest Posting**](/seo/link-building/guest-posting/), and [**EDU Backlinks**](/seo/link-building/edu-backlinks/).
+→ Learn the nuances in [**Link Building**](/seo/link-building/), [**Guest Posting**](/seo/link-building/), and [**EDU Backlinks**](/seo/link-building/).
 
 Backlinks measure what the internet thinks about you, authority grows when others endorse your value.
 
@@ -113,7 +113,7 @@ Use a clean **robots.txt**, **XML sitemaps**, and consistent canonicalisation to
 
 Trust begins with a secure connection. HTTPS encryption is a confirmed ranking factor.
 
-→ Master these systems in [**Technical SEO**](/seo/technical-seo/) and [**Core Web Vitals**](/seo/technical-seo/core-web-vitals/).
+→ Master these systems in [**Technical SEO**](/seo/technical-seo/) and [**Core Web Vitals**](/seo/technical-seo/).
 
 Technical excellence doesn’t create great content, it makes great content discoverable.
 
@@ -133,7 +133,7 @@ Google analyses how users interact with your site to gauge satisfaction.
 
 These behavioural cues influence future rankings because they reveal whether your content truly solves the query.
 
-→ Learn how to optimise engagement in [**How to Improve CTR**](/seo/seo-frameworks/ctr-optimisation-framework/) and understand the human value behind metrics in [**Why SEO Matters**](/seo/learn/why-seo-matters/).
+→ Learn how to optimise engagement in [**How to Improve CTR**](/seo/seo-frameworks/ctr-optimisation-framework/) and understand the human value behind metrics in [**Why SEO Matters**](/seo/learn/).
 
 User behaviour tells Google what quality looks like in practice.
 
@@ -190,6 +190,6 @@ To rank in 2026, focus on what consistently proves value:
 
 Together, these build relevance, trust, and accessibility, the three constants of SEO success.
 
-→ Next: turn these insights into action with [**SEO Strategy for Beginners**](/seo/learn/seo-strategy-for-beginners/).
+→ Next: turn these insights into action with [**SEO Strategy for Beginners**](/seo/learn/).
 
 When you optimise for humans first and algorithms second, your rankings follow naturally.

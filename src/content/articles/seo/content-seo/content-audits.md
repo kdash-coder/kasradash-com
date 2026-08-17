@@ -130,7 +130,7 @@ Use analytics dashboards to monitor changes after implementation.
 
 **Tracking progress → confirms → optimisation success.**
 
-→ Measure growth via [**Performance Metrics**](/seo/content-seo/performance-metrics/).
+→ Measure growth via [**Performance Metrics**](/seo/content-seo/).
 
 A well-audited site compounds in value every quarter.
 
@@ -218,7 +218,7 @@ Schedule updates and new article creation based on audit insights.
 
 **Systematic scheduling → turns → audits into continuous improvement.**
 
-→ Maintain consistency using the [**Content Calendar**](/seo/content-seo/content-calendar/).
+→ Maintain consistency using the [**Content Calendar**](/seo/content-seo/).
 
 Action beats analysis when it comes to SEO growth.
 
