@@ -1,5 +1,5 @@
 ---
-import { NAV, HUBS, ABOUT_MENU } from '../lib/site';
+import { HUBS, ABOUT_MENU } from '../lib/site';
 const current = Astro.url.pathname;
 const aboutActive = ABOUT_MENU.some((item) => current === item.href);
 ---
@@ -56,24 +56,22 @@ const aboutActive = ABOUT_MENU.some((item) => current === item.href);
         </div>
       </div>
 
-      {NAV.filter((n) => !n.children).map((item) => (
-        <a
-          href={item.href}
-          target={item.href.startsWith('http') ? '_blank' : undefined}
-          rel={item.href.startsWith('http') ? 'noopener' : undefined}
-          class={`rounded-full px-3 py-2 text-sm font-semibold transition hover:bg-white/5 hover:text-white ${current === item.href ? 'text-brand-600' : 'text-lavender'}`}
-        >
-          {item.label}
-        </a>
-      ))}
     </nav>
 
-    <div class="flex items-center gap-3">
+    <div class="flex items-center gap-2.5">
       <a
         href="/contact/"
-        class="btn-gradient hidden px-5 py-2.5 text-sm font-bold shadow-md shadow-brand-500/25 transition hover:shadow-lg hover:shadow-brand-500/40 sm:inline-block"
+        class="hidden rounded-full border border-tint-border px-5 py-2.5 text-sm font-bold text-ink transition hover:border-brand-500 hover:bg-brand-500/10 lg:inline-block"
       >
         Work With Me
+      </a>
+      <a
+        href="https://www.skool.com/the-new-search/about?utm_source=kasradash.com&utm_medium=site&utm_campaign=header-nav"
+        target="_blank"
+        rel="noopener"
+        class="btn-gradient hidden px-5 py-2.5 text-sm font-bold shadow-md shadow-brand-500/25 transition hover:shadow-lg hover:shadow-brand-500/40 sm:inline-block"
+      >
+        Join The New Search
       </a>
       <button
         id="mobile-menu-btn"
@@ -97,8 +95,8 @@ const aboutActive = ABOUT_MENU.some((item) => current === item.href);
       {ABOUT_MENU.filter((item) => item.href !== '/about-kasra-dash/').map((item) => (
         <a href={item.href} class="block rounded-lg px-3 py-2 pl-6 text-sm font-medium text-dim transition hover:bg-white/5 hover:text-white">{item.label}</a>
       ))}
-      <a href="https://www.skool.com/the-new-search/about?utm_source=kasradash.com&utm_medium=site&utm_campaign=header-nav" target="_blank" rel="noopener" class="block rounded-lg px-3 py-2 font-display font-bold text-ink transition hover:bg-white/5">The New Search</a>
-      <a href="/contact/" class="btn-gradient mt-2 block px-5 py-3 text-center font-bold">Work With Me</a>
+      <a href="/contact/" class="mt-2 block rounded-full border border-tint-border px-5 py-3 text-center font-bold text-ink transition hover:border-brand-500 hover:bg-brand-500/10">Work With Me</a>
+      <a href="https://www.skool.com/the-new-search/about?utm_source=kasradash.com&utm_medium=site&utm_campaign=header-nav" target="_blank" rel="noopener" class="btn-gradient mt-2 block px-5 py-3 text-center font-bold">Join The New Search</a>
     </nav>
   </div>
 </header>

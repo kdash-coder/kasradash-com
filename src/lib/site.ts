@@ -32,10 +32,6 @@ export const ABOUT_MENU: MenuItem[] = [
   { label: 'Podcast', href: '/podcast/' },
 ];
 
-export const NAV = [
-  { label: 'The New Search', href: 'https://www.skool.com/the-new-search/about?utm_source=kasradash.com&utm_medium=site&utm_campaign=header-nav' },
-];
-
 export const SOCIALS = [
   { label: 'YouTube', href: 'https://www.youtube.com/@kasradash' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/kasra-dash' },
