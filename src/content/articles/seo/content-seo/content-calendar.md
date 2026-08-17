@@ -207,7 +207,7 @@ Schedule updates for declining or outdated posts to maintain rankings.
 
 **Content updates → restore → visibility and topical freshness.**
 
-→ Learn the process in [**Optimise Old Content**](/seo/content-seo/optimise-old-content/).
+→ Learn the process in [**Optimise Old Content**](/seo/content-seo/content-pruning/).
 
 ### 3. Rebalance Content Mix
 

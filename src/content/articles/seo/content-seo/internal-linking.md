@@ -17,7 +17,7 @@ Because Google relies on link structure to interpret relationships and crawl con
 
 In this guide by **Kasra Dash**, you’ll learn how to build an internal linking strategy that improves crawlability, strengthens topical relevance, and maximises SEO performance.
 
-→ Start with [**Content SEO**](/seo/content-seo/semantic-seo/) to understand how internal linking fits into your broader optimisation strategy.
+→ Start with [**Content SEO**](/seo/content-seo/topical-authority/) to understand how internal linking fits into your broader optimisation strategy.
 
 Internal linking is the invisible architecture that holds your entire SEO ecosystem together.
 
@@ -154,7 +154,7 @@ Only link where it adds value, relevance always trumps volume.
 
 ### Step 4: Maintain a Logical Hierarchy
 
-[Pillar pages](/seo/seo-frameworks/internal-linking-framework/) should receive the most internal links, followed by supporting posts.
+Pillar pages should receive the most internal links, followed by supporting posts.
 
 **Hierarchy alignment → clarifies → authority flow.**
 

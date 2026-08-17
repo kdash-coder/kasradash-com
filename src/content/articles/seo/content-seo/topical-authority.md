@@ -33,7 +33,7 @@ Unlike **Domain Authority**, which is based on backlinks, **topical authority** 
 
 **Content depth → builds → expertise perception.**
 
-→ See how meaning influences authority in [**Semantic SEO**](/seo/content-seo/semantic-seo/).
+→ See how meaning influences authority in **Semantic SEO**.
 
 *The more you educate within a niche, the more search engines trust your voice.*
 
@@ -67,7 +67,7 @@ Topical authority supports Experience, Expertise, Authoritativeness, and Trustwo
 
 **E-E-A-T compliance → reinforces → credibility in competitive niches.**
 
-→ Learn more in [**E-E-A-T**](/seo/content-seo/e-e-a-t/), and see the full mapping later in this guide.
+→ Learn more in [**E-E-A-T**](/seo/seo-frameworks/eeat-framework/), and see the full mapping later in this guide.
 
 #### Why is topical authority important?
 
@@ -224,7 +224,7 @@ Interlink related pages using natural anchors that reflect relationships.
 
 Review old articles to maintain entity relevance, update internal links, and refresh outdated sections.
 
-→ Refresh what already ranks by [**optimising old content**](/seo/content-seo/optimise-old-content/).
+→ Refresh what already ranks by [**optimising old content**](/seo/content-seo/content-pruning/).
 
 **Consistent maintenance → preserves → topical alignment.**
 
@@ -444,7 +444,7 @@ Backlinks validate authority externally, while topical depth reinforces it inter
 
 **Internal mastery + external validation → create → durable ranking power.**
 
-→ Learn how to balance both in [**Link Building Strategies**](/seo/link-building/strategies/).
+→ Learn how to balance both in [**Link Building Strategies**](/seo/link-building/).
 
 *Topical authority makes you rank. Backlinks help you stay there.*
 
@@ -474,7 +474,7 @@ Interlink the full cluster. Add a direct, self-contained answer paragraph under 
 **Quarter 4: Validate externally.**
 Earn mentions and links from sources inside your subject. Track citations in AI answers alongside rankings. Refresh the pages that slipped.
 
-→ Plan the map faster using [**AI Topical Maps**](/seo/ai-and-seo/ai-topical-maps/), and shape pages for retrieval with [**AI Overviews Optimisation**](/seo/ai-and-seo/ai-overviews-optimisation/).
+→ Plan the map faster using **AI Topical Maps**, and shape pages for retrieval with [**AI Overviews Optimisation**](/seo/ai-and-seo/ai-overviews-optimisation/).
 
 #### What to stop doing in 2026
 
@@ -493,7 +493,7 @@ The most effective 2026 strategy is to define one narrow subject, prune off-topi
 
 As AI-driven search evolves, Google relies more on semantic signals and entity context. Authority will depend less on volume and more on precision.
 
-→ Future-proof your strategy through [**AI Overviews**](/seo/content-seo/ai-overviews/) and understand how [**AI search engines**](/seo/ai-and-seo/ai-search-engines/) select their sources.
+→ Future-proof your strategy through [**AI Overviews**](/seo/ai-and-seo/ai-overviews-optimisation/) and understand how [**AI search engines**](/seo/ai-and-seo/ai-search-engines/) select their sources.
 
 **Precision and context → future-proof → SEO relevance.**
 

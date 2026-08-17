@@ -35,7 +35,7 @@ It defines keywords, entities, intent, structure, and tone, turning strategy int
 - Align writers with searcher expectations.
 - Maintain topical consistency across your domain.
 
-→ Learn how meaning shapes SEO in [**Semantic SEO**](/seo/content-seo/semantic-seo/).
+→ Learn how meaning shapes SEO in [**Semantic SEO**](/seo/content-seo/topical-authority/).
 
 The brief is not a form, it’s a framework for clarity, precision, and ranking potential.
 

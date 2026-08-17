@@ -75,7 +75,7 @@ Every search query falls into one of four primary intent types. Understanding ea
 
 **Intent clarity → directs → content format and structure.**
 
-→ Deepen contextual understanding in [**Semantic SEO**](/seo/content-seo/semantic-seo/).
+→ Deepen contextual understanding in [**Semantic SEO**](/seo/content-seo/topical-authority/).
 
 Each query signals a specific mindset, your content should match it.
 

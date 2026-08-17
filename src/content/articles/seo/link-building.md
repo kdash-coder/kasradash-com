@@ -71,7 +71,7 @@ Search engines use links to understand both **authority** and **relevance**. Wit
 
 - **Discovery:** Googlebot finds new URLs via links.
 - **Evaluation:** Links help assess content quality through contextual relevance.
-- **Ranking:** PageRank and [E-E-A-T signals](/seo/content-seo/e-e-a-t/) determine visibility.
+- **Ranking:** PageRank and [E-E-A-T signals](/seo/seo-frameworks/eeat-framework/) determine visibility.
 
 **High-quality backlinks → enhance → trust and topical authority.**
 
@@ -253,7 +253,7 @@ The key to effective link building lies in **relevance, authority, and intent**.
 
 #### Step 2: Prospect Relevant Sites
 
-Use tools like **Ahrefs**, **Semrush**, or **BuzzStream** to identify sites with relevant audiences and authority metrics. These SEO link building tools let you filter by Domain Rating, organic traffic, and topical relevance, so your outreach targets the right sites. → Learn prospecting best practices in [Link Building Strategies](/seo/link-building/strategies/).
+Use tools like **Ahrefs**, **Semrush**, or **BuzzStream** to identify sites with relevant audiences and authority metrics. These SEO link building tools let you filter by Domain Rating, organic traffic, and topical relevance, so your outreach targets the right sites. → Learn prospecting best practices in Link Building Strategies.
 
 #### Step 3: Craft Personalised Outreach
 
@@ -571,7 +571,7 @@ You do not need to buy the best link building course on the market to get compet
 Work through these link building courses and guides in this order:
 
 1. This page, for the fundamentals of authority, equity and link quality.
-2. [Link building strategies](/seo/link-building/strategies/), for tactic selection by niche and budget.
+2. Link building strategies, for tactic selection by niche and budget.
 3. [Guest posting](/seo/link-building/guest-posting/) and [broken link building](/seo/link-building/broken-link-building/), for repeatable outreach execution.
 4. [Free backlinks](/seo/link-building/free-backlinks/), for what you can build before you have a budget.
 5. [Anchor text optimisation](/seo/link-building/anchor-text-optimisation/), for keeping your profile natural as volume increases.
@@ -639,6 +639,6 @@ To recap:
 - Avoid shortcuts or manipulative tactics.
 - Build topical authority with internal and external linking synergy.
 
-→ Continue your journey with [Link Building Strategies](/seo/link-building/strategies/) and [Backlink Analysis](/seo/link-building/backlink-analysis/) to deepen your expertise.
+→ Continue your journey with Link Building Strategies and [Backlink Analysis](/seo/link-building/backlink-analysis/) to deepen your expertise.
 
 *In SEO, authority is never bought. It is earned, one trusted link at a time.*

@@ -75,7 +75,7 @@ Recommended layout:
 1. **Overview Tab:** Quick snapshot of performance trends (traffic, clicks, conversions).
 2. **Visibility Tab:** Impressions, rankings, CTR, and keyword distribution.
 3. **Content Tab:** Top-performing pages and new opportunities.
-4. **Technical Tab:** [Crawl health](/seo/seo-frameworks/technical-seo-framework/), Core Web Vitals, and index status.
+4. **Technical Tab:** [Crawl health](/seo/technical-seo/), Core Web Vitals, and index status.
 5. **Authority Tab:** Backlinks, referring domains, and brand mentions.
 
 Use **Looker Studio’s blended data feature** to merge Search Console with GA4, aligning keywords with landing pages.

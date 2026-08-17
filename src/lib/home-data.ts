@@ -21,12 +21,12 @@ export const SERVICES = [
   },
   {
     name: 'Link Building',
-    href: '/seo/link-building/strategies/',
+    href: '/seo/link-building/',
     copy: 'Link building is tough but critical. Our strategies focus on earning high-quality backlinks that boost your site authority without risking penalties. We build connections with reputable sites to get you links that truly impact your rankings.',
   },
   {
     name: 'SEO Audits',
-    href: '/seo/technical-seo/audit/',
+    href: '/seo/technical-seo/',
     copy: 'Feeling stuck in the rankings? Our comprehensive SEO audits uncover what is holding your site back and give you clear, actionable steps to fix it. Consider it your roadmap to better rankings, higher traffic, and more business.',
   },
 ];

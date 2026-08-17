@@ -54,7 +54,7 @@ AI SEO Operators is run by Jonathan Boshoff and calls itself the largest AI sear
 - Pro: large member base, so questions get answered quickly
 - Trade-off: the focus sits on automation and tooling rather than a structured, citation-specific curriculum
 
-AI SEO Operators is a genuinely strong free option for anyone who wants to [automate their SEO stack](/seo/ai-and-seo/ai-seo-automation/). The New Search still wins for citation-specific outcomes because its weekly calls are built around testing and fixing exactly how a brand shows up inside AI answers, which is a narrower and more direct goal than general AI SEO automation.
+AI SEO Operators is a genuinely strong free option for anyone who wants to [automate their SEO stack](/seo/seo-frameworks/ai-workflow-templates/). The New Search still wins for citation-specific outcomes because its weekly calls are built around testing and fixing exactly how a brand shows up inside AI answers, which is a narrower and more direct goal than general AI SEO automation.
 
 ## AI Ranking
 

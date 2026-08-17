@@ -17,7 +17,7 @@ Because Google now prioritises semantics over strings, entity optimisation ensur
 
 In this guide by **Kasra Dash**, you’ll learn how to optimise entities to strengthen topical authority, improve E-E-A-T signals, and future-proof your SEO against AI-driven algorithms.
 
-→ Begin with [**Semantic SEO**](/seo/content-seo/semantic-seo/) to understand how entities fit into the broader framework of search meaning.
+→ Begin with [**Semantic SEO**](/seo/content-seo/topical-authority/) to understand how entities fit into the broader framework of search meaning.
 
 Entity optimisation bridges the gap between what you say and what Google understands.
 
@@ -87,7 +87,7 @@ By linking entities such as authors, credentials, and organisations, you signal 
 
 **Entity verification → boosts → credibility and ranking stability.**
 
-→ Learn more about credibility in [**E-E-A-T**](/seo/content-seo/e-e-a-t/).
+→ Learn more about credibility in [**E-E-A-T**](/seo/seo-frameworks/eeat-framework/).
 
 ### 3. Supports AI Overviews and MUM
 

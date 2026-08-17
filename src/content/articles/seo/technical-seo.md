@@ -17,7 +17,7 @@ It forms the **foundation** of every SEO strategy. Without technical health, you
 
 In this guide by **Kasra Dash**, you’ll learn what Technical SEO is, why it matters, and how to diagnose and fix technical issues affecting visibility.
 
-→ Before diving in, revisit [**SEO Fundamentals**](/seo/learn/seo-fundamentals/), [**How Search Engines Work**](/seo/learn/how-search-engines-work/), and [**What Is Google Indexing**](/seo/learn/what-is-google-indexing/) to understand the underlying systems.
+→ Before diving in, revisit [**SEO Fundamentals**](/seo/learn/), [**How Search Engines Work**](/seo/learn/how-search-engines-work/), and [**What Is Google Indexing**](/seo/learn/what-is-google-indexing/) to understand the underlying systems.
 
 If content is the message, Technical SEO is the microphone that makes it heard.
 
@@ -33,7 +33,7 @@ At its core, Technical SEO solves three key challenges:
 2. **Can they understand your pages?** (Indexing)
 3. **Can they deliver your pages quickly and securely?** (Performance)
 
-→ Deep dive into discovery systems via [**Google Crawling & Indexing**](/seo/technical-seo/google-crawling-and-indexing/) and fix accessibility errors in [**Fix Indexing Issues**](/seo/technical-seo/fix-indexing-issues/).
+→ Deep dive into discovery systems via [**Google Crawling & Indexing**](/seo/technical-seo/google-crawling-and-indexing/) and fix accessibility errors in **Fix Indexing Issues**.
 
 Technical SEO ensures search engines can access, interpret, and trust your content.
 

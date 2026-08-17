@@ -80,7 +80,7 @@ A **Content Audit → inventories → every indexable URL and its performance** 
 1. **Crawl the site** (Screaming Frog / Sitebulb) to export all indexable URLs, word counts, canonicals, status codes, inlinks/outlinks.
 2. **Join performance data** (GSC/Analytics): clicks, impressions, CTR, conversions.
 3. **Tag each URL** by topic, cluster, intent, and lifecycle stage (evergreen, dated, campaign).
-4. **Flag issues**: duplicate titles, thin pages, soft 404s, non‑canonical indexation, orphan pages (see [Fix Indexing Issues](/seo/technical-seo/fix-indexing-issues/)).
+4. **Flag issues**: duplicate titles, thin pages, soft 404s, non‑canonical indexation, orphan pages (see [Fix Indexing Issues](/seo/technical-seo/)).
 5. **Decide status** using an action column: *Keep / Update / Consolidate / Redirect / Noindex / Remove*.
 6. **Map merges**: assign a clear **destination URL** for any consolidation with anchor suggestions (see Internal Linking).
 

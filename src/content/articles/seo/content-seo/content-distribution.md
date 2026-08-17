@@ -55,7 +55,7 @@ Turn a blog post into:
 - A podcast discussion or YouTube explainer.
 - A downloadable checklist or infographic.
 
-For example, if you’ve written a guide on How to [Optimise Old Blog Posts](/seo/content-seo/optimise-old-content/) for Higher Rankings, you could create a “before and after” case study to showcase results visually.
+For example, if you’ve written a guide on How to [Optimise Old Blog Posts](/seo/content-seo/content-pruning/) for Higher Rankings, you could create a “before and after” case study to showcase results visually.
 
 Repurposing ensures your hard work continues generating returns across multiple channels.
 
@@ -87,7 +87,7 @@ Social channels remain powerful for content discovery. However, each platform re
 - **Facebook Groups / Slack Communities:** Target niche audiences with problem-solving content.
 
 Mention key entities and topics to help users connect your content to your brand authority.  
-For instance, when discussing **entity optimisation** or **semantic SEO**, link back to relevant cluster pages like [Entity Optimisation](/seo/content-seo/entity-optimisation/) or [Semantic SEO](/seo/content-seo/semantic-seo/).
+For instance, when discussing **entity optimisation** or **semantic SEO**, link back to relevant cluster pages like [Entity Optimisation](/seo/content-seo/entity-optimisation/) or [Semantic SEO](/seo/content-seo/topical-authority/).
 
 Social amplification drives engagement metrics that reinforce your SEO footprint.
 

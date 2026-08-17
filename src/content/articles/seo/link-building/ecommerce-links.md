@@ -57,7 +57,7 @@ Popular sectors like fashion, electronics, or supplements are oversaturated, req
 
 **Linkability gap → limits → traditional outreach success.**
 
-→ Learn alternative methods in [**Link Building Strategies**](/seo/link-building/strategies/).
+→ Learn alternative methods in [**Link Building Strategies**](/seo/link-building/).
 
 **Solving linkability challenges turns e-commerce from a hard sell into a link magnet.**
 
@@ -246,7 +246,7 @@ Backlinks must deliver measurable business value-not just vanity metrics.
 | **Keyword Rankings** | Tracks product and category performance |
 | **Referral Conversions** | Identifies links driving sales |
 
-→ Learn to quantify results in [**Measure ROI of Link Building**](/seo/link-building/measure-roi/).
+→ Learn to quantify results in [**Measure ROI of Link Building**](/seo/link-building/).
 
 **ROI tracking → validates → strategy effectiveness and stakeholder confidence.**
 

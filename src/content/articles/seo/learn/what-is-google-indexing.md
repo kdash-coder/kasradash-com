@@ -113,7 +113,7 @@ Typically between a few hours and a few days. For brand-new websites, it can tak
 
 ## Common Indexing Issues
 
-Sometimes, [pages fail to index](/seo/technical-seo/fix-indexing-issues/), not because of penalties, but because of preventable issues.
+Sometimes, [pages fail to index](/seo/technical-seo/), not because of penalties, but because of preventable issues.
 
 ### 1. **Thin or Low-Quality Content**
 
@@ -135,7 +135,7 @@ Large sites or poorly linked structures can waste crawl capacity.
 
 Broken links, 404s, or chains prevent successful crawling and indexing.
 
-→ Diagnose and fix these in [**Content Audits**](/seo/seo-frameworks/technical-seo-framework/) and **Technical SEO**.
+→ Diagnose and fix these in [**Content Audits**](/seo/technical-seo/) and **Technical SEO**.
 
 Fixing indexation issues often improves ranking indirectly, because accessible content is assessable content.
 

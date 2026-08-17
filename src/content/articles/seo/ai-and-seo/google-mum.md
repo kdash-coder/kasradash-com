@@ -115,7 +115,7 @@ It interprets intent across three layers:
 
 Because it connects cross-intent data, your content must address **journey-based search behaviour**, leading users naturally from learning to action.
 
-For structuring these journeys effectively, revisit [Search Intent Optimisation](/seo/ai-and-seo/ai-search-intent/).
+For structuring these journeys effectively, revisit [Search Intent Optimisation](/seo/content-seo/search-intent/).
 
 Search intent is no longer linear, it’s contextual and connected.
 

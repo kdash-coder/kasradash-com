@@ -17,7 +17,7 @@ From Google’s **AI Overviews** to predictive ranking systems like [**RankBrain
 
 AI isn’t replacing SEO; it’s redefining it.
 
-To stay competitive, content creators and SEO professionals must learn to optimise for algorithms that think more like humans – [analysing meaning, context, and intent](/seo/ai-and-seo/ai-search-intent/) rather than mere keywords.
+To stay competitive, content creators and SEO professionals must learn to optimise for algorithms that think more like humans – [analysing meaning, context, and intent](/seo/content-seo/search-intent/) rather than mere keywords.
 
 ## The Evolution of AI in Search
 
@@ -32,7 +32,7 @@ Key milestones include:
 
 Each step brings search closer to human-like understanding – interpreting *why* someone is searching, not just *what* they typed.
 
-For a deep dive into this generative shift, see [AI Overviews and SEO Content: How to Get Featured](/seo/content-seo/ai-overviews/).
+For a deep dive into this generative shift, see [AI Overviews and SEO Content: How to Get Featured](/seo/ai-and-seo/ai-overviews-optimisation/).
 
 ### How does AI improve search results?
 
@@ -67,7 +67,7 @@ For SEO, this means content must anticipate multi-intent queries and emerging tr
 
 ## Content Creation in the AI Era
 
-[AI is no longer just powering search](/seo/ai-and-seo/ai-search-engines/), it’s powering content. Writers and strategists now use **[AI-assisted tools](/seo/ai-and-seo/ai-seo-automation/)** like **ChatGPT**, **Jasper**, and **Frase** to scale content creation responsibly.
+[AI is no longer just powering search](/seo/ai-and-seo/ai-search-engines/), it’s powering content. Writers and strategists now use **[AI-assisted tools](/seo/seo-frameworks/ai-workflow-templates/)** like **ChatGPT**, **Jasper**, and **Frase** to scale content creation responsibly.
 
 When used correctly, AI accelerates research and ideation while keeping human insight central.  
 Combine machine efficiency with editorial quality standards, as detailed in Using AI Tools to Scale Content Production Responsibly.
@@ -110,7 +110,7 @@ Improve entity clarity by:
 
 You can learn entity alignment best practices in Entity Optimisation for SEO.
 
-A commonly asked question is can i [create a topical map using solely AI](/seo/ai-and-seo/ai-topical-maps/).
+A commonly asked question is can i [create a topical map using solely AI](/seo/content-seo/topical-authority/).
 
 ## E-E-A-T and AI: Trust in a Machine-Generated World
 
@@ -162,7 +162,7 @@ Search is becoming conversational, contextual, and predictive, powered by system
 
 To succeed in this new era, combine AI-assisted efficiency with human-led expertise, robust entity optimisation, and unwavering trust signals.
 
-**Next step:** Audit your site’s [semantic coverage](/seo/content-seo/semantic-seo/) and [E-E-A-T](/seo/content-seo/e-e-a-t/) strength using the [Content Auditing Framework](/seo/seo-frameworks/content-audit-template/) to prepare your SEO for the AI-first future.
+**Next step:** Audit your site’s [semantic coverage](/seo/content-seo/topical-authority/) and [E-E-A-T](/seo/seo-frameworks/eeat-framework/) strength using the [Content Auditing Framework](/seo/content-seo/content-audits/) to prepare your SEO for the AI-first future.
 
 Some other relevant articles that cover AI & SEO are:
 

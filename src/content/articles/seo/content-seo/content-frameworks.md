@@ -98,7 +98,7 @@ For each pillar, research related questions, entities, and pain points. These be
 
 Every cluster page should link back to its pillar using contextual, relevant anchor text. The pillar should also link out to each cluster, completing the semantic loop.
 
-For example, if you mention content updates or optimisation, naturally link to your guide on how to [optimise old blog posts](/seo/content-seo/optimise-old-content/).
+For example, if you mention content updates or optimisation, naturally link to your guide on how to [optimise old blog posts](/seo/content-seo/content-pruning/).
 
 ### Step 4: Use Schema and Metadata
 
@@ -126,7 +126,7 @@ Both frameworks thrive when you strengthen your site’s semantic web. Each pill
 
 For example, your **Content SEO** pillar might reference entities like “Google Search Console,” “EEAT,” and “SurferSEO.”
 
-Applying [Semantic SEO](/seo/content-seo/semantic-seo/) ensures that your content isn’t just linked it’s conceptually connected. This improves how Google understands your expertise and context.
+Applying [Semantic SEO](/seo/content-seo/topical-authority/) ensures that your content isn’t just linked it’s conceptually connected. This improves how Google understands your expertise and context.
 
 Semantic cohesion is the backbone of scalable content frameworks.
 

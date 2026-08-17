@@ -17,7 +17,7 @@ It acts as a translator between your content and Google’s understanding, helpi
 
 In this guide by **Kasra Dash**, you’ll learn what schema markup is, why it matters for SEO, and how to implement and validate it effectively.
 
-→ To understand the technical foundation, revisit [**Technical SEO**](/seo/technical-seo/) and [**Fix Indexing Issues**](/seo/technical-seo/fix-indexing-issues/).
+→ To understand the technical foundation, revisit [**Technical SEO**](/seo/technical-seo/) and [**Fix Indexing Issues**](/seo/technical-seo/).
 
 Schema markup tells Google what your content *means*, not just what it *says*.
 
@@ -189,7 +189,7 @@ Even valid schema can cause confusion if implemented incorrectly.
 - 🧩 **Conflicting Metadata**, Page title differs from schema headline.
 - 🚫 **JS-Injected Schema Failures**, Markup added dynamically that Googlebot can’t render.
 
-→ Troubleshoot render issues with **JavaScript SEO** and confirm crawlability via [**Technical SEO Audit**](/seo/technical-seo/audit/).
+→ Troubleshoot render issues with **JavaScript SEO** and confirm crawlability via [**Technical SEO Audit**](/seo/technical-seo/).
 
 Invalid schema wastes crawl budget and damages trust signals, precision matters.
 

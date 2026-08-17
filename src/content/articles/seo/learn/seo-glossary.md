@@ -40,7 +40,7 @@ Each term is written in plain English, linked contextually to deeper guides with
 
 **SERP (Search Engine Results Page)** → The list of results that appears after a user performs a search. Includes organic results, featured snippets, and paid ads.
 
-**Search Intent** → The underlying goal behind a search query, informational, navigational, or transactional. Central to [**What Are Keywords**](/learn/what-are-keywords/).
+**Search Intent** → The underlying goal behind a search query, informational, navigational, or transactional. Central to [**What Are Keywords**](/seo/learn/).
 
 **SEO (Search Engine Optimisation)** → The practice of improving website visibility in organic search. Start with **What Is SEO**.
 

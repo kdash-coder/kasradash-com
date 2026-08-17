@@ -17,7 +17,7 @@ Because Google interprets anchor text as a signal of topical relevance, balancin
 
 In this guide by **Kasra Dash**, you’ll learn how to optimise anchor text safely, improve contextual authority, and avoid over-optimisation penalties in 2026.
 
-→ Begin with [**Link Building Strategies**](/seo/link-building/strategies/) to understand how anchor optimisation fits into your wider SEO plan.
+→ Begin with [**Link Building Strategies**](/seo/link-building/) to understand how anchor optimisation fits into your wider SEO plan.
 
 Anchor text is a bridge between user intent, link equity, and topical relevance.
 
@@ -160,7 +160,7 @@ Anchor text optimisation isn’t a one-time task. Track changes monthly and adju
 
 **Monitoring patterns → prevents → unnatural spikes.**
 
-→ Learn how to track progress in [**Measure ROI**](/seo/link-building/measure-roi/).
+→ Learn how to track progress in [**Measure ROI**](/seo/link-building/).
 
 SEO rewards those who measure relentlessly.
 
@@ -204,7 +204,7 @@ Too many branded anchors can appear unnatural if they dominate your backlink pro
 
 Repeating the same internal anchor weakens topical depth. Vary phrasing naturally.
 
-→ Audit and fix issues with a [**Technical SEO Audit**](/seo/technical-seo/audit/).
+→ Audit and fix issues with a [**Technical SEO Audit**](/seo/technical-seo/).
 
 **Neglecting variety → breaks → algorithmic trust.**
 

@@ -57,7 +57,7 @@ Search engines use backlinks as trust signals, but broken links can disrupt this
 - **Topical Relevance:** Earn links from thematically aligned sites.
 - **Relationship Building:** Create positive outreach relationships for future collaborations.
 
-→ Learn how this fits within your [**Link Building Strategies**](/seo/link-building/strategies/).
+→ Learn how this fits within your [**Link Building Strategies**](/seo/link-building/).
 
 ### Impact on the Web Ecosystem
 
@@ -190,7 +190,7 @@ Broken link building is only effective if it drives measurable outcomes. Evaluat
 
 Use **Ahrefs**, **Google Search Console**, and **Google Analytics** to track progress.
 
-Cross-reference with [**Measure ROI of Link Building**](/seo/link-building/measure-roi/) to quantify performance.
+Cross-reference with [**Measure ROI of Link Building**](/seo/link-building/) to quantify performance.
 
 You can’t improve what you don’t measure.
 

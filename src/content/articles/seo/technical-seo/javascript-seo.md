@@ -17,7 +17,7 @@ As modern sites increasingly rely on JavaScript frameworks like React, Angular, 
 
 In this guide by **Kasra Dash**, you’ll learn exactly how JavaScript affects crawling and indexing, and how to fix the rendering issues that block visibility.
 
-→ Before you begin, revisit [**Technical SEO**](/seo/technical-seo/) and [**Fix Indexing Issues**](/seo/technical-seo/fix-indexing-issues/) to understand how crawl systems interact with rendering.
+→ Before you begin, revisit [**Technical SEO**](/seo/technical-seo/) and [**Fix Indexing Issues**](/seo/technical-seo/) to understand how crawl systems interact with rendering.
 
 If Google can’t render your JavaScript, it can’t index your content.
 
@@ -82,7 +82,7 @@ Not all rendering is created equal. The method you choose determines how Google 
 | **Server-Side Rendering (SSR)** | HTML is pre-rendered on the server before sending to browser. | Best for SEO; ensures full content is visible to crawlers. | E-commerce, blogs, or high-traffic landing pages. |
 | **Dynamic Rendering** | Server detects bots and serves pre-rendered HTML to them. | Good compromise; temporary solution. | Complex JS sites or frameworks not SEO-optimised. |
 
-→ Evaluate which model fits your stack in [**Technical SEO Audit**](/seo/technical-seo/audit/).
+→ Evaluate which model fits your stack in [**Technical SEO Audit**](/seo/technical-seo/).
 
 Choose rendering that balances user experience with crawl accessibility.
 

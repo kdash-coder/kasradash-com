@@ -38,7 +38,7 @@ Google evaluates three primary metrics:
 - **Interaction to Next Paint (INP):** Measures response latency more accurately than FID.
 - **First Contentful Paint (FCP):** Tracks when the first visible content appears on-screen.
 
-→ Deepen your understanding of performance metrics in **Website Speed SEO** and ensure clean accessibility via [**Fix Indexing Issues**](/seo/technical-seo/fix-indexing-issues/).
+→ Deepen your understanding of performance metrics in **Website Speed SEO** and ensure clean accessibility via [**Fix Indexing Issues**](/seo/technical-seo/).
 
 Core Web Vitals define whether your website feels instant or frustrating.
 
@@ -58,7 +58,7 @@ As a result, improving Core Web Vitals supports:
 - Stronger engagement and dwell time.
 - Better conversion rates and trust signals.
 
-→ See how algorithmic changes affect UX metrics in [**Google Algorithm Updates**](/seo/technical-seo/google-algorithm-updates/) and learn how to verify site performance in [**Technical SEO Audit**](/seo/technical-seo/audit/).
+→ See how algorithmic changes affect UX metrics in [**Google Algorithm Updates**](/seo/technical-seo/google-algorithm-updates/) and learn how to verify site performance in [**Technical SEO Audit**](/seo/technical-seo/).
 
 Google now ranks based on experience, not just information.
 

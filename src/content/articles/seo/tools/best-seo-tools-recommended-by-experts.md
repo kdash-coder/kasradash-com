@@ -476,7 +476,7 @@ It depends on what you need.
 
 For keyword research, many SEOs like Keyword Insights or Data For SEO.
 
-For [technical audits](/seo/technical-seo/audit/), tools like Screaming Frog, Sitebulb, and JetOctopus stood out in this list.
+For [technical audits](/seo/technical-seo/), tools like Screaming Frog, Sitebulb, and JetOctopus stood out in this list.
 
 The best tool is the one that fits your workflow and goals.
 

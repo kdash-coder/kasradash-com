@@ -17,7 +17,7 @@ Without proper canonicalisation, duplicate or parameterised URLs can split ranki
 
 In this guide by **Kasra Dash**, you’ll learn what canonical tags are, how to implement them correctly, and how they help consolidate authority while preventing crawl waste.
 
-→ Before we start, revisit [**Technical SEO**](/seo/technical-seo/) and [**Fix Indexing Issues**](/seo/technical-seo/fix-indexing-issues/) to understand how crawl and index systems interact with canonicalisation.
+→ Before we start, revisit [**Technical SEO**](/seo/technical-seo/) and [**Fix Indexing Issues**](/seo/technical-seo/) to understand how crawl and index systems interact with canonicalisation.
 
 Canonical tags unify authority, improve crawl efficiency, and keep Google focused on your preferred URLs.
 
@@ -119,7 +119,7 @@ Even small errors can lead to crawl inefficiencies or indexing loss.
 
 **Incorrect canonicals → create → mixed indexation signals.**
 
-→ Verify these with a [**Technical SEO Audit**](/seo/technical-seo/audit/) and correct sitemap entries via **XML Sitemaps & Robots.txt**.
+→ Verify these with a [**Technical SEO Audit**](/seo/technical-seo/) and correct sitemap entries via **XML Sitemaps & Robots.txt**.
 
 Canonicalisation is fragile, even one error can cause valuable pages to vanish from the index.
 

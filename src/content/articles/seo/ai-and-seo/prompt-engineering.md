@@ -88,7 +88,7 @@ LLMs don’t just find keywords, they reveal context.
 
 Prompt engineering also enables LLMs to create **SEO-ready content frameworks**.
 
-Example Prompt for [Topic Mapping](/seo/ai-and-seo/ai-topical-maps/):
+Example Prompt for [Topic Mapping](/seo/content-seo/topical-authority/):
 
 > “You are a content strategist building a pillar-cluster model around ‘Semantic SEO.’ Create 5 pillar pages and 15 supporting clusters. Include suggested internal links and search intent.”
 
@@ -192,7 +192,7 @@ Prompt engineering isn’t about automation, it’s about direction.
 
 ## Step 10: Future of Prompt Engineering in SEO
 
-Prompt engineering will soon evolve into **AI strategy design**, where SEOs instruct models through APIs and [autonomous agents](/seo/ai-and-seo/ai-seo-automation/). Expect:
+Prompt engineering will soon evolve into **AI strategy design**, where SEOs instruct models through APIs and [autonomous agents](/seo/seo-frameworks/ai-workflow-templates/). Expect:
 
 - **Dynamic prompting**, AI tools adjusting inputs in real time based on SERP data.
 - **Retrieval-Augmented Generation (RAG)**, AI referencing live data to enhance accuracy.

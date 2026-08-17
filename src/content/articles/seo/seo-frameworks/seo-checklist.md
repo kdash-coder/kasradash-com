@@ -30,13 +30,13 @@ This checklist is built around four key SEO pillars:
 3. **Off-Page SEO:** How your site earns authority and trust externally.
 4. **Performance Tracking:** How to measure, analyse, and refine.
 
-You can combine this with your [Content Auditing Framework](/seo/seo-frameworks/content-audit-template/) to keep your SEO systemised and data-driven.
+You can combine this with your [Content Auditing Framework](/seo/content-seo/content-audits/) to keep your SEO systemised and data-driven.
 
 SEO isn’t about doing everything, it’s about doing the right things in the right order.
 
 ## Section 1: Technical SEO Checklist
 
-[Technical SEO](/seo/seo-frameworks/technical-seo-framework/) → ensures → your site can be crawled, indexed, and understood by search engines.
+[Technical SEO](/seo/technical-seo/) → ensures → your site can be crawled, indexed, and understood by search engines.
 
 **✓ Website Architecture**
 
@@ -49,7 +49,7 @@ SEO isn’t about doing everything, it’s about doing the right things in the r
 - Submit and verify your XML sitemap.
 - Optimise robots.txt to allow access to important pages.
 - Use canonical tags to prevent duplicate content.
-- Check [crawl stats in Google Search Console](/seo/technical-seo/audit/).
+- Check [crawl stats in Google Search Console](/seo/technical-seo/).
 
 **✓ Site Speed & Core Web Vitals**
 
@@ -109,7 +109,7 @@ On-page SEO → aligns → your content with user intent and search algorithms.
 
 **✓ Internal Linking**
 
-- [Link contextually](/seo/seo-frameworks/internal-linking-framework/) to related pages or pillar content.
+- [Link contextually](/seo/content-seo/internal-linking/) to related pages or pillar content.
 - Use descriptive, entity-focused anchor text.
 - Avoid overlinking or irrelevant internal connections.
 

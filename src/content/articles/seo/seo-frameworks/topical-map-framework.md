@@ -147,7 +147,7 @@ Every entity should connect contextually to others in its cluster using **semant
 Example:  
 From your article on *AI for Keyword Research*, link to Using AI to Build Topical Maps Automatically with the anchor “AI topical mapping.”
 
-See [Internal Linking Framework](/seo/seo-frameworks/internal-linking-framework/): Structuring Site Architecture for Rankings for detailed guidance.
+See [Internal Linking Framework](/seo/content-seo/internal-linking/): Structuring Site Architecture for Rankings for detailed guidance.
 
 Internal linking is how you turn topical maps into ranking systems.
 
@@ -184,7 +184,7 @@ Audit it quarterly to:
 - Update outdated topics.
 - Identify orphan pages and reconnect them contextually.
 
-Integrate this with your [Content Auditing Framework](/seo/seo-frameworks/content-audit-template/) to ensure your topical structure always aligns with current authority and content performance.
+Integrate this with your [Content Auditing Framework](/seo/content-seo/content-audits/) to ensure your topical structure always aligns with current authority and content performance.
 
 The best topical maps grow organically, just like your expertise.
 

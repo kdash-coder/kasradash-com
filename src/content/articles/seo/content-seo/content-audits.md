@@ -51,7 +51,7 @@ Over time, rankings decline due to algorithm changes or outdated information.
 
 **Regular audits → prevent → performance drops from ageing content.**
 
-→ Revive lost rankings using [**Optimise Old Content**](/seo/content-seo/optimise-old-content/).
+→ Revive lost rankings using [**Optimise Old Content**](/seo/content-seo/content-pruning/).
 
 Neglected content silently drains authority.
 
@@ -61,7 +61,7 @@ By merging weak posts and linking related ones, audits enhance your topical dept
 
 **Consolidated content → reinforces → semantic trust.**
 
-→ Learn how this impacts authority in [**Semantic SEO**](/seo/content-seo/semantic-seo/).
+→ Learn how this impacts authority in [**Semantic SEO**](/seo/content-seo/topical-authority/).
 
 ### 3. Improve User Experience
 

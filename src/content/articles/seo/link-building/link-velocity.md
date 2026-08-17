@@ -17,7 +17,7 @@ It’s a crucial SEO metric because it helps search engines determine whether yo
 
 In this guide by **Kasra Dash**, we’ll explain how link velocity affects your rankings, what’s considered a healthy growth rate, and how to build backlinks at a sustainable pace.
 
-→ For foundational concepts, revisit [**Link Building Strategies**](/seo/link-building/strategies/) to understand how velocity fits into your broader authority-building framework.
+→ For foundational concepts, revisit [**Link Building Strategies**](/seo/link-building/) to understand how velocity fits into your broader authority-building framework.
 
 Link velocity doesn’t just measure speed, it signals trust, stability, and growth consistency.
 
@@ -204,7 +204,7 @@ Link velocity also affects ROI, sustainable growth leads to compounding authorit
 
 **Consistent growth → compounds → authority like interest in a savings account.**
 
-→ Quantify returns with [**Measure ROI**](/seo/link-building/measure-roi/).
+→ Quantify returns with [**Measure ROI**](/seo/link-building/).
 
 Slow, steady growth yields long-term financial and ranking stability.
 

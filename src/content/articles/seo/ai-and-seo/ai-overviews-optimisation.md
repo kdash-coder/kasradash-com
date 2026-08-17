@@ -130,7 +130,7 @@ To align with this, target natural-language searches such as:
 - “Is AI content penalised by Google?”
 
 Craft your content to answer both **primary** and **secondary** questions in one piece. Tools like **AlsoAsked**, **Semrush Topic Research**, and Google’s **“People Also Ask”** data surface the conversational and comparative queries AI Overviews favour.  
-You can refine your keyword and intent mapping by understanding [how AI changes search intent](/seo/ai-and-seo/ai-search-intent/).
+You can refine your keyword and intent mapping by understanding [how AI changes search intent](/seo/content-seo/search-intent/).
 
 Write like you’re answering, not just optimising.
 

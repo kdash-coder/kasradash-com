@@ -110,7 +110,7 @@ Even well-optimised websites encounter technical barriers that block crawling or
 
 **Crawl barriers → reduce → visibility and trust.**
 
-→ Diagnose and repair issues using [**Fix Indexing Issues**](/seo/technical-seo/fix-indexing-issues/), or review patterns in [**Common Technical SEO Mistakes**](/seo/technical-seo/common-mistakes/).
+→ Diagnose and repair issues using [**Fix Indexing Issues**](/seo/technical-seo/), or review patterns in [**Common Technical SEO Mistakes**](/seo/technical-seo/).
 
 Google can’t rank what it can’t read, accessibility is non-negotiable.
 
@@ -145,7 +145,7 @@ Improving crawl and index efficiency ensures your most valuable pages are priori
 - Implement CDN caching.
 - Monitor **Core Web Vitals** regularly.
 
-→ Audit all these systems in [**Technical SEO Audit**](/seo/technical-seo/audit/) and accelerate load times via [**Website Speed SEO**](/seo/technical-seo/website-speed-seo).
+→ Audit all these systems in [**Technical SEO Audit**](/seo/technical-seo/) and accelerate load times via [**Website Speed SEO**](/seo/technical-seo/website-speed-seo).
 
 Efficient crawling isn’t about getting more pages indexed, it’s about getting the right ones indexed.
 

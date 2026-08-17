@@ -67,7 +67,7 @@ Through algorithms like **SpamBrain** and **Helpful Content System**, Google fil
 
 AI also analyses **semantic distance**, how different your page is from existing indexed content. Pages with overlapping meaning but little differentiation are often deprioritised for crawling.
 
-To build distinct topical assets, see Using AI to [Build Topical Maps Automatically](/seo/ai-and-seo/ai-topical-maps/).
+To build distinct topical assets, see Using AI to [Build Topical Maps Automatically](/seo/content-seo/topical-authority/).
 
 Googlebot doesn’t want more content; it wants better context.
 

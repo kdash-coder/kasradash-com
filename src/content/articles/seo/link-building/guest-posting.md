@@ -125,7 +125,7 @@ Example:
 > Best,  
 > **[Your Name]**
 
-→ Learn scalable outreach systems in [**Link Building Strategies**](/seo/link-building/strategies/).
+→ Learn scalable outreach systems in [**Link Building Strategies**](/seo/link-building/).
 
 Personalisation and value always outperform templates.
 
@@ -200,7 +200,7 @@ Measurement ensures your guest posting efforts contribute to actual SEO growth. 
 
 Tracking turns intuition into strategy.
 
-→ Once campaigns are live, analyse impact with [**Measure ROI of Link Building**](/seo/link-building/measure-roi/).
+→ Once campaigns are live, analyse impact with [**Measure ROI of Link Building**](/seo/link-building/).
 
 ### How long before I see ROI from guest posting?
 

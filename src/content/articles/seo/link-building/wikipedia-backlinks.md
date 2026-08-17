@@ -17,7 +17,7 @@ Although most are *nofollow*, they remain valuable signals that strengthen a web
 
 In this guide by **Kasra Dash**, you’ll learn how Wikipedia backlinks work, why they matter for modern SEO, and how to earn them ethically without spam or citation stuffing.
 
-→ To understand the broader context, revisit **[Link Building Strategies](/seo/link-building/strategies/)** to see how Wikipedia fits within an overall authority-building system.
+→ To understand the broader context, revisit **[Link Building Strategies](/seo/link-building/)** to see how Wikipedia fits within an overall authority-building system.
 
 Wikipedia backlinks may not pass PageRank, but they pass trust and discovery signals that drive lasting SEO benefits.
 
@@ -212,7 +212,7 @@ Because these links are nofollow, tracking impact requires indirect performance 
 | **Entity Recognition** | Knowledge Graph & Brand SERP Monitoring |
 | **Brand Mentions** | Ahrefs Alerts or Google Alerts |
 
-→ Connect with your full ROI system using **[Measure ROI](/seo/link-building/measure-roi/)**.
+→ Connect with your full ROI system using **[Measure ROI](/seo/link-building/)**.
 
 **Indirect metrics → reveal → hidden SEO value.**
 

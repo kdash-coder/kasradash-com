@@ -213,7 +213,7 @@ Measuring success ensures your podcast appearances generate both SEO and brand g
 | **Brand Mentions** | Shows entity expansion across the web |
 
 Use **Ahrefs**, **Google Search Console**, and **Semrush** to monitor results.  
-→ Learn more in [**Measure ROI of Link Building**](/seo/link-building/measure-roi/).
+→ Learn more in [**Measure ROI of Link Building**](/seo/link-building/).
 
 **ROI tracking → connects → outreach to business growth.**
 
@@ -256,6 +256,6 @@ To recap:
 - Deliver authentic, valuable insights to audiences.
 - Repurpose appearances for content and link growth.
 
-→ Continue your education with [**Link Building Strategies**](/seo/link-building/strategies/) or improve link diversity using [**Guest Posting**](/seo/link-building/guest-posting/).
+→ Continue your education with [**Link Building Strategies**](/seo/link-building/) or improve link diversity using [**Guest Posting**](/seo/link-building/guest-posting/).
 
 Every podcast you guest on plants a link that speaks louder than any cold outreach email.

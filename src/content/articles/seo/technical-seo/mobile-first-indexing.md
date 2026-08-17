@@ -44,7 +44,7 @@ This shift reflects user behaviour, over 70% of global search traffic now origin
 - Hidden or trimmed content on mobile may not be indexed.
 - Structured data and canonical tags must match across devices.
 
-→ Learn more about how Google processes URLs in [**Fix Indexing Issues**](/seo/technical-seo/fix-indexing-issues/).
+→ Learn more about how Google processes URLs in [**Fix Indexing Issues**](/seo/technical-seo/).
 
 Mobile-first indexing doesn’t create a second index, it redefines how Google interprets your existing one.
 
@@ -139,7 +139,7 @@ To maintain parity between desktop and mobile, follow these foundational rules.
 - Verify that your mobile navigation links to all key sections.
 - Broken or missing links on mobile break crawl pathways.
 
-→ Validate structure in [**Technical SEO Audit**](/seo/technical-seo/audit/).
+→ Validate structure in [**Technical SEO Audit**](/seo/technical-seo/).
 
 Parity is precision, identical content ensures identical understanding.
 

@@ -65,7 +65,7 @@ Ask your model:
 For example, “AI SEO tools” = commercial, while “how AI affects SEO rankings” = informational.  
 Mapping this intent ensures your content aligns with **user journeys**, not just ranking opportunities.
 
-Dive deeper into this strategy in [Search Intent Optimisation](/seo/ai-and-seo/ai-search-intent/).
+Dive deeper into this strategy in [Search Intent Optimisation](/seo/content-seo/search-intent/).
 
 If you don’t optimise for intent, you optimise for the wrong audience.
 
@@ -121,7 +121,7 @@ Several [AI-powered SEO tools](/seo/ai-and-seo/ai-seo-tools/) now combine LLMs w
 
 These platforms reduce manual research time while aligning your strategy with LLM-level understanding.
 
-For [automation strategies](/seo/ai-and-seo/ai-seo-automation/), explore Using AI Tools to Scale Content Production Responsibly.
+For [automation strategies](/seo/seo-frameworks/ai-workflow-templates/), explore Using AI Tools to Scale Content Production Responsibly.
 
 ## Step 7: Spot Emerging Opportunities with Predictive AI
 
@@ -150,7 +150,7 @@ Relevance without authority is noise; authority without relevance is missed oppo
 
 ## Step 9: Build a Living Keyword Graph
 
-The most advanced approach to AI keyword research is building a **living keyword graph**, an [interconnected map of topics](/seo/ai-and-seo/ai-topical-maps/), entities, and intent relationships.  
+The most advanced approach to AI keyword research is building a **living keyword graph**, an [interconnected map of topics](/seo/content-seo/topical-authority/), entities, and intent relationships.  
 You can use tools like **ChatGPT**, **Neo4j**, or **MindMeister** to visualise how different keyword themes connect.
 
 This network model mirrors how Google’s **Knowledge Graph** operates, rewarding content ecosystems that reflect real-world relationships rather than isolated keywords.

@@ -179,7 +179,7 @@ E-E-A-T → must → live within your editorial process.
 - **Publishing:** Add structured data and visible bios.
 - **Distribution:** Promote through authoritative networks.
 
-Integrate this into your [Content Brief Template](/seo/seo-frameworks/content-brief-template/) and [SEO Frameworks System](/seo/seo-frameworks/).
+Integrate this into your [Content Brief Template](/seo/content-seo/content-briefs/) and [SEO Frameworks System](/seo/seo-frameworks/).
 
 A systemised framework turns E-E-A-T into muscle memory.
 
@@ -203,7 +203,7 @@ Add metadata fields for:
 - Last updated date.
 - Publisher and reviewer details.
 
-For deeper integration, pair with your [Internal Linking Framework](/seo/seo-frameworks/internal-linking-framework/) to strengthen semantic connectivity.
+For deeper integration, pair with your [Internal Linking Framework](/seo/content-seo/internal-linking/) to strengthen semantic connectivity.
 
 Structured trust is scalable trust.
 
@@ -241,7 +241,7 @@ E-E-A-T → isn’t → a one-time checklist. It’s a cultural mindset.
 
 And apply E-E-A-T across your **entire content ecosystem**, not just blog posts: product pages should show creator credibility, service pages should carry case studies and testimonials, and educational posts should surface author experience and linked citations. Domain-level trust compounds when every page type participates.
 
-Link this process to your [Content Auditing Framework](/seo/seo-frameworks/content-audit-template/) to ensure ongoing improvement.
+Link this process to your [Content Auditing Framework](/seo/content-seo/content-audits/) to ensure ongoing improvement.
 
 E-E-A-T is an evolution, not an endpoint.
 

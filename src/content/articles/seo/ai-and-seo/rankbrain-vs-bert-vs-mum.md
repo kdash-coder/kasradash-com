@@ -53,7 +53,7 @@ RankBrain taught Google to interpret *intent*, not just text.
 - Write content that solves problems, not just targets keywords.
 - Improve **user signals**, engagement and time on page matter.
 
-To learn more about intent mapping, explore [Search Intent Optimisation](/seo/ai-and-seo/ai-search-intent/).
+To learn more about intent mapping, explore [Search Intent Optimisation](/seo/content-seo/search-intent/).
 
 ### Is RankBrain still relevant today?
 

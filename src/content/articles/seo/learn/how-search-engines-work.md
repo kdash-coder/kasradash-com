@@ -17,7 +17,7 @@ Understanding this process, how Google, Bing, and AI-driven systems find and eva
 
 In this guide by **Kasra Dash**, you’ll learn exactly how search engines work and how to optimise your website for each stage of discovery.
 
-→ Before reading, check out [**SEO Fundamentals**](/seo/learn/seo-fundamentals/) and [**What Is SEO**](/seo/) to understand the context of search visibility.
+→ Before reading, check out [**SEO Fundamentals**](/seo/learn/) and [**What Is SEO**](/seo/) to understand the context of search visibility.
 
 Search engines exist to connect questions with the best possible answers.
 

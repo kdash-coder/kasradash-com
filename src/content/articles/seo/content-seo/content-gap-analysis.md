@@ -77,7 +77,7 @@ This comparison reveals **keyword opportunity zones**, areas of unmet demand.
 
 For instance, if a competitor covers “semantic SEO examples” and you only discuss “semantic SEO basics,” you’ve uncovered a **content depth gap**.
 
-You can explore how entity relationships drive this process further in our guide on [Semantic SEO](/seo/content-seo/semantic-seo/).
+You can explore how entity relationships drive this process further in our guide on [Semantic SEO](/seo/content-seo/topical-authority/).
 
 ## Step 3: Analyse Search Intent and User Needs
 
@@ -103,7 +103,7 @@ Once you’ve gathered your missing topics, organise them into your existing **p
 - Create new cluster pages for uncovered subtopics.
 - Interlink each new piece to reinforce semantic flow.
 
-For example, if you discover that “AI content workflows” is missing from your Content SEO cluster, you might link it naturally to your post on Using AI Tools to [Scale Content Production Responsibly](/seo/content-seo/ai-content-production/).
+For example, if you discover that “AI content workflows” is missing from your Content SEO cluster, you might link it naturally to your post on Using AI Tools to [Scale Content Production Responsibly](/seo/ai-and-seo/ai-content-creation/).
 
 This approach prevents duplicate targeting and strengthens your internal linking signals.
 

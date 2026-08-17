@@ -70,7 +70,7 @@ Core elements:
 
 Because On-Page signals communicate relevance, consistent optimisation here boosts both rankings and conversions.
 
-**→ Dive deeper in [What Are Keywords](/learn/what-are-keywords/), [SEO Glossary](/seo/learn/seo-glossary/), and [SEO Strategy for Beginners](/seo/learn/seo-strategy-for-beginners/).**
+**→ Dive deeper in [What Are Keywords](/seo/learn/), [SEO Glossary](/seo/learn/seo-glossary/), and [SEO Strategy for Beginners](/seo/learn/seo-strategy-for-beginners/).**
 
 Good On-Page SEO makes your content easy to read for humans and machines, a perfect alignment of clarity and intent.
 
