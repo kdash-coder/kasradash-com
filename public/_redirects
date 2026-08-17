@@ -163,3 +163,5 @@
 /seo/seo-frameworks/ai-workflow-templ /seo/seo-frameworks/ai-workflow-templates/ 301
 /privacy/ /privacy-policy/ 301
 /privacy /privacy-policy/ 301
+# Old RankMath sitemap path (GSC still fetches it)
+/sitemap_index.xml /sitemap-index.xml 301
