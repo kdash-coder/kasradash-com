@@ -12,5 +12,7 @@ export default defineConfig({
   integrations: [sitemap({ filter: makeSitemapFilter() })],
   vite: {
     plugins: [tailwindcss()],
+    // Local preview only: lets `astro preview` answer for the video-recording hostname.
+    preview: { allowedHosts: ['new.kasradash.test'] },
   },
 });
