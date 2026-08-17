@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" role="img" aria-labelledby="pl-title" font-family="Albert Sans, Arial, Helvetica, sans-serif">
+  <title id="pl-title">Diagram of Parkinson's Law: the same task fills five hours when given five, and one hour when given one.</title>
+
+  <!-- hour scale -->
+  <g fill="#8a8a8a" font-size="15">
+    <text x="120" y="52" text-anchor="middle">0h</text>
+    <text x="230" y="52" text-anchor="middle">1h</text>
+    <text x="340" y="52" text-anchor="middle">2h</text>
+    <text x="450" y="52" text-anchor="middle">3h</text>
+    <text x="560" y="52" text-anchor="middle">4h</text>
+    <text x="670" y="52" text-anchor="middle">5h</text>
+  </g>
+  <g stroke="#e5e2f0" stroke-width="1">
+    <line x1="120" y1="62" x2="120" y2="272" />
+    <line x1="230" y1="62" x2="230" y2="272" />
+    <line x1="340" y1="62" x2="340" y2="272" />
+    <line x1="450" y1="62" x2="450" y2="272" />
+    <line x1="560" y1="62" x2="560" y2="272" />
+    <line x1="670" y1="62" x2="670" y2="272" />
+  </g>
+
+  <!-- Row 1: given five hours, the work stretches -->
+  <text x="24" y="102" fill="#1a1a1a" font-size="17" font-weight="700">Given 5 hours</text>
+  <g>
+    <rect x="120" y="116" width="550" height="40" rx="10" fill="#eef0fd" stroke="#c7cbf6" stroke-width="1" />
+    <!-- work segments (indigo) interleaved with drift (pale) -->
+    <rect x="122" y="118" width="118" height="36" rx="6" fill="#4A4EF8" />
+    <rect x="252" y="124" width="86"  height="24" rx="6" fill="#b9bdf7" />
+    <rect x="350" y="118" width="96" height="36" rx="6" fill="#4A4EF8" />
+    <rect x="458" y="124" width="92"  height="24" rx="6" fill="#b9bdf7" />
+    <rect x="562" y="118" width="106" height="36" rx="6" fill="#4A4EF8" />
+    <g fill="#3f3c55" font-size="13" font-weight="600">
+      <text x="295" y="140" text-anchor="middle">emails</text>
+      <text x="504" y="140" text-anchor="middle">one more pass</text>
+    </g>
+    <text x="120" y="178" fill="#5b5971" font-size="14">the same task, padded until it fills the day</text>
+  </g>
+
+  <!-- Row 2: given one hour, done in one -->
+  <text x="24" y="222" fill="#1a1a1a" font-size="17" font-weight="700">Given 1 hour</text>
+  <g>
+    <rect x="120" y="236" width="110" height="40" rx="10" fill="#4A4EF8" />
+    <rect x="238" y="236" width="432" height="40" rx="10" fill="none" stroke="#d9d6e8" stroke-width="1.5" stroke-dasharray="6 6" />
+    <text x="175" y="261" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700">done</text>
+    <text x="252" y="261" fill="#8a8a8a" font-size="14">time you never needed</text>
+  </g>
+
+  <text x="24" y="308" fill="#1a1a1a" font-size="15" font-weight="600">Work expands to fill the time you give it.</text>
+</svg>
