@@ -59,7 +59,9 @@ const productRows: [string, string][] = [
 
 const otherBooks = BOOKS.filter((b) => b.slug !== book.slug);
 const graphNodes = [bookNode(book)];
-const webPageExtras = { mainEntity: { '@id': bookId(book.slug) } };
+// jamesdooley.com parity: the page node is an AboutPage whose about AND
+// mainEntity point at the Book (proper @id — his file's "id" bug not copied).
+const webPageExtras = { about: { '@id': bookId(book.slug) }, mainEntity: { '@id': bookId(book.slug) } };
 
 const authorHref = (name: string) =>
   name === 'Kasra Dash' ? '/about-kasra-dash/' : name === 'James Dooley' ? 'https://jamesdooley.com/' : undefined;
@@ -67,7 +69,7 @@ const authorHref = (name: string) =>
 const formatList = book.formats.map((f) => f.label).join(', ').replace(/, ([^,]*)$/, ' and $1');
 ---
 
-<BaseLayout {title} {description} {path} breadcrumbs={crumbs} {graphNodes} {webPageExtras} datePublished={book.datePublished}>
+<BaseLayout {title} {description} {path} pageType="AboutPage" breadcrumbs={crumbs} {graphNodes} {webPageExtras} datePublished={book.datePublished}>
   <main>
     <section class="border-b border-tint-border bg-tint">
       <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">

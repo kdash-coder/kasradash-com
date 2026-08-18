@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
-import { BOOKS, booksItemListNode, amazonUk, amazonUs } from '../../lib/schema';
+import { BOOKS, booksItemListNode, bookNodes, PERSON_ID, amazonUk, amazonUs } from '../../lib/schema';
 
 const title = 'Books by Kasra Dash';
 const description =
@@ -12,8 +12,13 @@ const crumbs = [
   { label: 'Books', href: '/books/' },
 ];
 
-const graphNodes = [booksItemListNode()];
-const webPageExtras = { mainEntity: { '@id': 'https://kasradash.com/books/#booklist' } };
+// jamesdooley.com parity: his hub defines every Book inline and the
+// CollectionPage carries about → #person alongside mainEntity → the list.
+const graphNodes = [booksItemListNode(), ...bookNodes()];
+const webPageExtras = {
+  about: { '@id': PERSON_ID },
+  mainEntity: { '@id': 'https://kasradash.com/books/#booklist' },
+};
 
 /* Sourced ratings, checked 11 August 2026 (q3-asset-inventory.md §1). Numbers only. */
 const RATINGS_CHECKED = '11 August 2026';
