@@ -402,6 +402,14 @@ export function buildGraph(nodes: object[]) {
 export interface BookFormat {
   label: string;
   asin: string;
+  /** Edition-level ISBN — only where verified (playbook paperback). */
+  isbn?: string;
+}
+
+/** A factual topic the book is about, anchored to its Wikipedia entity. */
+export interface BookTopic {
+  name: string;
+  wikipedia: string;
 }
 
 export interface BookDef {
@@ -417,7 +425,12 @@ export interface BookDef {
   /** Primary ASIN for the dp/ links (the format q3 verified on both marketplaces). */
   primaryAsin: string;
   goodreads?: string;
-  /** Extra verified sameAs URLs (book site, kgmid — playbook only). */
+  /** Verified only for the playbook (q3); Amazon bot-walls curl for the other two — omitted there. */
+  publisher?: string;
+  genre: string[];
+  /** Topic Things with Wikipedia sameAs (all URLs HEAD-checked 200 on 2026-08-18). */
+  topics: BookTopic[];
+  /** Extra verified sameAs URLs (book site, Google Books, kgmid — playbook only). */
   extraSameAs?: string[];
 }
 
@@ -431,13 +444,21 @@ export const BOOKS: BookDef[] = [
     isbn: '9798345497913',
     authorNames: ['Mike Martin', 'James Dooley', 'Kasra Dash'],
     formats: [
-      { label: 'Paperback', asin: 'B0DM55R5W4' },
+      { label: 'Paperback', asin: 'B0DM55R5W4', isbn: '9798345497913' },
       { label: 'Kindle', asin: 'B0DM2HFYK6' },
     ],
     primaryAsin: 'B0DM55R5W4',
     goodreads: 'https://www.goodreads.com/book/show/221235522-the-complete-local-seo-playbook-2025',
+    publisher: 'Independently published',
+    genre: ['Local SEO', 'Search engine optimisation', 'Digital marketing'],
+    topics: [
+      { name: 'Local SEO', wikipedia: 'https://en.wikipedia.org/wiki/Local_search_engine_optimisation' },
+      { name: 'Google Business Profile', wikipedia: 'https://en.wikipedia.org/wiki/Google_Business_Profile' },
+    ],
     extraSameAs: [
       'https://thecompletelocalseoplaybook.com/',
+      // Google Books id verified via the Q4 SERP audit (loads 200).
+      'https://books.google.com/books?id=ysAvEQAAQBAJ',
       // The ONE verified book KGMID (from James Dooley's live schema) — this book only.
       'https://www.google.com/search?kgmid=/g/11lw0t0wcl',
     ],
@@ -454,6 +475,13 @@ export const BOOKS: BookDef[] = [
       { label: 'Paperback', asin: 'B0DW8KY9HQ' },
     ],
     primaryAsin: 'B0F4QXZXHQ',
+    // Goodreads book id pulled live from the author's Goodreads book list (2026-08-18).
+    goodreads: 'https://www.goodreads.com/book/show/227450504-advanced-seo-tips-2025',
+    genre: ['Search engine optimisation', 'Digital marketing'],
+    topics: [
+      { name: 'Search engine optimisation', wikipedia: 'https://en.wikipedia.org/wiki/Search_engine_optimization' },
+      { name: 'Generative artificial intelligence', wikipedia: 'https://en.wikipedia.org/wiki/Generative_artificial_intelligence' },
+    ],
   },
   {
     slug: 'igaming-seo',
@@ -467,6 +495,13 @@ export const BOOKS: BookDef[] = [
       { label: 'Paperback', asin: 'B0F1FXDNP6' },
     ],
     primaryAsin: 'B0D91ZSFMP',
+    // Goodreads book id pulled live from the author's Goodreads book list (2026-08-18).
+    goodreads: 'https://www.goodreads.com/book/show/229131881-igaming-seo',
+    genre: ['Search engine optimisation', 'Online gambling'],
+    topics: [
+      { name: 'Online gambling', wikipedia: 'https://en.wikipedia.org/wiki/Online_gambling' },
+      { name: 'Search engine optimisation', wikipedia: 'https://en.wikipedia.org/wiki/Search_engine_optimization' },
+    ],
   },
 ];
 
@@ -494,8 +529,24 @@ function bookAuthor(name: string): object {
   return { '@type': 'Person', name };
 }
 
-/** Full Book node — emitted ONLY on that book's page. */
+/** "2024-11-15" → "15 November 2024" (for the human-readable disambiguating line). */
+function humanDate(iso: string) {
+  const [y, m, d] = iso.split('-').map(Number);
+  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  return `${d} ${months[m - 1]} ${y}`;
+}
+
+/** "A, B and C" from the byline array. */
+function bylineList(names: string[]) {
+  return names.length > 1 ? `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}` : names[0];
+}
+
+/** Full Book node — emitted on that book's page and on the /books/ hub
+ * (jamesdooley.com parity: his hub defines every Book inline). */
 export function bookNode(book: BookDef) {
+  // "Independently published" is verified only where publisher is set (playbook, q3);
+  // the other two say "published" without the self-publishing claim.
+  const publishedPhrase = book.publisher ? 'independently published' : 'published';
   return {
     '@type': 'Book',
     '@id': bookId(book.slug),
@@ -504,13 +555,21 @@ export function bookNode(book: BookDef) {
     url: bookUrl(book),
     author: book.authorNames.map(bookAuthor),
     datePublished: book.datePublished,
+    copyrightYear: book.datePublished.slice(0, 4),
     inLanguage: 'en-GB',
     bookFormat: 'https://schema.org/Paperback',
+    additionalType: 'https://en.wikipedia.org/wiki/Book',
+    genre: book.genre,
+    about: book.topics.map((t) => ({ '@type': 'Thing', name: t.name, sameAs: t.wikipedia })),
+    disambiguatingDescription: `${book.name} is a book ${publishedPhrase} on ${humanDate(book.datePublished)}, written by ${bylineList(book.authorNames)}.`,
     ...(book.isbn ? { isbn: book.isbn } : {}),
+    ...(book.publisher ? { publisher: { '@type': 'Organization', name: book.publisher } } : {}),
     workExample: book.formats.map((f) => ({
       '@type': 'Book',
       bookFormat: f.label === 'Kindle' ? 'https://schema.org/EBook' : `https://schema.org/${f.label}`,
       url: `https://www.amazon.co.uk/dp/${f.asin}`,
+      ...(f.isbn ? { isbn: [f.isbn] } : {}),
+      identifier: [{ '@type': 'PropertyValue', propertyID: `ASIN (${f.label})`, value: f.asin }],
     })),
     sameAs: [
       amazonUk(book),
@@ -522,11 +581,19 @@ export function bookNode(book: BookDef) {
   };
 }
 
+/** All three Book nodes for the /books/ hub graph. */
+export function bookNodes() {
+  return BOOKS.map(bookNode);
+}
+
 /** ItemList for the /books/ hub. */
 export function booksItemListNode() {
   return {
     '@type': 'ItemList',
     '@id': `${SITE_URL}/books/#booklist`,
+    name: 'Books by Kasra Dash',
+    description: 'The three SEO books co-authored by Kasra Dash: The Complete Local SEO Playbook 2025, Advanced SEO Tips 2025 and iGaming SEO.',
+    numberOfItems: BOOKS.length,
     itemListElement: BOOKS.map((b, i) => ({
       '@type': 'ListItem',
       position: i + 1,

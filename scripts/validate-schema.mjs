@@ -104,8 +104,38 @@ const EXPECTED_BOOKS = {
     authors: ['James Dooley', 'Karl Hudson', 'Kasra Dash', 'Koray Gübür'],
   },
 };
+// Dooley-parity edition counts: workExample entries must equal the verified format count.
+const EXPECTED_WORK_EXAMPLES = {
+  [`${SITE_URL}/books/the-complete-local-seo-playbook/#book`]: 2,
+  [`${SITE_URL}/books/advanced-seo-tips/#book`]: 3,
+  [`${SITE_URL}/books/igaming-seo/#book`]: 3,
+};
 const BOOK_IDS = Object.values(EXPECTED_BOOKS).map((b) => b.id);
+const BOOKS_HUB_PAGE = 'books/index.html';
 const PODCAST_PAGE = 'podcast/index.html';
+
+/** Dooley-parity Book shape: genre, copyrightYear, about-Things with Wikipedia
+ * sameAs, and per-edition workExample identifiers. */
+function checkBookShape(page, def, failFn) {
+  const expected = EXPECTED_WORK_EXAMPLES[def['@id']];
+  const examples = Array.isArray(def.workExample) ? def.workExample : [];
+  if (examples.length !== expected) {
+    failFn(page, `Book ${def['@id']} workExample count ${examples.length}, expected ${expected}`);
+  }
+  for (const ex of examples) {
+    const ids = Array.isArray(ex.identifier) ? ex.identifier : [];
+    if (!ids.some((i) => i && i['@type'] === 'PropertyValue' && /^B0[A-Z0-9]{8}$/.test(i.value ?? ''))) {
+      failFn(page, `Book edition without an ASIN identifier on ${def['@id']}`);
+    }
+  }
+  const topics = Array.isArray(def.about) ? def.about : [];
+  if (!topics.some((t) => typeof t?.sameAs === 'string' && t.sameAs.startsWith('https://en.wikipedia.org/wiki/'))) {
+    failFn(page, `Book ${def['@id']} about-Things missing a Wikipedia sameAs`);
+  }
+  if (!Array.isArray(def.genre) || def.genre.length === 0) failFn(page, `Book ${def['@id']} missing genre`);
+  if (!def.copyrightYear) failFn(page, `Book ${def['@id']} missing copyrightYear`);
+  if (!def.disambiguatingDescription) failFn(page, `Book ${def['@id']} missing disambiguatingDescription`);
+}
 
 let personDefsTotal = 0;
 let articleAuthorsChecked = 0;
@@ -185,11 +215,12 @@ for (const file of pages) {
     }
   }
 
-  // Forbidden URLs. The single verified playbook KGMID is allowed on its own page only.
+  // Forbidden URLs. The single verified playbook KGMID is allowed only where that
+  // Book node is defined: the playbook page and the /books/ hub (inline Book defs).
   for (const raw of scripts) {
     for (const [pattern, label] of FORBIDDEN_URL_PATTERNS) {
       if (!pattern.test(raw)) continue;
-      if (label.startsWith('kgmid') && page === PLAYBOOK_PAGE) {
+      if (label.startsWith('kgmid') && (page === PLAYBOOK_PAGE || page === 'books/index.html')) {
         const stripped = raw.split(PLAYBOOK_KGMID).join('');
         if (!/kgmid=/i.test(stripped)) continue; // only the one allowed id present
       }
@@ -198,6 +229,8 @@ for (const file of pages) {
   }
 
   // ---- Trust pages: Book node invariants ----
+  // Books are defined on their own page AND on the /books/ hub (jamesdooley.com
+  // parity: his hub defines every Book inline) — nowhere else.
   const bookDefs = nodes.filter((n) => typesOf(n).includes('Book') && isDefinition(n) && typeof n['@id'] === 'string' && BOOK_IDS.includes(n['@id']));
   const expectedBook = EXPECTED_BOOKS[page];
   if (expectedBook) {
@@ -216,10 +249,36 @@ for (const file of pages) {
       if (expectedBook.isbn && def.isbn !== expectedBook.isbn) {
         fail(page, `Book isbn mismatch: got ${JSON.stringify(def.isbn)}, expected ${expectedBook.isbn}`);
       }
+      checkBookShape(page, def, fail);
+      // AboutPage wrapper: the page node is an AboutPage whose about AND mainEntity → the Book.
+      const wrapper = nodes.find((n) => n['@id'] === `${SITE_URL}/${page.replace('index.html', '')}#webpage` && isDefinition(n));
+      if (!wrapper || !typesOf(wrapper).includes('AboutPage')) {
+        fail(page, 'book page node must be typed AboutPage');
+      } else {
+        for (const key of ['about', 'mainEntity']) {
+          if (wrapper[key]?.['@id'] !== expectedBook.id) fail(page, `AboutPage.${key} must reference ${expectedBook.id}`);
+        }
+      }
     }
     if (bookDefs.length !== 1) fail(page, `expected exactly 1 Book definition on a book page, found ${bookDefs.length}`);
+  } else if (page === BOOKS_HUB_PAGE) {
+    if (bookDefs.length !== BOOK_IDS.length) {
+      fail(page, `books hub must define all ${BOOK_IDS.length} Book nodes, found ${bookDefs.length}`);
+    }
+    for (const def of bookDefs) checkBookShape(page, def, fail);
+    const itemList = nodes.find((n) => typesOf(n).includes('ItemList') && isDefinition(n));
+    if (!itemList) {
+      fail(page, 'books hub missing ItemList');
+    } else {
+      const items = Array.isArray(itemList.itemListElement) ? itemList.itemListElement : [];
+      if (Number(itemList.numberOfItems) !== BOOK_IDS.length || items.length !== BOOK_IDS.length) {
+        fail(page, `books hub ItemList must carry numberOfItems ${BOOK_IDS.length} with ${BOOK_IDS.length} elements`);
+      }
+      const order = items.map((i) => i?.item?.['@id']);
+      if (JSON.stringify(order) !== JSON.stringify(BOOK_IDS)) fail(page, 'books hub ItemList ordering mismatch');
+    }
   } else if (bookDefs.length > 0) {
-    fail(page, `Book node defined outside its own page: ${bookDefs.map((n) => n['@id']).join(', ')}`);
+    fail(page, `Book node defined outside its own page/hub: ${bookDefs.map((n) => n['@id']).join(', ')}`);
   }
 
   // #person.author must reference exactly the three Book @ids (every page).
@@ -270,7 +329,7 @@ if (podcastDefsTotal !== 1) {
 
 console.log(`Checked ${pages.length} pages, ${sitemapUrls.size} sitemap URLs.`);
 console.log(`#person definitions: ${personDefsTotal}/${pages.length} pages (1 each), Article author refs verified: ${articleAuthorsChecked}.`);
-console.log(`Book definitions: ${bookDefsTotal}/3 (playbook kgmid allowed on its page only), PodcastSeries: ${podcastDefsTotal}/1 (YouTube-only sameAs).`);
+console.log(`Book definitions: ${bookDefsTotal}/3 pages + hub (Dooley-parity shape enforced; playbook kgmid allowed on its page + hub only), PodcastSeries: ${podcastDefsTotal}/1 (YouTube-only sameAs).`);
 if (failures.length > 0) {
   console.error(`\nFAILED — ${failures.length} problem(s):`);
   for (const f of failures) console.error('  ' + f);
