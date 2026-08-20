@@ -215,6 +215,17 @@ for (const file of pages) {
     }
   }
 
+  // VideoObject completeness — Rich Results flags thumbnailUrl as critical; description,
+  // embed/content URL and a timezone'd uploadDate as warnings. Enforce all of them.
+  for (const node of nodes) {
+    if (!typesOf(node).includes('VideoObject')) continue;
+    const thumbs = Array.isArray(node.thumbnailUrl) ? node.thumbnailUrl : node.thumbnailUrl ? [node.thumbnailUrl] : [];
+    if (thumbs.length === 0) fail(page, 'VideoObject missing thumbnailUrl');
+    if (!node.description) fail(page, 'VideoObject missing description');
+    if (!node.embedUrl && !node.contentUrl) fail(page, 'VideoObject missing embedUrl/contentUrl');
+    if (!/T.*(Z|[+-]\d{2}:\d{2})$/.test(String(node.uploadDate || ''))) fail(page, 'VideoObject uploadDate lacks a time zone');
+  }
+
   // Forbidden URLs. The single verified playbook KGMID is allowed only where that
   // Book node is defined: the playbook page and the /books/ hub (inline Book defs).
   for (const raw of scripts) {
@@ -334,18 +345,6 @@ if (failures.length > 0) {
   console.error(`\nFAILED — ${failures.length} problem(s):`);
   for (const f of failures) console.error('  ' + f);
   process.exit(1);
-}
-
-// VideoObject completeness (Rich Results: thumbnailUrl critical; description, embed/content URL, TZ'd uploadDate)
-for (const [file, nodes] of allGraphs) {
-  for (const n of nodes) {
-    if (String(n['@type']).includes('VideoObject')) {
-      if (!n.thumbnailUrl || !(Array.isArray(n.thumbnailUrl) ? n.thumbnailUrl.length : true)) fail(`${file}: VideoObject missing thumbnailUrl`);
-      if (!n.description) fail(`${file}: VideoObject missing description`);
-      if (!n.embedUrl && !n.contentUrl) fail(`${file}: VideoObject missing embedUrl/contentUrl`);
-      if (!/T.*(Z|[+-]\d{2}:\d{2})$/.test(String(n.uploadDate || ''))) fail(`${file}: VideoObject uploadDate lacks time zone`);
-    }
-  }
 }
 
 console.log('Schema validation clean: one #person per page, zero FAQPage, all authors → #person, no forbidden URLs.');
