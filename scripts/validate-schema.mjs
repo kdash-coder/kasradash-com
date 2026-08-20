@@ -300,6 +300,21 @@ for (const file of pages) {
     }
   }
 
+  // ---- Trust pages: Event invariants (Rich Results requirements) ----
+  // A node typed Event must be a complete, verified engagement: startDate,
+  // location (Place with a name), performer ref → #person, attendance mode and
+  // status. Anything that can't meet the bar must not be typed Event at all.
+  for (const node of nodes) {
+    if (!typesOf(node).includes('Event') || !isDefinition(node)) continue;
+    const label = node.name ?? '(unnamed Event)';
+    if (!node.startDate) fail(page, `Event "${label}" missing startDate`);
+    const loc = node.location;
+    if (!(loc && typesOf(loc).includes('Place') && loc.name)) fail(page, `Event "${label}" missing location Place with name`);
+    if (!(node.performer && node.performer['@id'] === PERSON_ID)) fail(page, `Event "${label}" performer must be {"@id": #person}`);
+    if (node.eventAttendanceMode !== 'https://schema.org/OfflineEventAttendanceMode') fail(page, `Event "${label}" missing eventAttendanceMode`);
+    if (node.eventStatus !== 'https://schema.org/EventScheduled') fail(page, `Event "${label}" missing eventStatus`);
+  }
+
   // ---- Trust pages: PodcastSeries only on /podcast/, YouTube-only sameAs ----
   const podcastDefs = nodes.filter(
     (n) => (typesOf(n).includes('PodcastSeries') || typesOf(n).includes('CreativeWorkSeries')) && isDefinition(n) && 'sameAs' in n
