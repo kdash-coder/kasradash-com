@@ -217,8 +217,15 @@ const GUEST_APPEARANCES = [
   {
     '@type': 'VideoObject',
     name: 'WOSCon 2024 Live Interview — Kasra Dash',
+    description:
+      'Live interview with Kasra Dash recorded at WOSCon 2024, covering SEO, algorithm recovery and building The Masterminders.',
     url: 'https://www.youtube.com/watch?v=FfkRa228qs8',
-    uploadDate: '2024-10-01',
+    embedUrl: 'https://www.youtube-nocookie.com/embed/FfkRa228qs8',
+    thumbnailUrl: [
+      'https://i.ytimg.com/vi/FfkRa228qs8/maxresdefault.jpg',
+      'https://i.ytimg.com/vi/FfkRa228qs8/hqdefault.jpg',
+    ],
+    uploadDate: '2024-10-01T00:00:00+00:00',
   },
 ];
 
