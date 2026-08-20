@@ -176,7 +176,29 @@ const engagements: Engagement[] = [
  * image: { src: '/images/speaking/<file>', alt: '<entity-first alt>' } to any
  * entry and the card renders it. Provenance per file: IMAGES-PROVENANCE.md. */
 
-// Event nodes — attested engagements; url only where the event site verified live.
+/*
+ * Event nodes — attested engagements; url only where the event site verified live.
+ * Rich-results pass (20 Aug 2026) provenance:
+ * - WOSCon 2024 venue/dates: The Heritage Hotel Manila, Pasay, 27–29 Sep 2024 —
+ *   grownle.com/woscon-2024/ + conferenceindex.org listing agree (10times/AllEvents
+ *   corroborate the venue; their 25/26–30 spread covers pre/post days). Kasra's
+ *   presence attested by the oEmbed-verified interview video (q3).
+ * - Masterminders 2026 offers: live tickets URL + £395 standard price read from
+ *   themasterminders.com on 20 Aug 2026.
+ * - Organizer orgs only where the event site was already evidence-verified
+ *   (themasterminders.com, brightonseo.com, seoestonia.com,
+ *   chiangmaiseoconference.com, seomasterysummit.com). Affiliate World Dubai and
+ *   Search Birmingham have no verified organizer URL → organizer omitted.
+ * - startDate precision stays at what archives attest (year-only stays year-only).
+ * - eventStatus EventScheduled on past events is factual: each ran as scheduled.
+ * - image: the engagement's self-hosted stage photo where one exists (7 of 11).
+ */
+const SITE = 'https://kasradash.com';
+const PERSON_REF = { '@id': `${SITE}/#person` };
+const MASTERMINDERS_ORG_REF = { '@id': `${SITE}/#org-the-masterminders` };
+const OFFLINE = 'https://schema.org/OfflineEventAttendanceMode';
+const SCHEDULED = 'https://schema.org/EventScheduled';
+
 const eventNodes = [
   {
     '@type': 'Event',
@@ -184,7 +206,17 @@ const eventNodes = [
     startDate: '2026-06-24',
     endDate: '2026-06-26',
     location: { '@type': 'Place', name: 'Hilton Deansgate', address: { '@type': 'PostalAddress', addressLocality: 'Manchester', addressCountry: 'United Kingdom' } },
-    organizer: { '@id': 'https://kasradash.com/#person' },
+    organizer: MASTERMINDERS_ORG_REF,
+    performer: PERSON_REF,
+    eventAttendanceMode: OFFLINE,
+    eventStatus: SCHEDULED,
+    offers: {
+      '@type': 'Offer',
+      url: 'https://themasterminders.com/products/2026-general-ticket-1',
+      price: '395',
+      priceCurrency: 'GBP',
+      availability: 'https://schema.org/InStock',
+    },
     url: 'https://themasterminders.com/',
   },
   {
@@ -192,7 +224,11 @@ const eventNodes = [
     name: 'The Masterminders 2025',
     startDate: '2025',
     location: { '@type': 'Place', name: 'Manchester', address: { '@type': 'PostalAddress', addressLocality: 'Manchester', addressCountry: 'United Kingdom' } },
-    organizer: { '@id': 'https://kasradash.com/#person' },
+    organizer: MASTERMINDERS_ORG_REF,
+    performer: PERSON_REF,
+    eventAttendanceMode: OFFLINE,
+    eventStatus: SCHEDULED,
+    image: `${SITE}/images/speaking/kasra-dash-speaking-at-the-masterminders-2025.jpg`,
     url: 'https://themasterminders.com/',
   },
   {
@@ -200,7 +236,10 @@ const eventNodes = [
     name: 'brightonSEO September 2023',
     startDate: '2023-09',
     location: { '@type': 'Place', name: 'Brighton', address: { '@type': 'PostalAddress', addressLocality: 'Brighton', addressCountry: 'United Kingdom' } },
-    performer: { '@id': 'https://kasradash.com/#person' },
+    performer: PERSON_REF,
+    organizer: { '@type': 'Organization', name: 'brightonSEO', url: 'https://brightonseo.com/' },
+    eventAttendanceMode: OFFLINE,
+    eventStatus: SCHEDULED,
     url: 'https://brightonseo.com/people/kasra-dash',
   },
   {
@@ -208,7 +247,11 @@ const eventNodes = [
     name: 'SEO Estonia 2023',
     startDate: '2023',
     location: { '@type': 'Place', name: 'Tallinn', address: { '@type': 'PostalAddress', addressLocality: 'Tallinn', addressCountry: 'Estonia' } },
-    performer: { '@id': 'https://kasradash.com/#person' },
+    performer: PERSON_REF,
+    organizer: { '@type': 'Organization', name: 'SEO Estonia', url: 'https://seoestonia.com/' },
+    eventAttendanceMode: OFFLINE,
+    eventStatus: SCHEDULED,
+    image: `${SITE}/images/speaking/kasra-dash-speaking-at-seo-estonia-2023.jpg`,
     url: 'https://seoestonia.com/',
   },
   {
@@ -216,7 +259,11 @@ const eventNodes = [
     name: 'SEO Estonia 2024',
     startDate: '2024',
     location: { '@type': 'Place', name: 'Tallinn', address: { '@type': 'PostalAddress', addressLocality: 'Tallinn', addressCountry: 'Estonia' } },
-    performer: { '@id': 'https://kasradash.com/#person' },
+    performer: PERSON_REF,
+    organizer: { '@type': 'Organization', name: 'SEO Estonia', url: 'https://seoestonia.com/' },
+    eventAttendanceMode: OFFLINE,
+    eventStatus: SCHEDULED,
+    image: `${SITE}/images/speaking/kasra-dash-speaking-at-seo-estonia-2024.jpg`,
     url: 'https://seoestonia.com/',
   },
   {
@@ -224,7 +271,11 @@ const eventNodes = [
     name: 'Chiang Mai SEO 2023',
     startDate: '2023',
     location: { '@type': 'Place', name: 'Chiang Mai', address: { '@type': 'PostalAddress', addressLocality: 'Chiang Mai', addressCountry: 'Thailand' } },
-    performer: { '@id': 'https://kasradash.com/#person' },
+    performer: PERSON_REF,
+    organizer: { '@type': 'Organization', name: 'Chiang Mai SEO Conference', url: 'https://chiangmaiseoconference.com/' },
+    eventAttendanceMode: OFFLINE,
+    eventStatus: SCHEDULED,
+    image: `${SITE}/images/speaking/kasra-dash-speaking-at-chiang-mai-seo-2023.jpg`,
     url: 'https://chiangmaiseoconference.com/',
   },
   {
@@ -232,7 +283,10 @@ const eventNodes = [
     name: 'SEO Mastery Summit 2024',
     startDate: '2024',
     location: { '@type': 'Place', name: 'Ho Chi Minh City', address: { '@type': 'PostalAddress', addressLocality: 'Ho Chi Minh City', addressCountry: 'Vietnam' } },
-    performer: { '@id': 'https://kasradash.com/#person' },
+    performer: PERSON_REF,
+    organizer: { '@type': 'Organization', name: 'SEO Mastery Summit', url: 'https://seomasterysummit.com/' },
+    eventAttendanceMode: OFFLINE,
+    eventStatus: SCHEDULED,
     url: 'https://seomasterysummit.com/',
   },
   {
@@ -240,7 +294,10 @@ const eventNodes = [
     name: 'SEO Mastery Summit 2025',
     startDate: '2025',
     location: { '@type': 'Place', name: 'Ho Chi Minh City', address: { '@type': 'PostalAddress', addressLocality: 'Ho Chi Minh City', addressCountry: 'Vietnam' } },
-    performer: { '@id': 'https://kasradash.com/#person' },
+    performer: PERSON_REF,
+    organizer: { '@type': 'Organization', name: 'SEO Mastery Summit', url: 'https://seomasterysummit.com/' },
+    eventAttendanceMode: OFFLINE,
+    eventStatus: SCHEDULED,
     url: 'https://seomasterysummit.com/',
   },
   {
@@ -248,20 +305,31 @@ const eventNodes = [
     name: 'Affiliate World Dubai 2024',
     startDate: '2024',
     location: { '@type': 'Place', name: 'Dubai', address: { '@type': 'PostalAddress', addressLocality: 'Dubai', addressCountry: 'United Arab Emirates' } },
-    performer: { '@id': 'https://kasradash.com/#person' },
+    performer: PERSON_REF,
+    eventAttendanceMode: OFFLINE,
+    eventStatus: SCHEDULED,
+    image: `${SITE}/images/speaking/kasra-dash-speaking-at-affiliate-world-dubai-2024.jpg`,
   },
   {
     '@type': 'Event',
     name: 'Search Birmingham 2023',
     startDate: '2023',
     location: { '@type': 'Place', name: 'Birmingham', address: { '@type': 'PostalAddress', addressLocality: 'Birmingham', addressCountry: 'United Kingdom' } },
-    performer: { '@id': 'https://kasradash.com/#person' },
+    performer: PERSON_REF,
+    eventAttendanceMode: OFFLINE,
+    eventStatus: SCHEDULED,
+    image: `${SITE}/images/speaking/kasra-dash-speaking-at-search-birmingham-2023.jpg`,
   },
   {
     '@type': 'Event',
     name: 'WOSCon 2024',
-    startDate: '2024',
-    performer: { '@id': 'https://kasradash.com/#person' },
+    startDate: '2024-09-27',
+    endDate: '2024-09-29',
+    location: { '@type': 'Place', name: 'The Heritage Hotel Manila', address: { '@type': 'PostalAddress', addressLocality: 'Pasay', addressCountry: 'Philippines' } },
+    performer: PERSON_REF,
+    eventAttendanceMode: OFFLINE,
+    eventStatus: SCHEDULED,
+    image: `${SITE}/images/speaking/kasra-dash-speaking-at-woscon-2024.jpg`,
     url: 'https://www.youtube.com/watch?v=FfkRa228qs8',
   },
 ];
