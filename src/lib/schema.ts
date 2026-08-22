@@ -41,7 +41,7 @@ const MANCHESTER_ADDRESS = {
 // Verified sameAs superset (all loaded live 2026-08-11 — q3-asset-inventory.md).
 // Deliberately excluded: TikTok @kasradash (ownership unconfirmed), all google.com/search?kgmid=
 // self-claims (three conflicting ids, none verified), eeat-seo.com (domain dead).
-const PERSON_SAME_AS = [
+export const PERSON_SAME_AS = [
   'https://www.linkedin.com/in/kasra-dash/', // https + canonical slug (live site's entry was malformed)
   'https://x.com/Kasra_Dash',
   'https://www.instagram.com/kasra_d_/',
