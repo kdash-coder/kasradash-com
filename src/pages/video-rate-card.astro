@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+/* UNLISTED page: noindex,nofollow + excluded from the sitemap (src/lib/noindex.mjs)
+ * + zero internal links to it anywhere on the site. Kasra shares the URL manually
+ * with brands who ask about promotional videos. Keep it that way. */
+
+const title = 'Video Sponsorship Rate Card';
+const description =
+  'What it costs to sponsor a video on the Kasra Dash YouTube channel, and how the sponsorships work.';
+
+const contactHref = '/contact/';
+
+const packages = [
+  {
+    name: 'One promotional video',
+    price: '£795',
+    detail: 'A sponsored integration in one video on my channel, in my own words.',
+    featured: false,
+  },
+  {
+    name: 'Three videos over four weeks',
+    price: '£1,800',
+    detail: 'Three sponsored integrations spread across four weeks. That works out at £600 a video, so it is the better deal if you want repeat exposure.',
+    featured: true,
+  },
+];
+
+const terms = [
+  {
+    heading: 'Flat sponsorships only',
+    body: 'I do not take affiliate deals. They are a poor use of my time, the law requires a disclosure in every description, and they make the video feel less genuine to the people watching. A flat fee keeps the integration honest.',
+  },
+  {
+    heading: 'Two brands a month, maximum',
+    body: 'I work with at most two brands per month. When both slots are taken, the next opening is the following month.',
+  },
+  {
+    heading: 'No scripts',
+    body: 'I talk about your product in my own words, the same way I talk about everything else on the channel. You will not get a read script, because my audience would spot one instantly.',
+  },
+  {
+    heading: 'Payment upfront',
+    body: 'Payment is made in full before the video is produced.',
+  },
+  {
+    heading: 'Every brand is vetted',
+    body: 'I look into every brand before I agree. If I have already worked with a brand similar to yours, or with one of your competitors, there is a good chance I will decline.',
+  },
+];
+---
+
+<BaseLayout {title} {description} path="/video-rate-card/" noindex="nofollow">
+  <main>
+    <section class="border-b border-tint-border bg-tint">
+      <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:py-16">
+        <p class="font-display text-xs font-bold uppercase tracking-wider text-dim">Sponsorships</p>
+        <h1 class="mt-3 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-ink sm:text-5xl">
+          Sponsor a video on my channel
+        </h1>
+        <p class="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
+          If you want your brand in one of my videos, this page is the full picture: what it costs and how I work. The videos run on my YouTube channel,{' '}
+          <a href="https://www.youtube.com/@kasradash" rel="noopener" target="_blank" class="font-semibold text-lavender transition hover:text-white">@kasradash</a>, which had 36.9k subscribers when last counted on 11 August 2026.
+        </p>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-4 py-14 sm:px-6" aria-label="Pricing">
+      <div class="mx-auto grid max-w-3xl gap-5 sm:grid-cols-2">
+        {packages.map((p) => (
+          <div class={`flex flex-col rounded-[20px] border p-7 ${p.featured ? 'border-brand-500/60 bg-deep shadow-lg shadow-brand-500/15' : 'border-tint-border bg-tint'}`}>
+            {p.featured && <p class="font-display text-xs font-bold uppercase tracking-wider text-brand-600">Better deal</p>}
+            <h2 class={`font-display text-lg font-bold text-ink ${p.featured ? 'mt-2' : ''}`}>{p.name}</h2>
+            <p class="mt-3 font-display text-4xl font-bold tracking-tight text-ink">{p.price}</p>
+            <p class="mt-3 text-sm leading-relaxed text-muted">{p.detail}</p>
+            <a
+              href={contactHref}
+              class={`mt-6 inline-flex justify-center px-6 py-3 text-sm font-bold transition ${p.featured ? 'btn-gradient shadow-lg shadow-brand-500/25 hover:shadow-xl hover:shadow-brand-500/40' : 'rounded-full border border-tint-border text-ink hover:border-brand-500 hover:bg-brand-500/10'}`}
+            >
+              Ask about a slot
+            </a>
+          </div>
+        ))}
+      </div>
+      <div class="mx-auto mt-5 max-w-3xl rounded-[20px] border border-tint-border bg-tint p-6 text-center">
+        <p class="text-sm leading-relaxed text-muted">
+          <strong class="font-display font-bold text-ink">Shorts add-on:</strong> add Shorts to any video for an extra £150.
+        </p>
+      </div>
+    </section>
+
+    <section class="border-t border-tint-border bg-tint py-14" aria-label="How I work">
+      <div class="mx-auto max-w-3xl px-4 sm:px-6">
+        <h2 class="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">How I work</h2>
+        <div class="mt-8 space-y-8">
+          {terms.map((t) => (
+            <div>
+              <h3 class="font-display text-base font-bold text-ink">{t.heading}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-muted">{t.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="py-14">
+      <div class="mx-auto max-w-3xl px-4 text-center sm:px-6">
+        <h2 class="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">Want a slot?</h2>
+        <p class="mx-auto mt-3 max-w-xl text-muted">
+          Tell me what you sell and which package you are after. If it fits the channel, I will come back to you with the next available slot.
+        </p>
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <a href={contactHref} class="btn-gradient px-6 py-3 text-sm font-bold shadow-lg shadow-brand-500/25 transition hover:shadow-xl hover:shadow-brand-500/40">
+            Ask about a slot
+          </a>
+          <a href="mailto:me@kasradash.com" class="rounded-full border border-tint-border px-6 py-3 text-sm font-bold text-ink transition hover:border-brand-500 hover:bg-brand-500/10">
+            Email me@kasradash.com
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

@@ -18,7 +18,7 @@ interface Props {
   graphNodes?: object[];
   datePublished?: string;
   dateModified?: string;
-  noindex?: boolean;
+  noindex?: boolean | 'nofollow';
 }
 
 const props = Astro.props;

@@ -26,8 +26,9 @@ interface Props {
   graphNodes?: object[];
   datePublished?: string;
   dateModified?: string;
-  /** noindex:true → robots noindex,follow. Sitemap exclusion is wired in astro.config.mjs. */
-  noindex?: boolean;
+  /** noindex:true → robots noindex,follow; 'nofollow' → noindex,nofollow (unlisted pages).
+   * Sitemap exclusion is wired in astro.config.mjs. */
+  noindex?: boolean | 'nofollow';
 }
 
 const {
@@ -71,7 +72,7 @@ const graph = buildGraph([
 <title>{title}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
-{noindex && <meta name="robots" content="noindex,follow" />}
+{noindex && <meta name="robots" content={noindex === 'nofollow' ? 'noindex,nofollow' : 'noindex,follow'} />}
 
 <meta property="og:type" content={type} />
 <meta property="og:site_name" content={SITE_NAME} />
