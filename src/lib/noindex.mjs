@@ -13,7 +13,10 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 /** Non-content pages to keep out of the sitemap, as site-relative paths. */
-const STATIC_NOINDEX_PATHS = [];
+const STATIC_NOINDEX_PATHS = [
+  // Private sponsor rate card — unlisted, Kasra shares the URL manually.
+  '/video-rate-card/',
+];
 
 function walk(dir, out = []) {
   for (const entry of readdirSync(dir, { withFileTypes: true })) {
