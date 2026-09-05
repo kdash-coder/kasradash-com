@@ -59,6 +59,7 @@ export const PERSON_SAME_AS = [
   'https://grokipedia.com/page/Kasra_Dash',
   'https://themasterminders.com/',
   'https://myseo.app/',
+  'https://kasradash.wiki/', // his own entity wiki — verified live 5 Sep 2026 (title + 197 name mentions)
 ];
 
 // Founder/worksFor org nodes — sameAs sets copied from the live site's hand-built schema

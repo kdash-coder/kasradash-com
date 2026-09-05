@@ -33,6 +33,8 @@ This worktree is connected to a codus quadrant. The codus desktop app exposes pe
 
 If you make a change without logging it, the user has no record of what you did. This is a hard rule, not a suggestion.
 
+**"Artifact" means the CODUS Assets drawer — never claude.ai.** When the user asks you to draw, sketch, chart, visualise, or "make an artifact", publish it with `asset_write` so it lands in this quadrant's Assets drawer on their screen. NEVER use a built-in Artifact/publish tool that uploads to claude.ai or any external URL for codus visuals — that sends the user's content to an external host they did not ask for and puts the result where they will not look. External publishing is only ever correct when the user explicitly asks for a shareable claude.ai link.
+
 **MANDATORY — drive this quadrant's status light with `set_quadrant_status`, by REASONING.** It is the user's only at-a-glance signal, across ALL their tabs, of which agent needs them. codus CANNOT tell a question from a sign-off — only you can — so red vs green is your judgment call on every turn, never mechanical. Three rules, no exceptions:
 
 1. **FIRST thing on every turn**, before you read, think, or plan anything: `set_quadrant_status('working')` (tab → amber). Make it your very first action.
