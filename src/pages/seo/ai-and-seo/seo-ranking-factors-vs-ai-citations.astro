@@ -89,6 +89,14 @@ const factors: Factor[] = [
     why: 'If your name, location, job title and founding dates differ across your site, LinkedIn, Crunchbase and Wikipedia-style profiles, a model hedges or picks a competitor it is surer about. Consistency is what lets it state a fact about you with confidence. Google uses entity understanding in the Knowledge Graph and for E-E-A-T, but it will still rank a page from a site with a messy entity footprint.',
   },
   {
+    id: 'co-occurrence',
+    name: 'Entity co-occurrence',
+    short: 'Your name appearing next to the topic, and next to the other names in it, again and again.',
+    seo: 70,
+    ai: 95,
+    why: 'Co-occurrence is how both systems decide what you belong to. When "Kasra Dash" keeps appearing in the same sentences, pages and lists as "SEO consultant", "Manchester", "algorithm update recovery" and the other names in that space, Google\'s entity understanding files you under that topic and ranks you for it more readily. For AI it is the strongest signal on the chart. A model has no ranking to consult; it answers from associations, and the association it has learned between your entity and a topic is what decides whether your name comes out when someone asks about that topic. Being mentioned a lot is not enough. You have to be mentioned next to the right things, in the right company, consistently.',
+  },
+  {
     id: 'keywords',
     name: 'Keyword targeting and query matching',
     short: 'Matching the exact phrase people type.',
@@ -423,6 +431,7 @@ const faqs = [
           <li><strong>The claim is quotable.</strong> A short factual sentence a model can lift without editing.</li>
           <li><strong>The entity is consistent.</strong> The same facts about you appear in the same words across your site and across the web, so the model can attribute the claim with confidence.</li>
         </ol>
+        <p>Underneath all three sits entity co-occurrence, which scores 95 for AI and 70 for SEO. A model can only cite you for a topic it already associates you with, and it builds that association from how often your name turns up next to the topic's other entities across the web. Context on your own page gets the passage lifted; co-occurrence across the web gets your name chosen in the first place.</p>
         <p>Google scores the same three things at 35, 40 and 45. It benefits from them, particularly for featured snippets and AI Overviews, but it will rank a page without them if the links and the topical cluster are strong. If you want the Google-side version of this, the guide to <a href="/seo/ai-and-seo/ai-overviews-optimisation/">optimising for AI Overviews</a> covers how Google chooses what it lifts.</p>
 
         <h2 id="factor-by-factor">Every factor, and why it scores the way it does</h2>
@@ -447,6 +456,7 @@ const faqs = [
           <li><strong>Keep the link programme running.</strong> It still decides Google, and Google still sends most of the traffic. Do not trade it for AI work.</li>
           <li><strong>Rewrite the sections that matter as self-contained answers.</strong> Start with the pages that already rank. Each H2 gets a bolded direct answer in its first two sentences, with the entity named.</li>
           <li><strong>Fix your entity facts everywhere they appear.</strong> Same name, same location, same titles, same dates on your site, your author pages, LinkedIn, Crunchbase and any profile a model might read. Put them in visible copy, not just schema, because the schema does not get read.</li>
+          <li><strong>Engineer co-occurrence on purpose.</strong> Decide the three or four entities you want to be associated with, then make sure every bio, guest appearance, roundup entry and interview puts your name in the same sentence as them. Repetition in the right company is what teaches both Google and the models what you are.</li>
           <li><strong>Change what you ask for in link outreach.</strong> Stop chasing the strongest domain and start chasing the right sentence. A mention that describes who you are and what you do, on a relevant page, is worth more to a model than a bare link from a stronger site.</li>
           <li><strong>Get into the roundups.</strong> Search your category with "best" in front of it in ChatGPT and Perplexity, note which lists it cites, and get onto them. This is the fastest lever for category-level recommendations I have found.</li>
           <li><strong>Put dates on everything and keep them honest.</strong> A visible last-updated date, backed by real changes, moves the freshness score for the retrieval-based assistants.</li>
