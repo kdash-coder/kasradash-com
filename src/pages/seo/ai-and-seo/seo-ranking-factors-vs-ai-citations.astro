@@ -1,0 +1,550 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/Breadcrumbs.astro';
+import { SITE_URL } from '../../../lib/site';
+import { articleNode } from '../../../lib/schema';
+
+/*
+ * SEO ranking factors vs AI citation factors: the side-by-side weighting page.
+ * Scores are Kasra Dash's practitioner weightings (0 to 100, relative weight of
+ * each signal within its own system), not measured percentages. Keep the
+ * `factors` array as the single source of truth: the chart, the summary cards
+ * and the per-factor breakdown all render from it.
+ */
+
+const path = '/seo/ai-and-seo/seo-ranking-factors-vs-ai-citations/';
+const h1 = 'SEO Ranking Factors vs AI Citation Factors: What Moves Each One';
+const title = 'SEO Ranking Factors vs AI Citation Factors (Side by Side)';
+const description =
+  'SEO ranking factors vs AI citation factors, weighted 0 to 100 side by side. See why links move Google, why context moves ChatGPT, and where the two split.';
+const ogImage = '/images/kasradash.com_.png';
+const datePublished = '2026-09-09T12:00:00+00:00';
+const dateModified = '2026-09-09T12:00:00+00:00';
+
+const canonical = new URL(path, SITE_URL).href;
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'SEO', href: '/seo/' },
+  { label: 'AI & SEO', href: '/seo/ai-and-seo/' },
+  { label: h1, href: path },
+];
+const graphNodes = [articleNode({ canonical, headline: h1, description, image: ogImage, datePublished, dateModified })];
+
+interface Factor {
+  id: string;
+  name: string;
+  short: string;
+  seo: number;
+  ai: number;
+  why: string;
+}
+
+const factors: Factor[] = [
+  {
+    id: 'backlinks',
+    name: 'Backlinks and PageRank',
+    short: 'Links from other sites passing authority to yours.',
+    seo: 85,
+    ai: 20,
+    why: 'Google still runs on links. Every large-scale test I have run since 2017 shows a page with the stronger link profile beating a near-identical page without one. AI assistants do not compute PageRank when they answer. They retrieve passages, and a passage with zero links behind it gets cited if it answers the question cleanly. The small weight AI gets here is indirect: links help the page get indexed and surfaced in the retrieval step.',
+  },
+  {
+    id: 'context',
+    name: 'Context and self-contained passages',
+    short: 'Each section answers a question on its own, without the rest of the page.',
+    seo: 35,
+    ai: 95,
+    why: 'This is the single biggest split. AI systems lift passages, not pages. If your paragraph only makes sense after reading the three above it, it never gets quoted. Google rewards page-level relevance and can rank a page whose answer is buried in section six. For AI, the answer has to sit inside one extractable block with the entity named, the claim stated and the reason attached.',
+  },
+  {
+    id: 'quotable',
+    name: 'Direct answers and quotable statements',
+    short: 'Short factual sentences a model can lift verbatim.',
+    seo: 40,
+    ai: 95,
+    why: 'A model needs a sentence it can attribute. Subject, verb, object, stated plainly and bolded, gets cited far more than the same fact spread over a paragraph. Google likes a direct answer for snippets and AI Overviews, but it will still rank a page that rambles if the links and topical coverage are there.',
+  },
+  {
+    id: 'brand-mentions',
+    name: 'Unlinked brand mentions across the web',
+    short: 'Your name appearing on other sites, with or without a link.',
+    seo: 25,
+    ai: 85,
+    why: 'Models learn what a brand is from how often, and in what context, it appears across their training data and the sources they retrieve at answer time. An unlinked mention in a Reddit thread, a listicle or a podcast transcript teaches the model that your brand belongs in that category. Google gives an unlinked mention very little direct weight; it wants the link.',
+  },
+  {
+    id: 'entity',
+    name: 'Entity clarity and consistency',
+    short: 'The same facts about you, in the same words, everywhere.',
+    seo: 45,
+    ai: 90,
+    why: 'If your name, location, job title and founding dates differ across your site, LinkedIn, Crunchbase and Wikipedia-style profiles, a model hedges or picks a competitor it is surer about. Consistency is what lets it state a fact about you with confidence. Google uses entity understanding in the Knowledge Graph and for E-E-A-T, but it will still rank a page from a site with a messy entity footprint.',
+  },
+  {
+    id: 'keywords',
+    name: 'Keyword targeting and query matching',
+    short: 'Matching the exact phrase people type.',
+    seo: 80,
+    ai: 30,
+    why: 'Google still maps a query to a page, and the title tag and H1 still carry real weight. AI retrieval works on meaning. The same question gets rephrased into several sub-queries before retrieval, so an exact-match keyword matters less than covering the concept from multiple angles. Keywords are not dead for AI; they are just one of many ways to be about the topic.',
+  },
+  {
+    id: 'freshness',
+    name: 'Content freshness',
+    short: 'How recently the page was updated, and whether it says so.',
+    seo: 45,
+    ai: 80,
+    why: 'Retrieval-backed assistants such as Perplexity and ChatGPT with browsing lean hard on recency, and a visible last-updated date is one of the first things they check when two sources conflict. Google cares about freshness for queries that deserve it and largely ignores it for evergreen topics.',
+  },
+  {
+    id: 'topical-authority',
+    name: 'Topical authority and depth of coverage',
+    short: 'Owning the whole topic, not one page of it.',
+    seo: 80,
+    ai: 70,
+    why: 'Both systems reward it, for different reasons. Google reads a well-linked cluster of pages as expertise and ranks the whole cluster higher. A model that finds your site answering the sub-questions around a topic treats you as a safer source to cite. The AI weight is a little lower because a single excellent passage on a thin site can still get cited.',
+  },
+  {
+    id: 'crawlability',
+    name: 'Crawlability and indexing',
+    short: 'Bots can fetch, render and store the page.',
+    seo: 90,
+    ai: 75,
+    why: 'Nothing else on this chart matters if the page cannot be fetched. For Google, an unindexed page has a ranking of zero. For AI, the gate is wider than one index: ChatGPT leans on Bing, Perplexity runs its own crawler, and Google AI Mode uses the Google index. Block GPTBot or PerplexityBot in robots.txt and you have opted out of citations from those tools.',
+  },
+  {
+    id: 'cwv',
+    name: 'Core Web Vitals and page speed',
+    short: 'Load time, interactivity and layout stability.',
+    seo: 35,
+    ai: 10,
+    why: 'Google has confirmed page experience as a lightweight ranking signal and a tiebreaker, and in my tests fixing Core Web Vitals rarely moves a page more than a position or two on its own. A model fetching your page for a citation does not care whether it painted in one second or four. It cares whether the text was there when it arrived.',
+  },
+  {
+    id: 'schema',
+    name: 'Structured data and schema markup',
+    short: 'JSON-LD that labels what the page and its author are.',
+    seo: 40,
+    ai: 55,
+    why: 'Schema earns rich results in Google but is not a ranking factor in itself. For AI, schema is one of the cleanest ways to hand a model your entity facts: Person, Organization, Article, author, datePublished. It is not a guarantee of a citation, but it removes ambiguity, and ambiguity is what stops a model naming you.',
+  },
+  {
+    id: 'eeat',
+    name: 'Author expertise and trust signals',
+    short: 'Who wrote it and why anyone should believe them.',
+    seo: 55,
+    ai: 65,
+    why: 'Google applies E-E-A-T most heavily on health, finance and other high-stakes topics, and its raters look for evidence of first-hand experience. A model looking for a source to cite prefers a named author with a consistent footprint over an anonymous page, because attributing a claim to a known entity is safer than attributing it to nobody.',
+  },
+  {
+    id: 'engagement',
+    name: 'User click and engagement signals',
+    short: 'What searchers do after they see your result.',
+    seo: 60,
+    ai: 15,
+    why: 'The Google antitrust exhibits made clear that click behaviour feeds ranking systems, and I have watched CTR changes move positions on client sites for years. An AI answer has no click data on your page at the moment it is composed. Any engagement effect is second-hand, through the search index it retrieves from.',
+  },
+  {
+    id: 'internal-linking',
+    name: 'Internal linking and site architecture',
+    short: 'How pages on your own site connect and pass relevance.',
+    seo: 70,
+    ai: 35,
+    why: 'Internal links tell Google which pages matter and what they are about, and moving a page higher in the architecture is still one of the fastest wins I have. A model retrieving a passage is largely indifferent to where that page sits in your hierarchy. The modest AI weight comes from crawl discovery and from hub pages that prove topical coverage.',
+  },
+  {
+    id: 'listicles',
+    name: 'Being listed in third-party roundups',
+    short: 'Best-of lists and comparison pages on other sites.',
+    seo: 20,
+    ai: 85,
+    why: 'Ask an assistant for the best agencies, tools or consultants in a category and watch where the names come from. It aggregates existing best-of lists and picks the names that recur. Appearing in those lists is now the most direct lever I know for category-level AI recommendations. Google gives you very little for it unless the list also links.',
+  },
+  {
+    id: 'ugc',
+    name: 'Reddit, forums and community presence',
+    short: 'Real people discussing you in places models read.',
+    seo: 30,
+    ai: 75,
+    why: 'Reddit and community threads feature heavily in the sources assistants cite, and OpenAI and Google both have data agreements with Reddit. A brand that real people recommend in threads shows up in answers. Google surfaces those threads in its own results, but they rarely lift your rankings directly.',
+  },
+  {
+    id: 'original-data',
+    name: 'Original data and statistics',
+    short: 'Numbers that only exist because you measured them.',
+    seo: 60,
+    ai: 85,
+    why: 'Original numbers earn links, which is why they score well for SEO. For AI they score higher again, because a model answering a question wants a specific figure with a source attached, and your page is the only place that figure exists. Publish the number, the sample and the date next to each other.',
+  },
+];
+
+const sorted = [...factors].sort((a, b) => Math.abs(b.seo - b.ai) - Math.abs(a.seo - a.ai));
+const seoWins = sorted.filter((f) => f.seo > f.ai);
+const aiWins = sorted.filter((f) => f.ai > f.seo);
+
+const faqs = [
+  {
+    q: 'Are SEO ranking factors and AI citation factors the same thing?',
+    a: 'No. They overlap on crawlability, topical depth and author trust, but the two systems weight signals differently. Google ranks documents using links, query matching and click behaviour. AI assistants select passages using context, entity clarity and how often a brand appears across the sources they read. Optimising for one does not automatically optimise for the other.',
+  },
+  {
+    q: 'Do backlinks help you get cited by ChatGPT or Perplexity?',
+    a: 'Only indirectly. Links help a page get crawled, indexed and surfaced in the retrieval step, but the model does not score a passage by PageRank when it decides what to quote. A page with a strong link profile and vague, dependent paragraphs loses the citation to a page with no links and one clean, self-contained answer.',
+  },
+  {
+    q: 'What is the most important factor for AI citations?',
+    a: 'Context. A passage has to name the entity, state the claim and give the reason inside one block that makes sense on its own. Every other AI-side factor on this page, from entity consistency to quotable statements, is a way of making passages easier for a model to lift and attribute.',
+  },
+  {
+    q: 'Which AI systems does this comparison cover?',
+    a: 'ChatGPT with search, Perplexity, Google AI Overviews and AI Mode, and Claude with web search. They retrieve differently, but they share the same preference for self-contained passages, consistent entity facts and recently updated sources. Google AI Overviews sit closest to classic SEO because they draw from the Google index.',
+  },
+  {
+    q: 'Should I stop building links and focus on AI?',
+    a: 'No. Links still decide Google rankings, and Google still sends the traffic. Keep the link programme and add the AI-side work on top: rewrite key sections as self-contained answers, fix entity facts everywhere they appear, get into category roundups and keep dates current. The two efforts share most of the same pages.',
+  },
+];
+---
+
+<BaseLayout {title} {description} {path} {ogImage} type="article" breadcrumbs={crumbs} {graphNodes} {datePublished} {dateModified}>
+  <main>
+    {/* Hero */}
+    <section class="border-b border-tint-border bg-tint">
+      <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:py-14">
+        <Breadcrumbs {crumbs} />
+        <p class="mt-4 inline-flex items-center rounded-full border border-brand-500/30 bg-brand-500/10 px-3 py-1 font-display text-xs font-bold uppercase tracking-wider text-brand-600">
+          AI & SEO
+        </p>
+        <h1 class="mt-4 max-w-4xl font-display text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl lg:text-[2.75rem]">
+          {h1}
+        </h1>
+        <div class="mt-5 max-w-3xl space-y-4 text-base leading-relaxed text-muted sm:text-lg">
+          <p>
+            SEO ranking factors and AI citation factors are two different scoring systems, and most sites are still optimising for only one of them. Links decide who ranks in Google. Context decides who gets cited by ChatGPT, Perplexity and AI Overviews.{' '}
+            <a href="https://kasradash.com/" class="font-semibold text-lavender underline decoration-brand-500/50 underline-offset-4 transition hover:text-white">Kasra Dash</a>{' '}
+            has ranked over 700 client sites, and since 2024 has been running the same pages through both systems to see which signals carry over and which do not.
+          </p>
+          <p>
+            Below, every factor is weighted 0 to 100 for each system and placed side by side, so you can see in one scan where your existing SEO work already counts for AI and where you are starting from zero.
+          </p>
+        </div>
+        <div class="mt-6 flex flex-wrap items-center gap-3">
+          <img src="/images/kasra-dash.jpg" alt="" class="h-10 w-10 rounded-full border border-tint-border object-cover" width="40" height="40" />
+          <div class="text-sm">
+            <p class="font-bold text-ink">Kasra Dash <span class="font-medium text-dim"> · Last Updated September 9, 2026</span></p>
+            <p class="text-dim">SEO Consultant · Founder, The Masterminders & mySEO.app</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Direct answer */}
+    <section class="mx-auto max-w-6xl px-4 pt-12 sm:px-6">
+      <div class="rounded-[20px] border border-brand-500/40 bg-deep p-6 sm:p-8">
+        <h2 id="difference" class="font-display text-xl font-bold tracking-tight text-ink sm:text-2xl">What is the difference between SEO ranking factors and AI citation factors?</h2>
+        <p class="mt-3 max-w-3xl text-base leading-relaxed text-lavender sm:text-lg">
+          <strong class="text-ink">SEO ranking factors decide which page Google shows for a query, and they are dominated by backlinks, query matching and click behaviour. AI citation factors decide which passage a model quotes in its answer, and they are dominated by context, entity clarity and how consistently a brand appears across the sources the model reads.</strong>
+        </p>
+      </div>
+    </section>
+
+    {/* Comparison chart */}
+    <section class="mx-auto max-w-6xl px-4 py-12 sm:px-6" aria-labelledby="chart-heading">
+      <div class="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+        <div>
+          <h2 id="chart-heading" class="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">The side-by-side weighting</h2>
+          <p class="mt-2 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">
+            Each score is the relative weight of that signal inside its own system, from 0 (ignored) to 100 (decisive). The badge on the right shows how far the two systems disagree.
+          </p>
+        </div>
+        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+          <span class="inline-flex items-center gap-2 font-semibold text-ink"><span class="h-3 w-3 rounded-sm bg-[#845cfe]"></span>SEO (Google rankings)</span>
+          <span class="inline-flex items-center gap-2 font-semibold text-ink"><span class="h-3 w-3 rounded-sm bg-[#2dd4bf]"></span>AI (citations in answers)</span>
+        </div>
+      </div>
+
+      <div class="mt-6 flex flex-wrap items-center gap-2" role="group" aria-label="Sort and filter the chart">
+        <span class="mr-1 font-display text-xs font-bold uppercase tracking-wider text-dim">Sort by</span>
+        <button type="button" data-sort="gap" class="chip is-active" aria-pressed="true">Biggest gap</button>
+        <button type="button" data-sort="seo" class="chip" aria-pressed="false">SEO weight</button>
+        <button type="button" data-sort="ai" class="chip" aria-pressed="false">AI weight</button>
+        <span class="mx-2 hidden h-5 w-px bg-tint-border sm:block"></span>
+        <span class="mr-1 font-display text-xs font-bold uppercase tracking-wider text-dim">Show</span>
+        <button type="button" data-filter="all" class="chip is-active" aria-pressed="true">All</button>
+        <button type="button" data-filter="seo" class="chip" aria-pressed="false">SEO leads</button>
+        <button type="button" data-filter="ai" class="chip" aria-pressed="false">AI leads</button>
+      </div>
+
+      <ol id="factor-chart" class="mt-6 space-y-3">
+        {sorted.map((f) => {
+          const gap = Math.abs(f.seo - f.ai);
+          const leader = f.seo > f.ai ? 'seo' : f.ai > f.seo ? 'ai' : 'tie';
+          return (
+            <li
+              class="factor-row rounded-[20px] border border-tint-border bg-tint p-5 transition hover:border-white/20 sm:p-6"
+              data-seo={f.seo}
+              data-ai={f.ai}
+              data-gap={gap}
+              data-leader={leader}
+            >
+              <div class="grid gap-4 lg:grid-cols-[minmax(0,17rem)_minmax(0,1fr)_7rem] lg:items-center lg:gap-8">
+                <div>
+                  <h3 class="font-display text-base font-bold leading-snug text-ink sm:text-lg">
+                    <a href={`#${f.id}`} class="transition hover:text-brand-600">{f.name}</a>
+                  </h3>
+                  <p class="mt-1 text-sm leading-relaxed text-dim">{f.short}</p>
+                </div>
+
+                <div class="space-y-2.5">
+                  <div class="grid grid-cols-[2.25rem_minmax(0,1fr)_2.5rem] items-center gap-3">
+                    <span class="font-display text-xs font-bold uppercase tracking-wider text-brand-600">SEO</span>
+                    <div class="h-3 overflow-hidden rounded-full bg-white/[0.06]" aria-hidden="true">
+                      <div class="bar h-full rounded-full bg-[linear-gradient(90deg,#4a4ef8,#845cfe)]" style={`width:${f.seo}%`}></div>
+                    </div>
+                    <span class="text-right font-jakarta text-sm font-bold tabular-nums text-ink"><span class="sr-only">SEO weight </span>{f.seo}</span>
+                  </div>
+                  <div class="grid grid-cols-[2.25rem_minmax(0,1fr)_2.5rem] items-center gap-3">
+                    <span class="font-display text-xs font-bold uppercase tracking-wider text-[#5eead4]">AI</span>
+                    <div class="h-3 overflow-hidden rounded-full bg-white/[0.06]" aria-hidden="true">
+                      <div class="bar h-full rounded-full bg-[linear-gradient(90deg,#0d9488,#2dd4bf)]" style={`width:${f.ai}%`}></div>
+                    </div>
+                    <span class="text-right font-jakarta text-sm font-bold tabular-nums text-ink"><span class="sr-only">AI weight </span>{f.ai}</span>
+                  </div>
+                </div>
+
+                <div class="lg:text-right">
+                  {leader === 'tie' ? (
+                    <span class="inline-flex rounded-full border border-tint-border px-3 py-1 font-display text-xs font-bold uppercase tracking-wider text-muted">Even</span>
+                  ) : (
+                    <span
+                      class={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 font-display text-xs font-bold uppercase tracking-wider ${
+                        leader === 'seo' ? 'border border-brand-500/40 bg-brand-500/15 text-brand-600' : 'border border-[#2dd4bf]/40 bg-[#2dd4bf]/10 text-[#5eead4]'
+                      }`}
+                    >
+                      <span class="font-jakarta text-sm tabular-nums">+{gap}</span> {leader === 'seo' ? 'SEO' : 'AI'}
+                    </span>
+                  )}
+                </div>
+              </div>
+            </li>
+          );
+        })}
+      </ol>
+      <p class="mt-5 text-xs leading-relaxed text-dim">
+        Weightings are Kasra Dash's practitioner estimates from testing the same pages in Google and in ChatGPT, Perplexity, Google AI Overviews and Claude. They are relative weights, not percentages of an algorithm, and they will be revised as the systems change.
+      </p>
+    </section>
+
+    {/* Summary cards */}
+    <section class="border-y border-tint-border bg-tint py-12">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <h2 id="split" class="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">Where the two systems split</h2>
+        <div class="mt-6 grid gap-5 md:grid-cols-2">
+          <div class="rounded-[20px] border border-brand-500/40 bg-deep p-6">
+            <p class="font-display text-xs font-bold uppercase tracking-wider text-brand-600">SEO leads by the most</p>
+            <ul class="mt-4 space-y-3">
+              {seoWins.slice(0, 4).map((f) => (
+                <li class="flex items-center justify-between gap-4 border-b border-tint-border pb-3 last:border-0 last:pb-0">
+                  <a href={`#${f.id}`} class="font-semibold text-ink transition hover:text-brand-600">{f.name}</a>
+                  <span class="shrink-0 font-jakarta text-sm font-bold tabular-nums text-brand-600">+{f.seo - f.ai}</span>
+                </li>
+              ))}
+            </ul>
+            <p class="mt-4 text-sm leading-relaxed text-muted">
+              These are the signals Google computes and a model does not: authority passed through links, the query-to-page match, and what searchers click.
+            </p>
+          </div>
+          <div class="rounded-[20px] border border-[#2dd4bf]/40 bg-deep p-6">
+            <p class="font-display text-xs font-bold uppercase tracking-wider text-[#5eead4]">AI leads by the most</p>
+            <ul class="mt-4 space-y-3">
+              {aiWins.slice(0, 4).map((f) => (
+                <li class="flex items-center justify-between gap-4 border-b border-tint-border pb-3 last:border-0 last:pb-0">
+                  <a href={`#${f.id}`} class="font-semibold text-ink transition hover:text-[#5eead4]">{f.name}</a>
+                  <span class="shrink-0 font-jakarta text-sm font-bold tabular-nums text-[#5eead4]">+{f.ai - f.seo}</span>
+                </li>
+              ))}
+            </ul>
+            <p class="mt-4 text-sm leading-relaxed text-muted">
+              These are the signals a model reads when it decides what to quote: whether the passage stands alone, whether it knows who you are, and whether other sources already say the same thing about you.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Written breakdown */}
+    <section class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:grid lg:grid-cols-[12rem_minmax(0,1fr)] lg:gap-10">
+      <aside class="hidden lg:block">
+        <nav class="sticky top-24" aria-label="On this page">
+          <h2 class="font-display text-xs font-bold uppercase tracking-wider text-dim">On this page</h2>
+          <ul class="mt-3 space-y-0.5 border-l border-tint-border">
+            {[
+              ['#difference', 'The difference'],
+              ['#chart-heading', 'Side-by-side chart'],
+              ['#split', 'Where they split'],
+              ['#why-links', 'Why links stop mattering'],
+              ['#why-context', 'Why context takes over'],
+              ['#factor-by-factor', 'Factor by factor'],
+              ['#strategy', 'What to change'],
+              ['#mistakes', 'What goes wrong'],
+              ['#faq', 'FAQ'],
+              ['#final-thoughts', 'Final thoughts'],
+            ].map(([href, label]) => (
+              <li>
+                <a href={href} class="-ml-px block border-l-2 border-transparent py-1 pl-3 text-[0.8rem] leading-snug text-dim transition hover:border-brand-500/50 hover:text-ink">{label}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </aside>
+
+      <div class="prose prose-kasra max-w-none lg:max-w-[46rem]">
+        <h2 id="why-links">Why links stop mattering the moment a model answers</h2>
+        <p><strong>Backlinks score 85 for SEO and 20 for AI citations because PageRank is a Google calculation, not a language-model calculation.</strong> Google crawls the link graph, scores every page by who links to it, and uses that score as one of its strongest ranking inputs. That has not changed, whatever the last conference talk told you.</p>
+        <p>An AI assistant answering a question does something different. It rewrites the question into a handful of searches, retrieves candidate passages, and then chooses which ones to quote based on how well each passage answers the question. The link score of the page that passage came from is not part of that choice.</p>
+        <p>I have watched this play out on client sites. A page with a Domain Rating in the seventies and 400 referring domains lost the citation to a two-year-old blog post with 12 referring domains, because the smaller site stated the answer in one paragraph and the larger site spread it across a 3,000-word guide with no direct sentence to lift.</p>
+        <p>Links still earn the 20 points because they help the page exist in the indexes the assistants retrieve from. That is a prerequisite, not a ranking factor. Understanding how each assistant retrieves is the starting point, and the differences between them are covered in the guide to <a href="/seo/ai-and-seo/ai-search-engines/">how AI search engines rank answers</a>.</p>
+
+        <h2 id="why-context">Why context takes over</h2>
+        <p><strong>Context scores 95 for AI citations because a model cites passages, and a passage has to carry its own meaning to be citable.</strong> When you read a guide, you carry the earlier sections with you. A model retrieving a chunk of your page does not. It gets the chunk, judged on its own.</p>
+        <p>That is why "as mentioned above" and "this approach" are citation killers. The model cannot resolve what "this" is, so the passage fails the relevance check and a competitor's clumsier but complete paragraph wins.</p>
+        <p>Context has three parts, and the chart scores each of them as a separate factor because you can fix them separately:</p>
+        <ol>
+          <li><strong>The passage is self-contained.</strong> Entity named, claim stated, reason attached, inside one block.</li>
+          <li><strong>The claim is quotable.</strong> A short factual sentence a model can lift without editing.</li>
+          <li><strong>The entity is consistent.</strong> The same facts about you appear in the same words across your site and across the web, so the model can attribute the claim with confidence.</li>
+        </ol>
+        <p>Google scores the same three things at 35, 40 and 45. It benefits from them, particularly for featured snippets and AI Overviews, but it will rank a page without them if the links and the topical cluster are strong. If you want the Google-side version of this, the guide to <a href="/seo/ai-and-seo/ai-overviews-optimisation/">optimising for AI Overviews</a> covers how Google chooses what it lifts.</p>
+
+        <h2 id="factor-by-factor">Every factor, and why it scores the way it does</h2>
+        <p>Each entry below is the reasoning behind the two numbers on the chart. Read the ones with the biggest gap first. Those are where your existing SEO effort is either wasted for AI or where you are doing nothing at all.</p>
+        {sorted.map((f) => (
+          <div id={f.id} class="not-prose mt-8 rounded-[20px] border border-tint-border bg-tint p-6 scroll-mt-28">
+            <div class="flex flex-wrap items-start justify-between gap-3">
+              <h3 class="font-display text-lg font-bold leading-snug text-ink">{f.name}</h3>
+              <div class="flex items-center gap-2 text-sm font-bold tabular-nums">
+                <span class="rounded-full border border-brand-500/40 bg-brand-500/15 px-2.5 py-0.5 text-brand-600">SEO {f.seo}</span>
+                <span class="rounded-full border border-[#2dd4bf]/40 bg-[#2dd4bf]/10 px-2.5 py-0.5 text-[#5eead4]">AI {f.ai}</span>
+              </div>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-muted sm:text-base">{f.why}</p>
+          </div>
+        ))}
+
+        <h2 id="strategy">What to change if you want both</h2>
+        <p><strong>The same page can rank in Google and get cited by AI, because the two systems mostly disagree on weight rather than on direction.</strong> Nothing on the AI side of the chart hurts your Google rankings. The work is additive.</p>
+        <p>Here is the order I run it in on client sites:</p>
+        <ol>
+          <li><strong>Keep the link programme running.</strong> It still decides Google, and Google still sends most of the traffic. Do not trade it for AI work.</li>
+          <li><strong>Rewrite the sections that matter as self-contained answers.</strong> Start with the pages that already rank. Each H2 gets a bolded direct answer in its first two sentences, with the entity named.</li>
+          <li><strong>Fix your entity facts everywhere they appear.</strong> Same name, same location, same titles, same dates on your site, your author pages, LinkedIn, Crunchbase and any profile a model might read. Mark it up with Person and Organization schema.</li>
+          <li><strong>Get into the roundups.</strong> Search your category with "best" in front of it in ChatGPT and Perplexity, note which lists it cites, and get onto them. This is the fastest lever for category-level recommendations I have found.</li>
+          <li><strong>Put dates on everything and keep them honest.</strong> A visible last-updated date, backed by real changes, moves the freshness score for the retrieval-based assistants.</li>
+          <li><strong>Check who you are blocking.</strong> Open robots.txt and confirm GPTBot, PerplexityBot, ClaudeBot and Google-Extended are not disallowed unless you have decided that on purpose.</li>
+        </ol>
+        <p>Google's own documentation on <a href="https://developers.google.com/search/docs/appearance/ai-features" rel="noopener" target="_blank">AI features and your website</a> confirms there is no separate optimisation for AI Overviews beyond standard indexing and helpful content, which is exactly why the Google-side AI system sits closest to classic SEO on the chart.</p>
+
+        <h2 id="mistakes">What I see go wrong</h2>
+        <p><strong>Treating AI visibility as a content-volume problem.</strong> Sites publish 200 new pages to "cover the topic for AI" and none of them get cited, because every page is written in the same dependent, page-level style as before. Ten rewritten sections beat 200 new pages.</p>
+        <p><strong>Chasing a single score.</strong> The 0 to 100 numbers on this page are weights, not targets. A page does not need 95 on context; it needs the passage that answers the question to stand on its own.</p>
+        <p><strong>Ignoring the retrieval gate.</strong> Teams spend a quarter on entity work while robots.txt has been blocking GPTBot since 2023. Check the gate before touching anything else.</p>
+        <p><strong>Assuming Google AI Overviews behave like ChatGPT.</strong> They do not. AI Overviews draw from the Google index and lean on the same signals as the classic results, so a page that ranks has a head start. ChatGPT and Perplexity retrieve from elsewhere and reward the AI-side factors more heavily. The guide to <a href="/seo/ai-and-seo/ai-quality-rater-guidelines/">how Google's raters judge AI-era content</a> shows how far Google's own quality standard has moved towards first-hand experience, which is the one factor both systems agree on.</p>
+        <p><strong>Letting the numbers on your own site disagree.</strong> A founding year on the about page that differs from the one on LinkedIn is enough for a model to hedge. Consistency is cheap and most sites still have not done it.</p>
+
+        <h2 id="faq">Frequently Asked Questions About SEO Ranking Factors vs AI Citation Factors</h2>
+        {faqs.map((f) => (
+          <div>
+            <h3>{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
+
+        <h2 id="final-thoughts">Final Thoughts</h2>
+        <p>Google and AI assistants are scoring different things. Google scores the page, using links, query match and clicks. A model scores the passage, using context, entity clarity and what the rest of the web already says about you. The chart above is the shortest way I know to explain that split, and the biggest gaps on it are where your next quarter of work should go.</p>
+        <p>I publish the test results behind these weightings, and revise them as the systems change, inside The New Search, my AI SEO community on Skool. If you want to see the pages that got cited and the ones that did not, that is where the evidence lives.</p>
+        <p class="not-prose mt-6">
+          <a href="https://www.skool.com/the-new-search/about?utm_source=kasradash.com&utm_medium=site&utm_campaign=seo-vs-ai-factors" target="_blank" rel="noopener" class="btn-gradient inline-flex px-6 py-3 text-sm font-bold shadow-lg shadow-brand-500/25 transition hover:shadow-xl hover:shadow-brand-500/40">
+            Join The New Search
+          </a>
+        </p>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .chip {
+    border-radius: 50px;
+    border: 1px solid var(--color-tint-border);
+    padding: 0.375rem 0.875rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-muted);
+    transition: border-color 150ms ease, color 150ms ease, background-color 150ms ease;
+  }
+  .chip:hover {
+    border-color: rgb(255 255 255 / 0.3);
+    color: var(--color-ink);
+  }
+  .chip.is-active {
+    border-color: rgb(132 92 254 / 0.6);
+    background-color: rgb(132 92 254 / 0.15);
+    color: var(--color-brand-600);
+  }
+  .factor-row[hidden] {
+    display: none;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .bar {
+      transform-origin: left;
+      animation: grow 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    @keyframes grow {
+      from { transform: scaleX(0); }
+      to { transform: scaleX(1); }
+    }
+  }
+</style>
+
+<script>
+  const list = document.getElementById('factor-chart');
+  if (list) {
+    const rows = Array.from(list.querySelectorAll<HTMLLIElement>('.factor-row'));
+    let sort = 'gap';
+    let filter = 'all';
+
+    const num = (el: HTMLElement, key: string) => Number(el.dataset[key] ?? 0);
+
+    function apply() {
+      const sortedRows = [...rows].sort((a, b) => num(b, sort) - num(a, sort));
+      for (const row of sortedRows) {
+        const leader = row.dataset.leader;
+        row.hidden = filter !== 'all' && leader !== filter;
+        list!.appendChild(row);
+      }
+    }
+
+    function activate(group: string, value: string) {
+      document.querySelectorAll<HTMLButtonElement>(`[data-${group}]`).forEach((b) => {
+        const on = b.dataset[group] === value;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-pressed', String(on));
+      });
+    }
+
+    document.querySelectorAll<HTMLButtonElement>('[data-sort]').forEach((b) =>
+      b.addEventListener('click', () => {
+        sort = b.dataset.sort!;
+        activate('sort', sort);
+        apply();
+      })
+    );
+    document.querySelectorAll<HTMLButtonElement>('[data-filter]').forEach((b) =>
+      b.addEventListener('click', () => {
+        filter = b.dataset.filter!;
+        activate('filter', filter);
+        apply();
+      })
+    );
+  }
+</script>
