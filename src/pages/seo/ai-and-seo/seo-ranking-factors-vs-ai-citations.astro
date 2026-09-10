@@ -431,6 +431,7 @@ const faqs = [
           return (
             <li
               class="factor-row group cursor-pointer rounded-[20px] border border-tint-border bg-tint p-5 transition hover:border-brand-500/60 hover:bg-deep sm:p-6"
+              id={`row-${f.id}`}
               data-target={f.id}
               data-seo={f.seo}
               data-ai={f.ai}
@@ -624,6 +625,10 @@ const faqs = [
                 <p class="mt-3 text-xs leading-relaxed text-dim sm:text-sm">{examples[f.id].note}</p>
               </div>
             )}
+            <a href={`#row-${f.id}`} class="back-to-row mt-4 inline-flex items-center gap-1.5 rounded-full border border-tint-border px-3.5 py-1.5 text-xs font-bold text-muted transition hover:border-brand-500 hover:bg-brand-500/10 hover:text-ink" data-row={`row-${f.id}`}>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-3.5 w-3.5" aria-hidden="true"><path fill-rule="evenodd" d="M10 17a.75.75 0 0 1-.75-.75V5.612L5.29 9.77a.75.75 0 0 1-1.08-1.04l5.25-5.5a.75.75 0 0 1 1.08 0l5.25 5.5a.75.75 0 1 1-1.08 1.04l-3.96-4.158V16.25A.75.75 0 0 1 10 17Z" clip-rule="evenodd" /></svg>
+              Back to this factor in the chart
+            </a>
           </div>
         ))}
 
@@ -669,6 +674,12 @@ const faqs = [
       </div>
     </section>
   </main>
+
+  {/* Floating return button: appears after a chart row is clicked, restores the exact chart position */}
+  <button type="button" id="back-to-chart" class="fixed right-4 z-40 hidden items-center gap-2 rounded-full border border-brand-500/60 bg-deep/95 px-4 py-2.5 text-sm font-bold text-ink shadow-lg shadow-brand-500/25 backdrop-blur transition hover:bg-brand-500/20 sm:right-6" aria-label="Back to where you were in the chart">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-brand-600" aria-hidden="true"><path fill-rule="evenodd" d="M10 17a.75.75 0 0 1-.75-.75V5.612L5.29 9.77a.75.75 0 0 1-1.08-1.04l5.25-5.5a.75.75 0 0 1 1.08 0l5.25 5.5a.75.75 0 1 1-1.08 1.04l-3.96-4.158V16.25A.75.75 0 0 1 10 17Z" clip-rule="evenodd" /></svg>
+    Back to the chart
+  </button>
 
   {/* Sticky Skool bar: appears after the hero, dismissible for the session */}
   <div id="skool-bar" class="fixed inset-x-0 bottom-0 z-40" role="complementary" aria-label="Join The New Search">
@@ -738,6 +749,20 @@ const faqs = [
     border-color: rgb(132 92 254 / 0.7);
     box-shadow: 0 0 0 4px rgb(132 92 254 / 0.15);
   }
+  .factor-row.is-flash {
+    border-color: rgb(132 92 254 / 0.8);
+    box-shadow: 0 0 0 4px rgb(132 92 254 / 0.18);
+  }
+  #back-to-chart {
+    bottom: 1.25rem;
+    transition: bottom 300ms ease-out, background-color 150ms ease;
+  }
+  #back-to-chart.is-visible {
+    display: inline-flex;
+  }
+  body.has-skool-bar #back-to-chart {
+    bottom: 5.75rem;
+  }
   .factor-row[hidden] {
     display: none;
   }
@@ -798,15 +823,59 @@ const faqs = [
   const list = document.getElementById('factor-chart');
   if (list) {
     const rows = Array.from(list.querySelectorAll<HTMLLIElement>('.factor-row'));
+    const backBtn = document.getElementById('back-to-chart');
+    let savedY: number | null = null;
+    const rememberAndGo = (row: HTMLLIElement) => {
+      const target = document.getElementById(row.dataset.target ?? '');
+      if (!target) return;
+      savedY = window.scrollY;
+      backBtn?.classList.add('is-visible');
+      history.pushState(null, '', `#${row.dataset.target}`);
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
     for (const row of rows) {
       row.addEventListener('click', (e) => {
-        if ((e.target as HTMLElement).closest('a')) return;
-        const target = document.getElementById(row.dataset.target ?? '');
-        if (!target) return;
-        history.pushState(null, '', `#${row.dataset.target}`);
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const link = (e.target as HTMLElement).closest('a');
+        if (link) {
+          e.preventDefault();
+        }
+        rememberAndGo(row);
       });
     }
+    const hideBack = () => {
+      backBtn?.classList.remove('is-visible');
+      savedY = null;
+    };
+    backBtn?.addEventListener('click', () => {
+      if (savedY === null) return;
+      window.scrollTo({ top: savedY, behavior: 'smooth' });
+      hideBack();
+    });
+    document.querySelectorAll<HTMLAnchorElement>('.back-to-row').forEach((a) =>
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        const row = document.getElementById(a.dataset.row ?? '');
+        if (!row) return;
+        if (row.hidden) {
+          filter = 'all';
+          activate('filter', filter);
+          apply();
+        }
+        const y = row.getBoundingClientRect().top + window.scrollY - 96;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+        row.classList.add('is-flash');
+        setTimeout(() => row.classList.remove('is-flash'), 1600);
+        hideBack();
+      })
+    );
+    // Hide the floating button once the reader is back at the chart on their own
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (savedY !== null && Math.abs(window.scrollY - savedY) < 200) hideBack();
+      },
+      { passive: true }
+    );
     let sort = 'gap';
     let filter = 'all';
 
