@@ -194,6 +194,136 @@ const factors: Factor[] = [
   },
 ];
 
+
+/*
+ * One worked example per factor. `weak` / `strong` render as a side-by-side pair;
+ * `single` renders one block. Highlight classes: hl-seo (purple), hl-ai (teal),
+ * hl-sub / hl-pred / hl-obj (semantic triple), hl-bad (red), hl-good (green).
+ */
+interface Example {
+  weak?: string;
+  strong?: string;
+  single?: string;
+  weakLabel?: string;
+  strongLabel?: string;
+  note: string;
+}
+
+const examples: Record<string, Example> = {
+  backlinks: {
+    weakLabel: 'Page A',
+    strongLabel: 'Page B',
+    weak: '<span class="hl-seo">412 referring domains</span>, Domain Rating 74. Answer spread across a 3,000-word guide with no direct sentence to lift.',
+    strong: '<span class="hl-seo">12 referring domains</span>, Domain Rating 21. Answer stated in one self-contained paragraph.',
+    note: 'Google ranks Page A. ChatGPT and Perplexity cite Page B. Same question, opposite winners, because only one system is counting the links.',
+  },
+  'link-context': {
+    weakLabel: 'Bare link',
+    strongLabel: 'Link with context',
+    weak: 'Sources: <span class="hl-bad">kasradash.com</span>',
+    strong: '<span class="hl-ai">Kasra Dash, the Manchester SEO consultant known for recovering sites from Google algorithm updates,</span> argues that links no longer decide AI citations.',
+    note: 'Both are a link to the same page. The first teaches a model nothing. The second teaches it who Kasra Dash is, where he is and what to cite him for.',
+  },
+  context: {
+    weakLabel: 'Dependent passage',
+    strongLabel: 'Self-contained passage',
+    weak: '<span class="hl-bad">As mentioned above, this approach</span> works because <span class="hl-bad">it</span> gives <span class="hl-bad">them</span> a cleaner signal.',
+    strong: '<span class="hl-ai">Self-contained passages get cited by AI assistants</span> because a model retrieves one chunk at a time and judges it without the rest of the page.',
+    note: 'Lift each one out of the page on its own. The first has three pronouns with nothing to point at. The second still answers a question.',
+  },
+  quotable: {
+    single: '<span class="hl-sub">Kasra Dash</span> <span class="hl-pred">recovers</span> <span class="hl-obj">websites from Google algorithm updates</span>.',
+    note: 'A semantic triple: subject, predicate, object. Bold it in the copy and a model can lift it verbatim and attribute it. "He helps with lots of different Google problems" carries the same idea and is never quoted.',
+  },
+  'brand-mentions': {
+    single: 'Reddit, r/SEO: "We got hit by the March core update and <span class="hl-ai">Kasra Dash</span>\'s recovery checklist was the only thing that made sense of it. No link, just the name."',
+    note: 'No link, no anchor text, no authority passed. Google gives this almost nothing. A model reads it as one more source saying Kasra Dash belongs to the topic of algorithm update recovery.',
+  },
+  entity: {
+    weakLabel: 'Inconsistent',
+    strongLabel: 'Consistent',
+    weak: 'Site: founded The Masterminders in <span class="hl-bad">2023</span>. LinkedIn: <span class="hl-bad">2022</span>. Press bio: <span class="hl-bad">"SEO agency owner"</span>. About page: <span class="hl-bad">"SEO consultant"</span>.',
+    strong: 'Everywhere: <span class="hl-good">Kasra Dash is an entrepreneur and SEO consultant based in Manchester, UK</span>, founder of The Masterminders (<span class="hl-good">2023</span>).',
+    note: 'Google resolves the entity faster when every source agrees. For AI, the retrieved snippets about you stop contradicting each other, which is what lets it state a fact with confidence.',
+  },
+  'co-occurrence': {
+    single: '"<span class="hl-sub">Kasra Dash</span> spoke at <span class="hl-ai">BrightonSEO</span> on <span class="hl-ai">algorithm update recovery</span>, the topic <span class="hl-ai">Lily Ray</span> and <span class="hl-ai">Glenn Gabe</span> are known for."',
+    note: 'One sentence puts the entity next to a topic, a venue and two names that already own that topic. Repeat that pattern across bios, roundups and interviews and both systems learn what Kasra Dash is.',
+  },
+  keywords: {
+    weakLabel: 'What the user typed',
+    strongLabel: 'What the assistant searched',
+    weak: '<span class="hl-seo">best SEO consultant Manchester</span>',
+    strong: '<span class="hl-ai">SEO consultants based in Manchester</span> · <span class="hl-ai">Manchester SEO expert algorithm recovery</span> · <span class="hl-ai">who is the top rated SEO in Manchester</span>',
+    note: 'Google matches the exact phrase to a page. The assistant fans the question out into several searches, so a page has to be about the concept from several angles, not just carry the phrase.',
+  },
+  freshness: {
+    weakLabel: 'No date',
+    strongLabel: 'Visible date',
+    weak: 'Guide to AI citation factors. <span class="hl-bad">No published or updated date anywhere on the page.</span>',
+    strong: 'Guide to AI citation factors. <span class="hl-good">Last Updated 9 September 2026.</span> Change log at the bottom listing what moved.',
+    note: 'When two retrieved chunks disagree, the retrieval-based assistants side with the one that can prove it is newer. Google only cares on queries that deserve freshness.',
+  },
+  'topical-authority': {
+    weakLabel: 'Authority site',
+    strongLabel: 'Thin site',
+    weak: '<span class="hl-seo">300 pages</span> on SEO, well interlinked. The passage on AI citations is generic and depends on the pages around it.',
+    strong: '<span class="hl-seo">4 pages</span> in total. One of them states the answer in a single clean paragraph.',
+    note: 'Google ranks the authority site. The assistant cites the thin one, because it never counted the other 299 pages. It only saw the chunk.',
+  },
+  crawlability: {
+    weakLabel: 'robots.txt (blocked)',
+    strongLabel: 'robots.txt (open)',
+    weak: '<code>User-agent: <span class="hl-bad">GPTBot</span><br>Disallow: <span class="hl-bad">/</span></code>',
+    strong: '<code>User-agent: <span class="hl-good">GPTBot</span><br>Allow: <span class="hl-good">/</span></code>',
+    note: 'The first site cannot be cited by ChatGPT, whatever else it does right. Check GPTBot, PerplexityBot, ClaudeBot and Google-Extended before touching anything else.',
+  },
+  cwv: {
+    weakLabel: 'Slow page',
+    strongLabel: 'Fast page',
+    weak: 'LCP <span class="hl-bad">4.1s</span>, CLS 0.24. Text is present in the HTML.',
+    strong: 'LCP <span class="hl-good">1.2s</span>, CLS 0.01. Text is present in the HTML.',
+    note: 'Both get cited at the same rate. The model fetched the text and did not measure the paint. Google uses the difference as a tiebreaker between otherwise equal pages.',
+  },
+  schema: {
+    weakLabel: 'In the script tag only',
+    strongLabel: 'In the visible copy',
+    weak: '<code>"@type": "Person",<br>"name": "<span class="hl-bad">Kasra Dash</span>",<br>"jobTitle": "<span class="hl-bad">SEO Consultant</span>"</code>',
+    strong: '<span class="hl-good">Kasra Dash is an entrepreneur and SEO consultant based in Manchester, UK.</span>',
+    note: 'The first earns Google rich results and is invisible to the assistants in every test I have seen. The second is the same fact, and it is the one that gets retrieved.',
+  },
+  eeat: {
+    weakLabel: 'Anonymous',
+    strongLabel: 'Named with experience',
+    weak: 'By <span class="hl-bad">Admin</span>. "Core updates can affect your rankings in various ways."',
+    strong: 'By <span class="hl-good">Kasra Dash</span>, SEO consultant who has <span class="hl-good">recovered client sites from every core update since 2018</span>. "The March update hit pages with thin author signals hardest on the client sites I audited."',
+    note: 'When two chunks say the same thing, the one with a named author and first-hand detail gets attributed. Google applies the same test hardest on health and money topics.',
+  },
+  engagement: {
+    single: 'Prompt: "best SEO consultant in Manchester". Week 1: cited <span class="hl-bad">third</span>. Week 4, after real engagement on the citation: cited <span class="hl-good">first</span>. Nothing on the page changed.',
+    note: 'Clicks on a citation appear to feed back into citation order. Some brands are manufacturing that engagement with bots, which is grey to black hat and tells you the signal is live.',
+  },
+  'internal-linking': {
+    single: '<span class="hl-seo">/seo/ai-and-seo/</span> (hub) → <span class="hl-seo">/seo/ai-and-seo/ai-search-engines/</span> → this page, with the anchor text "SEO ranking factors vs AI citation factors".',
+    note: 'Google reads the path and the anchor as a statement of what the page is about and how much it matters. A model retrieving the chunk does not know or care where the page sits.',
+  },
+  listicles: {
+    single: '"The 10 best SEO consultants in the UK: 1. ... 4. <span class="hl-ai">Kasra Dash</span>, Manchester. Known for algorithm update recovery and The Masterminders conference. ..."',
+    note: 'Ask an assistant for the best consultants and this is the chunk it retrieves and synthesises from. Appear in three of these lists and you are in the answer. Google gives you almost nothing for it unless the list links.',
+  },
+  ugc: {
+    single: 'r/bigseo reply: "Honestly the clearest breakdown of AI citations I have read is <span class="hl-ai">Kasra Dash</span>\'s side-by-side chart. Links vs context. Changed how we brief writers."',
+    note: 'Reddit threads sit in the training data and in the retrieved sources for both OpenAI and Google. A recommendation from a real person in a thread is a chunk that gets pulled. Google shows the thread; it rarely lifts your own rankings.',
+  },
+  'original-data': {
+    weakLabel: 'Borrowed claim',
+    strongLabel: 'Original data',
+    weak: '"Studies show most sites lose traffic to AI Overviews."',
+    strong: '"<span class="hl-good">Kasra Dash has ranked more than 700 client sites since 2017</span>, and publishes the citation tests behind these weightings inside The New Search."',
+    note: 'A model answering a question wants a specific figure with a named source. The second sentence is a number that only exists because someone measured it, tied to an entity. The first is unattributable.',
+  },
+};
+
 const sorted = [...factors].sort((a, b) => Math.abs(b.seo - b.ai) - Math.abs(a.seo - a.ai));
 const seoWins = sorted.filter((f) => f.seo > f.ai);
 const aiWins = sorted.filter((f) => f.ai > f.seo);
@@ -432,10 +562,20 @@ const faqs = [
           <li><strong>The entity is consistent.</strong> The same facts about you appear in the same words across your site and across the web, so the model can attribute the claim with confidence.</li>
         </ol>
         <p>Notice what is missing from that list: the entity. An assistant runs a search, pulls chunks that match the question and synthesises an answer from them. Most of the time it is not checking who you are. That is why entity co-occurrence and entity consistency, which are core SEO work at 70 and 65, sit at 40 and 45 for AI. They shape which chunks come back for questions about you or your category, but the passage does the heavy lifting.</p>
+        <div class="not-prose my-6 rounded-[14px] border border-tint-border bg-tint p-5">
+          <p class="font-display text-[0.65rem] font-bold uppercase tracking-wider text-dim">A semantic triple, highlighted</p>
+          <p class="example-text mt-2 text-lg font-semibold leading-relaxed text-ink"><span class="hl-sub">Kasra Dash</span> <span class="hl-pred">recovers</span> <span class="hl-obj">websites from Google algorithm updates</span>.</p>
+          <div class="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-xs font-semibold">
+            <span class="inline-flex items-center gap-1.5 text-muted"><span class="h-2.5 w-2.5 rounded-sm bg-[#b7a3ff]"></span>Subject: the entity</span>
+            <span class="inline-flex items-center gap-1.5 text-muted"><span class="h-2.5 w-2.5 rounded-sm bg-[#5eead4]"></span>Predicate: what it does</span>
+            <span class="inline-flex items-center gap-1.5 text-muted"><span class="h-2.5 w-2.5 rounded-sm bg-[#fbbf24]"></span>Object: what it does it to</span>
+          </div>
+          <p class="mt-3 text-sm leading-relaxed text-muted">One entity, one verb, one object, in one sentence. That is the unit a model lifts and attributes. Every example in the factor breakdown below is built the same way.</p>
+        </div>
         <p>Google scores the first two at 35 and 40 and entity consistency at 65. It benefits from them, particularly for featured snippets and AI Overviews, but it will rank a page without them if the links and the topical cluster are strong. If you want the Google-side version of this, the guide to <a href="/seo/ai-and-seo/ai-overviews-optimisation/">optimising for AI Overviews</a> covers how Google chooses what it lifts.</p>
 
         <h2 id="factor-by-factor">Every factor, and why it scores the way it does</h2>
-        <p>Each entry below is the reasoning behind the two numbers on the chart. Read the ones with the biggest gap first. Those are where your existing SEO effort is either wasted for AI or where you are doing nothing at all.</p>
+        <p>Each entry below is the reasoning behind the two numbers on the chart. Each one carries a worked example with the part that matters highlighted. Read the ones with the biggest gap first. Those are where your existing SEO effort is either wasted for AI or where you are doing nothing at all.</p>
         {sorted.map((f) => (
           <div id={f.id} class="not-prose mt-8 rounded-[20px] border border-tint-border bg-tint p-6 scroll-mt-28">
             <div class="flex flex-wrap items-start justify-between gap-3">
@@ -446,6 +586,26 @@ const faqs = [
               </div>
             </div>
             <p class="mt-3 text-sm leading-relaxed text-muted sm:text-base">{f.why}</p>
+            {examples[f.id] && (
+              <div class="mt-5 rounded-[14px] border border-tint-border bg-black/60 p-4 sm:p-5">
+                <p class="font-display text-[0.65rem] font-bold uppercase tracking-wider text-dim">Example</p>
+                {examples[f.id].single ? (
+                  <p class="example-text mt-2 text-sm leading-relaxed text-lavender sm:text-base" set:html={examples[f.id].single} />
+                ) : (
+                  <div class="mt-3 grid gap-3 sm:grid-cols-2">
+                    <div class="rounded-[10px] border border-white/[0.08] bg-tint p-3.5">
+                      <p class="font-display text-[0.65rem] font-bold uppercase tracking-wider text-dim">{examples[f.id].weakLabel}</p>
+                      <p class="example-text mt-1.5 text-sm leading-relaxed text-lavender" set:html={examples[f.id].weak} />
+                    </div>
+                    <div class="rounded-[10px] border border-white/[0.08] bg-tint p-3.5">
+                      <p class="font-display text-[0.65rem] font-bold uppercase tracking-wider text-dim">{examples[f.id].strongLabel}</p>
+                      <p class="example-text mt-1.5 text-sm leading-relaxed text-lavender" set:html={examples[f.id].strong} />
+                    </div>
+                  </div>
+                )}
+                <p class="mt-3 text-xs leading-relaxed text-dim sm:text-sm">{examples[f.id].note}</p>
+              </div>
+            )}
           </div>
         ))}
 
@@ -512,6 +672,14 @@ const faqs = [
     background-color: rgb(132 92 254 / 0.15);
     color: var(--color-brand-600);
   }
+  .example-text :global(.hl-seo) { color: #b7a3ff; background: rgb(132 92 254 / 0.16); border-radius: 4px; padding: 0 0.3em; }
+  .example-text :global(.hl-ai) { color: #5eead4; background: rgb(45 212 191 / 0.14); border-radius: 4px; padding: 0 0.3em; }
+  .example-text :global(.hl-sub) { color: #b7a3ff; background: rgb(132 92 254 / 0.18); border-radius: 4px; padding: 0.05em 0.3em; }
+  .example-text :global(.hl-pred) { color: #5eead4; background: rgb(45 212 191 / 0.16); border-radius: 4px; padding: 0.05em 0.3em; }
+  .example-text :global(.hl-obj) { color: #fbbf24; background: rgb(251 191 36 / 0.14); border-radius: 4px; padding: 0.05em 0.3em; }
+  .example-text :global(.hl-bad) { color: #fca5a5; background: rgb(248 113 113 / 0.14); border-radius: 4px; padding: 0 0.3em; }
+  .example-text :global(.hl-good) { color: #86efac; background: rgb(74 222 128 / 0.14); border-radius: 4px; padding: 0 0.3em; }
+  .example-text :global(code) { font-size: 0.85em; color: var(--color-lavender); }
   .factor-row[hidden] {
     display: none;
   }
