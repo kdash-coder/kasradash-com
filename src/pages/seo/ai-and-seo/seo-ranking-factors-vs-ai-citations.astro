@@ -124,9 +124,9 @@ const factors: Factor[] = [
     id: 'crawlability',
     name: 'Crawlability and indexing',
     short: 'Bots can fetch, render and store the page.',
-    seo: 85,
-    ai: 75,
-    why: 'Nothing else on this chart matters if the page cannot be fetched. For Google, an unindexed page has a ranking of zero. For AI, the gate is wider than one index: ChatGPT leans on Bing, Perplexity runs its own crawler, and Google AI Mode uses the Google index. Block GPTBot or PerplexityBot in robots.txt and you have opted out of citations from those tools.',
+    seo: 100,
+    ai: 100,
+    why: 'The only factor scored 100 for both, because it is not a weighting, it is a gate. Nothing else on this chart matters if the page cannot be fetched. For Google, an unindexed page has a ranking of zero. For AI, the gate is wider than one index: ChatGPT leans on Bing, Perplexity runs its own crawler, and Google AI Mode uses the Google index. Block GPTBot or PerplexityBot in robots.txt and you have opted out of citations from those tools.',
   },
   {
     id: 'cwv',
@@ -400,7 +400,7 @@ const faqs = [
         <div>
           <h2 id="chart-heading" class="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">The side-by-side weighting</h2>
           <p class="mt-2 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">
-            Each score is the relative weight of that signal inside its own system, from 0 (ignored) to 100 (decisive). The badge on the right shows how far the two systems disagree.
+            Each score is the relative weight of that signal inside its own system, from 0 (ignored) to 100 (decisive). Only crawlability scores 100, because without it every other score is zero. The badge on the right shows how far the two systems disagree.
           </p>
         </div>
         <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
