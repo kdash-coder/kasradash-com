@@ -52,8 +52,8 @@ const factors: Factor[] = [
     id: 'link-context',
     name: 'Context around links and mentions',
     short: 'What the surrounding text says about you where your name or link appears.',
-    seo: 30,
-    ai: 85,
+    seo: 35,
+    ai: 70,
     why: 'This is the AI-side replacement for PageRank. A model does not ask how strong the linking page is. It reads the sentence the link or mention sits in and learns what you are: "Kasra Dash, the Manchester SEO consultant who recovers sites from algorithm updates" teaches it something, a bare URL in a footer teaches it nothing. The same link on the same page can be worth a citation or worth zero depending on the words around it. Google reads anchor text and some surrounding context, but the link\'s authority does most of the work there.',
   },
   {
@@ -61,7 +61,7 @@ const factors: Factor[] = [
     name: 'Context and self-contained passages',
     short: 'Each section answers a question on its own, without the rest of the page.',
     seo: 35,
-    ai: 95,
+    ai: 85,
     why: 'This is the single biggest split. AI systems lift passages, not pages. If your paragraph only makes sense after reading the three above it, it never gets quoted. Google rewards page-level relevance and can rank a page whose answer is buried in section six. For AI, the answer has to sit inside one extractable block with the entity named, the claim stated and the reason attached.',
   },
   {
@@ -69,7 +69,7 @@ const factors: Factor[] = [
     name: 'Direct answers and quotable statements',
     short: 'Short factual sentences a model can lift verbatim.',
     seo: 40,
-    ai: 95,
+    ai: 85,
     why: 'A model needs a sentence it can attribute. Subject, verb, object, stated plainly and bolded, gets cited far more than the same fact spread over a paragraph. Google likes a direct answer for snippets and AI Overviews, but it will still rank a page that rambles if the links and topical coverage are there.',
   },
   {
@@ -77,31 +77,31 @@ const factors: Factor[] = [
     name: 'Unlinked brand mentions across the web',
     short: 'Your name appearing on other sites, with or without a link.',
     seo: 25,
-    ai: 85,
+    ai: 65,
     why: 'Models learn what a brand is from how often, and in what context, it appears across their training data and the sources they retrieve at answer time. An unlinked mention in a Reddit thread, a listicle or a podcast transcript teaches the model that your brand belongs in that category. Google gives an unlinked mention very little direct weight; it wants the link.',
   },
   {
     id: 'entity',
     name: 'Entity clarity and consistency',
     short: 'The same facts about you, in the same words, everywhere.',
-    seo: 45,
-    ai: 90,
-    why: 'If your name, location, job title and founding dates differ across your site, LinkedIn, Crunchbase and Wikipedia-style profiles, a model hedges or picks a competitor it is surer about. Consistency is what lets it state a fact about you with confidence. Google uses entity understanding in the Knowledge Graph and for E-E-A-T, but it will still rank a page from a site with a messy entity footprint.',
+    seo: 65,
+    ai: 45,
+    why: 'Google builds a Knowledge Graph entry for you and ranks you against it, so the same name, location, titles and dates everywhere is foundational SEO work. If your facts disagree across your site, LinkedIn, Crunchbase and profile pages, Google is slower to connect you to your topic. For AI the weight is lower than most people claim. A model retrieving chunks for a question is mostly judging the chunk, not auditing who you are. Consistency helps when the question is about you or your category, because the retrieved snippets then agree with each other, but it does not get a passage cited on its own.',
   },
   {
     id: 'co-occurrence',
     name: 'Entity co-occurrence',
     short: 'Your name appearing next to the topic, and next to the other names in it, again and again.',
     seo: 70,
-    ai: 95,
-    why: 'Co-occurrence is how both systems decide what you belong to. When "Kasra Dash" keeps appearing in the same sentences, pages and lists as "SEO consultant", "Manchester", "algorithm update recovery" and the other names in that space, Google\'s entity understanding files you under that topic and ranks you for it more readily. For AI it is the strongest signal on the chart. A model has no ranking to consult; it answers from associations, and the association it has learned between your entity and a topic is what decides whether your name comes out when someone asks about that topic. Being mentioned a lot is not enough. You have to be mentioned next to the right things, in the right company, consistently.',
+    ai: 40,
+    why: 'Defining the entity is a core part of SEO, and co-occurrence is how you do it. When "Kasra Dash" keeps appearing in the same sentences, pages and lists as "SEO consultant", "Manchester" and "algorithm update recovery", Google\'s entity understanding files you under that topic and ranks you for it more readily. For AI it matters, but it is not core, and the reason is how the systems work. An assistant runs a search, pulls chunks of content that match the query, and synthesises an answer from those chunks. Most of the time it is not checking the entity at all; it is checking whether the snippet answers the question. Co-occurrence still earns a real score for AI because it shapes which chunks come back for brand and category questions, but the passage itself does the heavy lifting.',
   },
   {
     id: 'keywords',
     name: 'Keyword targeting and query matching',
     short: 'Matching the exact phrase people type.',
     seo: 80,
-    ai: 30,
+    ai: 35,
     why: 'Google still maps a query to a page, and the title tag and H1 still carry real weight. AI retrieval works on meaning. The same question gets rephrased into several sub-queries before retrieval, so an exact-match keyword matters less than covering the concept from multiple angles. Keywords are not dead for AI; they are just one of many ways to be about the topic.',
   },
   {
@@ -109,7 +109,7 @@ const factors: Factor[] = [
     name: 'Content freshness',
     short: 'How recently the page was updated, and whether it says so.',
     seo: 45,
-    ai: 80,
+    ai: 75,
     why: 'Retrieval-backed assistants such as Perplexity and ChatGPT with browsing lean hard on recency, and a visible last-updated date is one of the first things they check when two sources conflict. Google cares about freshness for queries that deserve it and largely ignores it for evergreen topics.',
   },
   {
@@ -117,14 +117,14 @@ const factors: Factor[] = [
     name: 'Topical authority and depth of coverage',
     short: 'Owning the whole topic, not one page of it.',
     seo: 80,
-    ai: 30,
+    ai: 25,
     why: 'Google reads a well-linked cluster of pages as expertise and ranks the whole cluster higher, so this is one of the strongest SEO levers I have. For AI it matters far less than the industry assumes. A model retrieving passages does not check how many other pages on your site cover the topic. A single excellent, self-contained passage on a thin site gets cited over a mediocre one on a 300-page authority site. The modest AI score reflects the extra retrieval surface a cluster gives you, nothing more.',
   },
   {
     id: 'crawlability',
     name: 'Crawlability and indexing',
     short: 'Bots can fetch, render and store the page.',
-    seo: 90,
+    seo: 85,
     ai: 75,
     why: 'Nothing else on this chart matters if the page cannot be fetched. For Google, an unindexed page has a ranking of zero. For AI, the gate is wider than one index: ChatGPT leans on Bing, Perplexity runs its own crawler, and Google AI Mode uses the Google index. Block GPTBot or PerplexityBot in robots.txt and you have opted out of citations from those tools.',
   },
@@ -141,7 +141,7 @@ const factors: Factor[] = [
     name: 'Structured data and schema markup',
     short: 'JSON-LD that labels what the page and its author are.',
     seo: 40,
-    ai: 10,
+    ai: 5,
     why: 'Schema earns rich results in Google but is not a ranking factor in itself. For AI it scores close to nothing, because in every test I have seen, and in the ones run by people I trust, the JSON-LD simply does not get read when a model decides what to cite. Assistants work from the visible text of the passage. The entity facts you would put in schema still matter, but they have to be in the copy on the page and repeated across the web, not tucked into a script tag.',
   },
   {
@@ -149,8 +149,8 @@ const factors: Factor[] = [
     name: 'Author expertise and trust signals',
     short: 'Who wrote it and why anyone should believe them.',
     seo: 55,
-    ai: 70,
-    why: 'Google applies E-E-A-T most heavily on health, finance and other high-stakes topics, and its raters look for evidence of first-hand experience. For AI, a named author with a consistent footprint outweighs the topical depth of the site they are writing on. A model attributing a claim prefers a known person over an anonymous page, because attributing to a known entity is safer than attributing to nobody. Author expertise is where AI rewards the person; topical authority is where Google rewards the site.',
+    ai: 50,
+    why: 'Google applies E-E-A-T most heavily on health, finance and other high-stakes topics, and its raters look for evidence of first-hand experience. For AI it helps, without being decisive. When two retrieved chunks say the same thing, the one with a named author and visible first-hand experience tends to be the one that gets attributed. But a model rarely goes looking for the author before it decides a passage answers the question, so expertise nudges the choice rather than making it.',
   },
   {
     id: 'engagement',
@@ -165,7 +165,7 @@ const factors: Factor[] = [
     name: 'Internal linking and site architecture',
     short: 'How pages on your own site connect and pass relevance.',
     seo: 70,
-    ai: 35,
+    ai: 30,
     why: 'Internal links tell Google which pages matter and what they are about, and moving a page higher in the architecture is still one of the fastest wins I have. A model retrieving a passage is largely indifferent to where that page sits in your hierarchy. The modest AI weight comes from crawl discovery and from hub pages that prove topical coverage.',
   },
   {
@@ -173,7 +173,7 @@ const factors: Factor[] = [
     name: 'Being listed in third-party roundups',
     short: 'Best-of lists and comparison pages on other sites.',
     seo: 20,
-    ai: 85,
+    ai: 80,
     why: 'Ask an assistant for the best agencies, tools or consultants in a category and watch where the names come from. It aggregates existing best-of lists and picks the names that recur. Appearing in those lists is now the most direct lever I know for category-level AI recommendations. Google gives you very little for it unless the list also links.',
   },
   {
@@ -181,7 +181,7 @@ const factors: Factor[] = [
     name: 'Reddit, forums and community presence',
     short: 'Real people discussing you in places models read.',
     seo: 30,
-    ai: 75,
+    ai: 70,
     why: 'Reddit and community threads feature heavily in the sources assistants cite, and OpenAI and Google both have data agreements with Reddit. A brand that real people recommend in threads shows up in answers. Google surfaces those threads in its own results, but they rarely lift your rankings directly.',
   },
   {
@@ -189,7 +189,7 @@ const factors: Factor[] = [
     name: 'Original data and statistics',
     short: 'Numbers that only exist because you measured them.',
     seo: 60,
-    ai: 85,
+    ai: 80,
     why: 'Original numbers earn links, which is why they score well for SEO. For AI they score higher again, because a model answering a question wants a specific figure with a source attached, and your page is the only place that figure exists. Publish the number, the sample and the date next to each other.',
   },
 ];
@@ -201,7 +201,7 @@ const aiWins = sorted.filter((f) => f.ai > f.seo);
 const faqs = [
   {
     q: 'Are SEO ranking factors and AI citation factors the same thing?',
-    a: 'No. They overlap on crawlability, topical depth and author trust, but the two systems weight signals differently. Google ranks documents using links, query matching and click behaviour. AI assistants select passages using context, entity clarity and how often a brand appears across the sources they read. Optimising for one does not automatically optimise for the other.',
+    a: 'No. They overlap on crawlability, topical depth and author trust, but the two systems weight signals differently. Google ranks documents using links, query matching and click behaviour. AI assistants run a search, pull chunks of content that match the question and synthesise an answer, so they select on whether the chunk itself answers cleanly, not on who published it. Optimising for one does not automatically optimise for the other.',
   },
   {
     q: 'Do backlinks help you get cited by ChatGPT or Perplexity?',
@@ -259,7 +259,7 @@ const faqs = [
       <div class="rounded-[20px] border border-brand-500/40 bg-deep p-6 sm:p-8">
         <h2 id="difference" class="font-display text-xl font-bold tracking-tight text-ink sm:text-2xl">What is the difference between SEO ranking factors and AI citation factors?</h2>
         <p class="mt-3 max-w-3xl text-base leading-relaxed text-lavender sm:text-lg">
-          <strong class="text-ink">SEO ranking factors decide which page Google shows for a query, and they are dominated by backlinks, query matching and click behaviour. AI citation factors decide which passage a model quotes in its answer, and they are dominated by context, entity clarity and how consistently a brand appears across the sources the model reads.</strong>
+          <strong class="text-ink">SEO ranking factors decide which page Google shows for a query, and they are dominated by backlinks, query matching and click behaviour. AI citation factors decide which passage a model quotes in its answer, and they are dominated by context: whether a retrieved chunk answers the question on its own, states it quotably and is recent enough to trust.</strong>
         </p>
       </div>
     </section>
@@ -381,7 +381,7 @@ const faqs = [
               ))}
             </ul>
             <p class="mt-4 text-sm leading-relaxed text-muted">
-              These are the signals a model reads when it decides what to quote: whether the passage stands alone, whether it knows who you are, and whether other sources already say the same thing about you.
+              These are the signals a model reads when it decides what to quote: whether the chunk stands alone, whether it can be lifted verbatim, and whether the rest of the web is already saying it.
             </p>
           </div>
         </div>
@@ -416,14 +416,14 @@ const faqs = [
 
       <div class="prose prose-kasra max-w-none lg:max-w-[46rem]">
         <h2 id="why-links">Why links stop mattering the moment a model answers</h2>
-        <p><strong>Backlinks score 85 for SEO and 20 for AI citations because PageRank is a Google calculation, not a language-model calculation.</strong> Google crawls the link graph, scores every page by who links to it, and uses that score as one of its strongest ranking inputs. That has not changed, whatever the last conference talk told you.</p>
+        <p><strong>Backlinks score 85 for SEO and 10 for AI citations because PageRank is a Google calculation, not a language-model calculation.</strong> Google crawls the link graph, scores every page by who links to it, and uses that score as one of its strongest ranking inputs. That has not changed, whatever the last conference talk told you.</p>
         <p>An AI assistant answering a question does something different. It rewrites the question into a handful of searches, retrieves candidate passages, and then chooses which ones to quote based on how well each passage answers the question. The link score of the page that passage came from is not part of that choice.</p>
         <p>I have watched this play out on client sites. A page with a Domain Rating in the seventies and 400 referring domains lost the citation to a two-year-old blog post with 12 referring domains, because the smaller site stated the answer in one paragraph and the larger site spread it across a 3,000-word guide with no direct sentence to lift.</p>
-        <p><strong>What replaces PageRank for AI is the context around the link.</strong> A model reads the sentence your link or mention sits in and learns what you are from it. A link from a Domain Rating 90 site in a footer teaches it nothing. A mention on a small blog that says who you are, where you are and what you are known for teaches it exactly what to cite you for. That is why link context scores 85 for AI while PageRank scores 10, and why the same outreach campaign can move Google and do nothing for AI, or the reverse.</p>
+        <p><strong>What replaces PageRank for AI is the context around the link.</strong> A model reads the sentence your link or mention sits in and learns what you are from it. A link from a Domain Rating 90 site in a footer teaches it nothing. A mention on a small blog that says who you are, where you are and what you are known for teaches it exactly what to cite you for. That is why link context scores 70 for AI while PageRank scores 10, and why the same outreach campaign can move Google and do nothing for AI, or the reverse.</p>
         <p>Understanding how each assistant retrieves is the starting point, and the differences between them are covered in the guide to <a href="/seo/ai-and-seo/ai-search-engines/">how AI search engines rank answers</a>.</p>
 
         <h2 id="why-context">Why context takes over</h2>
-        <p><strong>Context scores 95 for AI citations because a model cites passages, and a passage has to carry its own meaning to be citable.</strong> When you read a guide, you carry the earlier sections with you. A model retrieving a chunk of your page does not. It gets the chunk, judged on its own.</p>
+        <p><strong>Context scores 85 for AI citations because a model cites passages, and a passage has to carry its own meaning to be citable.</strong> When you read a guide, you carry the earlier sections with you. A model retrieving a chunk of your page does not. It gets the chunk, judged on its own.</p>
         <p>That is why "as mentioned above" and "this approach" are citation killers. The model cannot resolve what "this" is, so the passage fails the relevance check and a competitor's clumsier but complete paragraph wins.</p>
         <p>Context has three parts, and the chart scores each of them as a separate factor because you can fix them separately:</p>
         <ol>
@@ -431,8 +431,8 @@ const faqs = [
           <li><strong>The claim is quotable.</strong> A short factual sentence a model can lift without editing.</li>
           <li><strong>The entity is consistent.</strong> The same facts about you appear in the same words across your site and across the web, so the model can attribute the claim with confidence.</li>
         </ol>
-        <p>Underneath all three sits entity co-occurrence, which scores 95 for AI and 70 for SEO. A model can only cite you for a topic it already associates you with, and it builds that association from how often your name turns up next to the topic's other entities across the web. Context on your own page gets the passage lifted; co-occurrence across the web gets your name chosen in the first place.</p>
-        <p>Google scores the same three things at 35, 40 and 45. It benefits from them, particularly for featured snippets and AI Overviews, but it will rank a page without them if the links and the topical cluster are strong. If you want the Google-side version of this, the guide to <a href="/seo/ai-and-seo/ai-overviews-optimisation/">optimising for AI Overviews</a> covers how Google chooses what it lifts.</p>
+        <p>Notice what is missing from that list: the entity. An assistant runs a search, pulls chunks that match the question and synthesises an answer from them. Most of the time it is not checking who you are. That is why entity co-occurrence and entity consistency, which are core SEO work at 70 and 65, sit at 40 and 45 for AI. They shape which chunks come back for questions about you or your category, but the passage does the heavy lifting.</p>
+        <p>Google scores the first two at 35 and 40 and entity consistency at 65. It benefits from them, particularly for featured snippets and AI Overviews, but it will rank a page without them if the links and the topical cluster are strong. If you want the Google-side version of this, the guide to <a href="/seo/ai-and-seo/ai-overviews-optimisation/">optimising for AI Overviews</a> covers how Google chooses what it lifts.</p>
 
         <h2 id="factor-by-factor">Every factor, and why it scores the way it does</h2>
         <p>Each entry below is the reasoning behind the two numbers on the chart. Read the ones with the biggest gap first. Those are where your existing SEO effort is either wasted for AI or where you are doing nothing at all.</p>
@@ -455,8 +455,8 @@ const faqs = [
         <ol>
           <li><strong>Keep the link programme running.</strong> It still decides Google, and Google still sends most of the traffic. Do not trade it for AI work.</li>
           <li><strong>Rewrite the sections that matter as self-contained answers.</strong> Start with the pages that already rank. Each H2 gets a bolded direct answer in its first two sentences, with the entity named.</li>
-          <li><strong>Fix your entity facts everywhere they appear.</strong> Same name, same location, same titles, same dates on your site, your author pages, LinkedIn, Crunchbase and any profile a model might read. Put them in visible copy, not just schema, because the schema does not get read.</li>
-          <li><strong>Engineer co-occurrence on purpose.</strong> Decide the three or four entities you want to be associated with, then make sure every bio, guest appearance, roundup entry and interview puts your name in the same sentence as them. Repetition in the right company is what teaches both Google and the models what you are.</li>
+          <li><strong>Fix your entity facts everywhere they appear.</strong> Same name, same location, same titles, same dates on your site, your author pages, LinkedIn, Crunchbase and any profile a model might read. This is mostly for Google, which ranks you against its Knowledge Graph entry for you. Put the facts in visible copy, not just schema, because the schema does not get read.</li>
+          <li><strong>Engineer co-occurrence on purpose.</strong> Decide the three or four entities you want to be associated with, then make sure every bio, guest appearance, roundup entry and interview puts your name in the same sentence as them. This is core SEO work that defines the entity for Google, and it shapes which chunks the assistants retrieve for questions about your category.</li>
           <li><strong>Change what you ask for in link outreach.</strong> Stop chasing the strongest domain and start chasing the right sentence. A mention that describes who you are and what you do, on a relevant page, is worth more to a model than a bare link from a stronger site.</li>
           <li><strong>Get into the roundups.</strong> Search your category with "best" in front of it in ChatGPT and Perplexity, note which lists it cites, and get onto them. This is the fastest lever for category-level recommendations I have found.</li>
           <li><strong>Put dates on everything and keep them honest.</strong> A visible last-updated date, backed by real changes, moves the freshness score for the retrieval-based assistants.</li>
