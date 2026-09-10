@@ -353,10 +353,13 @@ const faqs = [
 ---
 
 <BaseLayout {title} {description} {path} {ogImage} type="article" breadcrumbs={crumbs} {graphNodes} {datePublished} {dateModified}>
+  <div id="read-progress" class="pointer-events-none fixed inset-x-0 top-0 z-[60] h-[3px]" role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <div id="read-progress-fill" class="brand-gradient h-full w-full origin-left shadow-[0_0_10px_rgba(132,92,254,0.6)]" style="transform:scaleX(0)"></div>
+  </div>
   <main>
     {/* Hero */}
     <section class="border-b border-tint-border bg-tint">
-      <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:py-14">
+      <div class="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:py-10">
         <Breadcrumbs {crumbs} />
         <p class="mt-4 inline-flex items-center rounded-full border border-brand-500/30 bg-brand-500/10 px-3 py-1 font-display text-xs font-bold uppercase tracking-wider text-brand-600">
           AI & SEO
@@ -364,17 +367,12 @@ const faqs = [
         <h1 class="mt-4 max-w-4xl font-display text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl lg:text-[2.75rem]">
           {h1}
         </h1>
-        <div class="mt-5 max-w-3xl space-y-4 text-base leading-relaxed text-muted sm:text-lg">
-          <p>
-            SEO ranking factors and AI citation factors are two different scoring systems, and most sites are still optimising for only one of them. Links decide who ranks in Google. Context decides who gets cited by ChatGPT, Perplexity and AI Overviews.{' '}
-            <a href="https://kasradash.com/" class="font-semibold text-lavender underline decoration-brand-500/50 underline-offset-4 transition hover:text-white">Kasra Dash</a>{' '}
-            has ranked over 700 client sites, and the weightings on this page come from analysing 19,000 AI answers across Gemini, ChatGPT and Claude to see which signals carry over from Google and which do not.
-          </p>
-          <p>
-            Below, every factor is weighted 0 to 100 for each system and placed side by side, so you can see in one scan where your existing SEO work already counts for AI and where you are starting from zero.
-          </p>
-        </div>
-        <div class="mt-6 grid max-w-3xl gap-3 sm:grid-cols-3">
+        <p class="mt-4 max-w-3xl text-base leading-relaxed text-muted sm:text-lg">
+          Links decide who ranks in Google. Context decides who gets cited by AI.{' '}
+          <a href="https://kasradash.com/" class="font-semibold text-lavender underline decoration-brand-500/50 underline-offset-4 transition hover:text-white">Kasra Dash</a>{' '}
+          scored 19 factors 0 to 100 for each system, from 19,000 AI answers across Gemini, ChatGPT and Claude, so you can see in one scan where your SEO work already counts for AI and where it counts for nothing.
+        </p>
+        <div class="mt-5 grid max-w-3xl gap-3 sm:grid-cols-3">
           <div class="rounded-[14px] border border-tint-border bg-black/50 px-4 py-3">
             <p class="font-jakarta text-2xl font-bold tracking-tight text-ink">19,000</p>
             <p class="mt-0.5 text-xs font-semibold uppercase tracking-wider text-dim">AI answers analysed</p>
@@ -388,33 +386,20 @@ const faqs = [
             <p class="mt-0.5 text-xs font-semibold uppercase tracking-wider text-dim">Factors scored 0 to 100</p>
           </div>
         </div>
-        <div class="mt-6 flex flex-wrap items-center gap-3">
-          <img src="/images/kasra-dash.jpg" alt="" class="h-10 w-10 rounded-full border border-tint-border object-cover" width="40" height="40" />
-          <div class="text-sm">
-            <p class="font-bold text-ink">Kasra Dash <span class="font-medium text-dim"> · Last Updated September 9, 2026</span></p>
-            <p class="text-dim">SEO Consultant · Founder, The Masterminders & mySEO.app</p>
-          </div>
+        <div class="mt-5 flex flex-wrap items-center gap-3">
+          <img src="/images/kasra-dash.jpg" alt="" class="h-8 w-8 rounded-full border border-tint-border object-cover" width="32" height="32" />
+          <p class="text-sm text-dim"><span class="font-bold text-ink">Kasra Dash</span> · SEO Consultant · Last Updated September 9, 2026</p>
         </div>
       </div>
     </section>
 
-    {/* Direct answer */}
-    <section class="mx-auto max-w-6xl px-4 pt-12 sm:px-6">
-      <div class="rounded-[20px] border border-brand-500/40 bg-deep p-6 sm:p-8">
-        <h2 id="difference" class="font-display text-xl font-bold tracking-tight text-ink sm:text-2xl">What is the difference between SEO ranking factors and AI citation factors?</h2>
-        <p class="mt-3 max-w-3xl text-base leading-relaxed text-lavender sm:text-lg">
-          <strong class="text-ink">SEO ranking factors decide which page Google shows for a query, and they are dominated by backlinks, query matching and click behaviour. AI citation factors decide which passage a model quotes in its answer, and they are dominated by context: whether a retrieved chunk answers the question on its own, states it quotably and is recent enough to trust.</strong>
-        </p>
-      </div>
-    </section>
-
     {/* Comparison chart */}
-    <section class="mx-auto max-w-6xl px-4 py-12 sm:px-6" aria-labelledby="chart-heading">
+    <section class="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:py-10" aria-labelledby="chart-heading">
       <div class="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
         <div>
           <h2 id="chart-heading" class="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">The side-by-side weighting</h2>
           <p class="mt-2 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">
-            Each score is the relative weight of that signal inside its own system, from 0 (ignored) to 100 (decisive). Only crawlability scores 100, because without it every other score is zero. The badge on the right shows how far the two systems disagree.
+            0 means ignored, 100 means decisive, inside each system. Only crawlability scores 100, because without it every other score is zero. The badge shows how far the two systems disagree.
           </p>
         </div>
         <div class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
@@ -541,6 +526,16 @@ const faqs = [
       </div>
     </section>
 
+    {/* Direct answer */}
+    <section class="mx-auto max-w-6xl px-4 pt-12 sm:px-6">
+      <div class="rounded-[20px] border border-brand-500/40 bg-deep p-6 sm:p-8">
+        <h2 id="difference" class="font-display text-xl font-bold tracking-tight text-ink sm:text-2xl">What is the difference between SEO ranking factors and AI citation factors?</h2>
+        <p class="mt-3 max-w-3xl text-base leading-relaxed text-lavender sm:text-lg">
+          <strong class="text-ink">SEO ranking factors decide which page Google shows for a query, and they are dominated by backlinks, query matching and click behaviour. AI citation factors decide which passage a model quotes in its answer, and they are dominated by context: whether a retrieved chunk answers the question on its own, states it quotably and is recent enough to trust.</strong>
+        </p>
+      </div>
+    </section>
+
     {/* Written breakdown */}
     <section class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:grid lg:grid-cols-[12rem_minmax(0,1fr)] lg:gap-10">
       <aside class="hidden lg:block">
@@ -548,9 +543,9 @@ const faqs = [
           <h2 class="font-display text-xs font-bold uppercase tracking-wider text-dim">On this page</h2>
           <ul class="mt-3 space-y-0.5 border-l border-tint-border">
             {[
-              ['#difference', 'The difference'],
               ['#chart-heading', 'Side-by-side chart'],
               ['#split', 'Where they split'],
+              ['#difference', 'The difference'],
               ['#why-links', 'Why links stop mattering'],
               ['#why-context', 'Why context takes over'],
               ['#factor-by-factor', 'Factor by factor'],
@@ -759,6 +754,21 @@ const faqs = [
 </style>
 
 <script>
+  const progress = document.getElementById('read-progress');
+  const fill = document.getElementById('read-progress-fill');
+  if (progress && fill) {
+    const paint = () => {
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - window.innerHeight;
+      const pct = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+      fill.style.transform = `scaleX(${pct})`;
+      progress.setAttribute('aria-valuenow', String(Math.round(pct * 100)));
+    };
+    window.addEventListener('scroll', paint, { passive: true });
+    window.addEventListener('resize', paint);
+    paint();
+  }
+
   const bar = document.getElementById('skool-bar');
   const closeBtn = document.getElementById('skool-bar-close');
   if (bar && closeBtn) {
