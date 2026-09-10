@@ -421,13 +421,18 @@ const faqs = [
         <button type="button" data-filter="ai" class="chip" aria-pressed="false">AI leads</button>
       </div>
 
-      <ol id="factor-chart" class="mt-6 space-y-3">
+      <p class="mt-5 inline-flex items-center gap-2 rounded-full border border-tint-border bg-tint px-3.5 py-1.5 text-xs font-semibold text-muted sm:text-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-4 w-4 text-brand-600" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm.75-11.25a.75.75 0 0 0-1.5 0v4.69L7.53 9.72a.75.75 0 0 0-1.06 1.06l3 3a.75.75 0 0 0 1.06 0l3-3a.75.75 0 1 0-1.06-1.06l-1.72 1.72V6.75Z" clip-rule="evenodd" /></svg>
+        Click any factor to jump to the reasoning behind its scores and a worked example.
+      </p>
+      <ol id="factor-chart" class="mt-4 space-y-3">
         {sorted.map((f) => {
           const gap = Math.abs(f.seo - f.ai);
           const leader = f.seo > f.ai ? 'seo' : f.ai > f.seo ? 'ai' : 'tie';
           return (
             <li
-              class="factor-row rounded-[20px] border border-tint-border bg-tint p-5 transition hover:border-white/20 sm:p-6"
+              class="factor-row group cursor-pointer rounded-[20px] border border-tint-border bg-tint p-5 transition hover:border-brand-500/60 hover:bg-deep sm:p-6"
+              data-target={f.id}
               data-seo={f.seo}
               data-ai={f.ai}
               data-gap={gap}
@@ -436,9 +441,13 @@ const faqs = [
               <div class="grid gap-4 lg:grid-cols-[minmax(0,17rem)_minmax(0,1fr)_7rem] lg:items-center lg:gap-8">
                 <div>
                   <h3 class="font-display text-base font-bold leading-snug text-ink sm:text-lg">
-                    <a href={`#${f.id}`} class="transition hover:text-brand-600">{f.name}</a>
+                    <a href={`#${f.id}`} class="transition group-hover:text-brand-600">{f.name}</a>
                   </h3>
                   <p class="mt-1 text-sm leading-relaxed text-dim">{f.short}</p>
+                  <a href={`#${f.id}`} class="mt-2 inline-flex items-center gap-1 text-xs font-bold text-brand-600 transition group-hover:text-white sm:text-[0.8rem]">
+                    Why, with example
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-3.5 w-3.5 transition group-hover:translate-y-0.5" aria-hidden="true"><path fill-rule="evenodd" d="M10 3a.75.75 0 0 1 .75.75v10.638l3.96-4.158a.75.75 0 1 1 1.08 1.04l-5.25 5.5a.75.75 0 0 1-1.08 0l-5.25-5.5a.75.75 0 1 1 1.08-1.04l3.96 4.158V3.75A.75.75 0 0 1 10 3Z" clip-rule="evenodd" /></svg>
+                  </a>
                 </div>
 
                 <div class="space-y-2.5">
@@ -716,6 +725,10 @@ const faqs = [
   body.has-skool-bar {
     padding-bottom: 4.5rem;
   }
+  [id].scroll-mt-28:target {
+    border-color: rgb(132 92 254 / 0.7);
+    box-shadow: 0 0 0 4px rgb(132 92 254 / 0.15);
+  }
   .factor-row[hidden] {
     display: none;
   }
@@ -761,6 +774,15 @@ const faqs = [
   const list = document.getElementById('factor-chart');
   if (list) {
     const rows = Array.from(list.querySelectorAll<HTMLLIElement>('.factor-row'));
+    for (const row of rows) {
+      row.addEventListener('click', (e) => {
+        if ((e.target as HTMLElement).closest('a')) return;
+        const target = document.getElementById(row.dataset.target ?? '');
+        if (!target) return;
+        history.pushState(null, '', `#${row.dataset.target}`);
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
     let sort = 'gap';
     let filter = 'all';
 
