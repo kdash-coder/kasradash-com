@@ -16,7 +16,7 @@ const path = '/seo/ai-and-seo/seo-ranking-factors-vs-ai-citations/';
 const h1 = 'SEO Ranking Factors vs AI Citation Factors: What Moves Each One';
 const title = 'SEO Ranking Factors vs AI Citation Factors (Side by Side)';
 const description =
-  'SEO ranking factors vs AI citation factors, weighted 0 to 100 side by side. See why links move Google, why context moves ChatGPT, and where the two split.';
+  'SEO ranking factors vs AI citation factors, scored 0 to 100 from 19,000 AI answers. See why links move Google, why context moves ChatGPT, and where they split.';
 const ogImage = '/images/kasradash.com_.png';
 const datePublished = '2026-09-09T12:00:00+00:00';
 const dateModified = '2026-09-09T12:00:00+00:00';
@@ -149,8 +149,8 @@ const factors: Factor[] = [
     name: 'Author expertise and trust signals',
     short: 'Who wrote it and why anyone should believe them.',
     seo: 55,
-    ai: 50,
-    why: 'Google applies E-E-A-T most heavily on health, finance and other high-stakes topics, and its raters look for evidence of first-hand experience. For AI it helps, without being decisive. When two retrieved chunks say the same thing, the one with a named author and visible first-hand experience tends to be the one that gets attributed. But a model rarely goes looking for the author before it decides a passage answers the question, so expertise nudges the choice rather than making it.',
+    ai: 25,
+    why: 'Google applies E-E-A-T most heavily on health, finance and other high-stakes topics, and its raters look for evidence of first-hand experience. For AI it barely registers. Across the 19,000 answers analysed, anonymous pages were cited alongside named experts with no visible penalty, because a model rarely looks at the byline before deciding a chunk answers the question. Author signals earn a small score for the tie-break cases where two chunks say the same thing, and nothing more.',
   },
   {
     id: 'engagement',
@@ -297,7 +297,7 @@ const examples: Record<string, Example> = {
     strongLabel: 'Named with experience',
     weak: 'By <span class="hl-bad">Admin</span>. "Core updates can affect your rankings in various ways."',
     strong: 'By <span class="hl-good">Kasra Dash</span>, SEO consultant who has <span class="hl-good">recovered client sites from every core update since 2018</span>. "The March update hit pages with thin author signals hardest on the client sites I audited."',
-    note: 'When two chunks say the same thing, the one with a named author and first-hand detail gets attributed. Google applies the same test hardest on health and money topics.',
+    note: 'Google applies E-E-A-T hardest on health and money topics and the second version wins there. In the AI answers analysed, both versions got cited when the passage was clean. The byline was not what decided it.',
   },
   engagement: {
     single: 'Prompt: "best SEO consultant in Manchester". Week 1: cited <span class="hl-bad">third</span>. Week 4, after real engagement on the citation: cited <span class="hl-good">first</span>. Nothing on the page changed.',
@@ -331,7 +331,7 @@ const aiWins = sorted.filter((f) => f.ai > f.seo);
 const faqs = [
   {
     q: 'Are SEO ranking factors and AI citation factors the same thing?',
-    a: 'No. They overlap on crawlability, topical depth and author trust, but the two systems weight signals differently. Google ranks documents using links, query matching and click behaviour. AI assistants run a search, pull chunks of content that match the question and synthesise an answer, so they select on whether the chunk itself answers cleanly, not on who published it. Optimising for one does not automatically optimise for the other.',
+    a: 'No. They overlap on crawlability, freshness and original data, but the two systems weight almost everything else differently. Google ranks documents using links, query matching and click behaviour. AI assistants run a search, pull chunks of content that match the question and synthesise an answer, so they select on whether the chunk itself answers cleanly, not on who published it. Optimising for one does not automatically optimise for the other.',
   },
   {
     q: 'Do backlinks help you get cited by ChatGPT or Perplexity?',
@@ -343,7 +343,7 @@ const faqs = [
   },
   {
     q: 'Which AI systems does this comparison cover?',
-    a: 'ChatGPT with search, Perplexity, Google AI Overviews and AI Mode, and Claude with web search. They retrieve differently, but they share the same preference for self-contained passages, consistent entity facts and recently updated sources. Google AI Overviews sit closest to classic SEO because they draw from the Google index.',
+    a: 'The weightings come from 19,000 answers across Gemini, ChatGPT and Claude. They retrieve differently, but they share the same preference for self-contained passages, quotable statements and recently updated sources. Gemini and Google AI Overviews sit closest to classic SEO because they draw from the Google index.',
   },
   {
     q: 'Should I stop building links and focus on AI?',
@@ -368,11 +368,25 @@ const faqs = [
           <p>
             SEO ranking factors and AI citation factors are two different scoring systems, and most sites are still optimising for only one of them. Links decide who ranks in Google. Context decides who gets cited by ChatGPT, Perplexity and AI Overviews.{' '}
             <a href="https://kasradash.com/" class="font-semibold text-lavender underline decoration-brand-500/50 underline-offset-4 transition hover:text-white">Kasra Dash</a>{' '}
-            has ranked over 700 client sites, and since 2024 has been running the same pages through both systems to see which signals carry over and which do not.
+            has ranked over 700 client sites, and the weightings on this page come from analysing 19,000 AI answers across Gemini, ChatGPT and Claude to see which signals carry over from Google and which do not.
           </p>
           <p>
             Below, every factor is weighted 0 to 100 for each system and placed side by side, so you can see in one scan where your existing SEO work already counts for AI and where you are starting from zero.
           </p>
+        </div>
+        <div class="mt-6 grid max-w-3xl gap-3 sm:grid-cols-3">
+          <div class="rounded-[14px] border border-tint-border bg-black/50 px-4 py-3">
+            <p class="font-jakarta text-2xl font-bold tracking-tight text-ink">19,000</p>
+            <p class="mt-0.5 text-xs font-semibold uppercase tracking-wider text-dim">AI answers analysed</p>
+          </div>
+          <div class="rounded-[14px] border border-tint-border bg-black/50 px-4 py-3">
+            <p class="font-jakarta text-2xl font-bold tracking-tight text-ink">3</p>
+            <p class="mt-0.5 text-xs font-semibold uppercase tracking-wider text-dim">Models: Gemini, ChatGPT, Claude</p>
+          </div>
+          <div class="rounded-[14px] border border-tint-border bg-black/50 px-4 py-3">
+            <p class="font-jakarta text-2xl font-bold tracking-tight text-ink">19</p>
+            <p class="mt-0.5 text-xs font-semibold uppercase tracking-wider text-dim">Factors scored 0 to 100</p>
+          </div>
         </div>
         <div class="mt-6 flex flex-wrap items-center gap-3">
           <img src="/images/kasra-dash.jpg" alt="" class="h-10 w-10 rounded-full border border-tint-border object-cover" width="40" height="40" />
@@ -486,7 +500,7 @@ const faqs = [
         })}
       </ol>
       <p class="mt-5 text-xs leading-relaxed text-dim">
-        Weightings are Kasra Dash's practitioner estimates from testing the same pages in Google and in ChatGPT, Perplexity, Google AI Overviews and Claude. They are relative weights, not percentages of an algorithm, and they will be revised as the systems change.
+        Weightings come from Kasra Dash's analysis of 19,000 AI answers across Gemini, ChatGPT and Claude, compared with Google rankings for the same queries, plus his ranking tests since 2017. They are relative weights, not percentages of an algorithm, and they will be revised as the systems change.
       </p>
     </section>
 
@@ -638,7 +652,7 @@ const faqs = [
         <p><strong>Chasing a single score.</strong> The 0 to 100 numbers on this page are weights, not targets. A page does not need 95 on context; it needs the passage that answers the question to stand on its own.</p>
         <p><strong>Building schema for AI.</strong> Teams spend weeks on JSON-LD entity graphs because a conference talk said models read them. In testing they do not. Schema is worth doing for Google's rich results, but if the facts are not in the visible copy, the model never sees them.</p>
         <p><strong>Ignoring the retrieval gate.</strong> Teams spend a quarter on entity work while robots.txt has been blocking GPTBot since 2023. Check the gate before touching anything else.</p>
-        <p><strong>Assuming Google AI Overviews behave like ChatGPT.</strong> They do not. AI Overviews draw from the Google index and lean on the same signals as the classic results, so a page that ranks has a head start. ChatGPT and Perplexity retrieve from elsewhere and reward the AI-side factors more heavily. The guide to <a href="/seo/ai-and-seo/ai-quality-rater-guidelines/">how Google's raters judge AI-era content</a> shows how far Google's own quality standard has moved towards first-hand experience, which is the one factor both systems agree on.</p>
+        <p><strong>Assuming Google AI Overviews behave like ChatGPT.</strong> They do not. AI Overviews draw from the Google index and lean on the same signals as the classic results, so a page that ranks has a head start. ChatGPT and Perplexity retrieve from elsewhere and reward the AI-side factors more heavily. The guide to <a href="/seo/ai-and-seo/ai-quality-rater-guidelines/">how Google's raters judge AI-era content</a> shows how far Google's own quality standard has moved towards first-hand experience, a signal that matters in Google and barely registers in the AI answers analysed.</p>
         <p><strong>Letting the numbers on your own site disagree.</strong> A founding year on the about page that differs from the one on LinkedIn is enough for a model to hedge. Consistency is cheap and most sites still have not done it.</p>
 
         <h2 id="faq">Frequently Asked Questions About SEO Ranking Factors vs AI Citation Factors</h2>
@@ -651,7 +665,7 @@ const faqs = [
 
         <h2 id="final-thoughts">Final Thoughts</h2>
         <p>Google and AI assistants are scoring different things. Google scores the page, using links, query match and clicks. A model scores the passage, using context, entity clarity and what the rest of the web already says about you. The chart above is the shortest way I know to explain that split, and the biggest gaps on it are where your next quarter of work should go.</p>
-        <p>I publish the test results behind these weightings, and revise them as the systems change, inside The New Search, my AI SEO community on Skool. If you want to see the pages that got cited and the ones that did not, that is where the evidence lives.</p>
+        <p>I publish the analysis behind these weightings, all 19,000 answers and the pages that got cited, and revise it as the systems change, inside The New Search, my AI SEO community on Skool. If you want to see the pages that got cited and the ones that did not, that is where the evidence lives.</p>
         <p class="not-prose mt-6">
           <a href="https://www.skool.com/the-new-search/about?utm_source=kasradash.com&utm_medium=site&utm_campaign=seo-vs-ai-factors" target="_blank" rel="noopener" class="btn-gradient inline-flex px-6 py-3 text-sm font-bold shadow-lg shadow-brand-500/25 transition hover:shadow-xl hover:shadow-brand-500/40">
             Join The New Search
