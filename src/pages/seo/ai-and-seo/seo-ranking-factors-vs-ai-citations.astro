@@ -530,9 +530,15 @@ const faqs = [
         lockedCount={sorted.length - FREE_FACTORS}
         assetName="the full 19-factor breakdown, SEO vs AI citations"
         assetUrl={canonical}
-        heading={`See all ${sorted.length} factors, scored for Google and for AI`}
-        blurb={`You have seen the ${FREE_FACTORS} biggest gaps. Drop your email and the other ${sorted.length - FREE_FACTORS} open up straight away, each with both scores, the reasoning and a worked example. I will also send you the tests I run as I run them.`}
-        button={`Show me all ${sorted.length}`}
+        heading={`Unlock the other ${sorted.length - FREE_FACTORS} factors instantly`}
+        blurb={`You have seen the ${FREE_FACTORS} biggest gaps. Enter your name and email and the remaining ${sorted.length - FREE_FACTORS} appear right here on this page, straight away.`}
+        peek={sorted.slice(FREE_FACTORS, FREE_FACTORS + 3).map((f) => ({ name: f.name, seo: f.seo, ai: f.ai }))}
+        points={[
+          `All ${sorted.length} factors scored 0 to 100 for Google and for AI`,
+          'The reasoning behind every score, with a worked example',
+          'Sort and filter the full chart to find where your SEO work is wasted for AI',
+        ]}
+        button={`Unlock all ${sorted.length} now`}
       />
       {captureEnabled && (
         <style is:inline set:html={`.gate-locked-note{display:none}html.gate-locked-${GATE_ID} .gate-locked-note{display:block}`} />
