@@ -1,0 +1,183 @@
+---
+/*
+ * EmailSignup: the universal "get my emails" form. No content is locked.
+ *
+ * Posts to the same GoHighLevel webhook as <EmailGate />, through the same
+ * src/lib/capture-client.ts, so every subscriber gets the same single welcome
+ * email and the same tagging. Only `source` differs per placement:
+ *   footer         -> tag "src:footer"
+ *   article-end    -> tag "src:article-end"   (page_path says which article)
+ *   anything else  -> pass your own `source`
+ *
+ * To give something away without locking a page (an SOP, a checklist), pass
+ * assetName + assetUrl: the welcome email opens with that link.
+ *
+ * Renders nothing while CAPTURE_ENDPOINT is empty (see src/lib/capture.ts), and
+ * hides itself for anyone who has already subscribed on this device.
+ */
+import { CAPTURE_ENDPOINT, captureEnabled, sourceTag } from '../lib/capture';
+
+interface Props {
+  source: string;
+  variant?: 'footer' | 'inline';
+  heading?: string;
+  blurb?: string;
+  button?: string;
+  assetName?: string;
+  assetUrl?: string;
+}
+
+const {
+  source,
+  variant = 'inline',
+  heading = 'Get my SEO tests by email',
+  blurb = 'An email when I have something worth sending: a test I ran, what it showed, and what to do about it. Tested on real sites, not theorised.',
+  button = 'Send me the tests',
+  assetName = '',
+  assetUrl = '',
+} = Astro.props;
+
+const uid = `signup-${source.replace(/[^a-z0-9]+/gi, '-')}`;
+const isFooter = variant === 'footer';
+---
+
+{
+  captureEnabled && (
+    <div
+      class:list={[
+        'email-signup not-prose',
+        isFooter ? 'mt-10 w-full max-w-xl border-t border-tint-border pt-10 text-center' : 'mt-12 rounded-[20px] border border-tint-border bg-tint p-6 sm:p-8',
+      ]}
+      data-signup
+      data-endpoint={CAPTURE_ENDPOINT}
+      data-source={source}
+      data-tag={sourceTag(source)}
+      data-asset-name={assetName}
+      data-asset-url={assetUrl}
+    >
+      <div class="email-signup-ask">
+        {isFooter ? (
+          <p class="font-display text-base font-bold tracking-tight text-ink">{heading}</p>
+        ) : (
+          <h2 class="font-display text-xl font-bold leading-snug tracking-tight text-ink sm:text-2xl">{heading}</h2>
+        )}
+        <p class:list={['mt-2 text-sm leading-relaxed text-muted', isFooter ? 'mx-auto max-w-md' : 'max-w-2xl sm:text-base']}>{blurb}</p>
+
+        <form class:list={['mt-5 grid gap-3', isFooter ? 'sm:grid-cols-[minmax(0,1fr)_auto]' : 'sm:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]']} novalidate>
+          {!isFooter && (
+            <>
+              <label class="sr-only" for={`${uid}-name`}>First name</label>
+              <input id={`${uid}-name`} name="first_name" type="text" autocomplete="given-name" placeholder="First name" maxlength="60" class="email-gate-input" />
+            </>
+          )}
+          <label class="sr-only" for={`${uid}-email`}>Email address</label>
+          <input
+            id={`${uid}-email`}
+            name="email"
+            type="email"
+            required
+            autocomplete="email"
+            inputmode="email"
+            placeholder="you@company.com"
+            maxlength="120"
+            class="email-gate-input"
+          />
+          <div class="email-gate-hp" aria-hidden="true">
+            <label>
+              Company website
+              <input name="company_website" type="text" tabindex="-1" autocomplete="off" />
+            </label>
+          </div>
+          <button
+            type="submit"
+            class:list={['btn-gradient inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-bold text-white', !isFooter && 'sm:col-span-2 sm:justify-self-start']}
+          >
+            {button}
+          </button>
+        </form>
+
+        <p class="email-signup-error mt-3 text-sm text-[#fca5a5]" role="alert" hidden />
+        <p class="mt-3 text-xs leading-relaxed text-dim">
+          Unsubscribe in one click. See the <a href="/privacy-policy/" class="underline hover:text-muted">privacy policy</a>.
+        </p>
+      </div>
+
+      <div class="email-signup-done" hidden>
+        <p class="font-display text-base font-bold tracking-tight text-ink">You're in. Check your inbox.</p>
+        <p class="mt-2 text-sm leading-relaxed text-muted">
+          The first email is on its way. If it lands in Promotions, drag it to Primary so you actually see the rest.
+        </p>
+      </div>
+    </div>
+  )
+}
+
+{
+  captureEnabled && (
+    <>
+      {/* Already subscribed on this device: no point asking again. Set before paint. */}
+      <script is:inline>
+        try {
+          if (localStorage.getItem('kd_subscribed')) document.documentElement.classList.add('kd-subscribed');
+        } catch (e) {}
+      </script>
+      <style is:global>
+        html.kd-subscribed .email-signup:not(.is-just-done) {
+          display: none;
+        }
+        /* Shared with EmailGate. Declared here too so the form is styled on pages with no gate. */
+        .email-gate-input {
+          width: 100%;
+          border-radius: 9999px;
+          border: 1px solid var(--color-tint-border);
+          background: #000;
+          color: var(--color-ink);
+          padding: 0.75rem 1.1rem;
+          font-size: 0.95rem;
+        }
+        .email-gate-input::placeholder {
+          color: var(--color-dim);
+        }
+        .email-gate-input:focus {
+          outline: 2px solid var(--color-brand-500);
+          outline-offset: 1px;
+        }
+        .email-gate-hp {
+          position: absolute;
+          left: -9999px;
+          width: 1px;
+          height: 1px;
+          overflow: hidden;
+        }
+      </style>
+      <script>
+        import { readForm, submitCapture } from '../lib/capture-client';
+
+        document.querySelectorAll<HTMLElement>('.email-signup[data-signup]').forEach((box) => {
+          const form = box.querySelector<HTMLFormElement>('form')!;
+          const errorEl = box.querySelector<HTMLElement>('.email-signup-error')!;
+          const button = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+          form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const values = readForm(form, errorEl);
+            if (!values || values === 'bot') return;
+            button.disabled = true;
+            button.textContent = 'Sending…';
+            box.classList.add('is-just-done'); // keep THIS box visible to show the confirmation
+            await submitCapture({
+              endpoint: box.dataset.endpoint!,
+              email: values.email,
+              firstName: values.firstName,
+              source: box.dataset.source ?? '',
+              tag: box.dataset.tag ?? '',
+              assetName: box.dataset.assetName ?? '',
+              assetUrl: box.dataset.assetUrl ?? '',
+            });
+            box.querySelector<HTMLElement>('.email-signup-ask')!.hidden = true;
+            box.querySelector<HTMLElement>('.email-signup-done')!.hidden = false;
+          });
+        });
+      </script>
+    </>
+  )
+}

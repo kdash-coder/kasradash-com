@@ -3,6 +3,8 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../../components/Breadcrumbs.astro';
 import { SITE_URL } from '../../../lib/site';
 import { articleNode } from '../../../lib/schema';
+import EmailGate from '../../../components/EmailGate.astro';
+import { captureEnabled } from '../../../lib/capture';
 
 /*
  * SEO ranking factors vs AI citation factors: the side-by-side weighting page.
@@ -28,7 +30,26 @@ const crumbs = [
   { label: 'AI & SEO', href: '/seo/ai-and-seo/' },
   { label: h1, href: path },
 ];
-const graphNodes = [articleNode({ canonical, headline: h1, description, image: ogImage, datePublished, dateModified })];
+/*
+ * Email gate: the first FREE_FACTORS breakdowns are open, the rest sit behind a
+ * registration wall (see components/EmailGate.astro). The content stays in the
+ * HTML; isAccessibleForFree + hasPart is Google's documented markup for that,
+ * and is only emitted while the gate is actually live.
+ */
+const GATE_ID = 'factors';
+const GATE_SOURCE = 'seo-ranking-factors-vs-ai-citations';
+const FREE_FACTORS = 3;
+const graphNodes = [
+  {
+    ...articleNode({ canonical, headline: h1, description, image: ogImage, datePublished, dateModified }),
+    ...(captureEnabled
+      ? {
+          isAccessibleForFree: false,
+          hasPart: { '@type': 'WebPageElement', isAccessibleForFree: false, cssSelector: `[data-gated="${GATE_ID}"]` },
+        }
+      : {}),
+  },
+];
 
 interface Factor {
   id: string;
@@ -610,8 +631,13 @@ const faqs = [
 
         <h2 id="factor-by-factor">Every factor, and why it scores the way it does</h2>
         <p>Each entry below is the reasoning behind the two numbers on the chart. Each one carries a worked example with the part that matters highlighted. Read the ones with the biggest gap first. Those are where your existing SEO effort is either wasted for AI or where you are doing nothing at all.</p>
-        {sorted.map((f) => (
-          <div id={f.id} class="not-prose mt-8 rounded-[20px] border border-tint-border bg-tint p-6 scroll-mt-28">
+        {sorted.map((f, i) => (
+          <div
+            id={f.id}
+            class="not-prose mt-8 rounded-[20px] border border-tint-border bg-tint p-6 scroll-mt-28"
+            data-gated={i >= FREE_FACTORS ? GATE_ID : undefined}
+            data-gate-teaser={i === FREE_FACTORS ? '' : undefined}
+          >
             <div class="flex flex-wrap items-start justify-between gap-3">
               <h3 class="font-display text-lg font-bold leading-snug text-ink">{f.name}</h3>
               <div class="flex items-center gap-2 text-sm font-bold tabular-nums">
@@ -646,6 +672,17 @@ const faqs = [
             </a>
           </div>
         ))}
+
+        <EmailGate
+          gateId={GATE_ID}
+          source={GATE_SOURCE}
+          lockedCount={sorted.length - FREE_FACTORS}
+          assetName="the full 19-factor breakdown, SEO vs AI citations"
+          assetUrl={canonical}
+          heading="Get the reasoning behind all 19 factors"
+          blurb="You have seen the three biggest gaps. Drop your email and the other 16 open up straight away, each with its worked example. I will also send you the tests I run as I run them."
+          button="Show me all 19"
+        />
 
         <h2 id="strategy">What to change if you want both</h2>
         <p><strong>The same page can rank in Google and get cited by AI, because the two systems mostly disagree on weight rather than on direction.</strong> Nothing on the AI side of the chart hurts your Google rankings. The work is additive.</p>
