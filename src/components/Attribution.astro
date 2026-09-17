@@ -1,0 +1,55 @@
+---
+/*
+ * First-touch attribution. Runs on every page, before anything else.
+ *
+ * Stores where a visitor FIRST arrived from (landing URL, referrer, UTM params,
+ * click ids) in localStorage, and never overwrites it. Last-touch UTMs are kept
+ * separately in sessionStorage. <EmailGate /> reads both and sends them with the
+ * email, so a lead who came from a Facebook post, browsed three pages, then
+ * signed up on a different page is still credited to Facebook.
+ *
+ * No cookies, no network calls, nothing leaves the browser until the visitor
+ * submits a form.
+ */
+---
+
+<script is:inline>
+  (function () {
+    try {
+      var KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'fbclid', 'gclid', 'li_fat_id', 'ttclid'];
+      var q = new URLSearchParams(location.search);
+      var touch = {};
+      var hasAny = false;
+      KEYS.forEach(function (k) {
+        var v = q.get(k);
+        if (v) {
+          touch[k] = v.slice(0, 200);
+          hasAny = true;
+        }
+      });
+      var ref = document.referrer || '';
+      var external = ref && ref.indexOf(location.host) === -1;
+
+      if (!localStorage.getItem('kd_first_touch')) {
+        localStorage.setItem(
+          'kd_first_touch',
+          JSON.stringify(
+            Object.assign({}, touch, {
+              landing: location.pathname,
+              referrer: external ? ref.slice(0, 300) : '',
+              at: new Date().toISOString(),
+            })
+          )
+        );
+      }
+      if (hasAny || external) {
+        sessionStorage.setItem(
+          'kd_last_touch',
+          JSON.stringify(Object.assign({}, touch, { landing: location.pathname, referrer: external ? ref.slice(0, 300) : '' }))
+        );
+      }
+    } catch (e) {
+      /* storage blocked (private mode): attribution is a nice-to-have, never break the page */
+    }
+  })();
+</script>
