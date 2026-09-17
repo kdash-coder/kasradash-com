@@ -182,7 +182,7 @@ html.gate-locked-${gateId} [data-gated="${gateId}"][data-gate-teaser]{display:bl
             // Scroll first, focus after: focusing an input cancels an in-flight smooth scroll.
             const y = gate.getBoundingClientRect().top + window.scrollY - Math.max(96, (window.innerHeight - gate.offsetHeight) / 2);
             window.scrollTo({ top: y, behavior: 'smooth' });
-            window.setTimeout(() => form.querySelector<HTMLInputElement>('input[name="email"]')?.focus({ preventScroll: true }), 700);
+            window.setTimeout(() => form.querySelector<HTMLInputElement>('input[name="first_name"], input[name="email"]')?.focus({ preventScroll: true }), 700);
             return true;
           };
           document.addEventListener(
@@ -225,7 +225,8 @@ html.gate-locked-${gateId} [data-gated="${gateId}"][data-gate-teaser]{display:bl
             document.documentElement.classList.remove(lockClass);
             button.disabled = false;
             button.textContent = label;
-            document.querySelector<HTMLElement>(`[data-gated="${gateId}"][data-gate-teaser]`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Reveal happens in place: the form collapses and the first unlocked item takes its spot.
+            document.querySelector<HTMLElement>(`[data-gated="${gateId}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
           });
         });
       </script>

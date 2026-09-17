@@ -31,14 +31,16 @@ const crumbs = [
   { label: h1, href: path },
 ];
 /*
- * Email gate: the first FREE_FACTORS breakdowns are open, the rest sit behind a
- * registration wall (see components/EmailGate.astro). The content stays in the
+ * Email gate: the first FREE_FACTORS rows of the chart AND the matching
+ * breakdowns are open, the rest sit behind a registration wall (see
+ * components/EmailGate.astro). The form sits directly under the chart, because
+ * the chart is the list people came for. The content stays in the
  * HTML; isAccessibleForFree + hasPart is Google's documented markup for that,
  * and is only emitted while the gate is actually live.
  */
 const GATE_ID = 'factors';
 const GATE_SOURCE = 'seo-ranking-factors-vs-ai-citations';
-const FREE_FACTORS = 3;
+const FREE_FACTORS = 5;
 const graphNodes = [
   {
     ...articleNode({ canonical, headline: h1, description, image: ogImage, datePublished, dateModified }),
@@ -461,7 +463,7 @@ const faqs = [
         Click any factor to jump to the reasoning behind its scores and a worked example.
       </p>
       <ol id="factor-chart" class="mt-4 space-y-3">
-        {sorted.map((f) => {
+        {sorted.map((f, i) => {
           const gap = Math.abs(f.seo - f.ai);
           const leader = f.seo > f.ai ? 'seo' : f.ai > f.seo ? 'ai' : 'tie';
           return (
@@ -473,6 +475,7 @@ const faqs = [
               data-ai={f.ai}
               data-gap={gap}
               data-leader={leader}
+              data-gated={i >= FREE_FACTORS ? GATE_ID : undefined}
             >
               <div class="grid gap-4 lg:grid-cols-[minmax(0,17rem)_minmax(0,1fr)_7rem] lg:items-center lg:gap-8">
                 <div>
@@ -521,6 +524,19 @@ const faqs = [
           );
         })}
       </ol>
+      <EmailGate
+        gateId={GATE_ID}
+        source={GATE_SOURCE}
+        lockedCount={sorted.length - FREE_FACTORS}
+        assetName="the full 19-factor breakdown, SEO vs AI citations"
+        assetUrl={canonical}
+        heading={`See all ${sorted.length} factors, scored for Google and for AI`}
+        blurb={`You have seen the ${FREE_FACTORS} biggest gaps. Drop your email and the other ${sorted.length - FREE_FACTORS} open up straight away, each with both scores, the reasoning and a worked example. I will also send you the tests I run as I run them.`}
+        button={`Show me all ${sorted.length}`}
+      />
+      {captureEnabled && (
+        <style is:inline set:html={`.gate-locked-note{display:none}html.gate-locked-${GATE_ID} .gate-locked-note{display:block}`} />
+      )}
       <p class="mt-5 text-xs leading-relaxed text-dim">
         Weightings come from Kasra Dash's analysis of 19,000 AI answers across Gemini, ChatGPT and Claude, compared with Google rankings for the same queries, plus his ranking tests since 2017. They are relative weights, not percentages of an algorithm, and they will be revised as the systems change.
       </p>
@@ -673,16 +689,11 @@ const faqs = [
           </div>
         ))}
 
-        <EmailGate
-          gateId={GATE_ID}
-          source={GATE_SOURCE}
-          lockedCount={sorted.length - FREE_FACTORS}
-          assetName="the full 19-factor breakdown, SEO vs AI citations"
-          assetUrl={canonical}
-          heading="Get the reasoning behind all 19 factors"
-          blurb="You have seen the three biggest gaps. Drop your email and the other 16 open up straight away, each with its worked example. I will also send you the tests I run as I run them."
-          button="Show me all 19"
-        />
+        {captureEnabled && (
+          <p class="gate-locked-note not-prose mt-6 rounded-[20px] border border-tint-border bg-tint p-5 text-sm leading-relaxed text-muted">
+            The other {sorted.length - FREE_FACTORS} breakdowns are locked. <a href={`#gate-${GATE_ID}`} class="font-semibold text-brand-600 underline">Unlock all {sorted.length} with your email</a>, it takes ten seconds.
+          </p>
+        )}
 
         <h2 id="strategy">What to change if you want both</h2>
         <p><strong>The same page can rank in Google and get cited by AI, because the two systems mostly disagree on weight rather than on direction.</strong> Nothing on the AI side of the chart hurts your Google rankings. The work is additive.</p>
