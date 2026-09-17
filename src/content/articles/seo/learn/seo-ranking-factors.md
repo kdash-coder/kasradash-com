@@ -7,15 +7,9 @@ silo: "/seo/learn/"
 siloName: "Learn SEO"
 kind: "article"
 datePublished: "2025-10-12T22:38:58+00:00"
-dateModified: "2026-09-17T17:00:00+00:00"
+dateModified: "2025-10-30T13:09:06+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
-
-<div style="position:relative;width:100%;aspect-ratio:16/9;margin:0 0 1rem;">
-  <iframe src="https://www.youtube-nocookie.com/embed/VLmpQsVjWL8" title="SEO vs AI SEO: Every Ranking Factor Scored — video by Kasra Dash" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:12px;"></iframe>
-</div>
-
-Kasra Dash walks through this whole guide on video, scoring every ranking factor for classic SEO against AI SEO.
 
 Google considers **hundreds of ranking factors**, but only a few truly determine whether your page rises or disappears.
 
