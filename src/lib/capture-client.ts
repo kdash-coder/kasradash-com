@@ -97,10 +97,19 @@ export function readForm(form: HTMLFormElement, errorEl: HTMLElement): { email: 
   const data = new FormData(form);
   if (String(data.get('company_website') ?? '') !== '') return 'bot';
   const email = String(data.get('email') ?? '').trim();
+  // First name is only enforced where the input is marked required (the gates), so the emails can open "Hey <name>,".
+  const nameInput = form.querySelector<HTMLInputElement>('input[name="first_name"]');
+  const firstName = String(data.get('first_name') ?? '').trim();
+  if (nameInput?.required && firstName === '') {
+    errorEl.textContent = 'Add your first name so I know who I am emailing.';
+    errorEl.hidden = false;
+    nameInput.focus();
+    return null;
+  }
   if (!EMAIL_RE.test(email)) {
     errorEl.textContent = 'That email does not look right. Check it and try again.';
     errorEl.hidden = false;
     return null;
   }
-  return { email, firstName: String(data.get('first_name') ?? '').trim() };
+  return { email, firstName };
 }
