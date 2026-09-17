@@ -11,17 +11,17 @@ dateModified: "2026-09-17T17:00:00+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 
+<div style="position:relative;width:100%;aspect-ratio:16/9;margin:0 0 1rem;">
+  <iframe src="https://www.youtube-nocookie.com/embed/VLmpQsVjWL8" title="SEO vs AI SEO: Every Ranking Factor Scored — video by Kasra Dash" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:12px;"></iframe>
+</div>
+
+Kasra Dash walks through this whole guide on video, scoring every ranking factor for classic SEO against AI SEO.
+
 Google considers **hundreds of ranking factors**, but only a few truly determine whether your page rises or disappears.
 
 This guide by **Kasra Dash** breaks down the essential **SEO ranking factors in 2026**, explaining how algorithms measure **relevance, quality, and trust**, and what you can do to optimise effectively.
 
 → Before reading, start with [**How SEO Works**](/seo/) and [**What Are Search Engine Algorithms**](/seo/learn/) to understand the systems behind ranking.
-
-Prefer to watch? Kasra Dash walks through this whole guide on video, scoring every ranking factor for classic SEO against AI SEO:
-
-<div style="position:relative;width:100%;aspect-ratio:16/9;margin:1.5rem 0;">
-  <iframe src="https://www.youtube-nocookie.com/embed/VLmpQsVjWL8" title="SEO vs AI SEO: Every Ranking Factor Scored — video by Kasra Dash" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:12px;"></iframe>
-</div>
 
 Ranking isn’t about tricking Google, it’s about aligning with how Google defines value.
 
