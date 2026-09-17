@@ -62,6 +62,11 @@ const tag = sourceTag(source);
     <>
       <script is:inline define:vars={{ gateId }}>
         try {
+          // Links sent to existing subscribers carry ?sub=1 so they are never asked for an email twice.
+          if (new URLSearchParams(location.search).get('sub') === '1') {
+            localStorage.setItem('kd_unlocked_' + gateId, 'subscriber-link');
+            localStorage.setItem('kd_subscribed', 'subscriber-link');
+          }
           if (!localStorage.getItem('kd_unlocked_' + gateId)) {
             document.documentElement.classList.add('gate-locked-' + gateId);
           }
