@@ -7,7 +7,7 @@ silo: "/seo/technical-seo/"
 siloName: "Technical SEO"
 kind: "article"
 datePublished: "2026-09-25T09:00:00+00:00"
-dateModified: "2026-09-25T09:00:00+00:00"
+dateModified: "2026-09-25T22:10:00+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 
@@ -90,7 +90,7 @@ If you were hit, take the transcript of the video below, give it to an LLM with 
 
 ## Watch the breakdown
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8WDva1aobBk" title="Google Spam Update September 2026: What Got Hit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<div style="position:relative;width:100%;max-width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:12px;"><iframe src="https://www.youtube.com/embed/8WDva1aobBk" title="Google Spam Update September 2026: What Got Hit" style="position:absolute;inset:0;width:100%;height:100%;border:0;" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
 
 ## Common mistakes I see after a spam update
 
