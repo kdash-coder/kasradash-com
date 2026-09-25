@@ -165,3 +165,6 @@
 /privacy /privacy-policy/ 301
 # Old RankMath sitemap path (GSC still fetches it)
 /sitemap_index.xml /sitemap-index.xml 301
+# Spam update post moved into the SEO News silo (25 Sep 2026)
+/seo/technical-seo/google-spam-update-september-2026/ /seo/news/google-spam-update-september-2026/ 301
+/seo/technical-seo/google-spam-update-september-2026 /seo/news/google-spam-update-september-2026/ 301

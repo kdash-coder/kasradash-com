@@ -8,6 +8,10 @@ import { makeSitemapFilter } from './src/lib/noindex.mjs';
 export default defineConfig({
   site: 'https://kasradash.com',
   trailingSlash: 'ignore',
+  // Moved 25 Sep 2026 when the SEO News silo was created (GitHub Pages: emitted as a meta-refresh page).
+  redirects: {
+    '/seo/technical-seo/google-spam-update-september-2026/': '/seo/news/google-spam-update-september-2026/',
+  },
   // Pages with `noindex: true` frontmatter stay out of the sitemap (see src/lib/noindex.mjs).
   integrations: [sitemap({ filter: makeSitemapFilter() })],
   vite: {

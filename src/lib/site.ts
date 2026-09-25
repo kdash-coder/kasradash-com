@@ -14,6 +14,7 @@ export const HUBS: Hub[] = [
   { url: '/seo/content-seo/', name: 'Content SEO', blurb: 'Search intent, topical authority and content that ranks.' },
   { url: '/seo/ai-and-seo/', name: 'AI & SEO', blurb: 'AI Overviews, AI search engines and automation workflows.' },
   { url: '/seo/seo-frameworks/', name: 'SEO Frameworks', blurb: 'Templates and systems to run SEO like an operator.' },
+  { url: '/seo/news/', name: 'SEO News', blurb: 'Every Google update: what got hit, the patterns, the fixes.' },
 ];
 
 export interface MenuItem {
