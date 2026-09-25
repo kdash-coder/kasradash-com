@@ -2,12 +2,12 @@
 title: "Google Spam Update September 2026: What Got Hit and Why"
 description: "Google spam update September 2026: what got hit across 13,000 tracked sites. Exact match domains, no entity, spun content, location pages. Fixes inside."
 h1: "Google Spam Update September 2026: What Got Hit"
-url: "/seo/technical-seo/google-spam-update-september-2026/"
-silo: "/seo/technical-seo/"
-siloName: "Technical SEO"
+url: "/seo/news/google-spam-update-september-2026/"
+silo: "/seo/news/"
+siloName: "SEO News"
 kind: "article"
 datePublished: "2026-09-25T09:00:00+00:00"
-dateModified: "2026-09-25T22:10:00+00:00"
+dateModified: "2026-09-25T22:40:00+00:00"
 ogImage: "/images/kasradash.com_.png"
 ---
 
