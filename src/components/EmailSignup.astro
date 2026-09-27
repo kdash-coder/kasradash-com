@@ -25,6 +25,11 @@ interface Props {
   button?: string;
   assetName?: string;
   assetUrl?: string;
+  /** Email-only form (no first-name field). The delivery email then opens without a name. */
+  emailOnly?: boolean;
+  /** Override the confirmation shown after submit. */
+  doneHeading?: string;
+  doneBlurb?: string;
 }
 
 const {
@@ -35,6 +40,9 @@ const {
   button = 'Send me the tests',
   assetName = '',
   assetUrl = '',
+  emailOnly = false,
+  doneHeading = "You're in. Check your inbox.",
+  doneBlurb = 'The first email is on its way. If it lands in Promotions, drag it to Primary so you actually see the rest.',
 } = Astro.props;
 
 const uid = `signup-${source.replace(/[^a-z0-9]+/gi, '-')}`;
@@ -63,8 +71,8 @@ const isFooter = variant === 'footer';
         )}
         <p class:list={['mt-2 text-sm leading-relaxed text-muted', isFooter ? 'mx-auto max-w-md' : 'max-w-2xl sm:text-base']}>{blurb}</p>
 
-        <form class:list={['mt-5 grid gap-3', isFooter ? 'sm:grid-cols-[minmax(0,1fr)_auto]' : 'sm:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]']} novalidate>
-          {!isFooter && (
+        <form class:list={['mt-5 grid gap-3', isFooter || emailOnly ? 'sm:grid-cols-[minmax(0,1fr)_auto]' : 'sm:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]']} novalidate>
+          {!isFooter && !emailOnly && (
             <>
               <label class="sr-only" for={`${uid}-name`}>First name</label>
               <input id={`${uid}-name`} name="first_name" type="text" autocomplete="given-name" placeholder="First name" maxlength="60" class="email-gate-input" />
@@ -90,7 +98,7 @@ const isFooter = variant === 'footer';
           </div>
           <button
             type="submit"
-            class:list={['btn-gradient inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-bold text-white', !isFooter && 'sm:col-span-2 sm:justify-self-start']}
+            class:list={['btn-gradient inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-bold text-white', !isFooter && !emailOnly && 'sm:col-span-2 sm:justify-self-start']}
           >
             {button}
           </button>
@@ -103,10 +111,8 @@ const isFooter = variant === 'footer';
       </div>
 
       <div class="email-signup-done" hidden>
-        <p class="font-display text-base font-bold tracking-tight text-ink">You're in. Check your inbox.</p>
-        <p class="mt-2 text-sm leading-relaxed text-muted">
-          The first email is on its way. If it lands in Promotions, drag it to Primary so you actually see the rest.
-        </p>
+        <p class="font-display text-base font-bold tracking-tight text-ink">{doneHeading}</p>
+        <p class="mt-2 text-sm leading-relaxed text-muted">{doneBlurb}</p>
       </div>
     </div>
   )
