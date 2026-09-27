@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import EmailSignup from '../components/EmailSignup.astro';
+import { SITE_URL } from '../lib/site';
+import { webPageNode } from '../lib/schema';
+
+/*
+ * September spam update checklist: a giveaway landing page.
+ * One form, email only. The GoHighLevel universal capture workflow delivers the
+ * asset link (asset_name / asset_url in the payload), so no workflow change is
+ * needed for this page. The Google Sheet is a make-a-copy link.
+ * VIDEO_ID: swap for the final walkthrough video before this goes live.
+ */
+const path = '/september-spam-checklist/';
+const h1 = 'Get my September spam update checklist';
+const title = 'September Spam Update Checklist: 10 Brand and Entity Checks';
+const description =
+  'Ten practical brand and entity checks to work through after the Google spam update September 2026, with what to check, what to fix and space to track progress.';
+const ogImage = '/images/kasradash.com_.png';
+const datePublished = '2026-09-27T09:00:00+00:00';
+const dateModified = '2026-09-27T09:00:00+00:00';
+
+const SOURCE = 'september-spam-checklist';
+const ASSET_NAME = 'September spam update checklist';
+const ASSET_URL = 'https://docs.google.com/spreadsheets/d/1laJSv0vRzx9xuT2cxD-ULdrBG7zilvrMvzKd2kKEh3U/copy';
+const VIDEO_ID = '8WDva1aobBk';
+const SKOOL = 'https://www.skool.com/the-new-search/about?utm_source=kasradash.com&utm_medium=site&utm_campaign=september-spam-checklist';
+
+const canonical = new URL(path, SITE_URL).href;
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'September spam update checklist', href: path },
+];
+const graphNodes = [webPageNode({ canonical, title, description, datePublished, dateModified, hasBreadcrumb: true })];
+
+const checks = [
+  { t: 'What to check', d: 'Each of the ten points names one thing on your site or around your brand and tells you where to look.' },
+  { t: 'What to fix', d: 'If a point fails, the sheet says what the fix is and where it goes: your site, your Google Business Profile, your listings, your social profiles.' },
+  { t: 'Track your progress', d: 'A status column per point. Work through it in an afternoon, or one point a day alongside the video.' },
+];
+---
+
+<BaseLayout {title} {description} {path} {ogImage} breadcrumbs={crumbs} {graphNodes} {datePublished} {dateModified}>
+  <article>
+    <section class="border-b border-tint-border bg-tint">
+      <div class="mx-auto max-w-6xl px-4 pb-12 pt-8 sm:px-6 lg:pb-16 lg:pt-10">
+        <Breadcrumbs {crumbs} />
+        <div class="mt-6 grid gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:items-start">
+          <div>
+            <p class="inline-flex items-center gap-2 rounded-full border border-brand-500/40 bg-deep px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-brand-500">Free checklist</p>
+            <h1 class="mt-4 max-w-2xl font-display text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl lg:text-[2.75rem]">{h1}</h1>
+            <p class="mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
+              Ten practical brand and entity checks to work through alongside my YouTube video. Includes what to check, what to fix and space to track your progress.
+            </p>
+            <p class="mt-4 max-w-xl text-sm leading-relaxed text-dim">
+              Built from the patterns I saw across the sites I track after the <a href="/seo/news/google-spam-update-september-2026/" class="underline hover:text-muted">Google spam update September 2026</a>. It is a working checklist, not a list of confirmed ranking factors, and it does not promise a recovery.
+            </p>
+          </div>
+          <EmailSignup
+            source={SOURCE}
+            heading="Send me the checklist"
+            blurb="Enter your email and the link lands in your inbox. It's a Google Sheet, so you make your own copy and keep it."
+            button="Send me the checklist"
+            assetName={ASSET_NAME}
+            assetUrl={ASSET_URL}
+            emailOnly
+            doneHeading="Check your inbox for your checklist."
+            doneBlurb="If it hasn't arrived, check your spam folder. When it comes, sign in to Google and click Make a copy."
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-4 py-12 sm:px-6" aria-labelledby="inside-heading">
+      <h2 id="inside-heading" class="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">What is in the checklist</h2>
+      <div class="mt-6 grid gap-4 sm:grid-cols-3">
+        {checks.map((c) => (
+          <div class="rounded-[20px] border border-tint-border bg-tint p-6">
+            <p class="font-display text-lg font-bold text-ink">{c.t}</p>
+            <p class="mt-2 text-sm leading-relaxed text-muted">{c.d}</p>
+          </div>
+        ))}
+      </div>
+      <p class="mt-6 max-w-3xl text-sm leading-relaxed text-muted">
+        Point one is open when you copy the sheet. The remaining points open with the codes I share during the video, so you work through them in order rather than skimming the list.
+      </p>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-4 pb-4 sm:px-6" aria-labelledby="cta-heading">
+      <div class="relative overflow-hidden rounded-[20px] border border-brand-500/50 bg-deep p-6 shadow-lg shadow-brand-500/10 sm:p-10">
+        <div class="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-brand-500/20 blur-3xl"></div>
+        <p class="text-xs font-semibold uppercase tracking-[0.14em] text-brand-500">The New Search on Skool</p>
+        <h2 id="cta-heading" class="mt-3 max-w-2xl font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">The checklist tells you what to fix. The New Search shows you how, step by step.</h2>
+        <ul class="mt-5 grid gap-3 text-sm leading-relaxed text-muted sm:grid-cols-2 sm:text-base">
+          <li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-brand-500"></span>Module by module: entity setup, brand protection in AI search, and running Rank OS on your own site.</li>
+          <li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-brand-500"></span>The full breakdown of the September 2026 spam update once the rollout finishes, with the tracked numbers.</li>
+          <li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-brand-500"></span>A live session every week where you can ask about your own site.</li>
+          <li class="flex gap-3"><span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-brand-500"></span>Rank OS is included with membership.</li>
+        </ul>
+        <a href={SKOOL} target="_blank" rel="noopener" class="btn-gradient mt-7 inline-flex px-6 py-3 text-sm font-bold shadow-lg shadow-brand-500/25 transition hover:shadow-xl hover:shadow-brand-500/40">Join The New Search</a>
+      </div>
+    </section>
+
+    <section class="mx-auto max-w-6xl px-4 py-12 sm:px-6" aria-labelledby="video-heading">
+      <h2 id="video-heading" class="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">Watch the walkthrough</h2>
+      <p class="mt-3 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">Work through the sheet with the video open. The codes for points two to ten are in it.</p>
+      <div class="relative mt-6 w-full overflow-hidden rounded-[20px] border border-tint-border" style="aspect-ratio:16/9;">
+        <iframe
+          src={`https://www.youtube.com/embed/${VIDEO_ID}`}
+          title="September spam update checklist walkthrough"
+          style="position:absolute;inset:0;width:100%;height:100%;border:0;"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section class="border-t border-tint-border bg-tint">
+      <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+        <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-start">
+          <div>
+            <h2 class="font-display text-2xl font-bold tracking-tight text-ink sm:text-3xl">Why brand and entity checks</h2>
+            <p class="mt-4 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
+              The sites that lost the most in the August and September 2026 spam updates were the ones Google could not identify: no consistent name, no matching address across listings, stock photos, nobody else mentioning them. The checklist works through those signals one at a time. The full data is in the <a href="/seo/news/google-spam-update-september-2026/" class="underline hover:text-ink">update breakdown</a>, and the <a href="/seo/content-seo/entity-optimisation/" class="underline hover:text-ink">entity optimisation guide</a> covers the longer version of each fix.
+            </p>
+          </div>
+          <EmailSignup
+            source={SOURCE}
+            heading="Get my September spam update checklist"
+            blurb="Email only. The link comes straight to your inbox."
+            button="Send me the checklist"
+            assetName={ASSET_NAME}
+            assetUrl={ASSET_URL}
+            emailOnly
+            doneHeading="Check your inbox for your checklist."
+            doneBlurb="If it hasn't arrived, check your spam folder. When it comes, sign in to Google and click Make a copy."
+          />
+        </div>
+      </div>
+    </section>
+  </article>
+</BaseLayout>
