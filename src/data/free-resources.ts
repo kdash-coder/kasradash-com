@@ -40,6 +40,8 @@ export interface FreeResource {
   assetName: string;
   /** Plural noun for the items ("directories", "templates"). */
   noun: string;
+  /** Label on each item's link (default "Submit"). */
+  linkLabel?: string;
   /** How many items are visible before the email gate. */
   freeItems: number;
   /** Steps shown above the list. */
@@ -52,6 +54,56 @@ export interface FreeResource {
 }
 
 export const FREE_RESOURCES: FreeResource[] = [
+  {
+    slug: 'seo-tool-stack',
+    title: 'My SEO Tool Stack: Day One vs 8 Years In',
+    description:
+      'The SEO tools Kasra Dash would use on day one (all free) and the stack he uses after 8 years in SEO, with what each tool is for and the free alternative.',
+    h1: 'My SEO tool stack: day one vs 8 years in',
+    intro:
+      'What I would use if I were starting from zero today, and what I actually pay for now. Each paid tool has a free way to do the same job.',
+    keyword: 'STACK',
+    assetName: 'Kasra Dash\'s SEO tool stack, with the free version of each tool',
+    noun: 'tools',
+    linkLabel: 'Open',
+    freeItems: 5,
+    howTo: [
+      'Start with the free column. Most sites never outgrow it in year one.',
+      'Only pay for a tool when you are doing that job every week.',
+      'Pick one tool per job. Two keyword tools tell you the same thing twice.',
+    ],
+    gatePoints: [
+      'The five tools I pay for, and what I use each one for',
+      'The free way to do the same job for every paid tool',
+      'Links to all ten',
+    ],
+    sourceNote: 'My own stack as of November 2026. No affiliate links.',
+    datePublished: '2026-11-20T12:00:00+00:00',
+    groups: [
+      {
+        name: 'Day one (free)',
+        blurb: 'Everything you need to start, at no cost.',
+        items: [
+          { name: 'Google Search Console', pricing: 'Free. What you rank for, clicks, and indexing problems.', url: 'https://search.google.com/search-console' },
+          { name: 'Google Analytics 4', pricing: 'Free. Where your visitors come from and what they do.', url: 'https://analytics.google.com/' },
+          { name: 'Google Business Profile', pricing: 'Free. Your listing on Google Maps and local results.', url: 'https://business.google.com/' },
+          { name: 'Ahrefs Webmaster Tools', pricing: 'Free. Backlinks and a site audit for your own site.', url: 'https://ahrefs.com/webmaster-tools' },
+          { name: 'Claude (free plan)', pricing: 'Free. Outlines, rewrites and checking your pages.', url: 'https://claude.ai/' },
+        ],
+      },
+      {
+        name: '8 years in (what I pay for)',
+        blurb: 'What I use now, and the free way to do the same job.',
+        items: [
+          { name: 'Ahrefs', pricing: 'Keywords, backlinks and who ranks for a search. Free version: Ahrefs Webmaster Tools and Google Search Console.', url: 'https://ahrefs.com/' },
+          { name: 'Rank OS', pricing: 'Topical maps, page checks and a directory finder. Comes with my Skool group, The New Search. Free version: a spreadsheet of your pages next to your core topics.', url: 'https://www.skool.com/the-new-search' },
+          { name: 'Claude (paid)', pricing: 'Briefs, analysis and automations on real data. Free version: the free plan, one task at a time.', url: 'https://claude.ai/' },
+          { name: 'DataForSEO', pricing: 'Search and keyword data by API, paid per request, for tracking at scale. Free version: Google Search Console exports.', url: 'https://dataforseo.com/' },
+          { name: 'Hunter.io', pricing: 'Finds email addresses for outreach and link building. Free version: Hunter\'s free monthly searches, or the site\'s contact page.', url: 'https://hunter.io/' },
+        ],
+      },
+    ],
+  },
   {
     slug: 'business-directories',
     title: '50 Free Business Directories to List Your Business On',
