@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { FREE_RESOURCES } from '../../data/free-resources';
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Free resources', href: '/free/' },
+];
+---
+
+<BaseLayout title="Free SEO Resources from Kasra Dash" description="Free SEO lists, templates and checklists from Kasra Dash: directories to list your business on and more." path="/free/" breadcrumbs={crumbs}>
+  <main class="mx-auto max-w-3xl px-4 py-12 sm:px-6">
+    <Breadcrumbs {crumbs} />
+    <h1 class="mt-4 font-display text-3xl font-bold tracking-tight text-ink sm:text-5xl">Free resources</h1>
+    <ul class="mt-8 grid gap-4">
+      {FREE_RESOURCES.map((r) => (
+        <li class="rounded-[20px] border border-tint-border bg-tint p-5">
+          <a href={`/free/${r.slug}/`} class="font-display text-xl font-bold text-ink hover:underline">{r.h1}</a>
+          <p class="mt-2 text-muted">{r.intro}</p>
+        </li>
+      ))}
+    </ul>
+  </main>
+</BaseLayout>
