@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import EmailGate from '../../components/EmailGate.astro';
+import { SITE_URL } from '../../lib/site';
+import { captureEnabled } from '../../lib/capture';
+import { FREE_RESOURCES, type FreeResource } from '../../data/free-resources';
+
+/*
+ * One template for every lead magnet in src/data/free-resources.ts.
+ * The first `freeItems` items are open; the rest are in the HTML but locked
+ * behind <EmailGate /> (same registration-wall pattern as the ranking-factors page,
+ * with isAccessibleForFree markup while the gate is live).
+ */
+export function getStaticPaths() {
+  return FREE_RESOURCES.map((r) => ({ params: { slug: r.slug }, props: { r } }));
+}
+
+const { r } = Astro.props as { r: FreeResource };
+const path = `/free/${r.slug}/`;
+const canonical = new URL(path, SITE_URL).href;
+const GATE_ID = `free-${r.slug}`;
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Free resources', href: '/free/' },
+  { label: r.h1, href: path },
+];
+const total = r.groups.reduce((n, g) => n + g.items.length, 0);
+const locked = Math.max(0, total - r.freeItems);
+const webPageExtras = captureEnabled && locked > 0
+  ? { isAccessibleForFree: false, hasPart: { '@type': 'WebPageElement', isAccessibleForFree: false, cssSelector: `[data-gated="${GATE_ID}"]` } }
+  : {};
+
+// Number every item across groups so the gate can split the list at freeItems.
+let n = 0;
+const groups = r.groups.map((g) => ({ ...g, items: g.items.map((it) => ({ ...it, i: n++ })) }));
+const host = (u: string) => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return u; } };
+---
+
+<BaseLayout title={r.title} description={r.description} {path} breadcrumbs={crumbs} {webPageExtras} datePublished={r.datePublished}>
+  <main>
+    <section class="border-b border-tint-border bg-tint">
+      <div class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:py-16">
+        <Breadcrumbs {crumbs} />
+        {r.keyword && (
+          <p class="mt-5 inline-flex items-center gap-2 rounded-full border border-tint-border px-3 py-1 text-xs font-bold text-muted">
+            You commented <span class="rounded-full bg-[#845cfe] px-2 py-0.5 text-white">{r.keyword}</span>
+          </p>
+        )}
+        <h1 class="mt-4 font-display text-3xl font-bold leading-tight tracking-tight text-ink sm:text-5xl" style="text-wrap:balance">{r.h1}</h1>
+        <p class="mt-4 max-w-2xl text-lg leading-relaxed text-muted">{r.intro}</p>
+      </div>
+    </section>
+
+    <section class="mx-auto grid max-w-3xl gap-8 px-4 py-12 sm:px-6">
+      <div class="fr-how">
+        <h2 class="font-display text-lg font-bold text-ink">Before you start</h2>
+        <ol class="mt-3 grid gap-2 text-base text-ink">
+          {r.howTo.map((s, k) => (
+            <li class="flex gap-3"><span class="fr-step">{k + 1}</span><span>{s}</span></li>
+          ))}
+        </ol>
+      </div>
+
+      {groups.map((g) => {
+        const anyFree = g.items.some((it) => it.i < r.freeItems);
+        return (
+          <div class="grid gap-3" data-gated={anyFree ? undefined : GATE_ID}>
+            <div class="flex items-baseline gap-3">
+              <h2 class="font-display text-2xl font-bold tracking-tight text-ink">{g.name}</h2>
+              <span class="text-sm font-bold text-muted">{g.items.length}</span>
+            </div>
+            {g.blurb && <p class="text-sm text-muted">{g.blurb}</p>}
+            <ol class="fr-list">
+              {g.items.map((it) => (
+                <li class="fr-row" data-gated={it.i >= r.freeItems ? GATE_ID : undefined}>
+                  <span class="fr-name">{it.name}</span>
+                  {it.dr !== undefined && <span class="fr-dr">DR {it.dr}</span>}
+                  {it.pricing && <span class="fr-price">{it.pricing}</span>}
+                  <a class="fr-go" href={it.url} target="_blank" rel="noopener nofollow">
+                    <span>Submit <span aria-hidden="true">↗</span></span>
+                    <small>{host(it.url)}</small>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </div>
+        );
+      })}
+
+      {locked > 0 && (
+        <EmailGate
+          gateId={GATE_ID}
+          source={GATE_ID}
+          lockedCount={locked}
+          lockedNoun={r.noun}
+          assetName={r.assetName}
+          assetUrl={`${canonical}?sub=1`}
+          heading={`Get all ${total} ${r.noun} now`}
+          blurb={`You can see the first ${r.freeItems}. Enter your name and email and the other ${locked} appear right here, straight away. I'll email you the link too.`}
+          points={r.gatePoints}
+          button={`Show all ${total}`}
+        />
+      )}
+
+      <p class="text-sm text-muted">{r.sourceNote}</p>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .fr-how { border: 1px solid var(--color-tint-border); background: var(--color-tint); border-radius: 20px; padding: 1.25rem 1.5rem; }
+  .fr-step { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 1.6rem; height: 1.6rem; border-radius: 9999px; background: #845cfe; color: #fff; font-weight: 800; font-size: .85rem; }
+  .fr-list { list-style: none; margin: 0; padding: 0; border: 1px solid var(--color-tint-border); border-radius: 20px; overflow: hidden; background: var(--color-tint); }
+  .fr-row { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; grid-template-areas: "n d g" "p p g"; column-gap: .9rem; row-gap: .15rem; align-items: center; padding: .9rem 1.2rem; border-top: 1px solid var(--color-tint-border); }
+  .fr-row:first-child { border-top: 0; }
+  .fr-name { grid-area: n; font-weight: 700; color: var(--color-ink); min-width: 0; }
+  .fr-dr { grid-area: d; font-size: .8rem; font-weight: 700; color: var(--color-muted); font-variant-numeric: tabular-nums; }
+  .fr-price { grid-area: p; font-size: .8rem; color: var(--color-muted); }
+  .fr-go { grid-area: g; display: grid; justify-items: end; color: #a68bff; font-weight: 800; font-size: .9rem; text-decoration: none; white-space: nowrap; }
+  .fr-go small { font-weight: 500; font-size: .7rem; color: var(--color-dim); }
+  .fr-go:hover { text-decoration: underline; }
+  @media (max-width: 480px) { .fr-go small { display: none; } }
+</style>

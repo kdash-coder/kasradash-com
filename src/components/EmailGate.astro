@@ -41,6 +41,8 @@ interface Props {
   button?: string;
   /** How many items are behind the wall, shown in the UI. */
   lockedCount?: number;
+  /** Plural noun for the locked items, shown as "{lockedCount} {lockedNoun} locked". */
+  lockedNoun?: string;
   /** What they are signing up to get. Becomes the first line of the universal welcome email. */
   assetName?: string;
   /** Link to it (absolute). Defaults to this page. */
@@ -53,7 +55,7 @@ interface Props {
   instantNote?: string;
 }
 
-const { gateId, source, heading, blurb, button = 'Unlock the full list', lockedCount, assetName = '', assetUrl = '', points = [], peek = [], instantNote = 'Opens on this page the moment you hit the button. No confirmation email to wait for.' } = Astro.props;
+const { gateId, source, heading, blurb, button = 'Unlock the full list', lockedCount, lockedNoun = 'factors', assetName = '', assetUrl = '', points = [], peek = [], instantNote = 'Opens on this page the moment you hit the button. No confirmation email to wait for.' } = Astro.props;
 const tag = sourceTag(source);
 ---
 
@@ -107,7 +109,7 @@ const tag = sourceTag(source);
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5"><path fill-rule="evenodd" d="M10 1a4.5 4.5 0 0 0-4.5 4.5V9H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-.5V5.5A4.5 4.5 0 0 0 10 1Zm3 8V5.5a3 3 0 1 0-6 0V9h6Z" clip-rule="evenodd" /></svg>
             </span>
             <p class="font-display text-xs font-bold uppercase tracking-wider text-brand-600">
-              {lockedCount ? `${lockedCount} factors locked` : 'The rest is locked'}
+              {lockedCount ? `${lockedCount} ${lockedNoun} locked` : 'The rest is locked'}
             </p>
           </div>
           <h3 class="mt-4 font-display text-2xl font-bold leading-tight tracking-tight text-ink sm:text-3xl">{heading}</h3>
